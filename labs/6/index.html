@@ -1,0 +1,387 @@
+<!DOCTYPE html><html lang="en-us"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta property="og:description" content="Harvard Universty's introduction to the intellectual enterprises of computer science and the art of programming.">
+
+<meta property="og:image" content="https://img.youtube.com/vi/zYierUhIFNQ/maxresdefault.jpg"><meta property="og:title" content="Lab 6: World Cup - CS50x 2021"><link href="../../favicon.ico%3F1610389211" rel="icon">
+
+<!-- https://fonts.google.com/specimen/PT+Sans?query=PT+Sans&selection.family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700 -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+
+<!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+<script src="../../assets/jquery/dist/jquery.min.js%3F1610389211"></script>
+<script src="../../assets/bootstrap/dist/js/bootstrap.bundle.min.js%3F1610389211"></script>
+
+<!-- https://bootstrap-table.com/docs/getting-started/introduction/ -->
+<link href="../../assets/bootstrap-table/dist/bootstrap-table.min.css%3F1610389211.css" rel="stylesheet">
+<script src="../../assets/bootstrap-table/dist/bootstrap-table.min.js%3F1610389211"></script>
+<script src="../../assets/bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.min.js%3F1610389211"></script>
+
+<!-- https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use -->
+<link href="../../assets/@fortawesome/fontawesome-free/css/all.min.css%3F1610389211.css" rel="stylesheet">
+
+<!-- https://moment.github.io/luxon/ -->
+<script src="../../assets/luxon.min.js%3F1610389211"></script>
+
+<!-- http://docs.mathjax.org/ -->
+<!-- https://www.jsdelivr.com/package/npm/mathjax?path=es5 -->
+<script crossorigin="anonymous" integrity="sha256-+nfSJ1LiSvANSK3wvi6FjM+oFwoIQvURU1frozp5z6o=" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-chtml.js"></script>
+
+<!-- https://github.com/verlok/vanilla-lazyload -->
+<script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.7.0/intersection-observer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js"></script>
+
+
+
+<link href="../../assets/page.css%3F1610389211.css" rel="stylesheet">
+<script src="../../assets/jekyll-theme-cs50.js%3F1610389211"></script>
+
+<script>
+    window.CS50 = {
+        locale: "en",
+        tz: "America/New_York"
+    };
+</script>
+
+<title>Lab 6: World Cup - CS50x 2021</title>
+</head>
+
+    <body class="invisible">
+
+        
+        
+        
+        <div class="alert alert-dismissible fixed-top mb-0 rounded-0 shadow" data-alert="success" id="alert" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button><p>This is CS50x 2021, the newest version of the course. Looking for <a href="https://cs50.harvard.edu/x/2020/">CS50x 2020</a>?</p></div>
+        
+        
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <aside class="col-md">
+ 
+                    <header><h1 data-id="this-is-cs50x"><a href="../../index.html">This is CS50x</a></h1>
+
+<p>OpenCourseWare</p>
+
+<p><a href="https://community.alumni.harvard.edu/give/59206872" class="pr-1 small">Donate</a>
+<a href="https://community.alumni.harvard.edu/give/59206872" class="small"><i aria-hidden="true" class="fas fa-external-link-alt"></i></a></p>
+
+<p><a href="https://cs.harvard.edu/malan/">David J. Malan</a><br>
+<a href="mailto:malan@harvard.edu">malan@harvard.edu</a><br>
+<a href="https://www.facebook.com/dmalan" class="mr-2"><i class="fab fa-facebook-f"></i></a><a href="https://github.com/dmalan" class="mr-2"><i class="fab fa-github"></i></a><a href="https://www.instagram.com/davidjmalan/" class="mr-2"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/malan/" class="mr-2"><i class="fab fa-linkedin"></i></a><a href="https://www.quora.com/profile/David-J-Malan" class="mr-2"><i class="fab fa-quora"></i></a><a href="https://www.reddit.com/user/davidjmalan" class="mr-2"><i class="fab fa-reddit-alien"></i></a><a href="https://twitter.com/davidjmalan" class="mr-2"><i class="fab fa-twitter"></i></a></p></header>
+
+                    
+
+                    <button aria-controls="nav" aria-expanded="false" class="btn btn-sm collapsed d-md-none" data-target="aside > nav" data-toggle="collapse">
+                        Menu
+                    </button>
+
+                    <nav class="collapse d-md-block" id="nav"><hr>
+
+<ul>
+  <li data-marker="*"><a href="../../seminars/index.html">CS50’s New Year’s Seminars</a> <span class="text-white">🥂</span></li>
+  <li data-marker="*"><a href="../../gallery/index.html">Gallery of Final Projects</a> <span class="pl-1 text-white">🖼️ </span></li>
+  <li data-marker="*"><a href="../../new/index.html">What’s new for 2021?</a></li>
+</ul>
+<ul>
+  <li data-marker="*"><a href="../../weeks/0/index.html">Week 0</a> Scratch</li>
+  <li data-marker="*"><a href="../../weeks/1/index.html">Week 1</a> C</li>
+  <li data-marker="*"><a href="../../weeks/2/index.html">Week 2</a> Arrays</li>
+  <li data-marker="*"><a href="../../weeks/3/index.html">Week 3</a> Algorithms</li>
+  <li data-marker="*"><a href="../../weeks/4/index.html">Week 4</a> Memory</li>
+  <li data-marker="*"><a href="../../weeks/5/index.html">Week 5</a> Data Structures</li>
+  <li data-marker="*"><a href="../../weeks/6/index.html">Week 6</a> Python</li>
+  <li data-marker="*"><a href="../../weeks/7/index.html">Week 7</a> SQL</li>
+  <li data-marker="*"><a href="../../weeks/8/index.html">Week 8</a> HTML, CSS, JavaScript</li>
+  <li data-marker="*"><a href="../../weeks/9/index.html">Week 9</a> Flask</li>
+  <li data-marker="*"><a href="../../weeks/10/index.html">Week 10</a> Ethics</li>
+</ul>
+<ul>
+  <li data-marker="*" class="small"><a href="../../weeks/security/index.html">Security</a></li>
+  <li data-marker="*" class="small"><a href="../../weeks/ai/index.html">Artificial Intelligence</a></li>
+</ul>
+<ul>
+  <li data-marker="*"><a href="../../project/index.html">Final Project</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="../../honesty/index.html">Academic Honesty</a></li>
+  <li data-marker="*"><a href="../../certificate/index.html">CS50 Certificate</a></li>
+  <li data-marker="*"><a href="../../faqs/index.html">FAQs</a></li>
+  <li data-marker="*"><a href="https://cs50.me/cs50x">Gradebook</a></li>
+  <li data-marker="*"><a href="../../staff/index.html">Staff</a></li>
+  <li data-marker="*"><a href="../../syllabus/index.html">Syllabus</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="https://cs50.harvard.edu/x/ed">Ed Discussion</a> for Q&amp;A</li>
+  <li data-marker="*" class="small"><a href="https://us.edstem.org/quickstart/ed-discussion.pdf">Quick Start Guide</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://cs50.edx.org/">edX</a></li>
+  <li data-marker="*"><a href="https://www.youtube.com/playlist?list=PLhQjrBD2T382_R182iC2gNZI9HzWFMC_8">YouTube</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://ide.cs50.io/">CS50 IDE</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/css/">CSS Tutorial</a></li>
+  <li data-marker="*"><a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/">Flask Quickstart</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/html/">HTML Tutorial</a></li>
+  <li data-marker="*"><a href="https://jinja.palletsprojects.com/en/2.11.x/templates/">Jinja Template Designer Documentation</a></li>
+  <li data-marker="*"><a href="https://man.cs50.io/">Manual Pages</a></li>
+  <li data-marker="*"><a href="https://docs.python.org/3.7/search.html">Python Documentation</a></li>
+  <li data-marker="*"><a href="https://scratch.mit.edu/">Scratch</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/sql/">SQL Tutorial</a></li>
+  <li data-marker="*"><a href="https://cs50.readthedocs.io/style/c/">Style Guide</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://cs50.noticeable.io/">Changelog</a></li>
+  <li data-marker="*"><a href="https://cs50.statuspage.io/">Status Page</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="../../communities/index.html">Communities</a></li>
+  <li data-marker="*" class="small"><a href="https://discord.gg/cs50">Discord</a></li>
+  <li data-marker="*" class="small"><a href="https://www.facebook.com/groups/cs50/">Facebook Group</a></li>
+  <li data-marker="*" class="small"><a href="https://www.facebook.com/cs50/">Facebook Page</a></li>
+  <li data-marker="*" class="small"><a href="https://github.com/cs50">GitHub</a></li>
+  <li data-marker="*" class="small"><a href="https://gitter.im/cs50/x">Gitter</a></li>
+  <li data-marker="*" class="small"><a href="https://instagram.com/cs50">Instagram</a></li>
+  <li data-marker="*" class="small"><a href="https://www.linkedin.com/groups/7437240/">LinkedIn Group</a></li>
+  <li data-marker="*" class="small"><a href="https://www.linkedin.com/school/CS50/">LinkedIn Page</a></li>
+  <li data-marker="*" class="small"><a href="https://www.quora.com/topic/CS50">Quora</a></li>
+  <li data-marker="*" class="small"><a href="https://www.reddit.com/r/cs50/">Reddit</a></li>
+  <li data-marker="*" class="small"><a href="https://cs50.edx.org/slack">Slack</a></li>
+  <li data-marker="*" class="small"><a href="https://www.snapchat.com/add/cs50">Snapchat</a></li>
+  <li data-marker="*" class="small"><a href="https://soundcloud.com/cs50">SoundCloud</a></li>
+  <li data-marker="*" class="small"><a href="https://twitter.com/cs50">Twitter</a></li>
+  <li data-marker="*" class="small"><a href="http://www.youtube.com/subscription_center?add_user=cs50tv">YouTube</a></li>
+</ul>
+
+<hr>
+
+<p><a href="https://cs50.harvardshop.com/"><img src="https://i.imgur.com/GGMdcKt.png" alt="Harvard Shop"></a></p>
+
+<hr>
+
+<p><a href="../../license/index.html" class="small"><i class="fab fa-creative-commons mr-1"></i>License</a></p></nav>
+
+                    <footer></footer>
+
+                </aside>
+
+                <main class="col-md">
+
+                    <h1 id="lab-6-world-cup">Lab 6: World Cup</h1>
+
+<div class="alert" data-alert="warning" role="alert"><p>You are welcome to collaborate with one or two classmates on this lab, though it is expected that every student in any such group contribute equally to the lab.</p></div>
+
+<p>Write a program to run simulations of the FIFA World Cup.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ python tournament.py 2018m.csv
+Belgium: 20.9% chance of winning
+Brazil: 20.3% chance of winning
+Portugal: 14.5% chance of winning
+Spain: 13.6% chance of winning
+Switzerland: 10.5% chance of winning
+Argentina: 6.5% chance of winning
+England: 3.7% chance of winning
+France: 3.3% chance of winning
+Denmark: 2.2% chance of winning
+Croatia: 2.0% chance of winning
+Colombia: 1.8% chance of winning
+Sweden: 0.5% chance of winning
+Uruguay: 0.1% chance of winning
+Mexico: 0.1% chance of winning
+</code></pre></div></div>
+
+<h2 id="when-to-do-it">When to Do It</h2>
+
+<p>By <span data-local="2021-12-31T23:59:00-05:00"></span>.</p>
+
+<h2 id="background">Background</h2>
+
+<p>In soccer’s World Cup, the knockout round consists of 16 teams. In each round, each team plays another team and the losing teams are eliminated. When only two teams remain, the winner of the final match is the champion.</p>
+
+<p>In soccer, teams are given <a href="https://en.wikipedia.org/wiki/FIFA_World_Rankings#Current_calculation_method">FIFA Ratings</a>, which are numerical values representing each team’s relative skill level. Higher FIFA ratings indicate better previous game results, and given two teams’ FIFA ratings, it’s possible to estimate the probability that either team wins a game based on their current ratings. The FIFA Ratings from just before the two previous World Cups are available as the <a href="https://www.fifa.com/fifa-world-ranking/ranking-table/men/rank/id12189/">May 2018 Men’s FIFA Ratings</a> and <a href="https://www.fifa.com/fifa-world-ranking/ranking-table/women/rank/ranking_20190329/">March 2019 Women’s FIFA Ratings</a>.</p>
+
+<p>Using this information, we can simulate the entire tournament by repeatedly simulating rounds until we’re left with just one team. And if we want to estimate how likely it is that any given team wins the tournament, we might simulate the tournament many times (e.g. 1000 simulations) and count how many times each team wins a simulated tournament.</p>
+
+<p>Your task in this lab is to do just that using Python!</p>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<ol>
+  <li>Log into <a href="https://ide.cs50.io/">ide.cs50.io</a> using your GitHub account.</li>
+  <li>In your terminal window, run <code class="language-plaintext highlighter-rouge">wget https://cdn.cs50.net/2020/fall/labs/6/lab6.zip</code> to download a Zip file of the lab distribution code.</li>
+  <li>In your terminal window, run <code class="language-plaintext highlighter-rouge">unzip lab6.zip</code> to unzip (i.e., decompress) that Zip file.</li>
+  <li>In your terminal window, run <code class="language-plaintext highlighter-rouge">cd lab6</code> to change directories into your <code class="language-plaintext highlighter-rouge">lab6</code> directory.</li>
+</ol>
+
+<h2 id="understanding">Understanding</h2>
+
+<p>Start by taking a look at the <code class="language-plaintext highlighter-rouge">2018m.csv</code> file. This file contains the 16 teams in the knockout round of the 2018 Men’s World Cup and the ratings for each team. Notice that the CSV file has two columns, one called <code class="language-plaintext highlighter-rouge">team</code> (representing the team’s country name) and one called <code class="language-plaintext highlighter-rouge">rating</code> (representing the team’s rating).</p>
+
+<p>The order in which the teams are listed determines which teams will play each other in each round (in the first round, for example, Uruguay will play Portugal and France will play Argentina; in the next round, the winner of the Uruguay-Portugal match will play the winner of the France-Argentina match). So be sure not to edit the order in which teams appear in this file!</p>
+
+<p>Ultimately, in Python, we can represent each team as a dictionary that contains two values: the team name and the rating. Uruguay, for example, we would want to represent in Python as <code class="language-plaintext highlighter-rouge">{"team": "Uruguay", "rating": 976}</code>.</p>
+
+<p>Next, take a look at <code class="language-plaintext highlighter-rouge">2019w.csv</code>, which contains data formatted the same way for the 2019 Women’s World Cup.</p>
+
+<p>Now, open <code class="language-plaintext highlighter-rouge">tournament.py</code> and see that we’ve already written some code for you. The variable <code class="language-plaintext highlighter-rouge">N</code> at the top represents how many World Cup simulations to run: in this case, 1000.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">simulate_game</code> function accepts two teams as inputs (recall that each team is a dictionary containg the team name and the team’s rating), and simulates a game between them. If the first team wins, the function returns <code class="language-plaintext highlighter-rouge">True</code>; otherwise, the function returns <code class="language-plaintext highlighter-rouge">False</code>.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">simulate_round</code> function accepts a list of teams (in a variable called <code class="language-plaintext highlighter-rouge">teams</code>) as input, and simulates games between each pair of teams. The function then returns a list of all of the teams that won the round.</p>
+
+<p>In the <code class="language-plaintext highlighter-rouge">main</code> function, notice that we first ensure that <code class="language-plaintext highlighter-rouge">len(sys.argv)</code> (the number of command-line arguments) is 2. We’ll use command-line arguments to tell Python which team CSV file to use to run the tournament simulation. We’ve then defined a list called <code class="language-plaintext highlighter-rouge">teams</code> (which will eventually be a list of teams) and a dictionary called <code class="language-plaintext highlighter-rouge">counts</code> (which will associate team names with the number of times that team won a simulated tournament). Right now they’re both empty, so populating them is left up to you!</p>
+
+<p>Finally, at the end of <code class="language-plaintext highlighter-rouge">main</code>, we sort the teams in descending order of how many times they won simulations (according to <code class="language-plaintext highlighter-rouge">counts</code>) and print the estimated probability that each team wins the World Cup.</p>
+
+<p>Populating <code class="language-plaintext highlighter-rouge">teams</code> and <code class="language-plaintext highlighter-rouge">counts</code> and writing the <code class="language-plaintext highlighter-rouge">simulate_tournament</code> function are left up to you!</p>
+
+<h2 id="implementation-details">Implementation Details</h2>
+
+<p>Complete the implementation of <code class="language-plaintext highlighter-rouge">tournament.py</code>, such that it simulates a number of tournaments and outputs each team’s probability of winning.</p>
+
+<p>First, in <code class="language-plaintext highlighter-rouge">main</code>, read the team data from the CSV file into your program’s memory, and add each team to the list <code class="language-plaintext highlighter-rouge">teams</code>.</p>
+
+<ul>
+  <li data-marker="*">The file to use will be provided as a command-line argument. You can access the name of the file, then, with <code class="language-plaintext highlighter-rouge">sys.argv[1]</code>.</li>
+  <li data-marker="*">Recall that you can open a file with <code class="language-plaintext highlighter-rouge">open(filename)</code>, where <code class="language-plaintext highlighter-rouge">filename</code> is a variable storing the name of the file.</li>
+  <li data-marker="*">Once you have a file <code class="language-plaintext highlighter-rouge">f</code>, you can use <code class="language-plaintext highlighter-rouge">csv.DictReader(f)</code> to give you a “reader”: an object in Python that you can loop over to read the file one row at a time, treating each row as a dictionary.</li>
+  <li data-marker="*">By default, all values read from the file will be strings. So be sure to first convert the team’s <code class="language-plaintext highlighter-rouge">rating</code> to an <code class="language-plaintext highlighter-rouge">int</code> (you can use the <code class="language-plaintext highlighter-rouge">int</code> function in Python to do this).</li>
+  <li data-marker="*">Ultimately, append each team’s dictionary to <code class="language-plaintext highlighter-rouge">teams</code>. The function call <code class="language-plaintext highlighter-rouge">teams.append(x)</code> will append <code class="language-plaintext highlighter-rouge">x</code> to the list <code class="language-plaintext highlighter-rouge">teams</code>.</li>
+  <li data-marker="*">Recall that each team should be a dictionary with a <code class="language-plaintext highlighter-rouge">team</code> name and a <code class="language-plaintext highlighter-rouge">rating</code>.</li>
+</ul>
+
+<p>Next, implement the <code class="language-plaintext highlighter-rouge">simulate_tournament</code> function. This function should accept as input a list of teams and should repeatedly simulate rounds until you’re left with one team. The function should the return the name of that team.</p>
+
+<ul>
+  <li data-marker="*">You can call the <code class="language-plaintext highlighter-rouge">simulate_round</code> function, which simulates a single round, accepting a list of teams as input and returning a list of all of the winners.</li>
+  <li data-marker="*">Recall that if <code class="language-plaintext highlighter-rouge">x</code> is a list, you can use <code class="language-plaintext highlighter-rouge">len(x)</code> to determine the length of the list.</li>
+  <li data-marker="*">You should not assume the number of teams in the tournament, but you may assume it will be a power of 2.</li>
+</ul>
+
+<p>Finally, back in the <code class="language-plaintext highlighter-rouge">main</code> function, run <code class="language-plaintext highlighter-rouge">N</code> tournament simulations, and keep track of how many times each team wins in the <code class="language-plaintext highlighter-rouge">counts</code> dictionary.</p>
+
+<ul>
+  <li data-marker="*">For example, if Uruguay won 2 games and Portugal won 3 games, then your <code class="language-plaintext highlighter-rouge">counts</code> dictionary should be <code class="language-plaintext highlighter-rouge">{"Uruguay": 2, "Portugal": 3}</code>.</li>
+  <li data-marker="*">You should use your <code class="language-plaintext highlighter-rouge">simulate_tournament</code> to simulate each tournament and determine the winner.</li>
+  <li data-marker="*">Recall that if <code class="language-plaintext highlighter-rouge">counts</code> is a dictionary, then syntax like <code class="language-plaintext highlighter-rouge">counts[team_name] = x</code> will associate the key stored in <code class="language-plaintext highlighter-rouge">team_name</code> with the value stored in <code class="language-plaintext highlighter-rouge">x</code>.</li>
+  <li data-marker="*">You can use the <code class="language-plaintext highlighter-rouge">in</code> keyword in Python to check if a dictionary has a particular key already. For example, <code class="language-plaintext highlighter-rouge">if "Portugal" in counts:</code> will check to see if <code class="language-plaintext highlighter-rouge">"Portugal"</code> already has an existing value in the <code class="language-plaintext highlighter-rouge">counts</code> dictionary.</li>
+</ul>
+
+<h3 id="walkthrough">Walkthrough</h3>
+
+<div class="border embed-responsive embed-responsive-16by9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="embed-responsive-item" src="https://video.cs50.io/o5Bkc7gtRjo"></iframe></div>
+
+<h3 id="hints">Hints</h3>
+
+<ul>
+  <li data-marker="*">
+    <p>When reading in the file, you may find this syntax helpful, with <code class="language-plaintext highlighter-rouge">filename</code> as the name of your file and <code class="language-plaintext highlighter-rouge">file</code> as a variable.</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+      <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="p">.</span><span class="n">DictReader</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li data-marker="*">
+    <p>In Python, to append to the end of a list, use the <code class="language-plaintext highlighter-rouge">.append()</code> function.</p>
+  </li>
+</ul>
+
+<h3 id="testing">Testing</h3>
+
+<p>Your program should behave per the examples below. Since simulations have randomness within each, your output will likely not perfectly match the examples below.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ python tournament.py 2018m.csv
+Belgium: 20.9% chance of winning
+Brazil: 20.3% chance of winning
+Portugal: 14.5% chance of winning
+Spain: 13.6% chance of winning
+Switzerland: 10.5% chance of winning
+Argentina: 6.5% chance of winning
+England: 3.7% chance of winning
+France: 3.3% chance of winning
+Denmark: 2.2% chance of winning
+Croatia: 2.0% chance of winning
+Colombia: 1.8% chance of winning
+Sweden: 0.5% chance of winning
+Uruguay: 0.1% chance of winning
+Mexico: 0.1% chance of winning
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ python tournament.py 2019w.csv
+Germany: 17.1% chance of winning
+United States: 14.8% chance of winning
+England: 14.0% chance of winning
+France: 9.2% chance of winning
+Canada: 8.5% chance of winning
+Japan: 7.1% chance of winning
+Australia: 6.8% chance of winning
+Netherlands: 5.4% chance of winning
+Sweden: 3.9% chance of winning
+Italy: 3.0% chance of winning
+Norway: 2.9% chance of winning
+Brazil: 2.9% chance of winning
+Spain: 2.2% chance of winning
+China PR: 2.1% chance of winning
+Nigeria: 0.1% chance of winning
+</code></pre></div></div>
+
+<ul>
+  <li data-marker="*">You might be wondering what actually happened at the 2018 and 2019 World Cups! For Men’s, France won, defeating Croatia in the final. Belgium defeated England for the third place position. For Women’s, the United States won, defeating the Netherlands in the final. England defeated Sweden for the third place position.</li>
+</ul>
+
+<details><summary>Not sure how to solve?</summary><div class="border embed-responsive embed-responsive-16by9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="embed-responsive-item" src="https://video.cs50.io/Fo7Roe8hw3A"></iframe></div></details>
+
+<h2 id="how-to-test-your-code">How to Test Your Code</h2>
+
+<p>Execute the below to evaluate the correctness of your code using <code class="language-plaintext highlighter-rouge">check50</code>. But be sure to compile and test it yourself as well!</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>check50 cs50/labs/2021/x/worldcup
+</code></pre></div></div>
+
+<p>Execute the below to evaluate the style of your code using <code class="language-plaintext highlighter-rouge">style50</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>style50 tournament.py
+</code></pre></div></div>
+
+<h2 id="how-to-submit">How to Submit</h2>
+
+<p>Execute the below, logging in with your GitHub username and password when prompted. For security, you’ll see asterisks (<code class="language-plaintext highlighter-rouge">*</code>) instead of the actual characters in your password.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>submit50 cs50/labs/2021/x/worldcup
+</code></pre></div></div>
+
+
+                </main>
+
+            </div>
+
+        </div>
+
+        
+ 
+    
+
+
+</body></html>

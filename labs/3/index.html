@@ -1,0 +1,283 @@
+<!DOCTYPE html><html lang="en-us"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta property="og:description" content="Harvard Universty's introduction to the intellectual enterprises of computer science and the art of programming.">
+
+<meta property="og:image" content="https://img.youtube.com/vi/zYierUhIFNQ/maxresdefault.jpg"><meta property="og:title" content="Lab 3: Sort - CS50x 2021"><link href="../../favicon.ico%3F1610389211" rel="icon">
+
+<!-- https://fonts.google.com/specimen/PT+Sans?query=PT+Sans&selection.family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700 -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+
+<!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+<script src="../../assets/jquery/dist/jquery.min.js%3F1610389211"></script>
+<script src="../../assets/bootstrap/dist/js/bootstrap.bundle.min.js%3F1610389211"></script>
+
+<!-- https://bootstrap-table.com/docs/getting-started/introduction/ -->
+<link href="../../assets/bootstrap-table/dist/bootstrap-table.min.css%3F1610389211.css" rel="stylesheet">
+<script src="../../assets/bootstrap-table/dist/bootstrap-table.min.js%3F1610389211"></script>
+<script src="../../assets/bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.min.js%3F1610389211"></script>
+
+<!-- https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use -->
+<link href="../../assets/@fortawesome/fontawesome-free/css/all.min.css%3F1610389211.css" rel="stylesheet">
+
+<!-- https://moment.github.io/luxon/ -->
+<script src="../../assets/luxon.min.js%3F1610389211"></script>
+
+<!-- http://docs.mathjax.org/ -->
+<!-- https://www.jsdelivr.com/package/npm/mathjax?path=es5 -->
+<script crossorigin="anonymous" integrity="sha256-+nfSJ1LiSvANSK3wvi6FjM+oFwoIQvURU1frozp5z6o=" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-chtml.js"></script>
+
+<!-- https://github.com/verlok/vanilla-lazyload -->
+<script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.7.0/intersection-observer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js"></script>
+
+
+
+<link href="../../assets/page.css%3F1610389211.css" rel="stylesheet">
+<script src="../../assets/jekyll-theme-cs50.js%3F1610389211"></script>
+
+<script>
+    window.CS50 = {
+        locale: "en",
+        tz: "America/New_York"
+    };
+</script>
+
+<title>Lab 3: Sort - CS50x 2021</title>
+</head>
+
+    <body class="invisible">
+
+        
+        
+        
+        <div class="alert alert-dismissible fixed-top mb-0 rounded-0 shadow" data-alert="success" id="alert" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button><p>This is CS50x 2021, the newest version of the course. Looking for <a href="https://cs50.harvard.edu/x/2020/">CS50x 2020</a>?</p></div>
+        
+        
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <aside class="col-md">
+ 
+                    <header><h1 data-id="this-is-cs50x"><a href="../../index.html">This is CS50x</a></h1>
+
+<p>OpenCourseWare</p>
+
+<p><a href="https://community.alumni.harvard.edu/give/59206872" class="pr-1 small">Donate</a>
+<a href="https://community.alumni.harvard.edu/give/59206872" class="small"><i aria-hidden="true" class="fas fa-external-link-alt"></i></a></p>
+
+<p><a href="https://cs.harvard.edu/malan/">David J. Malan</a><br>
+<a href="mailto:malan@harvard.edu">malan@harvard.edu</a><br>
+<a href="https://www.facebook.com/dmalan" class="mr-2"><i class="fab fa-facebook-f"></i></a><a href="https://github.com/dmalan" class="mr-2"><i class="fab fa-github"></i></a><a href="https://www.instagram.com/davidjmalan/" class="mr-2"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/malan/" class="mr-2"><i class="fab fa-linkedin"></i></a><a href="https://www.quora.com/profile/David-J-Malan" class="mr-2"><i class="fab fa-quora"></i></a><a href="https://www.reddit.com/user/davidjmalan" class="mr-2"><i class="fab fa-reddit-alien"></i></a><a href="https://twitter.com/davidjmalan" class="mr-2"><i class="fab fa-twitter"></i></a></p></header>
+
+                    
+
+                    <button aria-controls="nav" aria-expanded="false" class="btn btn-sm collapsed d-md-none" data-target="aside > nav" data-toggle="collapse">
+                        Menu
+                    </button>
+
+                    <nav class="collapse d-md-block" id="nav"><hr>
+
+<ul>
+  <li data-marker="*"><a href="../../seminars/index.html">CS50’s New Year’s Seminars</a> <span class="text-white">🥂</span></li>
+  <li data-marker="*"><a href="../../gallery/index.html">Gallery of Final Projects</a> <span class="pl-1 text-white">🖼️ </span></li>
+  <li data-marker="*"><a href="../../new/index.html">What’s new for 2021?</a></li>
+</ul>
+<ul>
+  <li data-marker="*"><a href="../../weeks/0/index.html">Week 0</a> Scratch</li>
+  <li data-marker="*"><a href="../../weeks/1/index.html">Week 1</a> C</li>
+  <li data-marker="*"><a href="../../weeks/2/index.html">Week 2</a> Arrays</li>
+  <li data-marker="*"><a href="../../weeks/3/index.html">Week 3</a> Algorithms</li>
+  <li data-marker="*"><a href="../../weeks/4/index.html">Week 4</a> Memory</li>
+  <li data-marker="*"><a href="../../weeks/5/index.html">Week 5</a> Data Structures</li>
+  <li data-marker="*"><a href="../../weeks/6/index.html">Week 6</a> Python</li>
+  <li data-marker="*"><a href="../../weeks/7/index.html">Week 7</a> SQL</li>
+  <li data-marker="*"><a href="../../weeks/8/index.html">Week 8</a> HTML, CSS, JavaScript</li>
+  <li data-marker="*"><a href="../../weeks/9/index.html">Week 9</a> Flask</li>
+  <li data-marker="*"><a href="../../weeks/10/index.html">Week 10</a> Ethics</li>
+</ul>
+<ul>
+  <li data-marker="*" class="small"><a href="../../weeks/security/index.html">Security</a></li>
+  <li data-marker="*" class="small"><a href="../../weeks/ai/index.html">Artificial Intelligence</a></li>
+</ul>
+<ul>
+  <li data-marker="*"><a href="../../project/index.html">Final Project</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="../../honesty/index.html">Academic Honesty</a></li>
+  <li data-marker="*"><a href="../../certificate/index.html">CS50 Certificate</a></li>
+  <li data-marker="*"><a href="../../faqs/index.html">FAQs</a></li>
+  <li data-marker="*"><a href="https://cs50.me/cs50x">Gradebook</a></li>
+  <li data-marker="*"><a href="../../staff/index.html">Staff</a></li>
+  <li data-marker="*"><a href="../../syllabus/index.html">Syllabus</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="https://cs50.harvard.edu/x/ed">Ed Discussion</a> for Q&amp;A</li>
+  <li data-marker="*" class="small"><a href="https://us.edstem.org/quickstart/ed-discussion.pdf">Quick Start Guide</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://cs50.edx.org/">edX</a></li>
+  <li data-marker="*"><a href="https://www.youtube.com/playlist?list=PLhQjrBD2T382_R182iC2gNZI9HzWFMC_8">YouTube</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://ide.cs50.io/">CS50 IDE</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/css/">CSS Tutorial</a></li>
+  <li data-marker="*"><a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/">Flask Quickstart</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/html/">HTML Tutorial</a></li>
+  <li data-marker="*"><a href="https://jinja.palletsprojects.com/en/2.11.x/templates/">Jinja Template Designer Documentation</a></li>
+  <li data-marker="*"><a href="https://man.cs50.io/">Manual Pages</a></li>
+  <li data-marker="*"><a href="https://docs.python.org/3.7/search.html">Python Documentation</a></li>
+  <li data-marker="*"><a href="https://scratch.mit.edu/">Scratch</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/sql/">SQL Tutorial</a></li>
+  <li data-marker="*"><a href="https://cs50.readthedocs.io/style/c/">Style Guide</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://cs50.noticeable.io/">Changelog</a></li>
+  <li data-marker="*"><a href="https://cs50.statuspage.io/">Status Page</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="../../communities/index.html">Communities</a></li>
+  <li data-marker="*" class="small"><a href="https://discord.gg/cs50">Discord</a></li>
+  <li data-marker="*" class="small"><a href="https://www.facebook.com/groups/cs50/">Facebook Group</a></li>
+  <li data-marker="*" class="small"><a href="https://www.facebook.com/cs50/">Facebook Page</a></li>
+  <li data-marker="*" class="small"><a href="https://github.com/cs50">GitHub</a></li>
+  <li data-marker="*" class="small"><a href="https://gitter.im/cs50/x">Gitter</a></li>
+  <li data-marker="*" class="small"><a href="https://instagram.com/cs50">Instagram</a></li>
+  <li data-marker="*" class="small"><a href="https://www.linkedin.com/groups/7437240/">LinkedIn Group</a></li>
+  <li data-marker="*" class="small"><a href="https://www.linkedin.com/school/CS50/">LinkedIn Page</a></li>
+  <li data-marker="*" class="small"><a href="https://www.quora.com/topic/CS50">Quora</a></li>
+  <li data-marker="*" class="small"><a href="https://www.reddit.com/r/cs50/">Reddit</a></li>
+  <li data-marker="*" class="small"><a href="https://cs50.edx.org/slack">Slack</a></li>
+  <li data-marker="*" class="small"><a href="https://www.snapchat.com/add/cs50">Snapchat</a></li>
+  <li data-marker="*" class="small"><a href="https://soundcloud.com/cs50">SoundCloud</a></li>
+  <li data-marker="*" class="small"><a href="https://twitter.com/cs50">Twitter</a></li>
+  <li data-marker="*" class="small"><a href="http://www.youtube.com/subscription_center?add_user=cs50tv">YouTube</a></li>
+</ul>
+
+<hr>
+
+<p><a href="https://cs50.harvardshop.com/"><img src="https://i.imgur.com/GGMdcKt.png" alt="Harvard Shop"></a></p>
+
+<hr>
+
+<p><a href="../../license/index.html" class="small"><i class="fab fa-creative-commons mr-1"></i>License</a></p></nav>
+
+                    <footer></footer>
+
+                </aside>
+
+                <main class="col-md">
+
+                    <h1 id="lab-3-sort">Lab 3: Sort</h1>
+
+<div class="alert" data-alert="warning" role="alert"><p>You are welcome to collaborate with one or two classmates on this lab, though it is expected that every student in any such group contribute equally to the lab.</p></div>
+
+<p>Analyze three sorting programs to determine which algorithms they use.</p>
+
+<h2 id="when-to-do-it">When to Do It</h2>
+
+<p>By <span data-local="2021-12-31T23:59:00-05:00"></span>.</p>
+
+<h2 id="background">Background</h2>
+
+<p>Recall from lecture that we saw a few algorithms for sorting a sequence of numbers: selection sort, bubble sort, and merge sort.</p>
+
+<ul>
+  <li data-marker="*">Selection sort iterates through the unsorted portions of a list, selecting the smallest element each time and moving it to its correct location.</li>
+  <li data-marker="*">Bubble sort compares pairs of adjacent values one at a time and swaps them if they are in the incorrect order. This continues until the list is sorted.</li>
+  <li data-marker="*">Merge sort recursively divides the list into two repeatedly and then merges the smaller lists back into a larger one in the correct order.</li>
+</ul>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<ol>
+  <li>Log into <a href="https://ide.cs50.io/">ide.cs50.io</a> using your GitHub account.</li>
+  <li>In your terminal window, run <code class="language-plaintext highlighter-rouge">wget https://cdn.cs50.net/2020/fall/labs/3/lab3.zip</code> to download a Zip file of the lab distribution code.</li>
+  <li>In your terminal window, run <code class="language-plaintext highlighter-rouge">unzip lab3.zip</code> to unzip (i.e., decompress) that Zip file.</li>
+  <li>In your terminal window, run <code class="language-plaintext highlighter-rouge">cd lab3</code> to change directories into your <code class="language-plaintext highlighter-rouge">lab3</code> directory.</li>
+</ol>
+
+<h2 id="instructions">Instructions</h2>
+
+<p>Provided to you are three already-compiled C programs, <code class="language-plaintext highlighter-rouge">sort1</code>, <code class="language-plaintext highlighter-rouge">sort2</code>, and <code class="language-plaintext highlighter-rouge">sort3</code>. Each of these programs implements a different sorting algorithm: selection sort, bubble sort, or merge sort (though not necessarily in that order!). Your task is to determine which sorting algorithm is used by each file.</p>
+
+<ul>
+  <li data-marker="*"><code class="language-plaintext highlighter-rouge">sort1</code>, <code class="language-plaintext highlighter-rouge">sort2</code>, and <code class="language-plaintext highlighter-rouge">sort3</code> are binary files, so you won’t be able to view the C source code for each. To assess which sort implements which algorithm, run the sorts on different lists of values.</li>
+  <li data-marker="*">Multiple <code class="language-plaintext highlighter-rouge">.txt</code> files are provided to you. These files contain <code class="language-plaintext highlighter-rouge">n</code> lines of values, either reversed, shuffled, or sorted.
+    <ul>
+      <li data-marker="*">For example, <code class="language-plaintext highlighter-rouge">reversed10000.txt</code> contains 10000 lines of numbers that are reversed from <code class="language-plaintext highlighter-rouge">10000</code>, while <code class="language-plaintext highlighter-rouge">random100000.txt</code> contains 100000 lines of numbers that are in random order.</li>
+    </ul>
+  </li>
+  <li data-marker="*">To run the sorts on the text files, in the terminal, run <code class="language-plaintext highlighter-rouge">./[program_name] [text_file.txt]</code>.
+    <ul>
+      <li data-marker="*">For example, to sort <code class="language-plaintext highlighter-rouge">reversed10000.txt</code> with <code class="language-plaintext highlighter-rouge">sort1</code>, run <code class="language-plaintext highlighter-rouge">./sort1 reversed10000.txt</code>.</li>
+    </ul>
+  </li>
+  <li data-marker="*">You may find it helpful to time your sorts. To do so, run <code class="language-plaintext highlighter-rouge">time ./[sort_file] [text_file.txt]</code>.
+    <ul>
+      <li data-marker="*">For example, you could run <code class="language-plaintext highlighter-rouge">time ./sort1 reversed10000.txt</code> to run <code class="language-plaintext highlighter-rouge">sort1</code> on 10,000 reversed numbers. At the end of your terminal’s output, you can look at the <code class="language-plaintext highlighter-rouge">real</code> time to see how much time actually elapsed while running the program.</li>
+    </ul>
+  </li>
+  <li data-marker="*">Record your answers in <code class="language-plaintext highlighter-rouge">answers.txt</code>, along with an explanation for each program, by filling in the blanks marked <code class="language-plaintext highlighter-rouge">TODO</code>.</li>
+</ul>
+
+<h3 id="walkthrough">Walkthrough</h3>
+
+<div class="border embed-responsive embed-responsive-16by9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="embed-responsive-item" src="https://video.cs50.io/-Bhxxw6JKKY"></iframe></div>
+
+<h3 id="hints">Hints</h3>
+
+<ul>
+  <li data-marker="*">The different types of <code class="language-plaintext highlighter-rouge">.txt</code> files may help you determine which sort is which. Consider how each algorithm performs with an already sorted list. How about a reversed list? Or shuffled list? It may help to work through a smaller list of each type and walk through each sorting process.</li>
+</ul>
+
+<details><summary>Not sure how to solve?</summary><div class="border embed-responsive embed-responsive-16by9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="embed-responsive-item" src="https://video.cs50.io/uOYhrBs37j0"></iframe></div></details>
+
+<h3 id="how-to-check-your-answers">How to Check Your Answers</h3>
+
+<p>Execute the below to evaluate the correctness of your answers using <code class="language-plaintext highlighter-rouge">check50</code>. But be sure to fill in your explanations as well, which <code class="language-plaintext highlighter-rouge">check50</code> won’t check here!</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>check50 cs50/labs/2021/x/sort
+</code></pre></div></div>
+
+<h2 id="how-to-submit">How to Submit</h2>
+
+<p>Execute the below, logging in with your GitHub username and password when prompted. For security, you’ll see asterisks (<code class="language-plaintext highlighter-rouge">*</code>) instead of the actual characters in your password.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>submit50 cs50/labs/2021/x/sort
+</code></pre></div></div>
+
+
+                </main>
+
+            </div>
+
+        </div>
+
+        
+ 
+    
+
+
+</body></html>

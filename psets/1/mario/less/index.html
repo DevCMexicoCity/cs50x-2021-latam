@@ -1,0 +1,425 @@
+<!DOCTYPE html><html lang="en-us"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta property="og:description" content="Harvard Universty's introduction to the intellectual enterprises of computer science and the art of programming.">
+
+<meta property="og:image" content="https://img.youtube.com/vi/zYierUhIFNQ/maxresdefault.jpg"><meta property="og:title" content="Mario - CS50x 2021"><link href="../../../../favicon.ico%3F1610389211" rel="icon">
+
+<!-- https://fonts.google.com/specimen/PT+Sans?query=PT+Sans&selection.family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700 -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+
+<!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+<script src="../../../../assets/jquery/dist/jquery.min.js%3F1610389211"></script>
+<script src="../../../../assets/bootstrap/dist/js/bootstrap.bundle.min.js%3F1610389211"></script>
+
+<!-- https://bootstrap-table.com/docs/getting-started/introduction/ -->
+<link href="../../../../assets/bootstrap-table/dist/bootstrap-table.min.css%3F1610389211.css" rel="stylesheet">
+<script src="../../../../assets/bootstrap-table/dist/bootstrap-table.min.js%3F1610389211"></script>
+<script src="../../../../assets/bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.min.js%3F1610389211"></script>
+
+<!-- https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use -->
+<link href="../../../../assets/@fortawesome/fontawesome-free/css/all.min.css%3F1610389211.css" rel="stylesheet">
+
+<!-- https://moment.github.io/luxon/ -->
+<script src="../../../../assets/luxon.min.js%3F1610389211"></script>
+
+<!-- http://docs.mathjax.org/ -->
+<!-- https://www.jsdelivr.com/package/npm/mathjax?path=es5 -->
+<script crossorigin="anonymous" integrity="sha256-+nfSJ1LiSvANSK3wvi6FjM+oFwoIQvURU1frozp5z6o=" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-chtml.js"></script>
+
+<!-- https://github.com/verlok/vanilla-lazyload -->
+<script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.7.0/intersection-observer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js"></script>
+
+
+
+<link href="../../../../assets/page.css%3F1610389211.css" rel="stylesheet">
+<script src="../../../../assets/jekyll-theme-cs50.js%3F1610389211"></script>
+
+<script>
+    window.CS50 = {
+        locale: "en",
+        tz: "America/New_York"
+    };
+</script>
+
+<title>Mario - CS50x 2021</title>
+</head>
+
+    <body class="invisible">
+
+        
+        
+        
+        <div class="alert alert-dismissible fixed-top mb-0 rounded-0 shadow" data-alert="success" id="alert" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button><p>This is CS50x 2021, the newest version of the course. Looking for <a href="https://cs50.harvard.edu/x/2020/">CS50x 2020</a>?</p></div>
+        
+        
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <aside class="col-md">
+ 
+                    <header><h1 data-id="this-is-cs50x"><a href="../../../../index.html">This is CS50x</a></h1>
+
+<p>OpenCourseWare</p>
+
+<p><a href="https://community.alumni.harvard.edu/give/59206872" class="pr-1 small">Donate</a>
+<a href="https://community.alumni.harvard.edu/give/59206872" class="small"><i aria-hidden="true" class="fas fa-external-link-alt"></i></a></p>
+
+<p><a href="https://cs.harvard.edu/malan/">David J. Malan</a><br>
+<a href="mailto:malan@harvard.edu">malan@harvard.edu</a><br>
+<a href="https://www.facebook.com/dmalan" class="mr-2"><i class="fab fa-facebook-f"></i></a><a href="https://github.com/dmalan" class="mr-2"><i class="fab fa-github"></i></a><a href="https://www.instagram.com/davidjmalan/" class="mr-2"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/malan/" class="mr-2"><i class="fab fa-linkedin"></i></a><a href="https://www.quora.com/profile/David-J-Malan" class="mr-2"><i class="fab fa-quora"></i></a><a href="https://www.reddit.com/user/davidjmalan" class="mr-2"><i class="fab fa-reddit-alien"></i></a><a href="https://twitter.com/davidjmalan" class="mr-2"><i class="fab fa-twitter"></i></a></p></header>
+
+                    
+
+                    <button aria-controls="nav" aria-expanded="false" class="btn btn-sm collapsed d-md-none" data-target="aside > nav" data-toggle="collapse">
+                        Menu
+                    </button>
+
+                    <nav class="collapse d-md-block" id="nav"><hr>
+
+<ul>
+  <li data-marker="*"><a href="../../../../seminars/index.html">CS50’s New Year’s Seminars</a> <span class="text-white">🥂</span></li>
+  <li data-marker="*"><a href="../../../../gallery/index.html">Gallery of Final Projects</a> <span class="pl-1 text-white">🖼️ </span></li>
+  <li data-marker="*"><a href="../../../../new/index.html">What’s new for 2021?</a></li>
+</ul>
+<ul>
+  <li data-marker="*"><a href="../../../../weeks/0/index.html">Week 0</a> Scratch</li>
+  <li data-marker="*"><a href="../../../../weeks/1/index.html">Week 1</a> C</li>
+  <li data-marker="*"><a href="../../../../weeks/2/index.html">Week 2</a> Arrays</li>
+  <li data-marker="*"><a href="../../../../weeks/3/index.html">Week 3</a> Algorithms</li>
+  <li data-marker="*"><a href="../../../../weeks/4/index.html">Week 4</a> Memory</li>
+  <li data-marker="*"><a href="../../../../weeks/5/index.html">Week 5</a> Data Structures</li>
+  <li data-marker="*"><a href="../../../../weeks/6/index.html">Week 6</a> Python</li>
+  <li data-marker="*"><a href="../../../../weeks/7/index.html">Week 7</a> SQL</li>
+  <li data-marker="*"><a href="../../../../weeks/8/index.html">Week 8</a> HTML, CSS, JavaScript</li>
+  <li data-marker="*"><a href="../../../../weeks/9/index.html">Week 9</a> Flask</li>
+  <li data-marker="*"><a href="../../../../weeks/10/index.html">Week 10</a> Ethics</li>
+</ul>
+<ul>
+  <li data-marker="*" class="small"><a href="../../../../weeks/security/index.html">Security</a></li>
+  <li data-marker="*" class="small"><a href="../../../../weeks/ai/index.html">Artificial Intelligence</a></li>
+</ul>
+<ul>
+  <li data-marker="*"><a href="../../../../project/index.html">Final Project</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="../../../../honesty/index.html">Academic Honesty</a></li>
+  <li data-marker="*"><a href="../../../../certificate/index.html">CS50 Certificate</a></li>
+  <li data-marker="*"><a href="../../../../faqs/index.html">FAQs</a></li>
+  <li data-marker="*"><a href="https://cs50.me/cs50x">Gradebook</a></li>
+  <li data-marker="*"><a href="../../../../staff/index.html">Staff</a></li>
+  <li data-marker="*"><a href="../../../../syllabus/index.html">Syllabus</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="https://cs50.harvard.edu/x/ed">Ed Discussion</a> for Q&amp;A</li>
+  <li data-marker="*" class="small"><a href="https://us.edstem.org/quickstart/ed-discussion.pdf">Quick Start Guide</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://cs50.edx.org/">edX</a></li>
+  <li data-marker="*"><a href="https://www.youtube.com/playlist?list=PLhQjrBD2T382_R182iC2gNZI9HzWFMC_8">YouTube</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://ide.cs50.io/">CS50 IDE</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/css/">CSS Tutorial</a></li>
+  <li data-marker="*"><a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/">Flask Quickstart</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/html/">HTML Tutorial</a></li>
+  <li data-marker="*"><a href="https://jinja.palletsprojects.com/en/2.11.x/templates/">Jinja Template Designer Documentation</a></li>
+  <li data-marker="*"><a href="https://man.cs50.io/">Manual Pages</a></li>
+  <li data-marker="*"><a href="https://docs.python.org/3.7/search.html">Python Documentation</a></li>
+  <li data-marker="*"><a href="https://scratch.mit.edu/">Scratch</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/sql/">SQL Tutorial</a></li>
+  <li data-marker="*"><a href="https://cs50.readthedocs.io/style/c/">Style Guide</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://cs50.noticeable.io/">Changelog</a></li>
+  <li data-marker="*"><a href="https://cs50.statuspage.io/">Status Page</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="../../../../communities/index.html">Communities</a></li>
+  <li data-marker="*" class="small"><a href="https://discord.gg/cs50">Discord</a></li>
+  <li data-marker="*" class="small"><a href="https://www.facebook.com/groups/cs50/">Facebook Group</a></li>
+  <li data-marker="*" class="small"><a href="https://www.facebook.com/cs50/">Facebook Page</a></li>
+  <li data-marker="*" class="small"><a href="https://github.com/cs50">GitHub</a></li>
+  <li data-marker="*" class="small"><a href="https://gitter.im/cs50/x">Gitter</a></li>
+  <li data-marker="*" class="small"><a href="https://instagram.com/cs50">Instagram</a></li>
+  <li data-marker="*" class="small"><a href="https://www.linkedin.com/groups/7437240/">LinkedIn Group</a></li>
+  <li data-marker="*" class="small"><a href="https://www.linkedin.com/school/CS50/">LinkedIn Page</a></li>
+  <li data-marker="*" class="small"><a href="https://www.quora.com/topic/CS50">Quora</a></li>
+  <li data-marker="*" class="small"><a href="https://www.reddit.com/r/cs50/">Reddit</a></li>
+  <li data-marker="*" class="small"><a href="https://cs50.edx.org/slack">Slack</a></li>
+  <li data-marker="*" class="small"><a href="https://www.snapchat.com/add/cs50">Snapchat</a></li>
+  <li data-marker="*" class="small"><a href="https://soundcloud.com/cs50">SoundCloud</a></li>
+  <li data-marker="*" class="small"><a href="https://twitter.com/cs50">Twitter</a></li>
+  <li data-marker="*" class="small"><a href="http://www.youtube.com/subscription_center?add_user=cs50tv">YouTube</a></li>
+</ul>
+
+<hr>
+
+<p><a href="https://cs50.harvardshop.com/"><img src="https://i.imgur.com/GGMdcKt.png" alt="Harvard Shop"></a></p>
+
+<hr>
+
+<p><a href="../../../../license/index.html" class="small"><i class="fab fa-creative-commons mr-1"></i>License</a></p></nav>
+
+                    <footer></footer>
+
+                </aside>
+
+                <main class="col-md">
+
+                    <h1 id="mario">Mario</h1>
+
+<h2 id="world-1-1">World 1-1</h2>
+
+<p>Toward the end of World 1-1 in Nintendo’s Super Mario Brothers, Mario must ascend right-aligned pyramid of blocks, a la the below.</p>
+
+<p><img src="pyramid.png" alt="screenshot of Mario jumping up a right-aligned pyramid"></p>
+
+<p>Let’s recreate that pyramid in C, albeit in text, using hashes (<code class="language-plaintext highlighter-rouge">#</code>) for bricks, a la the below. Each hash is a bit taller than it is wide, so the pyramid itself is also be taller than it is wide.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       #
+      ##
+     ###
+    ####
+   #####
+  ######
+ #######
+########
+</code></pre></div></div>
+
+<p>The program we’ll write will be called <code class="language-plaintext highlighter-rouge">mario</code>. And let’s allow the user to decide just how tall the pyramid should be by first prompting them for a positive integer between, say, 1 and 8, inclusive.</p>
+
+<p>Here’s how the program might work if the user inputs <code class="language-plaintext highlighter-rouge">8</code> when prompted:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./mario
+Height: 8
+       #
+      ##
+     ###
+    ####
+   #####
+  ######
+ #######
+########
+</code></pre></div></div>
+
+<p>Here’s how the program might work if the user inputs <code class="language-plaintext highlighter-rouge">4</code> when prompted:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./mario
+Height: 4
+   #
+  ##
+ ###
+####
+</code></pre></div></div>
+
+<p>Here’s how the program might work if the user inputs <code class="language-plaintext highlighter-rouge">2</code> when prompted:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./mario
+Height: 2
+ #
+##
+</code></pre></div></div>
+
+<p>And here’s how the program might work if the user inputs <code class="language-plaintext highlighter-rouge">1</code> when prompted:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./mario
+Height: 1
+#
+</code></pre></div></div>
+
+<p>If the user doesn’t, in fact, input a positive integer between 1 and 8, inclusive, when prompted, the program should re-prompt the user until they cooperate:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./mario
+Height: -1
+Height: 0
+Height: 42
+Height: 50
+Height: 4
+   #
+  ##
+ ###
+####
+</code></pre></div></div>
+
+<p>How to begin? Let’s approach this problem one step at a time.</p>
+
+<div class="border embed-responsive embed-responsive-16by9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="embed-responsive-item" src="https://www.youtube.com/embed/NAs4FIWkJ4s?modestbranding=0&amp;rel=0&amp;showinfo=0"></iframe></div>
+
+<h2 id="pseudocode">Pseudocode</h2>
+
+<p>First, create a new directory (i.e., folder) called <code class="language-plaintext highlighter-rouge">mario</code> inside of your <code class="language-plaintext highlighter-rouge">pset1</code> directory, by executing</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/ $ mkdir ~/pset1/mario
+</code></pre></div></div>
+
+<p>Add a new file called <code class="language-plaintext highlighter-rouge">pseudocode.txt</code> inside of your <code class="language-plaintext highlighter-rouge">mario</code> directory.</p>
+
+<p>Write in <code class="language-plaintext highlighter-rouge">pseudocode.txt</code> some pseudocode that implements this program, even if not (yet!) sure how to write it in code. There’s no one right way to write pseudocode, but short English sentences suffice. Recall how we wrote pseudocode for <a href="https://docs.google.com/presentation/d/17wRd8ksO6QkUq906SUgm17AqcI-Jan42jkY-EmufxnE/edit?usp=sharing">finding Mike Smith</a>. Odds are your pseudocode will use (or imply using!) one or more functions, conditions, Boolean expressions, loops, and/or variables.</p>
+
+<details><summary>Spoiler</summary><p>There’s more than one way to do this, so here’s just one!</p>
+
+<ol>
+  <li>Prompt user for height</li>
+  <li>If height is less than 1 or greater than 8 (or not an integer at all), go back one step</li>
+  <li>Iterate from 1 through height:
+    <ol>
+      <li>On iteration <em>i</em>, print <em>i</em> hashes and then a newline</li>
+    </ol>
+  </li>
+</ol>
+
+<p>It’s okay to edit your own after seeing this pseudocode here, but don’t simply copy/paste ours into your own!</p></details>
+
+<h2 id="prompting-for-input">Prompting for Input</h2>
+
+<p>Whatever your pseudocode, let’s first write only the C code that prompts (and re-prompts, as needed) the user for input. Create a new file called <code class="language-plaintext highlighter-rouge">mario.c</code> inside of your <code class="language-plaintext highlighter-rouge">mario</code> directory.</p>
+
+<p>Now, modify <code class="language-plaintext highlighter-rouge">mario.c</code> in such a way that it prompts the user for the pyramid’s height, storing their input in a variable, re-prompting the user again and again as needed if their input is not a positive integer between 1 and 8, inclusive. Then, simply print the value of that variable, thereby confirming (for yourself) that you’ve indeed stored the user’s input successfully, a la the below.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./mario
+Height: -1
+Height: 0
+Height: 42
+Height: 50
+Height: 4
+Stored: 4
+</code></pre></div></div>
+
+<details><summary>Hints</summary><ul>
+  <li data-marker="*">Recall that you can compile your program with <code class="language-plaintext highlighter-rouge">make</code>.</li>
+  <li data-marker="*">Recall that you can print an <code class="language-plaintext highlighter-rouge">int</code> with <code class="language-plaintext highlighter-rouge">printf</code> using <code class="language-plaintext highlighter-rouge">%i</code>.</li>
+  <li data-marker="*">Recall that you can get an integer from the user with <code class="language-plaintext highlighter-rouge">get_int</code>.</li>
+  <li data-marker="*">Recall that <code class="language-plaintext highlighter-rouge">get_int</code> is declared in <code class="language-plaintext highlighter-rouge">cs50.h</code>.</li>
+  <li data-marker="*">Recall that we prompted the user for a positive integer in class via <code class="language-plaintext highlighter-rouge">positive.c</code>.</li>
+</ul></details>
+
+<h2 id="building-the-opposite">Building the Opposite</h2>
+
+<p>Now that your program is (hopefully!) accepting input as prescribed, it’s time for another step.</p>
+
+<p>It turns out it’s a bit easier to build a left-aligned pyramid than right-, a la the below.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#
+##
+###
+####
+#####
+######
+#######
+########
+</code></pre></div></div>
+
+<p>So let’s build a left-aligned pyramid first and then, once that’s working, right-align it instead!</p>
+
+<p>Modify <code class="language-plaintext highlighter-rouge">mario.c</code> at right such that it no longer simply prints the user’s input but instead prints a left-aligned pyramid of that height.</p>
+
+<details><summary>Hints</summary><ul>
+  <li data-marker="*">Keep in mind that a hash is just a character like any other, so you can print it with <code class="language-plaintext highlighter-rouge">printf</code>.</li>
+  <li data-marker="*">Just as Scratch has a <a href="https://docs.google.com/presentation/d/17wRd8ksO6QkUq906SUgm17AqcI-Jan42jkY-EmufxnE/edit?usp=sharing">Repeat</a> block, so does C have a <a href="https://docs.google.com/presentation/d/191XW0DHWlW6WmAhYuFUYnZKUlDx0N4u4Fp81AeW-uNs/edit?usp=sharing"><code class="language-plaintext highlighter-rouge">for</code></a> loop, via which you can iterate some number times. Perhaps on each iteration, <em>i</em>, you could print that many hashes?</li>
+  <li data-marker="*">
+    <p>You can actually “nest” loops, iterating with one variable (e.g., <code class="language-plaintext highlighter-rouge">i</code>) in the “outer” loop and another (e.g., <code class="language-plaintext highlighter-rouge">j</code>) in the “inner” loop. For instance, here’s how you might print a square of height and width <code class="language-plaintext highlighter-rouge">n</code>, below. Of course, it’s not a square that you want to print!</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  for (int i = 0; i &lt; n; i++)
+  {
+      for (int j = 0; j &lt; n; j++)
+      {
+          printf("#");
+      }
+      printf("\n");
+  }
+</code></pre></div>    </div>
+  </li>
+</ul></details>
+
+<h2 id="right-aligning-with-dots">Right-Aligning with Dots</h2>
+
+<p>Let’s now right-align that pyramid by pushing its hashes to the right by prefixing them with dots (i.e., periods), a la the below.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.......#
+......##
+.....###
+....####
+...#####
+..######
+.#######
+########
+</code></pre></div></div>
+
+<p>Modify <code class="language-plaintext highlighter-rouge">mario.c</code> in such a way that it does exactly that!</p>
+
+<details><summary>Hint</summary><p>Notice how the number of dots needed on each line is the “opposite” of the number of that line’s hashes. For a pyramid of height 8, like the above, the first line has but 1 hash and thus 7 dots. The bottom line, meanwhile, has 8 hashes and thus 0 dots. Via what formula (or arithmetic, really) could you print that many dots?</p></details>
+
+<h3 id="how-to-test-your-code">How to Test Your Code</h3>
+
+<p>Does your code work as prescribed when you input</p>
+
+<ul>
+  <li data-marker="*"><code class="language-plaintext highlighter-rouge">-1</code> (or other negative numbers)?</li>
+  <li data-marker="*"><code class="language-plaintext highlighter-rouge">0</code>?</li>
+  <li data-marker="*"><code class="language-plaintext highlighter-rouge">1</code> through <code class="language-plaintext highlighter-rouge">8</code>?</li>
+  <li data-marker="*"><code class="language-plaintext highlighter-rouge">9</code> or other positive numbers?</li>
+  <li data-marker="*">letters or words?</li>
+  <li data-marker="*">no input at all, when you only hit Enter?</li>
+</ul>
+
+<h2 id="removing-the-dots">Removing the Dots</h2>
+
+<p>All that remains now is a finishing flourish! Modify <code class="language-plaintext highlighter-rouge">mario.c</code> in such a way that it prints spaces instead of those dots!</p>
+
+<h3 id="how-to-test-your-code-1">How to Test Your Code</h3>
+
+<p>Execute the below to evaluate the correctness of your code using <code class="language-plaintext highlighter-rouge">check50</code>. But be sure to compile and test it yourself as well!</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>check50 cs50/problems/2021/x/mario/less
+</code></pre></div></div>
+
+<p>Execute the below to evaluate the style of your code using <code class="language-plaintext highlighter-rouge">style50</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>style50 mario.c
+</code></pre></div></div>
+
+<details><summary>Hint</summary><p>A space is just a press of your space bar, just as a period is just a press of its key! Just remember that <code class="language-plaintext highlighter-rouge">printf</code> requires that you surround both with double quotes!</p></details>
+
+<h2 id="how-to-submit">How to Submit</h2>
+
+<p>Execute the below, logging in with your GitHub username and password when prompted. For security, you’ll see asterisks (<code class="language-plaintext highlighter-rouge">*</code>) instead of the actual characters in your password.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>submit50 cs50/problems/2021/x/mario/less
+</code></pre></div></div>
+
+
+                </main>
+
+            </div>
+
+        </div>
+
+        
+ 
+    
+
+
+</body></html>

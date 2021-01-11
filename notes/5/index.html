@@ -1,0 +1,608 @@
+<!DOCTYPE html><html lang="en-us"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta property="og:description" content="Harvard Universty's introduction to the intellectual enterprises of computer science and the art of programming.">
+
+<meta property="og:image" content="https://img.youtube.com/vi/zYierUhIFNQ/maxresdefault.jpg"><meta property="og:title" content="Lecture 5 - CS50x 2021"><link href="../../favicon.ico%3F1610389211" rel="icon">
+
+<!-- https://fonts.google.com/specimen/PT+Sans?query=PT+Sans&selection.family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700 -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+
+<!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+<script src="../../assets/jquery/dist/jquery.min.js%3F1610389211"></script>
+<script src="../../assets/bootstrap/dist/js/bootstrap.bundle.min.js%3F1610389211"></script>
+
+<!-- https://bootstrap-table.com/docs/getting-started/introduction/ -->
+<link href="../../assets/bootstrap-table/dist/bootstrap-table.min.css%3F1610389211.css" rel="stylesheet">
+<script src="../../assets/bootstrap-table/dist/bootstrap-table.min.js%3F1610389211"></script>
+<script src="../../assets/bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.min.js%3F1610389211"></script>
+
+<!-- https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use -->
+<link href="../../assets/@fortawesome/fontawesome-free/css/all.min.css%3F1610389211.css" rel="stylesheet">
+
+<!-- https://moment.github.io/luxon/ -->
+<script src="../../assets/luxon.min.js%3F1610389211"></script>
+
+<!-- http://docs.mathjax.org/ -->
+<!-- https://www.jsdelivr.com/package/npm/mathjax?path=es5 -->
+<script crossorigin="anonymous" integrity="sha256-+nfSJ1LiSvANSK3wvi6FjM+oFwoIQvURU1frozp5z6o=" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-chtml.js"></script>
+
+<!-- https://github.com/verlok/vanilla-lazyload -->
+<script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.7.0/intersection-observer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js"></script>
+
+
+
+<link href="../../assets/page.css%3F1610389211.css" rel="stylesheet">
+<script src="../../assets/jekyll-theme-cs50.js%3F1610389211"></script>
+
+<script>
+    window.CS50 = {
+        locale: "en",
+        tz: "America/New_York"
+    };
+</script>
+
+<title>Lecture 5 - CS50x 2021</title>
+</head>
+
+    <body class="invisible">
+
+        
+        
+        
+        <div class="alert alert-dismissible fixed-top mb-0 rounded-0 shadow" data-alert="success" id="alert" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button><p>This is CS50x 2021, the newest version of the course. Looking for <a href="https://cs50.harvard.edu/x/2020/">CS50x 2020</a>?</p></div>
+        
+        
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <aside class="col-md">
+ 
+                    <header><h1 data-id="this-is-cs50x"><a href="../../index.html">This is CS50x</a></h1>
+
+<p>OpenCourseWare</p>
+
+<p><a href="https://community.alumni.harvard.edu/give/59206872" class="pr-1 small">Donate</a>
+<a href="https://community.alumni.harvard.edu/give/59206872" class="small"><i aria-hidden="true" class="fas fa-external-link-alt"></i></a></p>
+
+<p><a href="https://cs.harvard.edu/malan/">David J. Malan</a><br>
+<a href="mailto:malan@harvard.edu">malan@harvard.edu</a><br>
+<a href="https://www.facebook.com/dmalan" class="mr-2"><i class="fab fa-facebook-f"></i></a><a href="https://github.com/dmalan" class="mr-2"><i class="fab fa-github"></i></a><a href="https://www.instagram.com/davidjmalan/" class="mr-2"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/malan/" class="mr-2"><i class="fab fa-linkedin"></i></a><a href="https://www.quora.com/profile/David-J-Malan" class="mr-2"><i class="fab fa-quora"></i></a><a href="https://www.reddit.com/user/davidjmalan" class="mr-2"><i class="fab fa-reddit-alien"></i></a><a href="https://twitter.com/davidjmalan" class="mr-2"><i class="fab fa-twitter"></i></a></p></header>
+
+                    
+
+                    <button aria-controls="nav" aria-expanded="false" class="btn btn-sm collapsed d-md-none" data-target="aside > nav" data-toggle="collapse">
+                        Menu
+                    </button>
+
+                    <nav class="collapse d-md-block" id="nav"><hr>
+
+<ul>
+  <li data-marker="*"><a href="../../seminars/index.html">CS50’s New Year’s Seminars</a> <span class="text-white">🥂</span></li>
+  <li data-marker="*"><a href="../../gallery/index.html">Gallery of Final Projects</a> <span class="pl-1 text-white">🖼️ </span></li>
+  <li data-marker="*"><a href="../../new/index.html">What’s new for 2021?</a></li>
+</ul>
+<ul>
+  <li data-marker="*"><a href="../../weeks/0/index.html">Week 0</a> Scratch</li>
+  <li data-marker="*"><a href="../../weeks/1/index.html">Week 1</a> C</li>
+  <li data-marker="*"><a href="../../weeks/2/index.html">Week 2</a> Arrays</li>
+  <li data-marker="*"><a href="../../weeks/3/index.html">Week 3</a> Algorithms</li>
+  <li data-marker="*"><a href="../../weeks/4/index.html">Week 4</a> Memory</li>
+  <li data-marker="*"><a href="../../weeks/5/index.html">Week 5</a> Data Structures</li>
+  <li data-marker="*"><a href="../../weeks/6/index.html">Week 6</a> Python</li>
+  <li data-marker="*"><a href="../../weeks/7/index.html">Week 7</a> SQL</li>
+  <li data-marker="*"><a href="../../weeks/8/index.html">Week 8</a> HTML, CSS, JavaScript</li>
+  <li data-marker="*"><a href="../../weeks/9/index.html">Week 9</a> Flask</li>
+  <li data-marker="*"><a href="../../weeks/10/index.html">Week 10</a> Ethics</li>
+</ul>
+<ul>
+  <li data-marker="*" class="small"><a href="../../weeks/security/index.html">Security</a></li>
+  <li data-marker="*" class="small"><a href="../../weeks/ai/index.html">Artificial Intelligence</a></li>
+</ul>
+<ul>
+  <li data-marker="*"><a href="../../project/index.html">Final Project</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="../../honesty/index.html">Academic Honesty</a></li>
+  <li data-marker="*"><a href="../../certificate/index.html">CS50 Certificate</a></li>
+  <li data-marker="*"><a href="../../faqs/index.html">FAQs</a></li>
+  <li data-marker="*"><a href="https://cs50.me/cs50x">Gradebook</a></li>
+  <li data-marker="*"><a href="../../staff/index.html">Staff</a></li>
+  <li data-marker="*"><a href="../../syllabus/index.html">Syllabus</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="https://cs50.harvard.edu/x/ed">Ed Discussion</a> for Q&amp;A</li>
+  <li data-marker="*" class="small"><a href="https://us.edstem.org/quickstart/ed-discussion.pdf">Quick Start Guide</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://cs50.edx.org/">edX</a></li>
+  <li data-marker="*"><a href="https://www.youtube.com/playlist?list=PLhQjrBD2T382_R182iC2gNZI9HzWFMC_8">YouTube</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://ide.cs50.io/">CS50 IDE</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/css/">CSS Tutorial</a></li>
+  <li data-marker="*"><a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/">Flask Quickstart</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/html/">HTML Tutorial</a></li>
+  <li data-marker="*"><a href="https://jinja.palletsprojects.com/en/2.11.x/templates/">Jinja Template Designer Documentation</a></li>
+  <li data-marker="*"><a href="https://man.cs50.io/">Manual Pages</a></li>
+  <li data-marker="*"><a href="https://docs.python.org/3.7/search.html">Python Documentation</a></li>
+  <li data-marker="*"><a href="https://scratch.mit.edu/">Scratch</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/sql/">SQL Tutorial</a></li>
+  <li data-marker="*"><a href="https://cs50.readthedocs.io/style/c/">Style Guide</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://cs50.noticeable.io/">Changelog</a></li>
+  <li data-marker="*"><a href="https://cs50.statuspage.io/">Status Page</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="../../communities/index.html">Communities</a></li>
+  <li data-marker="*" class="small"><a href="https://discord.gg/cs50">Discord</a></li>
+  <li data-marker="*" class="small"><a href="https://www.facebook.com/groups/cs50/">Facebook Group</a></li>
+  <li data-marker="*" class="small"><a href="https://www.facebook.com/cs50/">Facebook Page</a></li>
+  <li data-marker="*" class="small"><a href="https://github.com/cs50">GitHub</a></li>
+  <li data-marker="*" class="small"><a href="https://gitter.im/cs50/x">Gitter</a></li>
+  <li data-marker="*" class="small"><a href="https://instagram.com/cs50">Instagram</a></li>
+  <li data-marker="*" class="small"><a href="https://www.linkedin.com/groups/7437240/">LinkedIn Group</a></li>
+  <li data-marker="*" class="small"><a href="https://www.linkedin.com/school/CS50/">LinkedIn Page</a></li>
+  <li data-marker="*" class="small"><a href="https://www.quora.com/topic/CS50">Quora</a></li>
+  <li data-marker="*" class="small"><a href="https://www.reddit.com/r/cs50/">Reddit</a></li>
+  <li data-marker="*" class="small"><a href="https://cs50.edx.org/slack">Slack</a></li>
+  <li data-marker="*" class="small"><a href="https://www.snapchat.com/add/cs50">Snapchat</a></li>
+  <li data-marker="*" class="small"><a href="https://soundcloud.com/cs50">SoundCloud</a></li>
+  <li data-marker="*" class="small"><a href="https://twitter.com/cs50">Twitter</a></li>
+  <li data-marker="*" class="small"><a href="http://www.youtube.com/subscription_center?add_user=cs50tv">YouTube</a></li>
+</ul>
+
+<hr>
+
+<p><a href="https://cs50.harvardshop.com/"><img src="https://i.imgur.com/GGMdcKt.png" alt="Harvard Shop"></a></p>
+
+<hr>
+
+<p><a href="../../license/index.html" class="small"><i class="fab fa-creative-commons mr-1"></i>License</a></p></nav>
+
+                    <footer></footer>
+
+                </aside>
+
+                <main class="col-md">
+
+                    <h1 class="no_toc" id="lecture-5">Lecture 5</h1>
+
+<ul id="markdown-toc">
+  <li><a href="index.html#resizing-arrays" id="markdown-toc-resizing-arrays">Resizing arrays</a></li>
+  <li><a href="index.html#data-structures" id="markdown-toc-data-structures">Data structures</a></li>
+  <li><a href="index.html#linked-lists" id="markdown-toc-linked-lists">Linked Lists</a></li>
+  <li><a href="index.html#implementing-arrays" id="markdown-toc-implementing-arrays">Implementing arrays</a></li>
+  <li><a href="index.html#implementing-linked-lists" id="markdown-toc-implementing-linked-lists">Implementing linked lists</a></li>
+  <li><a href="index.html#trees" id="markdown-toc-trees">Trees</a></li>
+  <li><a href="index.html#more-data-structures" id="markdown-toc-more-data-structures">More data structures</a></li>
+</ul>
+
+<h2 id="resizing-arrays">Resizing arrays</h2>
+
+<ul>
+  <li data-marker="*">Last time, we learned about pointers, <code class="language-plaintext highlighter-rouge">malloc</code>, and other useful tools for working with memory.</li>
+  <li data-marker="*">In week 2, we learned about arrays, where we could store the same kind of value in a list, back-to-back in memory. When we need to insert an element, we need to increase the size of the array as well. But, the memory after it in our computer might already be used for some other data, like a string:<br>
+<img src="array_of_length_3.png" alt="boxes of garbage values, with boxes for values 1, 2, 3, and a string after in gray"></li>
+  <li data-marker="*">One solution might be to allocate more memory where there’s enough space, and move our array there. But we’ll need to copy our array there, which becomes an operation with running time of <em>O</em>(<em>n</em>), since we need to copy each of the original <em>n</em> elements first:<br>
+<img src="array_of_length_4.png" alt="boxes of original array with values 1, 2, 3 and a new array with copied values 1, 2, 3, and space for new value">
+    <ul>
+      <li data-marker="*">The lower bound of inserting an element into an array would be O(1) since we might already have space in the array for it.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="data-structures">Data structures</h2>
+
+<ul>
+  <li data-marker="*"><strong>Data structures</strong> are more complex ways to organize data in memory, allowing us to store information in different layouts.</li>
+  <li data-marker="*">To build a data structure, we’ll need some tools:
+    <ul>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">struct</code> to create custom data types</li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">.</code> to access properties in a structure</li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">*</code> to go to an address in memory pointed to by a pointer</li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">-&gt;</code> to access properties in a structure pointed to by a pointer</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="linked-lists">Linked Lists</h2>
+
+<ul>
+  <li data-marker="*">With a <strong>linked list</strong>, we can store a list of values that can easily be grown by storing values in different parts of memory:<br>
+<img src="linked_list.png" alt="grid representing memory, with three of the boxes labeled with empty boxes between them, each labeled 1 0x123, 2 0x456, and 3 0x789">
+    <ul>
+      <li data-marker="*">We have the values <code class="language-plaintext highlighter-rouge">1</code>, <code class="language-plaintext highlighter-rouge">2</code>, and <code class="language-plaintext highlighter-rouge">3</code>, each at some address in memory like <code class="language-plaintext highlighter-rouge">0x123</code>, <code class="language-plaintext highlighter-rouge">0x456</code>, and <code class="language-plaintext highlighter-rouge">0x789</code>.</li>
+      <li data-marker="*">This is different than an array since our values are no longer next to one another in memory. We can use whatever locations in memory that are free.</li>
+    </ul>
+  </li>
+  <li data-marker="*">To track all of these values, we need link our list together by allocating, for each element, enough memory for both the value we want to store, and the address of the next element:<br>
+<img src="linked_list_with_addresses.png" alt="three boxes, each divided in two and labeled (1 0x123 and 0x456), (2 0x456 and 0x789), and (3 0x789 and NULL)">
+    <ul>
+      <li data-marker="*">Next to our value of <code class="language-plaintext highlighter-rouge">1</code>, for example, we also store a pointer, <code class="language-plaintext highlighter-rouge">0x456</code>, to the next value. We’ll call this a <strong>node</strong>, a component of our data structure that stores both a value and a pointer. In C, we’ll implement our nodes with a struct.</li>
+      <li data-marker="*">For our last node with value <code class="language-plaintext highlighter-rouge">3</code>, we have the null pointer, since there’s no next element. When we need to insert another node, we can just change that single null pointer to point to our new value.</li>
+    </ul>
+  </li>
+  <li data-marker="*">We have the tradeoff of needing to allocate twice as much memory for each element, in order to spend less time adding values. And we can no longer use binary search, since our nodes might be anywhere in memory. We can only access them by following the pointers, one at a time.</li>
+  <li data-marker="*">In code, we might create our own struct called <code class="language-plaintext highlighter-rouge">node</code>, and we need to store both our value, an <code class="language-plaintext highlighter-rouge">int</code> called <code class="language-plaintext highlighter-rouge">number</code>, and a pointer to the next <code class="language-plaintext highlighter-rouge">node</code>, called <code class="language-plaintext highlighter-rouge">next</code>:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span> <span class="n">node</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">number</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">node</span><span class="p">;</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">We start this struct with <code class="language-plaintext highlighter-rouge">typedef struct node</code> so that we can refer to a <code class="language-plaintext highlighter-rouge">node</code> inside our struct.</li>
+    </ul>
+  </li>
+  <li data-marker="*">We can build a linked list in code starting with our struct. First, we’ll want to remember an empty list, so we can use the null pointer: <code class="language-plaintext highlighter-rouge">node *list = NULL;</code>.</li>
+  <li data-marker="*">To add an element, first we’ll need to allocate some memory for a node, and set its values:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// We use sizeof(node) to get the right amount of memory to allocate, and</span>
+<span class="c1">// malloc returns a pointer that we save as n</span>
+<span class="n">node</span> <span class="o">*</span><span class="n">n</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">node</span><span class="p">));</span>
+
+<span class="c1">// We want to make sure malloc succeeded in getting memory for us</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// This is equivalent to (*n).number, where we first go to the node pointed</span>
+    <span class="c1">// to by n, and then set the number property. In C, we can also use this</span>
+    <span class="c1">// arrow notation</span>
+    <span class="n">n</span><span class="o">-&gt;</span><span class="n">number</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="c1">// Then we need to make sure the pointer to the next node in our list</span>
+    <span class="c1">// isn't a garbage value, but the new node won't point to anything (for now)</span>
+    <span class="n">n</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li data-marker="*">Now our list needs to point to this node: <code class="language-plaintext highlighter-rouge">list = n;</code>:<br>
+<img src="list_with_one_node.png" alt="a box labeled list with arrow outwards pointing to two connected boxes, one with 1 and one empty)"></li>
+  <li data-marker="*">To add to the list, we’ll create a new node the same way by allocating more memory:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">node</span><span class="p">));</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">n</span><span class="o">-&gt;</span><span class="n">number</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">n</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li data-marker="*">But now we need to update the pointer in our first node to point to our new <code class="language-plaintext highlighter-rouge">n</code>:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li data-marker="*">To add a third node, we’ll do the same by following the <code class="language-plaintext highlighter-rouge">next</code> pointer in our list first, then setting the <code class="language-plaintext highlighter-rouge">next</code> pointer <em>there</em> to point to the new node:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">node</span><span class="p">));</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">n</span><span class="o">-&gt;</span><span class="n">number</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="n">n</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">list</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li data-marker="*">Graphically, our nodes in memory look like this:<br>
+<img src="list_with_three_nodes.png" alt="a box labeled list with arrow pointing to node with 1 and arrow pointing to another node with 2 and arrow pointing to third node with 3 and no pointer, and box labeled n pointing to third node`">
+    <ul>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">n</code> is a temporary variable, pointing to our new node with value 3.</li>
+      <li data-marker="*">We want the pointer in our node with value 2 to point to the new node as well, so we start from <code class="language-plaintext highlighter-rouge">list</code> (which points to the node with value 1), follow the <code class="language-plaintext highlighter-rouge">next</code> pointer to get to our node with value 2, and update the <code class="language-plaintext highlighter-rouge">next</code> pointer to point to <code class="language-plaintext highlighter-rouge">n</code>.</li>
+    </ul>
+  </li>
+  <li data-marker="*">As a result, searching a linked list will also have running time of O(<em>n</em>), since we need to look at all elements in order by following each pointer, even if the list is sorted. Inserting into a linked list can have running time of O(1), if we insert new nodes at the beginning of the list.</li>
+</ul>
+
+<h2 id="implementing-arrays">Implementing arrays</h2>
+
+<ul>
+  <li data-marker="*">Let’s see how we might implement resizing an array:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Use malloc to allocate enough space for an array with 3 integers</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">list</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">list</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Set the values in our array</span>
+    <span class="n">list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+    <span class="c1">// Now if we want to store another value, we can allocate more memory</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">tmp</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">tmp</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">free</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Copy list of size 3 into list of size 4</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">tmp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Add new number to list of size 4</span>
+    <span class="n">tmp</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+
+    <span class="c1">// Free original list of size 3</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+
+    <span class="c1">// Remember new list of size 4</span>
+    <span class="n">list</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+
+    <span class="c1">// Print list</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%i</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Free new list</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li data-marker="*">Recall that <code class="language-plaintext highlighter-rouge">malloc</code> allocates and frees memory from the heap area. It turns out that we can call another library function, <code class="language-plaintext highlighter-rouge">realloc</code>, to reallocate some memory that we allocated earlier:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="o">*</span><span class="n">tmp</span> <span class="o">=</span> <span class="n">realloc</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="nf">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">And <code class="language-plaintext highlighter-rouge">realloc</code> copies our old array, <code class="language-plaintext highlighter-rouge">list</code>, for us into a bigger chunk of memory of the size we pass in. If there happens to be space after our existing chunk of memory, we’ll get the same address back, but with the memory after it allocated to our variable as well.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="implementing-linked-lists">Implementing linked lists</h2>
+
+<ul>
+  <li data-marker="*">Let’s combine our snippets of code from earlier into a program that implements a linked list:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+</span>
+<span class="c1">// Represents a node</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">node</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">number</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">node</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// List of size 0. We initialize the value to NULL explicitly, so there's</span>
+    <span class="c1">// no garbage value for our list variable</span>
+    <span class="n">node</span> <span class="o">*</span><span class="n">list</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+    <span class="c1">// Allocate memory for a node, n</span>
+    <span class="n">node</span> <span class="o">*</span><span class="n">n</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">node</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Set the value and pointer in our node</span>
+    <span class="n">n</span><span class="o">-&gt;</span><span class="n">number</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">n</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+    <span class="c1">// Add node n by pointing list to it, since we only have one node so far</span>
+    <span class="n">list</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+
+    <span class="c1">// Allocate memory for another node, and we can reuse our variable n to</span>
+    <span class="c1">// point to it, since list points to the first node already</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">node</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">free</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Set the values in our new node</span>
+    <span class="n">n</span><span class="o">-&gt;</span><span class="n">number</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">n</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+    <span class="c1">// Update the pointer in our first node to point to the second node</span>
+    <span class="n">list</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+
+    <span class="c1">// Allocate memory for a third node</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">node</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Free both of our other nodes</span>
+        <span class="n">free</span><span class="p">(</span><span class="n">list</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">);</span>
+        <span class="n">free</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">n</span><span class="o">-&gt;</span><span class="n">number</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="n">n</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+    <span class="c1">// Follow the next pointer of the list to the second node, and update</span>
+    <span class="c1">// the next pointer there to point to n</span>
+    <span class="n">list</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+
+    <span class="c1">// Print list using a loop, by using a temporary variable, tmp, to point</span>
+    <span class="c1">// to list, the first node. Then, every time we go over the loop, we use</span>
+    <span class="c1">// tmp = tmp-&gt;next to update our temporary pointer to the next node. We</span>
+    <span class="c1">// keep going as long as tmp points to somewhere, stopping when we get to</span>
+    <span class="c1">// the last node and tmp-&gt;next is null.</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">node</span> <span class="o">*</span><span class="n">tmp</span> <span class="o">=</span> <span class="n">list</span><span class="p">;</span> <span class="n">tmp</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%i</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">tmp</span><span class="o">-&gt;</span><span class="n">number</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Free list, by using a while loop and a temporary variable to point</span>
+    <span class="c1">// to the next node before freeing the current one</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">list</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// We point to the next node first</span>
+        <span class="n">node</span> <span class="o">*</span><span class="n">tmp</span> <span class="o">=</span> <span class="n">list</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="c1">// Then, we can free the first node</span>
+        <span class="n">free</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+        <span class="c1">// Now we can set the list to point to the next node</span>
+        <span class="n">list</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+        <span class="c1">// If list is null, when there are no nodes left, our while loop will stop</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li data-marker="*">If we want to insert a node to the front of our linked list, we would need to carefully update our node to point to the one following it, before updating the list variable. Otherwise, we’ll lose the rest of our list:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Here, we're inserting a node into the front of the list, so we want its</span>
+<span class="c1">// next pointer to point to the original list. Then we can change the list to</span>
+<span class="c1">// point to n.</span>
+<span class="n">n</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">list</span><span class="p">;</span>
+<span class="n">list</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li data-marker="*">At first, we’ll have a node with value <code class="language-plaintext highlighter-rouge">1</code> pointing to the start of our list, a node with value <code class="language-plaintext highlighter-rouge">2</code>:<br>
+<img src="inserting_linked_list.png" alt="boxes labeled list and 1 pointing to a box labeled 2, pointing at a box labeled 4, pointing at a box labeled 5">
+    <ul>
+      <li data-marker="*">Now we can update our <code class="language-plaintext highlighter-rouge">list</code> variable to point to the node with value <code class="language-plaintext highlighter-rouge">1</code>, and not lose the rest of our list.</li>
+    </ul>
+  </li>
+  <li data-marker="*">Similarly, to insert a node in the middle of our list, we change the <code class="language-plaintext highlighter-rouge">next</code> pointer of the new node first to point to the rest of the list, then update the previous node to point to the new node.</li>
+  <li data-marker="*">A linked list demonstrates how we can use pointers to build flexible data structures in memory, though we’re only visualizing it in one dimension.</li>
+</ul>
+
+<h2 id="trees">Trees</h2>
+
+<ul>
+  <li data-marker="*">With a sorted array, we can use binary search to find an element, starting at the middle (yellow), then the middle of either half (red), and finally left or right (green) as needed:<br>
+<img src="sorted_array.png" alt="boxes labeled 1, green; 2, red; 3, green; 4, yellow; 5, green; 6, red; 7, green">
+    <ul>
+      <li data-marker="*">With an array, we can randomly access elements in O(1) time, since we can use arithmetic to go to an element at any index.</li>
+    </ul>
+  </li>
+  <li data-marker="*">A <strong>tree</strong> is another data structure where each node points to two other nodes, one to the left (with a smaller value) and one to the right (with a larger value):<br>
+<img src="tree.png" alt="tree with node 4 at top center, left arrow to 3 below, right arrow to 6 below; 2 has left arrow to 1 below, right arrow to 3 below; 6 has left arrow to 5 below, right arrow to 7 below">
+    <ul>
+      <li data-marker="*">Notice that we now visualize this data structure in two dimensions (even though the nodes in memory can be at any location).</li>
+      <li data-marker="*">And we can implement this with a more complex version of a node in a linked list, where each node has not one but two pointers to other nodes. All the values to the left of a node are smaller, and all the values of nodes to the right are greater, which allows this to be used as a <strong>binary search tree</strong>. And the data structure is itself defined recursively, so we can use recursive functions to work with it.</li>
+      <li data-marker="*">Each node has at most two <strong>children</strong>, or nodes it is pointing to.</li>
+      <li data-marker="*">And like a linked list, we’ll want to keep a pointer to just the beginning of the list, but in this case we want to point to the <strong>root</strong>, or top center node of the tree (the 4).</li>
+    </ul>
+  </li>
+  <li data-marker="*">We can define a node with not one but two pointers:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span> <span class="n">node</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">number</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">left</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">right</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">node</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li data-marker="*">And write a function to recursively search a tree:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// tree is a pointer to a node that is the root of the tree we're searching in.</span>
+<span class="c1">// number is the value we're trying to find in the tree.</span>
+<span class="n">bool</span> <span class="nf">search</span><span class="p">(</span><span class="n">node</span> <span class="o">*</span><span class="n">tree</span><span class="p">,</span> <span class="kt">int</span> <span class="n">number</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// First, we make sure that the tree isn't NULL, if we've reached a node</span>
+    <span class="c1">// on the bottom, or if our tree is entirely empty</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">tree</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// If we're looking for a number that's less than the tree's number,</span>
+    <span class="c1">// search the left side, using the node on the left as the new root</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">number</span> <span class="o">&lt;</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">number</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">search</span><span class="p">(</span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">number</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// Otherwise, search the right side, using the node on the right as the new root</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">number</span> <span class="o">&gt;</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">number</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">search</span><span class="p">(</span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">number</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// Finally, we've found the number we're looking for, so we can return true.</span>
+    <span class="c1">// We can simplify this to just "else", since there's no other case possible</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">number</span> <span class="o">==</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">number</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li data-marker="*">With a binary search tree, we’ve incurred the cost of even more memory, since each node now needs space for a value and two pointers. Inserting a new value would take O(log <em>n</em>) time, since we need to find the nodes that it should go between.</li>
+  <li data-marker="*">If we add enough nodes, though, our search tree might start to look like a linked list:<br>
+<img src="imbalanced_tree.png" alt="node with 1 pointing at node with 2 pointing at node with 3">
+    <ul>
+      <li data-marker="*">We started our tree with a node with value of <code class="language-plaintext highlighter-rouge">1</code>, then added the node with value <code class="language-plaintext highlighter-rouge">2</code>, and finally added the node with value <code class="language-plaintext highlighter-rouge">3</code>. Even though this tree follows the constraints of a binary search tree, it’s not as efficient as it could be.</li>
+      <li data-marker="*">We can make the tree balanced, or optimal, by making the node with value <code class="language-plaintext highlighter-rouge">2</code> the new root node. More advanced courses will cover data structures and algorithms that help us keep trees balanced as nodes are added.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="more-data-structures">More data structures</h2>
+
+<ul>
+  <li data-marker="*">A data structure with almost a constant time, O(1) search is a <strong>hash table</strong>, which is essential an array <em>of</em> linked lists. Each linked list in the array has elements of a certain category.</li>
+  <li data-marker="*">For example, we might have lots of names, and we might sort them into an array with 26 positions, one for each letter of the alphabet:<br>
+<img src="hash_table.png" alt="vertical array with 26 boxes, the first with an arrow pointing to a box labeled Albus, the second empty, the third with an arrow pointing to a box labeled Cedric ... the eighth with an arrow pointing to a box labeled Hermione with an arrow from that box pointing to a box labeled Harry with an arrow to a box labeled Hagrid ...">
+    <ul>
+      <li data-marker="*">Since we have random access with arrays, we can set elements and index into a location, or bucket, in the array quickly.</li>
+      <li data-marker="*">A location might have multiple matching values, but we can add a value to another value since they’re nodes in a linked list, as we see with Hermione, Harry, and Hagrid. We don’t need to grow the size of our array or move any of our other values.</li>
+    </ul>
+  </li>
+  <li data-marker="*">This is called a hash table because we use a <strong>hash function</strong>, which takes some input and deterministically maps it to the location it should go in. In our example, the hash function just returns an index corresponding to the first letter of the name, such as <code class="language-plaintext highlighter-rouge">0</code> for “Albus” and <code class="language-plaintext highlighter-rouge">25</code> for “Zacharias”.</li>
+  <li data-marker="*">But in the worst case, all the names might start with the same letter, so we might end up with the equivalent of a single linked list again. We might look at the first two letters, and allocate enough buckets for 26*26 possible hashed values, or even the first three letters, requiring 26*26*26 buckets:<br>
+<img src="hash_table_three_letters.png" alt="vertical array with boxes labeled ... Haa, Hab, Hac ... Har ... Her ...">
+    <ul>
+      <li data-marker="*">Now, we’re using more space in memory, since some of those buckets will be empty, but we’re more likely to only need one step to look for a value, reducing our running time for search.</li>
+    </ul>
+  </li>
+  <li data-marker="*">To sort some standard playing cards, too, we might first start with putting them in piles by suit, of spades, diamonds, hearts, and clubs. Then, we can sort each pile a little more quickly.</li>
+  <li data-marker="*">It turns out that the worst case running time for a hash table is O(<em>n</em>), since, as <em>n</em> gets very large, each bucket will have on the order of <em>n</em> values, even if we have hundreds or thousands of buckets. In practice, though, our running time will be faster since we’re dividing our values into multiple buckets.</li>
+  <li data-marker="*">In problem set 5, we’ll be challenged to improve the real world running time of searching for values in our data structures, while also balancing our use of memory.</li>
+  <li data-marker="*">We can use another data structure called a <strong>trie</strong> (pronounced like “try”, and is short for “retrieval”). A trie is a tree with arrays as nodes:<br>
+<img src="trie.png" alt="array with letters from A-Z in 26 elements, with H pointing to another array with all 26 letters. this array's A and E each point to two more arrays of all 26 letters, and this continues in a tree until the bottom-most arrays have only one letter marked as valid">
+    <ul>
+      <li data-marker="*">Each array will have each letter, A-Z, stored. For each word, the first letter will point to an array, where the next valid letter will point to another array, and so on, until we reach a boolean value indicating the end of a valid word, marked in green above. If our word isn’t in the trie, then one of the arrays won’t have a pointer or terminating character for our word.</li>
+      <li data-marker="*">In the trie above, we have the words Hagrid, Harry, and Hermione.</li>
+      <li data-marker="*">Now, even if our data structure has lots of words, the maximum lookup time will be just the length of the word we’re looking for. This might be a fixed maximum, so we can have <em>O</em>(1) for searching and insertion.</li>
+      <li data-marker="*">The cost for this, though, is that we need lots of memory to store pointers and boolean values as indicators of valid words, even though lots of them won’t be used.</li>
+    </ul>
+  </li>
+  <li data-marker="*">There are even higher-level constructs, <strong>abstract data structures</strong>, where we use our building blocks of arrays, linked lists, hash tables, and tries to <em>implement</em> a solution to some problem.</li>
+  <li data-marker="*">For example, one abstract data structure is a <strong>queue</strong>, like a line of people waiting, where the first value we put in are the first values that are removed, or first-in-first-out (FIFO). To add a value we <strong>enqueue</strong> it, and to remove a value we <strong>dequeue</strong> it. This data structure is abstract because it’s an idea that we can implement in different ways: with an array that we resize as we add and remove items, or with a linked list where we append values to the end.</li>
+  <li data-marker="*">An “opposite” data structure would be a <strong>stack</strong>, where items most recently added are removed first: last-in-first-out (LIFO). At a clothing store, we might take, or <strong>pop</strong>, the top sweater from a stack, and new sweaters would be added, or <strong>pushed</strong>, to the top as well.</li>
+  <li data-marker="*">Another example of an abstract data structure is a <strong>dictionary</strong>, where we can map keys to values, such as words to their definitions. We can implement one with a hash table or an array, taking into account the tradeoff between time and space.</li>
+  <li data-marker="*">We take a look at <a href="https://www.youtube.com/watch?v=ItAG3s6KIEI">“Jack Learns the Facts About Queues and Stacks”</a>, an animation about these data structures.</li>
+</ul>
+
+
+                </main>
+
+            </div>
+
+        </div>
+
+        
+ 
+    
+
+
+</body></html>

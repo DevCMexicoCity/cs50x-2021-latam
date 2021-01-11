@@ -1,0 +1,503 @@
+<!DOCTYPE html><html lang="en-us"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta property="og:description" content="Harvard Universty's introduction to the intellectual enterprises of computer science and the art of programming.">
+
+<meta property="og:image" content="https://img.youtube.com/vi/zYierUhIFNQ/maxresdefault.jpg"><meta property="og:title" content="Speller - CS50x 2021"><link href="../../../favicon.ico%3F1610389211" rel="icon">
+
+<!-- https://fonts.google.com/specimen/PT+Sans?query=PT+Sans&selection.family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700 -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+
+<!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+<script src="../../../assets/jquery/dist/jquery.min.js%3F1610389211"></script>
+<script src="../../../assets/bootstrap/dist/js/bootstrap.bundle.min.js%3F1610389211"></script>
+
+<!-- https://bootstrap-table.com/docs/getting-started/introduction/ -->
+<link href="../../../assets/bootstrap-table/dist/bootstrap-table.min.css%3F1610389211.css" rel="stylesheet">
+<script src="../../../assets/bootstrap-table/dist/bootstrap-table.min.js%3F1610389211"></script>
+<script src="../../../assets/bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.min.js%3F1610389211"></script>
+
+<!-- https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use -->
+<link href="../../../assets/@fortawesome/fontawesome-free/css/all.min.css%3F1610389211.css" rel="stylesheet">
+
+<!-- https://moment.github.io/luxon/ -->
+<script src="../../../assets/luxon.min.js%3F1610389211"></script>
+
+<!-- http://docs.mathjax.org/ -->
+<!-- https://www.jsdelivr.com/package/npm/mathjax?path=es5 -->
+<script crossorigin="anonymous" integrity="sha256-+nfSJ1LiSvANSK3wvi6FjM+oFwoIQvURU1frozp5z6o=" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-chtml.js"></script>
+
+<!-- https://github.com/verlok/vanilla-lazyload -->
+<script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.7.0/intersection-observer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js"></script>
+
+
+
+<link href="../../../assets/page.css%3F1610389211.css" rel="stylesheet">
+<script src="../../../assets/jekyll-theme-cs50.js%3F1610389211"></script>
+
+<script>
+    window.CS50 = {
+        locale: "en",
+        tz: "America/New_York"
+    };
+</script>
+
+<title>Speller - CS50x 2021</title>
+</head>
+
+    <body class="invisible">
+
+        
+        
+        
+        <div class="alert alert-dismissible fixed-top mb-0 rounded-0 shadow" data-alert="success" id="alert" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button><p>This is CS50x 2021, the newest version of the course. Looking for <a href="https://cs50.harvard.edu/x/2020/">CS50x 2020</a>?</p></div>
+        
+        
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <aside class="col-md">
+ 
+                    <header><h1 data-id="this-is-cs50x"><a href="../../../index.html">This is CS50x</a></h1>
+
+<p>OpenCourseWare</p>
+
+<p><a href="https://community.alumni.harvard.edu/give/59206872" class="pr-1 small">Donate</a>
+<a href="https://community.alumni.harvard.edu/give/59206872" class="small"><i aria-hidden="true" class="fas fa-external-link-alt"></i></a></p>
+
+<p><a href="https://cs.harvard.edu/malan/">David J. Malan</a><br>
+<a href="mailto:malan@harvard.edu">malan@harvard.edu</a><br>
+<a href="https://www.facebook.com/dmalan" class="mr-2"><i class="fab fa-facebook-f"></i></a><a href="https://github.com/dmalan" class="mr-2"><i class="fab fa-github"></i></a><a href="https://www.instagram.com/davidjmalan/" class="mr-2"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/malan/" class="mr-2"><i class="fab fa-linkedin"></i></a><a href="https://www.quora.com/profile/David-J-Malan" class="mr-2"><i class="fab fa-quora"></i></a><a href="https://www.reddit.com/user/davidjmalan" class="mr-2"><i class="fab fa-reddit-alien"></i></a><a href="https://twitter.com/davidjmalan" class="mr-2"><i class="fab fa-twitter"></i></a></p></header>
+
+                    
+
+                    <button aria-controls="nav" aria-expanded="false" class="btn btn-sm collapsed d-md-none" data-target="aside > nav" data-toggle="collapse">
+                        Menu
+                    </button>
+
+                    <nav class="collapse d-md-block" id="nav"><hr>
+
+<ul>
+  <li data-marker="*"><a href="../../../seminars/index.html">CS50’s New Year’s Seminars</a> <span class="text-white">🥂</span></li>
+  <li data-marker="*"><a href="../../../gallery/index.html">Gallery of Final Projects</a> <span class="pl-1 text-white">🖼️ </span></li>
+  <li data-marker="*"><a href="../../../new/index.html">What’s new for 2021?</a></li>
+</ul>
+<ul>
+  <li data-marker="*"><a href="../../../weeks/0/index.html">Week 0</a> Scratch</li>
+  <li data-marker="*"><a href="../../../weeks/1/index.html">Week 1</a> C</li>
+  <li data-marker="*"><a href="../../../weeks/2/index.html">Week 2</a> Arrays</li>
+  <li data-marker="*"><a href="../../../weeks/3/index.html">Week 3</a> Algorithms</li>
+  <li data-marker="*"><a href="../../../weeks/4/index.html">Week 4</a> Memory</li>
+  <li data-marker="*"><a href="../../../weeks/5/index.html">Week 5</a> Data Structures</li>
+  <li data-marker="*"><a href="../../../weeks/6/index.html">Week 6</a> Python</li>
+  <li data-marker="*"><a href="../../../weeks/7/index.html">Week 7</a> SQL</li>
+  <li data-marker="*"><a href="../../../weeks/8/index.html">Week 8</a> HTML, CSS, JavaScript</li>
+  <li data-marker="*"><a href="../../../weeks/9/index.html">Week 9</a> Flask</li>
+  <li data-marker="*"><a href="../../../weeks/10/index.html">Week 10</a> Ethics</li>
+</ul>
+<ul>
+  <li data-marker="*" class="small"><a href="../../../weeks/security/index.html">Security</a></li>
+  <li data-marker="*" class="small"><a href="../../../weeks/ai/index.html">Artificial Intelligence</a></li>
+</ul>
+<ul>
+  <li data-marker="*"><a href="../../../project/index.html">Final Project</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="../../../honesty/index.html">Academic Honesty</a></li>
+  <li data-marker="*"><a href="../../../certificate/index.html">CS50 Certificate</a></li>
+  <li data-marker="*"><a href="../../../faqs/index.html">FAQs</a></li>
+  <li data-marker="*"><a href="https://cs50.me/cs50x">Gradebook</a></li>
+  <li data-marker="*"><a href="../../../staff/index.html">Staff</a></li>
+  <li data-marker="*"><a href="../../../syllabus/index.html">Syllabus</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="https://cs50.harvard.edu/x/ed">Ed Discussion</a> for Q&amp;A</li>
+  <li data-marker="*" class="small"><a href="https://us.edstem.org/quickstart/ed-discussion.pdf">Quick Start Guide</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://cs50.edx.org/">edX</a></li>
+  <li data-marker="*"><a href="https://www.youtube.com/playlist?list=PLhQjrBD2T382_R182iC2gNZI9HzWFMC_8">YouTube</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://ide.cs50.io/">CS50 IDE</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/css/">CSS Tutorial</a></li>
+  <li data-marker="*"><a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/">Flask Quickstart</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/html/">HTML Tutorial</a></li>
+  <li data-marker="*"><a href="https://jinja.palletsprojects.com/en/2.11.x/templates/">Jinja Template Designer Documentation</a></li>
+  <li data-marker="*"><a href="https://man.cs50.io/">Manual Pages</a></li>
+  <li data-marker="*"><a href="https://docs.python.org/3.7/search.html">Python Documentation</a></li>
+  <li data-marker="*"><a href="https://scratch.mit.edu/">Scratch</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/sql/">SQL Tutorial</a></li>
+  <li data-marker="*"><a href="https://cs50.readthedocs.io/style/c/">Style Guide</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://cs50.noticeable.io/">Changelog</a></li>
+  <li data-marker="*"><a href="https://cs50.statuspage.io/">Status Page</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="../../../communities/index.html">Communities</a></li>
+  <li data-marker="*" class="small"><a href="https://discord.gg/cs50">Discord</a></li>
+  <li data-marker="*" class="small"><a href="https://www.facebook.com/groups/cs50/">Facebook Group</a></li>
+  <li data-marker="*" class="small"><a href="https://www.facebook.com/cs50/">Facebook Page</a></li>
+  <li data-marker="*" class="small"><a href="https://github.com/cs50">GitHub</a></li>
+  <li data-marker="*" class="small"><a href="https://gitter.im/cs50/x">Gitter</a></li>
+  <li data-marker="*" class="small"><a href="https://instagram.com/cs50">Instagram</a></li>
+  <li data-marker="*" class="small"><a href="https://www.linkedin.com/groups/7437240/">LinkedIn Group</a></li>
+  <li data-marker="*" class="small"><a href="https://www.linkedin.com/school/CS50/">LinkedIn Page</a></li>
+  <li data-marker="*" class="small"><a href="https://www.quora.com/topic/CS50">Quora</a></li>
+  <li data-marker="*" class="small"><a href="https://www.reddit.com/r/cs50/">Reddit</a></li>
+  <li data-marker="*" class="small"><a href="https://cs50.edx.org/slack">Slack</a></li>
+  <li data-marker="*" class="small"><a href="https://www.snapchat.com/add/cs50">Snapchat</a></li>
+  <li data-marker="*" class="small"><a href="https://soundcloud.com/cs50">SoundCloud</a></li>
+  <li data-marker="*" class="small"><a href="https://twitter.com/cs50">Twitter</a></li>
+  <li data-marker="*" class="small"><a href="http://www.youtube.com/subscription_center?add_user=cs50tv">YouTube</a></li>
+</ul>
+
+<hr>
+
+<p><a href="https://cs50.harvardshop.com/"><img src="https://i.imgur.com/GGMdcKt.png" alt="Harvard Shop"></a></p>
+
+<hr>
+
+<p><a href="../../../license/index.html" class="small"><i class="fab fa-creative-commons mr-1"></i>License</a></p></nav>
+
+                    <footer></footer>
+
+                </aside>
+
+                <main class="col-md">
+
+                    <h1 id="speller">Speller</h1>
+
+<div class="alert" data-alert="danger" role="alert"><p><strong>Be sure to read this specification in its entirety before starting so you know what to do and how to do it!</strong></p></div>
+
+<p>Implement a program that spell-checks a file, a la the below, using a hash table.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./speller texts/lalaland.txt
+MISSPELLED WORDS
+
+[...]
+AHHHHHHHHHHHHHHHHHHHHHHHHHHHT
+[...]
+Shangri
+[...]
+fianc
+[...]
+Sebastian's
+[...]
+
+WORDS MISSPELLED:
+WORDS IN DICTIONARY:
+WORDS IN TEXT:
+TIME IN load:
+TIME IN check:
+TIME IN size:
+TIME IN unload:
+TIME IN TOTAL:
+</code></pre></div></div>
+
+<h2 id="distribution">Distribution</h2>
+
+<h3 id="downloading">Downloading</h3>
+
+<p>Log into <a href="https://ide.cs50.io/">CS50 IDE</a> and then, in a terminal window, execute each of the below.</p>
+
+<ul>
+  <li data-marker="*">Execute <code class="language-plaintext highlighter-rouge">cd ~/</code> (or simply <code class="language-plaintext highlighter-rouge">cd</code> with no arguments) to ensure that you’re in your home directory.</li>
+  <li data-marker="*">Execute <code class="language-plaintext highlighter-rouge">mkdir pset5</code> to make (i.e., create) a directory called <code class="language-plaintext highlighter-rouge">pset5</code>.</li>
+  <li data-marker="*">Execute <code class="language-plaintext highlighter-rouge">cd pset5</code> to change into (i.e., open) that directory.</li>
+  <li data-marker="*">Execute <code class="language-plaintext highlighter-rouge">wget http://cdn.cs50.net/2021/spring/psets/5/speller/speller.zip</code> to download a (compressed) ZIP file with this problem’s distribution.</li>
+  <li data-marker="*">Execute <code class="language-plaintext highlighter-rouge">unzip speller.zip</code> to uncompress that file.</li>
+  <li data-marker="*">Execute <code class="language-plaintext highlighter-rouge">rm speller.zip</code> followed by <code class="language-plaintext highlighter-rouge">yes</code> or <code class="language-plaintext highlighter-rouge">y</code> to delete that ZIP file.</li>
+  <li data-marker="*">Execute <code class="language-plaintext highlighter-rouge">ls</code>. You should see a directory called <code class="language-plaintext highlighter-rouge">speller</code>, which was inside of that ZIP file.</li>
+  <li data-marker="*">Execute <code class="language-plaintext highlighter-rouge">cd speller</code> to change into that directory.</li>
+  <li data-marker="*">Execute <code class="language-plaintext highlighter-rouge">ls</code>. You should see this problem’s distribution:</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dictionaries/  dictionary.c  dictionary.h  keys/  Makefile  speller.c  texts/
+</code></pre></div></div>
+
+<h3 id="understanding">Understanding</h3>
+
+<p>Theoretically, on input of size <em>n</em>, an algorithm with a running time of <em>n</em> is “asymptotically equivalent,” in terms of <em>O</em>, to an algorithm with a running time of <em>2n</em>. Indeed, when describing the running time of an algorithm, we typically focus on the dominant (i.e., most impactful) term (i.e., <em>n</em> in this case, since <em>n</em> could be much larger than 2). In the real world, though, the fact of the matter is that <em>2n</em> feels twice as slow as <em>n</em>.</p>
+
+<p>The challenge ahead of you is to implement the fastest spell checker you can! By “fastest,” though, we’re talking actual “wall-clock,” not asymptotic, time.</p>
+
+<p>In <code class="language-plaintext highlighter-rouge">speller.c</code>, we’ve put together a program that’s designed to spell-check a file after loading a dictionary of words from disk into memory. That dictionary, meanwhile, is implemented in a file called <code class="language-plaintext highlighter-rouge">dictionary.c</code>. (It could just be implemented in <code class="language-plaintext highlighter-rouge">speller.c</code>, but as programs get more complex, it’s often convenient to break them into multiple files.) The prototypes for the functions therein, meanwhile, are defined not in <code class="language-plaintext highlighter-rouge">dictionary.c</code> itself but in <code class="language-plaintext highlighter-rouge">dictionary.h</code> instead. That way, both <code class="language-plaintext highlighter-rouge">speller.c</code> and <code class="language-plaintext highlighter-rouge">dictionary.c</code> can <code class="language-plaintext highlighter-rouge">#include</code> the file. Unfortunately, we didn’t quite get around to implementing the loading part. Or the checking part. Both (and a bit more) we leave to you! But first, a tour.</p>
+
+<h4 id="dictionaryh"><code class="language-plaintext highlighter-rouge">dictionary.h</code></h4>
+
+<p>Open up <code class="language-plaintext highlighter-rouge">dictionary.h</code>, and you’ll see some new syntax, including a few lines that mention <code class="language-plaintext highlighter-rouge">DICTIONARY_H</code>. No need to worry about those, but, if curious, those lines just ensure that, even though <code class="language-plaintext highlighter-rouge">dictionary.c</code> and <code class="language-plaintext highlighter-rouge">speller.c</code> (which you’ll see in a moment) <code class="language-plaintext highlighter-rouge">#include</code> this file, <code class="language-plaintext highlighter-rouge">clang</code> will only compile it once.</p>
+
+<p>Next notice how we <code class="language-plaintext highlighter-rouge">#include</code> a file called <code class="language-plaintext highlighter-rouge">stdbool.h</code>. That’s the file in which <code class="language-plaintext highlighter-rouge">bool</code> itself is defined. You’ve not needed it before, since the CS50 Library used to <code class="language-plaintext highlighter-rouge">#include</code> that for you.</p>
+
+<p>Also notice our use of <code class="language-plaintext highlighter-rouge">#define</code>, a “preprocessor directive” that defines a “constant” called <code class="language-plaintext highlighter-rouge">LENGTH</code> that has a value of <code class="language-plaintext highlighter-rouge">45</code>. It’s a constant in the sense that you can’t (accidentally) change it in your own code. In fact, <code class="language-plaintext highlighter-rouge">clang</code> will replace any mentions of <code class="language-plaintext highlighter-rouge">LENGTH</code> in your own code with, literally, <code class="language-plaintext highlighter-rouge">45</code>. In other words, it’s not a variable, just a find-and-replace trick.</p>
+
+<p>Finally, notice the prototypes for five functions: <code class="language-plaintext highlighter-rouge">check</code>, <code class="language-plaintext highlighter-rouge">hash</code>, <code class="language-plaintext highlighter-rouge">load</code>, <code class="language-plaintext highlighter-rouge">size</code>, and <code class="language-plaintext highlighter-rouge">unload</code>. Notice how three of those take a pointer as an argument, per the <code class="language-plaintext highlighter-rouge">*</code>:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bool</span> <span class="nf">check</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">word</span><span class="p">);</span>
+<span class="kt">unsigned</span> <span class="kt">int</span> <span class="nf">hash</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">word</span><span class="p">);</span>
+<span class="n">bool</span> <span class="nf">load</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">dictionary</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Recall that <code class="language-plaintext highlighter-rouge">char *</code> is what we used to call <code class="language-plaintext highlighter-rouge">string</code>. So those three prototypes are essentially just:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bool</span> <span class="nf">check</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span> <span class="n">word</span><span class="p">);</span>
+<span class="kt">unsigned</span> <span class="kt">int</span> <span class="nf">hash</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span> <span class="n">word</span><span class="p">);</span>
+<span class="n">bool</span> <span class="nf">load</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span> <span class="n">dictionary</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>And <code class="language-plaintext highlighter-rouge">const</code>, meanwhile, just says that those strings, when passed in as arguments, must remain constant; you won’t be able to change them, accidentally or otherwise!</p>
+
+<h4 id="dictionaryc"><code class="language-plaintext highlighter-rouge">dictionary.c</code></h4>
+
+<p>Now open up <code class="language-plaintext highlighter-rouge">dictionary.c</code>. Notice how, atop the file, we’ve defined a <code class="language-plaintext highlighter-rouge">struct</code> called <code class="language-plaintext highlighter-rouge">node</code> that represents a node in a hash table. And we’ve declared a global pointer array, <code class="language-plaintext highlighter-rouge">table</code>, which will (soon) represent the hash table you will use to keep track of words in the dictionary. The array contains <code class="language-plaintext highlighter-rouge">N</code> node pointers, and we’ve set <code class="language-plaintext highlighter-rouge">N</code> equal to <code class="language-plaintext highlighter-rouge">1</code> for now, meaning this hash table has just 1 bucket right now. You’ll likely want to increase the number of buckets, as by changing <code class="language-plaintext highlighter-rouge">N</code>, to something larger!</p>
+
+<p>Next, notice that we’ve implemented <code class="language-plaintext highlighter-rouge">load</code>, <code class="language-plaintext highlighter-rouge">hash</code>, <code class="language-plaintext highlighter-rouge">check</code>, <code class="language-plaintext highlighter-rouge">size</code>, and <code class="language-plaintext highlighter-rouge">unload</code>, but only barely, just enough for the code to compile. Your job, ultimately, is to re-implement those functions as cleverly as possible so that this spell checker works as advertised. And fast!</p>
+
+<h4 id="spellerc"><code class="language-plaintext highlighter-rouge">speller.c</code></h4>
+
+<p>Okay, next open up <code class="language-plaintext highlighter-rouge">speller.c</code> and spend some time looking over the code and comments therein. You won’t need to change anything in this file, and you don’t need to understand its entirety, but do try to get a sense of its functionality nonetheless. Notice how, by way of a function called <code class="language-plaintext highlighter-rouge">getrusage</code>, we’ll be “benchmarking” (i.e., timing the execution of) your implementations of <code class="language-plaintext highlighter-rouge">check</code>, <code class="language-plaintext highlighter-rouge">load</code>, <code class="language-plaintext highlighter-rouge">size</code>, and <code class="language-plaintext highlighter-rouge">unload</code>. Also notice how we go about passing <code class="language-plaintext highlighter-rouge">check</code>, word by word, the contents of some file to be spell-checked. Ultimately, we report each misspelling in that file along with a bunch of statistics.</p>
+
+<p>Notice, incidentally, that we have defined the usage of <code class="language-plaintext highlighter-rouge">speller</code> to be</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Usage: speller [dictionary] text
+</code></pre></div></div>
+
+<p>where <code class="language-plaintext highlighter-rouge">dictionary</code> is assumed to be a file containing a list of lowercase words, one per line, and <code class="language-plaintext highlighter-rouge">text</code> is a file to be spell-checked. As the brackets suggest, provision of <code class="language-plaintext highlighter-rouge">dictionary</code> is optional; if this argument is omitted, <code class="language-plaintext highlighter-rouge">speller</code> will use <code class="language-plaintext highlighter-rouge">dictionaries/large</code> by default. In other words, running</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./speller text
+</code></pre></div></div>
+
+<p>will be equivalent to running</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./speller dictionaries/large text
+</code></pre></div></div>
+
+<p>where <code class="language-plaintext highlighter-rouge">text</code> is the file you wish to spell-check. Suffice it to say, the former is easier to type! (Of course, <code class="language-plaintext highlighter-rouge">speller</code> will not be able to load any dictionaries until you implement <code class="language-plaintext highlighter-rouge">load</code> in <code class="language-plaintext highlighter-rouge">dictionary.c</code>! Until then, you’ll see <code class="language-plaintext highlighter-rouge">Could not load</code>.)</p>
+
+<p>Within the default dictionary, mind you, are 143,091 words, all of which must be loaded into memory! In fact, take a peek at that file to get a sense of its structure and size. Notice that every word in that file appears in lowercase (even, for simplicity, proper nouns and acronyms). From top to bottom, the file is sorted lexicographically, with only one word per line (each of which ends with <code class="language-plaintext highlighter-rouge">\n</code>). No word is longer than 45 characters, and no word appears more than once. During development, you may find it helpful to provide <code class="language-plaintext highlighter-rouge">speller</code> with a <code class="language-plaintext highlighter-rouge">dictionary</code> of your own that contains far fewer words, lest you struggle to debug an otherwise enormous structure in memory. In <code class="language-plaintext highlighter-rouge">dictionaries/small</code> is one such dictionary. To use it, execute</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./speller dictionaries/small text
+</code></pre></div></div>
+
+<p>where <code class="language-plaintext highlighter-rouge">text</code> is the file you wish to spell-check. Don’t move on until you’re sure you understand how <code class="language-plaintext highlighter-rouge">speller</code> itself works!</p>
+
+<p>Odds are, you didn’t spend enough time looking over <code class="language-plaintext highlighter-rouge">speller.c</code>. Go back one square and walk yourself through it again!</p>
+
+<h4 id="texts"><code class="language-plaintext highlighter-rouge">texts/</code></h4>
+
+<p>So that you can test your implementation of <code class="language-plaintext highlighter-rouge">speller</code>, we’ve also provided you with a whole bunch of texts, among them the script from <em>La La Land</em>, the text of the Affordable Care Act, three million bytes from Tolstoy, some excerpts from <em>The Federalist Papers</em> and Shakespeare, the entirety of the King James V Bible and the Koran, and more. So that you know what to expect, open and skim each of those files, all of which are in a directory called <code class="language-plaintext highlighter-rouge">texts</code> within your <code class="language-plaintext highlighter-rouge">pset5</code> directory.</p>
+
+<p>Now, as you should know from having read over <code class="language-plaintext highlighter-rouge">speller.c</code> carefully, the output of <code class="language-plaintext highlighter-rouge">speller</code>, if executed with, say,</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./speller texts/lalaland.txt
+</code></pre></div></div>
+
+<p>will eventually resemble the below.</p>
+
+<p>Below’s some of the output you’ll see. For information’s sake, we’ve excerpted some examples of “misspellings.” And lest we spoil the fun, we’ve omitted our own statistics for now.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MISSPELLED WORDS
+
+[...]
+AHHHHHHHHHHHHHHHHHHHHHHHHHHHT
+[...]
+Shangri
+[...]
+fianc
+[...]
+Sebastian's
+[...]
+
+WORDS MISSPELLED:
+WORDS IN DICTIONARY:
+WORDS IN TEXT:
+TIME IN load:
+TIME IN check:
+TIME IN size:
+TIME IN unload:
+TIME IN TOTAL:
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">TIME IN load</code> represents the number of seconds that <code class="language-plaintext highlighter-rouge">speller</code> spends executing your implementation of <code class="language-plaintext highlighter-rouge">load</code>. <code class="language-plaintext highlighter-rouge">TIME IN check</code> represents the number of seconds that <code class="language-plaintext highlighter-rouge">speller</code> spends, in total, executing your implementation of <code class="language-plaintext highlighter-rouge">check</code>. <code class="language-plaintext highlighter-rouge">TIME IN size</code> represents the number of seconds that <code class="language-plaintext highlighter-rouge">speller</code> spends executing your implementation of <code class="language-plaintext highlighter-rouge">size</code>. <code class="language-plaintext highlighter-rouge">TIME IN unload</code> represents the number of seconds that <code class="language-plaintext highlighter-rouge">speller</code> spends executing your implementation of <code class="language-plaintext highlighter-rouge">unload</code>. <code class="language-plaintext highlighter-rouge">TIME IN TOTAL</code> is the sum of those four measurements.</p>
+
+<div class="alert" data-alert="primary" role="alert"><p><strong>Note that these times may vary somewhat across executions of <code class="language-plaintext highlighter-rouge">speller</code>, depending on what else CS50 IDE is doing, even if you don’t change your code.</strong></p></div>
+
+<p>Incidentally, to be clear, by “misspelled” we simply mean that some word is not in the <code class="language-plaintext highlighter-rouge">dictionary</code> provided.</p>
+
+<h4 id="makefile"><code class="language-plaintext highlighter-rouge">Makefile</code></h4>
+
+<p>And, lastly, recall that <code class="language-plaintext highlighter-rouge">make</code> automates compilation of your code so that you don’t have to execute <code class="language-plaintext highlighter-rouge">clang</code> manually along with a whole bunch of switches. However, as your programs grow in size, <code class="language-plaintext highlighter-rouge">make</code> won’t be able to infer from context anymore how to compile your code; you’ll need to start telling <code class="language-plaintext highlighter-rouge">make</code> how to compile your program, particularly when they involve multiple source (i.e., <code class="language-plaintext highlighter-rouge">.c</code>) files, as in the case of this problem. And so we’ll utilize a <code class="language-plaintext highlighter-rouge">Makefile</code>, a configuration file that tells <code class="language-plaintext highlighter-rouge">make</code> exactly what to do. Open up <code class="language-plaintext highlighter-rouge">Makefile</code>, and you should see four lines:</p>
+
+<ol>
+  <li>The first line tells <code class="language-plaintext highlighter-rouge">make</code> to execute the subsequent lines whenever you yourself execute <code class="language-plaintext highlighter-rouge">make speller</code> (or just <code class="language-plaintext highlighter-rouge">make</code>).</li>
+  <li>The second line tells <code class="language-plaintext highlighter-rouge">make</code> how to compile <code class="language-plaintext highlighter-rouge">speller.c</code> into machine code (i.e., <code class="language-plaintext highlighter-rouge">speller.o</code>).</li>
+  <li>The third line tells <code class="language-plaintext highlighter-rouge">make</code> how to compile <code class="language-plaintext highlighter-rouge">dictionary.c</code> into machine code (i.e., <code class="language-plaintext highlighter-rouge">dictionary.o</code>).</li>
+  <li>The fourth line tells <code class="language-plaintext highlighter-rouge">make</code> to link <code class="language-plaintext highlighter-rouge">speller.o</code> and <code class="language-plaintext highlighter-rouge">dictionary.o</code> in a file called <code class="language-plaintext highlighter-rouge">speller</code>.</li>
+</ol>
+
+<div class="alert" data-alert="warning" role="alert"><p><strong>Be sure to compile <code class="language-plaintext highlighter-rouge">speller</code> by executing <code class="language-plaintext highlighter-rouge">make speller</code> (or just <code class="language-plaintext highlighter-rouge">make</code>). Executing <code class="language-plaintext highlighter-rouge">make dictionary</code> won’t work!</strong></p></div>
+
+<h2 id="specification">Specification</h2>
+
+<p>Alright, the challenge now before you is to implement, in order, <code class="language-plaintext highlighter-rouge">load</code>, <code class="language-plaintext highlighter-rouge">hash</code>, <code class="language-plaintext highlighter-rouge">size</code>, <code class="language-plaintext highlighter-rouge">check</code>, and <code class="language-plaintext highlighter-rouge">unload</code> as efficiently as possible using a hash table in such a way that <code class="language-plaintext highlighter-rouge">TIME IN load</code>, <code class="language-plaintext highlighter-rouge">TIME IN check</code>, <code class="language-plaintext highlighter-rouge">TIME IN size</code>, and <code class="language-plaintext highlighter-rouge">TIME IN unload</code> are all minimized. To be sure, it’s not obvious what it even means to be minimized, inasmuch as these benchmarks will certainly vary as you feed <code class="language-plaintext highlighter-rouge">speller</code> different values for <code class="language-plaintext highlighter-rouge">dictionary</code> and for <code class="language-plaintext highlighter-rouge">text</code>. But therein lies the challenge, if not the fun, of this problem. This problem is your chance to design. Although we invite you to minimize space, your ultimate enemy is time. But before you dive in, some specifications from us.</p>
+
+<ul>
+  <li data-marker="*">You may not alter <code class="language-plaintext highlighter-rouge">speller.c</code>, <code class="language-plaintext highlighter-rouge">dictionary.h</code>, or <code class="language-plaintext highlighter-rouge">Makefile</code>.</li>
+  <li data-marker="*">You may alter <code class="language-plaintext highlighter-rouge">dictionary.c</code> (and, in fact, must in order to complete the implementations of <code class="language-plaintext highlighter-rouge">load</code>, <code class="language-plaintext highlighter-rouge">hash</code>, <code class="language-plaintext highlighter-rouge">size</code>, <code class="language-plaintext highlighter-rouge">check</code>, and <code class="language-plaintext highlighter-rouge">unload</code>), but you may not alter the declarations (i.e., prototypes) of <code class="language-plaintext highlighter-rouge">load</code>, <code class="language-plaintext highlighter-rouge">hash</code>, <code class="language-plaintext highlighter-rouge">size</code>, <code class="language-plaintext highlighter-rouge">check</code>, or <code class="language-plaintext highlighter-rouge">unload</code>. You may, though, add new functions and (local or global) variables to <code class="language-plaintext highlighter-rouge">dictionary.c</code>.</li>
+  <li data-marker="*">You may change the value of <code class="language-plaintext highlighter-rouge">N</code> in <code class="language-plaintext highlighter-rouge">dictionary.c</code>, so that your hash table can have more buckets.</li>
+  <li data-marker="*">Your implementation of <code class="language-plaintext highlighter-rouge">check</code> must be case-insensitive. In other words, if <code class="language-plaintext highlighter-rouge">foo</code> is in dictionary, then <code class="language-plaintext highlighter-rouge">check</code> should return true given any capitalization thereof; none of <code class="language-plaintext highlighter-rouge">foo</code>, <code class="language-plaintext highlighter-rouge">foO</code>, <code class="language-plaintext highlighter-rouge">fOo</code>, <code class="language-plaintext highlighter-rouge">fOO</code>, <code class="language-plaintext highlighter-rouge">fOO</code>, <code class="language-plaintext highlighter-rouge">Foo</code>, <code class="language-plaintext highlighter-rouge">FoO</code>, <code class="language-plaintext highlighter-rouge">FOo</code>, and <code class="language-plaintext highlighter-rouge">FOO</code> should be considered misspelled.</li>
+  <li data-marker="*">Capitalization aside, your implementation of <code class="language-plaintext highlighter-rouge">check</code> should only return <code class="language-plaintext highlighter-rouge">true</code> for words actually in <code class="language-plaintext highlighter-rouge">dictionary</code>. Beware hard-coding common words (e.g., <code class="language-plaintext highlighter-rouge">the</code>), lest we pass your implementation a <code class="language-plaintext highlighter-rouge">dictionary</code> without those same words. Moreover, the only possessives allowed are those actually in <code class="language-plaintext highlighter-rouge">dictionary</code>. In other words, even if <code class="language-plaintext highlighter-rouge">foo</code> is in <code class="language-plaintext highlighter-rouge">dictionary</code>, <code class="language-plaintext highlighter-rouge">check</code> should return <code class="language-plaintext highlighter-rouge">false</code> given <code class="language-plaintext highlighter-rouge">foo's</code> if <code class="language-plaintext highlighter-rouge">foo's</code> is not also in <code class="language-plaintext highlighter-rouge">dictionary</code>.</li>
+  <li data-marker="*">You may assume that any <code class="language-plaintext highlighter-rouge">dictionary</code> passed to your program will be structured exactly like ours, alphabetically sorted from top to bottom with one word per line, each of which ends with <code class="language-plaintext highlighter-rouge">\n</code>. You may also assume that <code class="language-plaintext highlighter-rouge">dictionary</code> will contain at least one word, that no word will be longer than <code class="language-plaintext highlighter-rouge">LENGTH</code> (a constant defined in <code class="language-plaintext highlighter-rouge">dictionary.h</code>) characters, that no word will appear more than once, that each word will contain only lowercase alphabetical characters and possibly apostrophes, and that no word will start with an apostrophe.</li>
+  <li data-marker="*">You may assume that <code class="language-plaintext highlighter-rouge">check</code> will only be passed words that contain (uppercase or lowercase) alphabetical characters and possibly apostrophes.</li>
+  <li data-marker="*">Your spell checker may only take <code class="language-plaintext highlighter-rouge">text</code> and, optionally, <code class="language-plaintext highlighter-rouge">dictionary</code> as input. Although you might be inclined (particularly if among those more comfortable) to “pre-process” our default dictionary in order to derive an “ideal hash function” for it, you may not save the output of any such pre-processing to disk in order to load it back into memory on subsequent runs of your spell checker in order to gain an advantage.</li>
+  <li data-marker="*">Your spell checker must not leak any memory. Be sure to check for leaks with <code class="language-plaintext highlighter-rouge">valgrind</code>.</li>
+  <li data-marker="*">You may search for (good) hash functions online, so long as you cite the origin of any hash function you integrate into your own code.</li>
+</ul>
+
+<p>Alright, ready to go?</p>
+
+<ul>
+  <li data-marker="*">Implement <code class="language-plaintext highlighter-rouge">load</code>.</li>
+  <li data-marker="*">Implement <code class="language-plaintext highlighter-rouge">hash</code>.</li>
+  <li data-marker="*">Implement <code class="language-plaintext highlighter-rouge">size</code>.</li>
+  <li data-marker="*">Implement <code class="language-plaintext highlighter-rouge">check</code>.</li>
+  <li data-marker="*">Implement <code class="language-plaintext highlighter-rouge">unload</code>.</li>
+</ul>
+
+<h2 id="walkthroughs">Walkthroughs</h2>
+
+<div class="alert" data-alert="primary" role="alert"><p><strong>Please note that there are 6 videos in this playlist.</strong></p></div>
+
+<div class="border embed-responsive embed-responsive-16by9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="embed-responsive-item" src="https://www.youtube.com/embed/_z57x5PGF4w?modestbranding=0&amp;rel=0&amp;showinfo=1&amp;list=PLhQjrBD2T382T4b6jjwX_qbU23E_Unwcz"></iframe></div>
+
+<h2 id="hints">Hints</h2>
+
+<p>To compare two strings case-insensitively, you may find <a href="https://man.cs50.io/3/strcasecmp"><code class="language-plaintext highlighter-rouge">strcasecmp</code></a> (declared in <code class="language-plaintext highlighter-rouge">strings.h</code>) useful! You’ll likely also want to ensure that your hash function is case-insensitive, such that <code class="language-plaintext highlighter-rouge">foo</code> and <code class="language-plaintext highlighter-rouge">FOO</code> have the same hash value.</p>
+
+<p>Ultimately, be sure to <code class="language-plaintext highlighter-rouge">free</code> in <code class="language-plaintext highlighter-rouge">unload</code> any memory that you allocated in <code class="language-plaintext highlighter-rouge">load</code>! Recall that <code class="language-plaintext highlighter-rouge">valgrind</code> is your newest best friend. Know that <code class="language-plaintext highlighter-rouge">valgrind</code> watches for leaks while your program is actually running, so be sure to provide command-line arguments if you want <code class="language-plaintext highlighter-rouge">valgrind</code> to analyze <code class="language-plaintext highlighter-rouge">speller</code> while you use a particular <code class="language-plaintext highlighter-rouge">dictionary</code> and/or text, as in the below. Best to use a small text, though, else <code class="language-plaintext highlighter-rouge">valgrind</code> could take quite a while to run.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ valgrind ./speller texts/cat.txt
+</code></pre></div></div>
+
+<p>If you run <code class="language-plaintext highlighter-rouge">valgrind</code> without specifying a <code class="language-plaintext highlighter-rouge">text</code> for <code class="language-plaintext highlighter-rouge">speller</code>, your implementations of <code class="language-plaintext highlighter-rouge">load</code> and <code class="language-plaintext highlighter-rouge">unload</code> won’t actually get called (and thus analyzed).</p>
+
+<p>If unsure how to interpret the output of <code class="language-plaintext highlighter-rouge">valgrind</code>, do just ask <code class="language-plaintext highlighter-rouge">help50</code> for help:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ help50 valgrind ./speller texts/cat.txt
+</code></pre></div></div>
+
+<h2 id="testing">Testing</h2>
+
+<p>How to check whether your program is outting the right misspelled words? Well, you’re welcome to consult the “answer keys” that are inside of the <code class="language-plaintext highlighter-rouge">keys</code> directory that’s inside of your <code class="language-plaintext highlighter-rouge">speller</code> directory. For instance, inside of <code class="language-plaintext highlighter-rouge">keys/lalaland.txt</code> are all of the words that your program <em>should</em> think are misspelled.</p>
+
+<p>You could therefore run your program on some text in one window, as with the below.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./speller texts/lalaland.txt
+</code></pre></div></div>
+
+<p>And you could then run the staff’s solution on the same text in another window, as with the below.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ~cs50/2019/fall/pset5/speller texts/lalaland.txt
+</code></pre></div></div>
+
+<p>And you could then compare the windows visually side by side. That could get tedious quickly, though. So you might instead want to “redirect” your program’s output to a file, as with the below.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./speller texts/lalaland.txt &gt; student.txt
+$ ~cs50/2019/fall/pset5/speller texts/lalaland.txt &gt; staff.txt
+</code></pre></div></div>
+
+<p>You can then compare both files side by side in the same window with a program like <code class="language-plaintext highlighter-rouge">diff</code>, as with the below.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ diff -y student.txt staff.txt
+</code></pre></div></div>
+
+<p>Alternatively, to save time, you could just compare your program’s output (assuming you redirected it to, e.g., <code class="language-plaintext highlighter-rouge">student.txt</code>) against one of the answer keys without running the staff’s solution, as with the below.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ diff -y student.txt keys/lalaland.txt
+</code></pre></div></div>
+
+<p>If your program’s output matches the staff’s, <code class="language-plaintext highlighter-rouge">diff</code> will output two columns that should be identical except for, perhaps, the running times at the bottom. If the columns differ, though, you’ll see a <code class="language-plaintext highlighter-rouge">&gt;</code> or <code class="language-plaintext highlighter-rouge">|</code> where they differ. For instance, if you see</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MISSPELLED WORDS                                                MISSPELLED WORDS
+
+TECHNO                                                          TECHNO
+L                                                               L
+                                                              &gt; Thelonious
+Prius                                                           Prius
+                                                              &gt; MIA
+L                                                               L
+</code></pre></div></div>
+
+<p>that means your program (whose output is on the left) does not think that <code class="language-plaintext highlighter-rouge">Thelonious</code> or <code class="language-plaintext highlighter-rouge">MIA</code> is misspelled, even though the staff’s output (on the right) does, as is implied by the absence of, say, <code class="language-plaintext highlighter-rouge">Thelonious</code> in the lefthand column and the presence of <code class="language-plaintext highlighter-rouge">Thelonious</code> in the righthand column.</p>
+
+<h3 id="check50"><code class="language-plaintext highlighter-rouge">check50</code></h3>
+
+<p>To test your code less manually (though still not exhaustively), you may also execute the below.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ check50 cs50/problems/2021/x/speller
+</code></pre></div></div>
+
+<p>Note that <code class="language-plaintext highlighter-rouge">check50</code> will also check for memory leaks, so be sure you’ve run <code class="language-plaintext highlighter-rouge">valgrind</code> as well.</p>
+
+<h3 id="style50">style50</h3>
+
+<p>Execute the below to evaluate the style of your code using <code class="language-plaintext highlighter-rouge">style50</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>style50 dictionary.c
+</code></pre></div></div>
+
+<h2 id="staffs-solution">Staff’s Solution</h2>
+
+<p>How to assess just how fast (and correct) your code is? Well, as always, feel free to play with the staff’s solution, as with the below, and compare its numbers against yours.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ~cs50/2019/fall/pset5/speller texts/lalaland.txt
+</code></pre></div></div>
+
+<h2 id="big-board">Big Board</h2>
+
+<p>If you’ve worked on this problem in the past, you know that we formerly had a “Big Board” against which students could compare their benchmark times for their spell-checker against other students. After some consideration, afraid we’ve decided to retire the Big Board for 2021!</p>
+
+<h2 id="how-to-submit">How to Submit</h2>
+
+<p>Execute the below, logging in with your GitHub username and password when prompted. For security, you’ll see asterisks (<code class="language-plaintext highlighter-rouge">*</code>) instead of the actual characters in your password.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>submit50 cs50/problems/2021/x/speller
+</code></pre></div></div>
+
+
+                </main>
+
+            </div>
+
+        </div>
+
+        
+ 
+    
+
+
+</body></html>

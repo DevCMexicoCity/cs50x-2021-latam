@@ -1,0 +1,486 @@
+<!DOCTYPE html><html lang="en-us"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta property="og:description" content="Harvard Universty's introduction to the intellectual enterprises of computer science and the art of programming.">
+
+<meta property="og:image" content="https://img.youtube.com/vi/zYierUhIFNQ/maxresdefault.jpg"><meta property="og:title" content="Caesar - CS50x 2021"><link href="../../../favicon.ico%3F1610389211" rel="icon">
+
+<!-- https://fonts.google.com/specimen/PT+Sans?query=PT+Sans&selection.family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700 -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+
+<!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+<script src="../../../assets/jquery/dist/jquery.min.js%3F1610389211"></script>
+<script src="../../../assets/bootstrap/dist/js/bootstrap.bundle.min.js%3F1610389211"></script>
+
+<!-- https://bootstrap-table.com/docs/getting-started/introduction/ -->
+<link href="../../../assets/bootstrap-table/dist/bootstrap-table.min.css%3F1610389211.css" rel="stylesheet">
+<script src="../../../assets/bootstrap-table/dist/bootstrap-table.min.js%3F1610389211"></script>
+<script src="../../../assets/bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.min.js%3F1610389211"></script>
+
+<!-- https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use -->
+<link href="../../../assets/@fortawesome/fontawesome-free/css/all.min.css%3F1610389211.css" rel="stylesheet">
+
+<!-- https://moment.github.io/luxon/ -->
+<script src="../../../assets/luxon.min.js%3F1610389211"></script>
+
+<!-- http://docs.mathjax.org/ -->
+<!-- https://www.jsdelivr.com/package/npm/mathjax?path=es5 -->
+<script crossorigin="anonymous" integrity="sha256-+nfSJ1LiSvANSK3wvi6FjM+oFwoIQvURU1frozp5z6o=" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-chtml.js"></script>
+
+<!-- https://github.com/verlok/vanilla-lazyload -->
+<script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.7.0/intersection-observer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js"></script>
+
+
+
+<link href="../../../assets/page.css%3F1610389211.css" rel="stylesheet">
+<script src="../../../assets/jekyll-theme-cs50.js%3F1610389211"></script>
+
+<script>
+    window.CS50 = {
+        locale: "en",
+        tz: "America/New_York"
+    };
+</script>
+
+<title>Caesar - CS50x 2021</title>
+</head>
+
+    <body class="invisible">
+
+        
+        
+        
+        <div class="alert alert-dismissible fixed-top mb-0 rounded-0 shadow" data-alert="success" id="alert" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button><p>This is CS50x 2021, the newest version of the course. Looking for <a href="https://cs50.harvard.edu/x/2020/">CS50x 2020</a>?</p></div>
+        
+        
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <aside class="col-md">
+ 
+                    <header><h1 data-id="this-is-cs50x"><a href="../../../index.html">This is CS50x</a></h1>
+
+<p>OpenCourseWare</p>
+
+<p><a href="https://community.alumni.harvard.edu/give/59206872" class="pr-1 small">Donate</a>
+<a href="https://community.alumni.harvard.edu/give/59206872" class="small"><i aria-hidden="true" class="fas fa-external-link-alt"></i></a></p>
+
+<p><a href="https://cs.harvard.edu/malan/">David J. Malan</a><br>
+<a href="mailto:malan@harvard.edu">malan@harvard.edu</a><br>
+<a href="https://www.facebook.com/dmalan" class="mr-2"><i class="fab fa-facebook-f"></i></a><a href="https://github.com/dmalan" class="mr-2"><i class="fab fa-github"></i></a><a href="https://www.instagram.com/davidjmalan/" class="mr-2"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/malan/" class="mr-2"><i class="fab fa-linkedin"></i></a><a href="https://www.quora.com/profile/David-J-Malan" class="mr-2"><i class="fab fa-quora"></i></a><a href="https://www.reddit.com/user/davidjmalan" class="mr-2"><i class="fab fa-reddit-alien"></i></a><a href="https://twitter.com/davidjmalan" class="mr-2"><i class="fab fa-twitter"></i></a></p></header>
+
+                    
+
+                    <button aria-controls="nav" aria-expanded="false" class="btn btn-sm collapsed d-md-none" data-target="aside > nav" data-toggle="collapse">
+                        Menu
+                    </button>
+
+                    <nav class="collapse d-md-block" id="nav"><hr>
+
+<ul>
+  <li data-marker="*"><a href="../../../seminars/index.html">CS50’s New Year’s Seminars</a> <span class="text-white">🥂</span></li>
+  <li data-marker="*"><a href="../../../gallery/index.html">Gallery of Final Projects</a> <span class="pl-1 text-white">🖼️ </span></li>
+  <li data-marker="*"><a href="../../../new/index.html">What’s new for 2021?</a></li>
+</ul>
+<ul>
+  <li data-marker="*"><a href="../../../weeks/0/index.html">Week 0</a> Scratch</li>
+  <li data-marker="*"><a href="../../../weeks/1/index.html">Week 1</a> C</li>
+  <li data-marker="*"><a href="../../../weeks/2/index.html">Week 2</a> Arrays</li>
+  <li data-marker="*"><a href="../../../weeks/3/index.html">Week 3</a> Algorithms</li>
+  <li data-marker="*"><a href="../../../weeks/4/index.html">Week 4</a> Memory</li>
+  <li data-marker="*"><a href="../../../weeks/5/index.html">Week 5</a> Data Structures</li>
+  <li data-marker="*"><a href="../../../weeks/6/index.html">Week 6</a> Python</li>
+  <li data-marker="*"><a href="../../../weeks/7/index.html">Week 7</a> SQL</li>
+  <li data-marker="*"><a href="../../../weeks/8/index.html">Week 8</a> HTML, CSS, JavaScript</li>
+  <li data-marker="*"><a href="../../../weeks/9/index.html">Week 9</a> Flask</li>
+  <li data-marker="*"><a href="../../../weeks/10/index.html">Week 10</a> Ethics</li>
+</ul>
+<ul>
+  <li data-marker="*" class="small"><a href="../../../weeks/security/index.html">Security</a></li>
+  <li data-marker="*" class="small"><a href="../../../weeks/ai/index.html">Artificial Intelligence</a></li>
+</ul>
+<ul>
+  <li data-marker="*"><a href="../../../project/index.html">Final Project</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="../../../honesty/index.html">Academic Honesty</a></li>
+  <li data-marker="*"><a href="../../../certificate/index.html">CS50 Certificate</a></li>
+  <li data-marker="*"><a href="../../../faqs/index.html">FAQs</a></li>
+  <li data-marker="*"><a href="https://cs50.me/cs50x">Gradebook</a></li>
+  <li data-marker="*"><a href="../../../staff/index.html">Staff</a></li>
+  <li data-marker="*"><a href="../../../syllabus/index.html">Syllabus</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="https://cs50.harvard.edu/x/ed">Ed Discussion</a> for Q&amp;A</li>
+  <li data-marker="*" class="small"><a href="https://us.edstem.org/quickstart/ed-discussion.pdf">Quick Start Guide</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://cs50.edx.org/">edX</a></li>
+  <li data-marker="*"><a href="https://www.youtube.com/playlist?list=PLhQjrBD2T382_R182iC2gNZI9HzWFMC_8">YouTube</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://ide.cs50.io/">CS50 IDE</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/css/">CSS Tutorial</a></li>
+  <li data-marker="*"><a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/">Flask Quickstart</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/html/">HTML Tutorial</a></li>
+  <li data-marker="*"><a href="https://jinja.palletsprojects.com/en/2.11.x/templates/">Jinja Template Designer Documentation</a></li>
+  <li data-marker="*"><a href="https://man.cs50.io/">Manual Pages</a></li>
+  <li data-marker="*"><a href="https://docs.python.org/3.7/search.html">Python Documentation</a></li>
+  <li data-marker="*"><a href="https://scratch.mit.edu/">Scratch</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/sql/">SQL Tutorial</a></li>
+  <li data-marker="*"><a href="https://cs50.readthedocs.io/style/c/">Style Guide</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://cs50.noticeable.io/">Changelog</a></li>
+  <li data-marker="*"><a href="https://cs50.statuspage.io/">Status Page</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="../../../communities/index.html">Communities</a></li>
+  <li data-marker="*" class="small"><a href="https://discord.gg/cs50">Discord</a></li>
+  <li data-marker="*" class="small"><a href="https://www.facebook.com/groups/cs50/">Facebook Group</a></li>
+  <li data-marker="*" class="small"><a href="https://www.facebook.com/cs50/">Facebook Page</a></li>
+  <li data-marker="*" class="small"><a href="https://github.com/cs50">GitHub</a></li>
+  <li data-marker="*" class="small"><a href="https://gitter.im/cs50/x">Gitter</a></li>
+  <li data-marker="*" class="small"><a href="https://instagram.com/cs50">Instagram</a></li>
+  <li data-marker="*" class="small"><a href="https://www.linkedin.com/groups/7437240/">LinkedIn Group</a></li>
+  <li data-marker="*" class="small"><a href="https://www.linkedin.com/school/CS50/">LinkedIn Page</a></li>
+  <li data-marker="*" class="small"><a href="https://www.quora.com/topic/CS50">Quora</a></li>
+  <li data-marker="*" class="small"><a href="https://www.reddit.com/r/cs50/">Reddit</a></li>
+  <li data-marker="*" class="small"><a href="https://cs50.edx.org/slack">Slack</a></li>
+  <li data-marker="*" class="small"><a href="https://www.snapchat.com/add/cs50">Snapchat</a></li>
+  <li data-marker="*" class="small"><a href="https://soundcloud.com/cs50">SoundCloud</a></li>
+  <li data-marker="*" class="small"><a href="https://twitter.com/cs50">Twitter</a></li>
+  <li data-marker="*" class="small"><a href="http://www.youtube.com/subscription_center?add_user=cs50tv">YouTube</a></li>
+</ul>
+
+<hr>
+
+<p><a href="https://cs50.harvardshop.com/"><img src="https://i.imgur.com/GGMdcKt.png" alt="Harvard Shop"></a></p>
+
+<hr>
+
+<p><a href="../../../license/index.html" class="small"><i class="fab fa-creative-commons mr-1"></i>License</a></p></nav>
+
+                    <footer></footer>
+
+                </aside>
+
+                <main class="col-md">
+
+                    <h1 id="caesar">Caesar</h1>
+
+<p>Implement a program that encrypts messages using Caesar’s cipher, per the below.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./caesar 13
+plaintext:  HELLO
+ciphertext: URYYB
+</code></pre></div></div>
+
+<h2 id="background">Background</h2>
+
+<p>Supposedly, Caesar (yes, that Caesar) used to “encrypt” (i.e., conceal in a reversible way) confidential messages by shifting each letter therein by some number of places. For instance, he might write A as B, B as C, C as D, …, and, wrapping around alphabetically, Z as A. And so, to say HELLO to someone, Caesar might write IFMMP. Upon receiving such messages from Caesar, recipients would have to “decrypt” them by shifting letters in the opposite direction by the same number of places.</p>
+
+<p>The secrecy of this “cryptosystem” relied on only Caesar and the recipients knowing a secret, the number of places by which Caesar had shifted his letters (e.g., 1). Not particularly secure by modern standards, but, hey, if you’re perhaps the first in the world to do it, pretty secure!</p>
+
+<p>Unencrypted text is generally called <em>plaintext</em>. Encrypted text is generally called <em>ciphertext</em>. And the secret used is called a <em>key</em>.</p>
+
+<p>To be clear, then, here’s how encrypting <code class="language-plaintext highlighter-rouge">HELLO</code> with a key of 1 yields <code class="language-plaintext highlighter-rouge">IFMMP</code>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>plaintext</th>
+      <th>H</th>
+      <th>E</th>
+      <th>L</th>
+      <th>L</th>
+      <th>O</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>+ key</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>= ciphertext</td>
+      <td>I</td>
+      <td>F</td>
+      <td>M</td>
+      <td>M</td>
+      <td>P</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>More formally, Caesar’s algorithm (i.e., cipher) encrypts messages by “rotating” each letter by <em>k</em> positions. More formally, if <em>p</em> is some plaintext (i.e., an unencrypted message), <em>p<sub>i</sub></em> is the <em>i<sup>th</sup></em> character in <em>p</em>, and <em>k</em> is a secret key (i.e., a non-negative integer), then each letter, <em>c<sub>i</sub></em>, in the ciphertext, <em>c</em>, is computed as</p>
+
+<p>c<sub>i</sub> = (p<sub>i</sub> + k) % 26</p>
+
+<p>wherein <code class="language-plaintext highlighter-rouge">% 26</code> here means “remainder when dividing by 26.” This formula perhaps makes the cipher seem more complicated than it is, but it’s really just a concise way of expressing the algorithm precisely. Indeed, for the sake of discussion, think of A (or a) as 0, B (or b) as 1, …, H (or h) as 7, I (or i) as 8, …, and Z (or z) as 25. Suppose that Caesar just wants to say Hi to someone confidentially using, this time, a key, <em>k</em>, of 3. And so his plaintext, <em>p</em>, is Hi, in which case his plaintext’s first character, <em>p<sub>0</sub></em>, is H (aka 7), and his plaintext’s second character, <em>p<sub>1</sub></em>, is i (aka 8). His ciphertext’s first character, <em>c<sub>0</sub></em>, is thus K, and his ciphertext’s second character, <em>c<sub>1</sub></em>, is thus L. Can you see why?</p>
+
+<p>Let’s write a program called <code class="language-plaintext highlighter-rouge">caesar</code> that enables you to encrypt messages using Caesar’s cipher. At the time the user executes the program, they should decide, by providing a command-line argument, on what the key should be in the secret message they’ll provide at runtime. We shouldn’t necessarily assume that the user’s key is going to be a number; though you may assume that, if it is a number, it will be a positive integer.</p>
+
+<p>Here are a few examples of how the program might work. For example, if the user inputs a key of <code class="language-plaintext highlighter-rouge">1</code> and a plaintext of <code class="language-plaintext highlighter-rouge">HELLO</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./caesar 1
+plaintext:  HELLO
+ciphertext: IFMMP
+</code></pre></div></div>
+
+<p>Here’s how the program might work if the user provides a key of <code class="language-plaintext highlighter-rouge">13</code> and a plaintext of <code class="language-plaintext highlighter-rouge">hello, world</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./caesar 13
+plaintext:  hello, world
+ciphertext: uryyb, jbeyq
+</code></pre></div></div>
+
+<p>Notice that neither the comma nor the space were “shifted” by the cipher. Only rotate alphabetical characters!</p>
+
+<p>How about one more? Here’s how the program might work if the user provides a key of <code class="language-plaintext highlighter-rouge">13</code> again, with a more complex plaintext:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./caesar 13
+plaintext:  be sure to drink your Ovaltine
+ciphertext: or fher gb qevax lbhe Binygvar
+</code></pre></div></div>
+
+<details><summary>Why?</summary><div class="border embed-responsive embed-responsive-16by9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="embed-responsive-item" src="https://www.youtube.com/embed/9K4FsAHB-C8?modestbranding=0&amp;rel=0&amp;showinfo=0"></iframe></div></details>
+
+<p>Notice that the case of the original message has been preserved. Lowercase letters remain lowercase, and uppercase letters remain uppercase.</p>
+
+<p>And what if a user doesn’t cooperate?</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./caesar HELLO
+Usage: ./caesar key
+</code></pre></div></div>
+
+<p>Or really doesn’t cooperate?</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./caesar
+Usage: ./caesar key
+</code></pre></div></div>
+
+<p>Or even…</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./caesar 1 2 3
+Usage: ./caesar key
+</code></pre></div></div>
+
+<details><summary>Try It</summary><p>To try out the staff’s implementation of this problem, execute</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./caesar key
+</code></pre></div></div>
+
+<p>substituting a valid integer in place of <code class="language-plaintext highlighter-rouge">key</code>, within <a href="http://bit.ly/2Vwi8n0">this sandbox</a>.</p></details>
+
+<h2 id="specification">Specification</h2>
+
+<p>Design and implement a program, <code class="language-plaintext highlighter-rouge">caesar</code>, that encrypts messages using Caesar’s cipher.</p>
+
+<ul>
+  <li data-marker="*">Implement your program in a file called <code class="language-plaintext highlighter-rouge">caesar.c</code> in a directory called <code class="language-plaintext highlighter-rouge">caesar</code>.</li>
+  <li data-marker="*">Your program must accept a single command-line argument, a non-negative integer. Let’s call it <em>k</em> for the sake of discussion.</li>
+  <li data-marker="*">If your program is executed without any command-line arguments or with more than one command-line argument, your program should print an error message of your choice (with <code class="language-plaintext highlighter-rouge">printf</code>) and return from <code class="language-plaintext highlighter-rouge">main</code> a value of <code class="language-plaintext highlighter-rouge">1</code> (which tends to signify an error) immediately.</li>
+  <li data-marker="*">If any of the characters of the command-line argument is not a decimal digit, your program should print the message <code class="language-plaintext highlighter-rouge">Usage: ./caesar key</code> and return from <code class="language-plaintext highlighter-rouge">main</code> a value of <code class="language-plaintext highlighter-rouge">1</code>.</li>
+  <li data-marker="*">Do not assume that <em>k</em> will be less than or equal to 26. Your program should work for all non-negative integral values of <em>k</em> less than 2^31 - 26. In other words, you don’t need to worry if your program eventually breaks if the user chooses a value for <em>k</em> that’s too big or almost too big to fit in an <code class="language-plaintext highlighter-rouge">int</code>. (Recall that an <code class="language-plaintext highlighter-rouge">int</code> can overflow.) But, even if <em>k</em> is greater than 26, alphabetical characters in your program’s input should remain alphabetical characters in your program’s output. For instance, if <em>k</em> is 27, <code class="language-plaintext highlighter-rouge">A</code> should not become <code class="language-plaintext highlighter-rouge">[</code> even though <code class="language-plaintext highlighter-rouge">[</code> is 27 positions away from <code class="language-plaintext highlighter-rouge">A</code> in ASCII, per http://www.asciichart.com/[asciichart.com]; <code class="language-plaintext highlighter-rouge">A</code> should become <code class="language-plaintext highlighter-rouge">B</code>, since <code class="language-plaintext highlighter-rouge">B</code> is 27 positions away from <code class="language-plaintext highlighter-rouge">A</code>, provided you wrap around from <code class="language-plaintext highlighter-rouge">Z</code> to <code class="language-plaintext highlighter-rouge">A</code>.</li>
+  <li data-marker="*">Your program must output <code class="language-plaintext highlighter-rouge">plaintext:</code> (without a newline) and then prompt the user for a <code class="language-plaintext highlighter-rouge">string</code> of plaintext (using <code class="language-plaintext highlighter-rouge">get_string</code>).</li>
+  <li data-marker="*">Your program must output <code class="language-plaintext highlighter-rouge">ciphertext:</code> (without a newline) followed by the plaintext’s corresponding ciphertext, with each alphabetical character in the plaintext “rotated” by <em>k</em> positions; non-alphabetical characters should be outputted unchanged.</li>
+  <li data-marker="*">Your program must preserve case: capitalized letters, though rotated, must remain capitalized letters; lowercase letters, though rotated, must remain lowercase letters.</li>
+  <li data-marker="*">After outputting ciphertext, you should print a newline. Your program should then exit by returning <code class="language-plaintext highlighter-rouge">0</code> from <code class="language-plaintext highlighter-rouge">main</code>.</li>
+</ul>
+
+<p>How to begin? Let’s approach this problem one step at a time.</p>
+
+<h3 id="pseudocode">Pseudocode</h3>
+
+<p>First, write some pseudocode that implements this program, even if not (yet!) sure how to write it in code. There’s no one right way to write pseudocode, but short English sentences suffice. Recall how we wrote pseudocode for <a href="https://cdn.cs50.net/2018/fall/lectures/0/lecture0.pdf">finding Mike Smith</a>. Odds are your pseudocode will use (or imply using!) one or more functions, conditions, Boolean expressions, loops, and/or variables.</p>
+
+<details><summary>Spoiler</summary><p>There’s more than one way to do this, so here’s just one!</p>
+
+<ol>
+  <li>Check that program was run with one command-line argument</li>
+  <li>Iterate over the provided argument to make sure all characters are digits</li>
+  <li>Convert that command-line argument from a <code class="language-plaintext highlighter-rouge">string</code> to an <code class="language-plaintext highlighter-rouge">int</code></li>
+  <li>Prompt user for plaintext</li>
+  <li>Iterate over each character of the plaintext:
+    <ol>
+      <li>If it is an uppercase letter, rotate it, preserving case, then print out the rotated character</li>
+      <li>If it is a lowercase letter, rotate it, preserving case, then print out the rotated character</li>
+      <li>If it is neither, print out the character as is</li>
+    </ol>
+  </li>
+  <li>Print a newline</li>
+</ol>
+
+<p>It’s okay to edit your own after seeing this pseudocode here, but don’t simply copy/paste ours into your own!</p></details>
+
+<h3 id="counting-command-line-arguments">Counting Command-Line Arguments</h3>
+
+<p>Whatever your pseudocode, let’s first write only the C code that checks whether the program was run with a single command-line argument before adding additional functionality.</p>
+
+<p>Specifically, modify <code class="language-plaintext highlighter-rouge">caesar.c</code> in such a way that: if the user provides exactly one command-line argument, it prints <code class="language-plaintext highlighter-rouge">Success</code>; if the user provides no command-line arguments, or two or more, it prints <code class="language-plaintext highlighter-rouge">Usage: ./caesar key</code>. Remember, since this key is coming from the command line at runtime, and not via <code class="language-plaintext highlighter-rouge">get_string</code>, we don’t have an opportunity to re-prompt the user. The behavior of the resulting program should be like the below.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./caesar 20
+Success
+</code></pre></div></div>
+
+<p>or</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./caesar
+Usage: ./caesar key
+</code></pre></div></div>
+
+<p>or</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./caesar 1 2 3
+Usage: ./caesar key
+</code></pre></div></div>
+
+<details><summary>Hints</summary><ul>
+  <li data-marker="*">Recall that you can compile your program with <code class="language-plaintext highlighter-rouge">make</code>.</li>
+  <li data-marker="*">Recall that you can print with <code class="language-plaintext highlighter-rouge">printf</code>.</li>
+  <li data-marker="*">Recall that <code class="language-plaintext highlighter-rouge">argc</code> and <code class="language-plaintext highlighter-rouge">argv</code> give you information about what was provided at the command line.</li>
+  <li data-marker="*">Recall that the name of the program itself (here, <code class="language-plaintext highlighter-rouge">./caesar</code>) is in <code class="language-plaintext highlighter-rouge">argv[0]</code>.</li>
+</ul></details>
+
+<h3 id="accessing-the-key">Accessing the Key</h3>
+
+<p>Now that your program is (hopefully!) accepting input as prescribed, it’s time for another step.</p>
+
+<p>Recall that in our program, we must defend against users who technically provide a single command-line argument (the key), but provide something that isn’t actually an integer, for example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./caesar xyz
+</code></pre></div></div>
+
+<p>Before we start to analyze the key for validity, though, let’s make sure we can actually read it. Further modify <code class="language-plaintext highlighter-rouge">caesar.c</code> such that it not only checks that the user has provided just one command-line argument, but after verifying that, prints out that single command-line argument. So, for example, the behavior might look like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./caesar 20
+Success
+20
+</code></pre></div></div>
+
+<details><summary>Hints</summary><ul>
+  <li data-marker="*">Recall that <code class="language-plaintext highlighter-rouge">argc</code> and <code class="language-plaintext highlighter-rouge">argv</code> give you information about what was provided at the command line.</li>
+  <li data-marker="*">Recall that <code class="language-plaintext highlighter-rouge">argv</code> is an array of strings.</li>
+  <li data-marker="*">Recall that with <code class="language-plaintext highlighter-rouge">printf</code> we can print a string using <code class="language-plaintext highlighter-rouge">%s</code> as the placeholder.</li>
+  <li data-marker="*">Recall that computer scientists like counting starting from 0.</li>
+  <li data-marker="*">Recall that we can access individual elements of an array, such as <code class="language-plaintext highlighter-rouge">argv</code> using square brackets, for example: <code class="language-plaintext highlighter-rouge">argv[0]</code>.</li>
+</ul></details>
+
+<h3 id="validating-the-key">Validating the Key</h3>
+
+<p>Now that you know how to read the key, let’s analyze it. Modify <code class="language-plaintext highlighter-rouge">caesar.c</code> such that instead of printing out the command-line argument provided, your program instead checks to make sure that each character of that command line argument is a decimal digit (i.e., <code class="language-plaintext highlighter-rouge">0</code>, <code class="language-plaintext highlighter-rouge">1</code>, <code class="language-plaintext highlighter-rouge">2</code>, etc.) and, if any of them are not, terminates after printing the message <code class="language-plaintext highlighter-rouge">Usage: ./caesar key</code>. But if the argument consists solely of digit characters, you should convert that string (recall that <code class="language-plaintext highlighter-rouge">argv</code> is an array of strings, even if those strings happen to look like numbers) to an actual integer, and print out the <em>integer</em>, as via <code class="language-plaintext highlighter-rouge">%i</code> with <code class="language-plaintext highlighter-rouge">printf</code>. So, for example, the behavior might look like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./caesar 20
+Success
+20
+</code></pre></div></div>
+
+<p>or</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./caesar 20x
+Usage: ./caesar key
+</code></pre></div></div>
+
+<details><summary>Hints</summary><ul>
+  <li data-marker="*">Recall that <code class="language-plaintext highlighter-rouge">argv</code> is an array of strings.</li>
+  <li data-marker="*">Recall that a string, meanwhile, is just an array of <code class="language-plaintext highlighter-rouge">char</code>s.</li>
+  <li data-marker="*">Recall that the <code class="language-plaintext highlighter-rouge">string.h</code> header file contains a number of useful functions that work with strings.</li>
+  <li data-marker="*">Recall that we can use a loop to iterate over each character of a string if we know its length.</li>
+  <li data-marker="*">Recall that the <code class="language-plaintext highlighter-rouge">ctype.h</code> header file contains a number of useful functions that tell us things about characters.</li>
+  <li data-marker="*">Recall that we can <code class="language-plaintext highlighter-rouge">return</code> nonzero values from <code class="language-plaintext highlighter-rouge">main</code> to indicate that our program did not finish successfully.</li>
+  <li data-marker="*">Recall that with <code class="language-plaintext highlighter-rouge">printf</code> we can print an integer using <code class="language-plaintext highlighter-rouge">%i</code> as the placeholder.</li>
+  <li data-marker="*">Recall that the <code class="language-plaintext highlighter-rouge">atoi</code> function converts a string that looks like a number into that number.</li>
+</ul></details>
+
+<h3 id="peeking-underneath-the-hood">Peeking Underneath the Hood</h3>
+
+<p>As human beings it’s easy for us to intuitively understand the formula described above, inasmuch as we can say “H + 1 = I”. But can a computer understand that same logic? Let’s find out. For now, we’re going to temporarily ignore the key the user provided and instead prompt the user for a secret message and attempt to shift all of its characters by just 1.</p>
+
+<p>Extend the functionality of <code class="language-plaintext highlighter-rouge">caesar.c</code> such that, after validating the key, we prompt the user for a string and then shift all of its characters by 1, printing out the result. We can also at this point probably remove the line of code we wrote earlier that prints <code class="language-plaintext highlighter-rouge">Success</code>. All told, this might result in this behavior:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./caesar 1
+plaintext:  hello
+ciphertext: ifmmp
+</code></pre></div></div>
+
+<details><summary>Hints</summary><ul>
+  <li data-marker="*">Try to iterate over every character in the plaintext and literally add 1 to it, then print it.</li>
+  <li data-marker="*">If <code class="language-plaintext highlighter-rouge">c</code> is a variable of type <code class="language-plaintext highlighter-rouge">char</code> in C, what happens when you call <code class="language-plaintext highlighter-rouge">printf("%c", c + 1)</code>?</li>
+</ul></details>
+
+<h3 id="your-turn">Your Turn</h3>
+
+<p>Now it’s time to tie everything together! Instead of shifting the characters by 1, modify <code class="language-plaintext highlighter-rouge">caesar.c</code> to instead shift them by the actual key value. And be sure to preserve case! Uppercase letters should stay uppercase, lowercase letters should stay lowercase, and characters that aren’t alphabetical should remain unchanged.</p>
+
+<details><summary>Hints</summary><ul>
+  <li data-marker="*">Best to use the modulo (i.e., remainder) operator, <code class="language-plaintext highlighter-rouge">%</code>, to handle wraparound from Z to A! But how?</li>
+  <li data-marker="*">Things get weird if we try to wrap <code class="language-plaintext highlighter-rouge">Z</code> or <code class="language-plaintext highlighter-rouge">z</code> by 1 using the technique in the previous section.</li>
+  <li data-marker="*">Things get weird also if we try to wrap punctuation marks using that technique.</li>
+  <li data-marker="*">Recall that ASCII maps all printable characters to numbers.</li>
+  <li data-marker="*">Recall that the ASCII value of <code class="language-plaintext highlighter-rouge">A</code> is 65. The ASCII value of <code class="language-plaintext highlighter-rouge">a</code>, meanwhile, is 97.</li>
+  <li data-marker="*">If you’re not seeing any output at all when you call <code class="language-plaintext highlighter-rouge">printf</code>, odds are it’s because you’re printing characters outside of the valid ASCII range from 0 to 127. Try printing characters as numbers (using <code class="language-plaintext highlighter-rouge">%i</code> instead of <code class="language-plaintext highlighter-rouge">%c</code>) at first to see what values you’re printing, and make sure you’re only ever trying to print valid characters!</li>
+</ul></details>
+
+<h2 id="walkthrough">Walkthrough</h2>
+
+<div class="border embed-responsive embed-responsive-16by9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="embed-responsive-item" src="https://www.youtube.com/embed/V2uusmv2wxI?modestbranding=0&amp;rel=0&amp;showinfo=0"></iframe></div>
+
+<h2 id="how-to-test-your-code">How to Test Your Code</h2>
+
+<p>Execute the below to evaluate the correctness of your code using <code class="language-plaintext highlighter-rouge">check50</code>. But be sure to compile and test it yourself as well!</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>check50 cs50/problems/2021/x/caesar
+</code></pre></div></div>
+
+<p>Execute the below to evaluate the style of your code using <code class="language-plaintext highlighter-rouge">style50</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>style50 caesar.c
+</code></pre></div></div>
+
+<h2 id="how-to-submit">How to Submit</h2>
+
+<p>Execute the below, logging in with your GitHub username and password when prompted. For security, you’ll see asterisks (<code class="language-plaintext highlighter-rouge">*</code>) instead of the actual characters in your password.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>submit50 cs50/problems/2021/x/caesar
+</code></pre></div></div>
+
+
+                </main>
+
+            </div>
+
+        </div>
+
+        
+ 
+    
+
+
+</body></html>

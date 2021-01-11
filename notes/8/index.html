@@ -1,0 +1,899 @@
+<!DOCTYPE html><html lang="en-us"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta property="og:description" content="Harvard Universty's introduction to the intellectual enterprises of computer science and the art of programming.">
+
+<meta property="og:image" content="https://img.youtube.com/vi/zYierUhIFNQ/maxresdefault.jpg"><meta property="og:title" content="Lecture 8 - CS50x 2021"><link href="../../favicon.ico%3F1610389211" rel="icon">
+
+<!-- https://fonts.google.com/specimen/PT+Sans?query=PT+Sans&selection.family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700 -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+
+<!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+<script src="../../assets/jquery/dist/jquery.min.js%3F1610389211"></script>
+<script src="../../assets/bootstrap/dist/js/bootstrap.bundle.min.js%3F1610389211"></script>
+
+<!-- https://bootstrap-table.com/docs/getting-started/introduction/ -->
+<link href="../../assets/bootstrap-table/dist/bootstrap-table.min.css%3F1610389211.css" rel="stylesheet">
+<script src="../../assets/bootstrap-table/dist/bootstrap-table.min.js%3F1610389211"></script>
+<script src="../../assets/bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.min.js%3F1610389211"></script>
+
+<!-- https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use -->
+<link href="../../assets/@fortawesome/fontawesome-free/css/all.min.css%3F1610389211.css" rel="stylesheet">
+
+<!-- https://moment.github.io/luxon/ -->
+<script src="../../assets/luxon.min.js%3F1610389211"></script>
+
+<!-- http://docs.mathjax.org/ -->
+<!-- https://www.jsdelivr.com/package/npm/mathjax?path=es5 -->
+<script crossorigin="anonymous" integrity="sha256-+nfSJ1LiSvANSK3wvi6FjM+oFwoIQvURU1frozp5z6o=" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-chtml.js"></script>
+
+<!-- https://github.com/verlok/vanilla-lazyload -->
+<script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.7.0/intersection-observer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js"></script>
+
+
+
+<link href="../../assets/page.css%3F1610389211.css" rel="stylesheet">
+<script src="../../assets/jekyll-theme-cs50.js%3F1610389211"></script>
+
+<script>
+    window.CS50 = {
+        locale: "en",
+        tz: "America/New_York"
+    };
+</script>
+
+<title>Lecture 8 - CS50x 2021</title>
+</head>
+
+    <body class="invisible">
+
+        
+        
+        
+        <div class="alert alert-dismissible fixed-top mb-0 rounded-0 shadow" data-alert="success" id="alert" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button><p>This is CS50x 2021, the newest version of the course. Looking for <a href="https://cs50.harvard.edu/x/2020/">CS50x 2020</a>?</p></div>
+        
+        
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <aside class="col-md">
+ 
+                    <header><h1 data-id="this-is-cs50x"><a href="../../index.html">This is CS50x</a></h1>
+
+<p>OpenCourseWare</p>
+
+<p><a href="https://community.alumni.harvard.edu/give/59206872" class="pr-1 small">Donate</a>
+<a href="https://community.alumni.harvard.edu/give/59206872" class="small"><i aria-hidden="true" class="fas fa-external-link-alt"></i></a></p>
+
+<p><a href="https://cs.harvard.edu/malan/">David J. Malan</a><br>
+<a href="mailto:malan@harvard.edu">malan@harvard.edu</a><br>
+<a href="https://www.facebook.com/dmalan" class="mr-2"><i class="fab fa-facebook-f"></i></a><a href="https://github.com/dmalan" class="mr-2"><i class="fab fa-github"></i></a><a href="https://www.instagram.com/davidjmalan/" class="mr-2"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/malan/" class="mr-2"><i class="fab fa-linkedin"></i></a><a href="https://www.quora.com/profile/David-J-Malan" class="mr-2"><i class="fab fa-quora"></i></a><a href="https://www.reddit.com/user/davidjmalan" class="mr-2"><i class="fab fa-reddit-alien"></i></a><a href="https://twitter.com/davidjmalan" class="mr-2"><i class="fab fa-twitter"></i></a></p></header>
+
+                    
+
+                    <button aria-controls="nav" aria-expanded="false" class="btn btn-sm collapsed d-md-none" data-target="aside > nav" data-toggle="collapse">
+                        Menu
+                    </button>
+
+                    <nav class="collapse d-md-block" id="nav"><hr>
+
+<ul>
+  <li data-marker="*"><a href="../../seminars/index.html">CS50’s New Year’s Seminars</a> <span class="text-white">🥂</span></li>
+  <li data-marker="*"><a href="../../gallery/index.html">Gallery of Final Projects</a> <span class="pl-1 text-white">🖼️ </span></li>
+  <li data-marker="*"><a href="../../new/index.html">What’s new for 2021?</a></li>
+</ul>
+<ul>
+  <li data-marker="*"><a href="../../weeks/0/index.html">Week 0</a> Scratch</li>
+  <li data-marker="*"><a href="../../weeks/1/index.html">Week 1</a> C</li>
+  <li data-marker="*"><a href="../../weeks/2/index.html">Week 2</a> Arrays</li>
+  <li data-marker="*"><a href="../../weeks/3/index.html">Week 3</a> Algorithms</li>
+  <li data-marker="*"><a href="../../weeks/4/index.html">Week 4</a> Memory</li>
+  <li data-marker="*"><a href="../../weeks/5/index.html">Week 5</a> Data Structures</li>
+  <li data-marker="*"><a href="../../weeks/6/index.html">Week 6</a> Python</li>
+  <li data-marker="*"><a href="../../weeks/7/index.html">Week 7</a> SQL</li>
+  <li data-marker="*"><a href="../../weeks/8/index.html">Week 8</a> HTML, CSS, JavaScript</li>
+  <li data-marker="*"><a href="../../weeks/9/index.html">Week 9</a> Flask</li>
+  <li data-marker="*"><a href="../../weeks/10/index.html">Week 10</a> Ethics</li>
+</ul>
+<ul>
+  <li data-marker="*" class="small"><a href="../../weeks/security/index.html">Security</a></li>
+  <li data-marker="*" class="small"><a href="../../weeks/ai/index.html">Artificial Intelligence</a></li>
+</ul>
+<ul>
+  <li data-marker="*"><a href="../../project/index.html">Final Project</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="../../honesty/index.html">Academic Honesty</a></li>
+  <li data-marker="*"><a href="../../certificate/index.html">CS50 Certificate</a></li>
+  <li data-marker="*"><a href="../../faqs/index.html">FAQs</a></li>
+  <li data-marker="*"><a href="https://cs50.me/cs50x">Gradebook</a></li>
+  <li data-marker="*"><a href="../../staff/index.html">Staff</a></li>
+  <li data-marker="*"><a href="../../syllabus/index.html">Syllabus</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="https://cs50.harvard.edu/x/ed">Ed Discussion</a> for Q&amp;A</li>
+  <li data-marker="*" class="small"><a href="https://us.edstem.org/quickstart/ed-discussion.pdf">Quick Start Guide</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://cs50.edx.org/">edX</a></li>
+  <li data-marker="*"><a href="https://www.youtube.com/playlist?list=PLhQjrBD2T382_R182iC2gNZI9HzWFMC_8">YouTube</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://ide.cs50.io/">CS50 IDE</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/css/">CSS Tutorial</a></li>
+  <li data-marker="*"><a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/">Flask Quickstart</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/html/">HTML Tutorial</a></li>
+  <li data-marker="*"><a href="https://jinja.palletsprojects.com/en/2.11.x/templates/">Jinja Template Designer Documentation</a></li>
+  <li data-marker="*"><a href="https://man.cs50.io/">Manual Pages</a></li>
+  <li data-marker="*"><a href="https://docs.python.org/3.7/search.html">Python Documentation</a></li>
+  <li data-marker="*"><a href="https://scratch.mit.edu/">Scratch</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/sql/">SQL Tutorial</a></li>
+  <li data-marker="*"><a href="https://cs50.readthedocs.io/style/c/">Style Guide</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://cs50.noticeable.io/">Changelog</a></li>
+  <li data-marker="*"><a href="https://cs50.statuspage.io/">Status Page</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="../../communities/index.html">Communities</a></li>
+  <li data-marker="*" class="small"><a href="https://discord.gg/cs50">Discord</a></li>
+  <li data-marker="*" class="small"><a href="https://www.facebook.com/groups/cs50/">Facebook Group</a></li>
+  <li data-marker="*" class="small"><a href="https://www.facebook.com/cs50/">Facebook Page</a></li>
+  <li data-marker="*" class="small"><a href="https://github.com/cs50">GitHub</a></li>
+  <li data-marker="*" class="small"><a href="https://gitter.im/cs50/x">Gitter</a></li>
+  <li data-marker="*" class="small"><a href="https://instagram.com/cs50">Instagram</a></li>
+  <li data-marker="*" class="small"><a href="https://www.linkedin.com/groups/7437240/">LinkedIn Group</a></li>
+  <li data-marker="*" class="small"><a href="https://www.linkedin.com/school/CS50/">LinkedIn Page</a></li>
+  <li data-marker="*" class="small"><a href="https://www.quora.com/topic/CS50">Quora</a></li>
+  <li data-marker="*" class="small"><a href="https://www.reddit.com/r/cs50/">Reddit</a></li>
+  <li data-marker="*" class="small"><a href="https://cs50.edx.org/slack">Slack</a></li>
+  <li data-marker="*" class="small"><a href="https://www.snapchat.com/add/cs50">Snapchat</a></li>
+  <li data-marker="*" class="small"><a href="https://soundcloud.com/cs50">SoundCloud</a></li>
+  <li data-marker="*" class="small"><a href="https://twitter.com/cs50">Twitter</a></li>
+  <li data-marker="*" class="small"><a href="http://www.youtube.com/subscription_center?add_user=cs50tv">YouTube</a></li>
+</ul>
+
+<hr>
+
+<p><a href="https://cs50.harvardshop.com/"><img src="https://i.imgur.com/GGMdcKt.png" alt="Harvard Shop"></a></p>
+
+<hr>
+
+<p><a href="../../license/index.html" class="small"><i class="fab fa-creative-commons mr-1"></i>License</a></p></nav>
+
+                    <footer></footer>
+
+                </aside>
+
+                <main class="col-md">
+
+                    <h1 class="no_toc" id="lecture-8">Lecture 8</h1>
+
+<ul id="markdown-toc">
+  <li><a href="index.html#the-internet" id="markdown-toc-the-internet">The internet</a></li>
+  <li><a href="index.html#web-development" id="markdown-toc-web-development">Web development</a></li>
+  <li><a href="index.html#html" id="markdown-toc-html">HTML</a></li>
+  <li><a href="index.html#css" id="markdown-toc-css">CSS</a></li>
+  <li><a href="index.html#javascript" id="markdown-toc-javascript">JavaScript</a></li>
+</ul>
+
+<h2 id="the-internet">The internet</h2>
+
+<ul>
+  <li data-marker="*">Today we’ll take a look at web programming, using a set of new languages and technologies to create graphical and visual applications for the internet.</li>
+  <li data-marker="*">The <strong>internet</strong> is the network of networks of computers communicating with one another, which provides the infrastructure to send zeros and ones. On top of that foundation, we can build applications that send and receive data.</li>
+  <li data-marker="*"><strong>Routers</strong> are specialized computers, with CPUs and memory, whose purpose is to relay data across cables or wireless technologies, between other devices on the internet.</li>
+  <li data-marker="*"><strong>Protocols</strong> are a set of standard conventions, like a physical handshake, that the world has agreed upon for computers to communicate with. For example, there are certain patterns of zeros and ones, or messages, a computer has to use to tell a router where it wants to send data.</li>
+  <li data-marker="*"><strong>TCP/IP</strong> are two protocols for sending data between two computers. In the real world, we might write an address on an envelope in order to send a letter to someone, along with our own address for a letter in return. The digital version of an envelope, or a message with from and to addresses, is called a <strong>packet</strong>.</li>
+  <li data-marker="*"><strong>IP</strong> stands for internet protocol, a protocol supported by modern computers’ software, which includes a standard way for computers to address each other. <strong>IP addresses</strong> are unique addresses for computers connected to the internet, such that a packet sent from one computer to another will be passed along routers until it reaches its destination.
+    <ul>
+      <li data-marker="*">Routers have, in their memory, a table mapping IP addresses to cables each connected to other routers, so they know where to forward packets to. It turns out that there are protocols for routers to communicate and figure out these paths as well.</li>
+    </ul>
+  </li>
+  <li data-marker="*"><strong>DNS</strong>, domain name system, is another technology that translates domain names like cs50.harvard.edu to IP addresses. DNS is generally provided as a service by the nearest internet service provider, or ISP.</li>
+  <li data-marker="*">Finally, <strong>TCP</strong>, transmission control protocol, is one final protocol that allows a single server, at the same IP address, to provide multiple services through the use of a <strong>port number</strong>, a small integer added to the IP address. For example, HTTP, HTTPS, email, and even Zoom has their own port numbers for those programs to use to communicate over the network.</li>
+  <li data-marker="*">TCP also provides a mechanism for resending packets if a packet is somehow lost and not received. It turns out that, on the internet, there are multiple paths for a packet to be sent since there are lots of routers that are interconnected. So a web browser, making a request for a cat, might see its packet sent through one path of routers, and the responding server might see its response packets sent through another.
+    <ul>
+      <li data-marker="*">A large amount of data, such as a picture, will be broken into smaller chunks so that the packets are all of a similar size. This way, routers along the internet can send everyone’s packets along more fairly and easily. <strong>Net neutrality</strong> refers to the idea that these public routers treat packets equally, as opposed to allowing packets from certain companies or of certain types to be prioritized.</li>
+      <li data-marker="*">When there are multiple packets for a single response, TCP will also specify that each of them be labeled, as with “1 of 2” or “2 of 2”, so they can be combined or re-sent as needed.</li>
+    </ul>
+  </li>
+  <li data-marker="*">With all of these technologies and protocols, we’re able to send data from one computer to another, and can abstract the internet away, to build applications on top.</li>
+</ul>
+
+<h2 id="web-development">Web development</h2>
+
+<ul>
+  <li data-marker="*">The web is one application running on top of the internet, allowing us to get web pages. Other applications like Zoom provide video conferencing, and email is another application as well.</li>
+  <li data-marker="*"><strong>HTTP</strong>, or Hypertext Transfer Protocol, governs how web browsers and web servers communicate within TCP/IP packets.</li>
+  <li data-marker="*">Two commands supported by HTTP include <strong>GET</strong> and <strong>POST</strong>. GET allows a browser to ask for a page or file, and POST allows a browser to send data <em>to</em> the server.</li>
+  <li data-marker="*">A <strong>URL</strong>, or web address, might look like <code class="language-plaintext highlighter-rouge">https://www.example.com/</code>.
+    <ul>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">https</code> is the protocol being used, and in this case HTTPS is the secure version of HTTP, ensuring that the contents of packets between the browser and server are encrypted.</li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">example.com</code> is the domain name, where <code class="language-plaintext highlighter-rouge">.com</code> is the top-level domain, conventionally indicating the “type” of website, like a commercial website for <code class="language-plaintext highlighter-rouge">.com</code>, or an organization for <code class="language-plaintext highlighter-rouge">.org</code>. Now there are hundreds of top-level domains, and they vary in restrictions on who can use them, but many of them allow anyone to register for a domain.</li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">www</code> is the hostname that, by convention, indicates to us that this is a “world wide web” service. It’s not required, so today many websites aren’t configured to include it.</li>
+      <li data-marker="*">Finally, the <code class="language-plaintext highlighter-rouge">/</code> at the end is a request for the default file, like <code class="language-plaintext highlighter-rouge">index.html</code>, that the web server will respond with.</li>
+    </ul>
+  </li>
+  <li data-marker="*">An HTTP request will start with:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET / HTTP/1.1
+Host: www.example.com
+...
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">The <code class="language-plaintext highlighter-rouge">GET</code> indicates that the request is for some file, and <code class="language-plaintext highlighter-rouge">/</code> indicates the default file. A request could be more specific, and start with <code class="language-plaintext highlighter-rouge">GET /index.html</code>.</li>
+      <li data-marker="*">There are different versions of the HTTP protocol, so <code class="language-plaintext highlighter-rouge">HTTP/1.1</code> indicates that the browser is using version 1.1.</li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">Host: www.example.com</code> indicates that the request is for <code class="language-plaintext highlighter-rouge">www.example.com</code>, since the same web server might be hosting multiple websites and domains.</li>
+    </ul>
+  </li>
+  <li data-marker="*">A response will start with:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
+Content-Type: text/html
+...
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">The web server will respond with the version of HTTP, followed by a status code, which is <code class="language-plaintext highlighter-rouge">200 OK</code> here, indicating that the request was valid.</li>
+      <li data-marker="*">Then, the web server indicates the type of content in its response, which might be text, image, or other format.</li>
+      <li data-marker="*">Finally, the rest of the packet or packets will include the content.</li>
+    </ul>
+  </li>
+  <li data-marker="*">We can see a redirect in a browser by typing in a URL, like <code class="language-plaintext highlighter-rouge">http://www.harvard.edu</code>, and looking at the address bar after the page has loaded, which will show <code class="language-plaintext highlighter-rouge">https://www.harvard.edu</code>. Browsers include developer tools, which allow us to see what’s happening. In Chrome’s menu, for example, we can go to View &gt; Developer &gt; Developer Tools, which will open a panel on the screen. In the Network tab, we can see that there were many requests, for text, images, and other pieces of data that were downloaded separately for the single web pages.</li>
+  <li data-marker="*">The first request actually returned a status code of <code class="language-plaintext highlighter-rouge">301 Moved Permanently</code>, redirecting our browser from <code class="language-plaintext highlighter-rouge">http://...</code> to <code class="language-plaintext highlighter-rouge">https://...</code>:<br>
+<img src="301.png" alt="Request for www.harvard.edu with 301 Moved Permanently"></li>
+  <li data-marker="*">The request and response also includes a number of headers, or additional data:<br>
+<img src="request_headers.png" alt="Request headers with GET, Host, Connection, and others">
+<img src="response_headers.png" alt="Response headers with HTTP/1.1, Content-Type, and others">
+    <ul>
+      <li data-marker="*">Note that the response includes a <code class="language-plaintext highlighter-rouge">Location:</code> header for the browser to redirect us to.</li>
+    </ul>
+  </li>
+  <li data-marker="*">Other HTTP status codes include:
+    <ul>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">200 OK</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">301 Moved Permanently</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">304 Not Modified</code>
+        <ul>
+          <li data-marker="*">This allows the browser to use its cache, or local copy, of some resource like an image, instead of having the server send it back again.</li>
+        </ul>
+      </li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">307 Temporary Redirect</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">401 Unauthorized</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">403 Forbidden</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">404 Not Found</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">418 I'm a Teapot</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">500 Internal Server Error</code>
+        <ul>
+          <li data-marker="*">Buggy code on a server might result in this status code.</li>
+        </ul>
+      </li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">503 Service Unavailable</code></li>
+      <li data-marker="*">…</li>
+    </ul>
+  </li>
+  <li data-marker="*">We can use a command-line tool, <code class="language-plaintext highlighter-rouge">curl</code>, to connect to a URL. We can run:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -I http://safetyschool.org
+HTTP/1.1 301 Moved Permanently
+Server: Sun-ONE-Web-Server/6.1
+Date: Wed, 26 Oct 2020 18:17:05 GMT
+Content-length: 122
+Content-type: text/html
+Location: http://www.yale.edu
+Connection: close
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">It turns out that <code class="language-plaintext highlighter-rouge">safetyschool.org</code> redirects to <code class="language-plaintext highlighter-rouge">yale.edu</code>!</li>
+      <li data-marker="*">And <code class="language-plaintext highlighter-rouge">harvardsucks.org</code> is a website with another prank on Harvard!</li>
+    </ul>
+  </li>
+  <li data-marker="*">Finally, an HTTP request can include inputs to servers, like the string <code class="language-plaintext highlighter-rouge">q=cats</code> after the <code class="language-plaintext highlighter-rouge">?</code>:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /search?q=cats HTTP/1.1
+Host: www.google.com
+...
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">This uses a standard format for passing input, like command-line arguments, to web servers.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="html">HTML</h2>
+
+<ul>
+  <li data-marker="*">Now that we can use the internet and HTTP to send and receive messages, it’s time to see what’s in the content for web pages. <strong>HTML</strong>, Hypertext Markup Language, is not a programming language, but rather used to format web pages and tell the browser how to display pages, using tags and attributes.</li>
+  <li data-marker="*">A simple page in HTML might look like this:
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>
+            hello, title
+        <span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        hello, body
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">The first line is a declaration that the page follows the HTML standard.</li>
+      <li data-marker="*">Next is a <strong>tag</strong>, a word in brackets like <code class="language-plaintext highlighter-rouge">&lt;html&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;/html&gt;</code>. The first is a start or open tag, and the second is a close tag. In this case, the tags indicate the start and end of the HTML page. The start tag here has an <strong>attribute</strong> as well, <code class="language-plaintext highlighter-rouge">lang="en"</code> which specifies that the language of the page will be in English, to help the browser translate the page if needed.</li>
+      <li data-marker="*">Within the <code class="language-plaintext highlighter-rouge">&lt;html&gt;</code> tag are two more tags, <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code>, which are both like children nodes in a tree. And within <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> is the <code class="language-plaintext highlighter-rouge">&lt;title&gt;</code> tag, the contents of which we see in a tab or window’s title in a browser. Within <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> is the contents of the page itself, which we’ll see in the main view of a browser as well.</li>
+    </ul>
+  </li>
+  <li data-marker="*">The page above will be loaded into the browser as a data structure, like this tree:<br>
+<img src="html_structure.png" alt="HTML above mapped to a tree, with document containing html, containing head, title, &quot;hello, title,&quot; as well as body, &quot;hello, body&quot;">
+    <ul>
+      <li data-marker="*">Note that there is a hierarchy mapping each tag and its children. Rectangular nodes are tags, while oval ones are text.</li>
+    </ul>
+  </li>
+  <li data-marker="*">We can save the code above as an HTML on our local computers, which would work in a browser, but just for us. With the CS50 IDE, we can create an HTML file, and actually make it available over the internet.</li>
+  <li data-marker="*">We’ll create <code class="language-plaintext highlighter-rouge">hello.html</code> with the code above, and start a web server installed on the CS50 IDE with <code class="language-plaintext highlighter-rouge">http-server</code>, a program that will listen for HTTP requests and respond with pages or other content.</li>
+  <li data-marker="*">The CS50 IDE itself is already running on some web server, using ports 80 and 443, so our own web server within the IDE will have to use a different port, <code class="language-plaintext highlighter-rouge">8080</code> by default. We’ll see a long URL, ending in <code class="language-plaintext highlighter-rouge">cs50.xyz</code>, and if we open that URL we’ll see a listing of files, including <code class="language-plaintext highlighter-rouge">hello.html</code>.</li>
+  <li data-marker="*">Back in the terminal of our IDE, we’ll see new rows of text printed by our web server, a log of requests that it’s getting.</li>
+  <li data-marker="*">We’ll take a look at <a href="https://cdn.cs50.net/2020/fall/lectures/8/src8/paragraphs0.html?highlight"><code class="language-plaintext highlighter-rouge">paragraphs.html</code></a>.
+    <ul>
+      <li data-marker="*">With the <code class="language-plaintext highlighter-rouge">&lt;p&gt;</code> tag, we can indicate that each section of text should be a paragraph.</li>
+      <li data-marker="*">After we save this file, we’ll need to refresh the index in the web browser, and then open <code class="language-plaintext highlighter-rouge">paragraphs.html</code>.</li>
+    </ul>
+  </li>
+  <li data-marker="*">We can add headings with tags that start with <code class="language-plaintext highlighter-rouge">h</code>, and have levels of <code class="language-plaintext highlighter-rouge">1</code> through <code class="language-plaintext highlighter-rouge">6</code> in <a href="https://cdn.cs50.net/2020/fall/lectures/8/src8/headings.html?highlight"><code class="language-plaintext highlighter-rouge">headings.html</code></a>.</li>
+  <li data-marker="*">We take a look at <a href="https://cdn.cs50.net/2020/fall/lectures/8/src8/list.html?highlight"><code class="language-plaintext highlighter-rouge">list.html</code></a>, <a href="https://cdn.cs50.net/2020/fall/lectures/8/src8/table.html?highlight"><code class="language-plaintext highlighter-rouge">table.html</code></a>, and <a href="https://cdn.cs50.net/2020/fall/lectures/8/src8/image.html?highlight"><code class="language-plaintext highlighter-rouge">image.html</code></a> as well, to add lists, tables, and images.
+    <ul>
+      <li data-marker="*">We can use the <code class="language-plaintext highlighter-rouge">&lt;ul&gt;</code> tag to create an unordered list, like bullet points, and <code class="language-plaintext highlighter-rouge">&lt;ol&gt;</code> for an ordered list with numbers.</li>
+      <li data-marker="*">Tables start with a <code class="language-plaintext highlighter-rouge">&lt;table&gt;</code> tag and have <code class="language-plaintext highlighter-rouge">&lt;tr&gt;</code> tags as rows, and <code class="language-plaintext highlighter-rouge">&lt;td&gt;</code> tags for individual cells.</li>
+      <li data-marker="*">For <code class="language-plaintext highlighter-rouge">image.html</code>, we can upload an image to the CS50 IDE, to include it in our page, as well as use the <code class="language-plaintext highlighter-rouge">alt</code> attribute to add alternative text for accessibility.</li>
+    </ul>
+  </li>
+  <li data-marker="*">By looking for documentation or other online resources, we can learn the tags that exist in HTML, and how to use them.</li>
+  <li data-marker="*">We can create links in <a href="https://cdn.cs50.net/2020/fall/lectures/8/src8/link0.html?highlight"><code class="language-plaintext highlighter-rouge">link.html</code></a> with the <code class="language-plaintext highlighter-rouge">&lt;a&gt;</code>, or anchor, tag. The <code class="language-plaintext highlighter-rouge">href</code> attribute is for a hypertext reference, or simply where the link should take us, and within the tag is the text that should appear as the link.
+    <ul>
+      <li data-marker="*">We could set the <code class="language-plaintext highlighter-rouge">href</code> to <code class="language-plaintext highlighter-rouge">https://www.yale.edu</code>, but leave <code class="language-plaintext highlighter-rouge">Harvard</code> within the tag, which might prank users or even trick them into visiting a fake version of some website. <strong>Phishing</strong> is an act of tricking users, a form of social engineering that includes misleading links.</li>
+    </ul>
+  </li>
+  <li data-marker="*">In <code class="language-plaintext highlighter-rouge">search.html</code>, we can create a more complex form that takes user input and sends it to Google’s search engine:
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>search<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"https://www.google.com/search"</span> <span class="na">method=</span><span class="s">"get"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"q"</span> <span class="na">type=</span><span class="s">"search"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Search"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">First, we have a <code class="language-plaintext highlighter-rouge">&lt;form&gt;</code> tag that has an <code class="language-plaintext highlighter-rouge">action</code> of Google’s search URL, with a method of GET.</li>
+      <li data-marker="*">Inside the form, we have one <code class="language-plaintext highlighter-rouge">&lt;input&gt;</code>, with the name <code class="language-plaintext highlighter-rouge">q</code>, and another <code class="language-plaintext highlighter-rouge">&lt;input&gt;</code> with the type of <code class="language-plaintext highlighter-rouge">submit</code>. When the second input, a button, is clicked, the form will append the text in the first input to the action URL, ending it with <code class="language-plaintext highlighter-rouge">search?q=...</code>.</li>
+      <li data-marker="*">So when we open <code class="language-plaintext highlighter-rouge">search.html</code> in our browser, we can use the form to search via Google.</li>
+      <li data-marker="*">A form can also use a POST method, which doesn’t include the form’s data in the URL, but elsewhere in the request.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="css">CSS</h2>
+
+<ul>
+  <li data-marker="*">We can improve the aesthetics of our pages with <strong>CSS</strong>, Cascading Style Sheets, another language that tells our browser how to display tags on a page. CSS uses <strong>properties</strong>, or key-value pairs, like <code class="language-plaintext highlighter-rouge">color: red;</code> to tags with selectors.</li>
+  <li data-marker="*">In HTML, we have some options for including CSS. We can add a <code class="language-plaintext highlighter-rouge">&lt;style&gt;</code> tag within the <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> tag, with styles direcly inside, or we can link to a <code class="language-plaintext highlighter-rouge">styles.css</code> file with a <code class="language-plaintext highlighter-rouge">&lt;link&gt;</code> tag within the <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> tag.</li>
+  <li data-marker="*">We can also include CSS directly in each tag:
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>css<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;header</span> <span class="na">style=</span><span class="s">"font-size: large; text-align: center;"</span><span class="nt">&gt;</span>
+            John Harvard
+        <span class="nt">&lt;/header&gt;</span>
+        <span class="nt">&lt;main</span> <span class="na">style=</span><span class="s">"font-size: medium; text-align: center;"</span><span class="nt">&gt;</span>
+            Welcome to my home page!
+        <span class="nt">&lt;/main&gt;</span>
+        <span class="nt">&lt;footer</span> <span class="na">style=</span><span class="s">"font-size: small; text-align: center;"</span><span class="nt">&gt;</span>
+            Copyright <span class="ni">&amp;#169;</span> John Harvard
+        <span class="nt">&lt;/footer&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">&lt;header&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;main&gt;</code>, and <code class="language-plaintext highlighter-rouge">&lt;footer&gt;</code> tags are like <code class="language-plaintext highlighter-rouge">&lt;p&gt;</code> tags, indicating the sections that the text on our page are in.</li>
+      <li data-marker="*">For each tag, we can add a <code class="language-plaintext highlighter-rouge">style</code> attribute, with the value being a list of CSS key-value properties, separated by semicolons. Here, we’re setting the <code class="language-plaintext highlighter-rouge">font-size</code> for each tag, and aligning the text in the center.</li>
+      <li data-marker="*">Note that we can use <code class="language-plaintext highlighter-rouge">&amp;#169;</code>, an <strong>HTML entity</strong>, as a code to include some symbol in our web page.</li>
+    </ul>
+  </li>
+  <li data-marker="*">We can align all the text at once:
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>css<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body</span> <span class="na">style=</span><span class="s">"text-align: center;"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;header</span> <span class="na">style=</span><span class="s">"font-size: large;"</span><span class="nt">&gt;</span>
+            John Harvard
+        <span class="nt">&lt;/header&gt;</span>
+        <span class="nt">&lt;main</span> <span class="na">style=</span><span class="s">"font-size: medium;"</span><span class="nt">&gt;</span>
+            Welcome to my home page!
+        <span class="nt">&lt;/main&gt;</span>
+        <span class="nt">&lt;footer</span> <span class="na">style=</span><span class="s">"font-size: small;"</span><span class="nt">&gt;</span>
+            Copyright <span class="ni">&amp;#169;</span> John Harvard
+        <span class="nt">&lt;/footer&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">Here, the style applied to the <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> tag cascades, or applies, to its children, so all the sections inside will have centered text as well.</li>
+    </ul>
+  </li>
+  <li data-marker="*">To factor out, or separate our CSS from HTML, we can include styles in the <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> tag:
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;style&gt;</span>
+
+            <span class="nt">header</span>
+            <span class="p">{</span>
+                <span class="nl">font-size</span><span class="p">:</span> <span class="nb">large</span><span class="p">;</span>
+                <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="nt">main</span>
+            <span class="p">{</span>
+                <span class="nl">font-size</span><span class="p">:</span> <span class="nb">medium</span><span class="p">;</span>
+                <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="nt">footer</span>
+            <span class="p">{</span>
+                <span class="nl">font-size</span><span class="p">:</span> <span class="n">small</span><span class="p">;</span>
+                <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+            <span class="p">}</span>
+
+        <span class="nt">&lt;/style&gt;</span>
+        <span class="nt">&lt;title&gt;</span>css<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;header&gt;</span>
+            John Harvard
+        <span class="nt">&lt;/header&gt;</span>
+        <span class="nt">&lt;main&gt;</span>
+            Welcome to my home page!
+        <span class="nt">&lt;/main&gt;</span>
+        <span class="nt">&lt;footer&gt;</span>
+            Copyright <span class="ni">&amp;#169;</span> John Harvard
+        <span class="nt">&lt;/footer&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">For each <em>type</em> of tag, we’ve used a CSS <strong>type selector</strong> to style it.</li>
+    </ul>
+  </li>
+  <li data-marker="*">We can also use a more specific <strong>class selector</strong>:
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;style&gt;</span>
+
+            <span class="nc">.centered</span>
+            <span class="p">{</span>
+                <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="nc">.large</span>
+            <span class="p">{</span>
+                <span class="nl">font-size</span><span class="p">:</span> <span class="nb">large</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="nc">.medium</span>
+            <span class="p">{</span>
+                <span class="nl">font-size</span><span class="p">:</span> <span class="nb">medium</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="nc">.small</span>
+            <span class="p">{</span>
+                <span class="nl">font-size</span><span class="p">:</span> <span class="n">small</span><span class="p">;</span>
+            <span class="p">}</span>
+
+        <span class="nt">&lt;/style&gt;</span>
+        <span class="nt">&lt;title&gt;</span>css<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"centered large"</span><span class="nt">&gt;</span>
+            John Harvard
+        <span class="nt">&lt;/header&gt;</span>
+        <span class="nt">&lt;main</span> <span class="na">class=</span><span class="s">"centered medium"</span><span class="nt">&gt;</span>
+            Welcome to my home page!
+        <span class="nt">&lt;/main&gt;</span>
+        <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"centered small"</span><span class="nt">&gt;</span>
+            Copyright <span class="ni">&amp;#169;</span> John Harvard
+        <span class="nt">&lt;/footer&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">We can define our own CSS class with a <code class="language-plaintext highlighter-rouge">.</code> followed by a keyword we choose, so here we’ve created <code class="language-plaintext highlighter-rouge">.large</code>, <code class="language-plaintext highlighter-rouge">.medium</code>, and <code class="language-plaintext highlighter-rouge">.small</code>, each with some property for the font size.</li>
+      <li data-marker="*">Then, on any number of tags in our page’s HTML, we can add one or more of these classes with <code class="language-plaintext highlighter-rouge">class="centered large"</code>, reusing these styles.</li>
+      <li data-marker="*">We can remove the redundancy for <code class="language-plaintext highlighter-rouge">centered</code>, and apply it to just the <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> tag as well.</li>
+    </ul>
+  </li>
+  <li data-marker="*">Finally, we can take all of the CSS for the properties and move them to another file with the <code class="language-plaintext highlighter-rouge">&lt;link&gt;</code> tag:
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"styles.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;title&gt;</span>css<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"centered large"</span><span class="nt">&gt;</span>
+            John Harvard
+        <span class="nt">&lt;/header&gt;</span>
+        <span class="nt">&lt;main</span> <span class="na">class=</span><span class="s">"centered medium"</span><span class="nt">&gt;</span>
+            Welcome to my home page!
+        <span class="nt">&lt;/main&gt;</span>
+        <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"centered small"</span><span class="nt">&gt;</span>
+            Copyright <span class="ni">&amp;#169;</span> John Harvard
+        <span class="nt">&lt;/footer&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">Now, one person can work on the HTML and another can work on the CSS, more independently.</li>
+    </ul>
+  </li>
+  <li data-marker="*">With CSS, we’ll also rely on references and other resources to look up how to use properties as we need them.</li>
+  <li data-marker="*">We can use <strong>pseudoselectors</strong>, which selects certain states:
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;style&gt;</span>
+
+            <span class="nf">#harvard</span>
+            <span class="p">{</span>
+                <span class="nl">color</span><span class="p">:</span> <span class="m">#ff0000</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="nf">#yale</span>
+            <span class="p">{</span>
+                <span class="nl">color</span><span class="p">:</span> <span class="m">#0000ff</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="nt">a</span>
+            <span class="p">{</span>
+                <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="nt">a</span><span class="nd">:hover</span>
+            <span class="p">{</span>
+                <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">underline</span><span class="p">;</span>
+            <span class="p">}</span>
+
+        <span class="nt">&lt;/style&gt;</span>
+        <span class="nt">&lt;title&gt;</span>link<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        Visit <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.harvard.edu/"</span> <span class="na">id=</span><span class="s">"harvard"</span> <span class="nt">&gt;</span>Harvard<span class="nt">&lt;/a&gt;</span> or <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.yale.edu/"</span> <span class="na">id=</span><span class="s">"yale"</span> <span class="nt">&gt;</span>Yale<span class="nt">&lt;/a&gt;</span>.
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">Here, we’re using <code class="language-plaintext highlighter-rouge">a:hover</code> to set properties on <code class="language-plaintext highlighter-rouge">&lt;a&gt;</code> tags when the user hovers over them.</li>
+      <li data-marker="*">We also have an <code class="language-plaintext highlighter-rouge">id</code> attribute on each <code class="language-plaintext highlighter-rouge">&lt;a&gt;</code> tag, to set different colors on each with <strong>ID selectors</strong> that start with a <code class="language-plaintext highlighter-rouge">#</code> in CSS.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="javascript">JavaScript</h2>
+
+<ul>
+  <li data-marker="*">To write code that can run in users’ browsers, or on the client, we’ll use a new language, <strong>JavaScript</strong>.</li>
+  <li data-marker="*">The syntax of JavaScript is similar to that of C and Python for basic constructs:
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</code></pre></div>    </div>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">counter</span> <span class="o">=</span> <span class="nx">counter</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nx">counter</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nx">counter</span><span class="o">++</span><span class="p">;</span>
+</code></pre></div>    </div>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="nx">y</span><span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="nx">y</span><span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="nx">y</span><span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="nx">y</span><span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">Notice that JavaScript is loosely typed as well, with <code class="language-plaintext highlighter-rouge">let</code> being the keyword to declare variables of any type.</li>
+    </ul>
+  </li>
+  <li data-marker="*">With JavaScript, we can change the HTML in the browser in real-time. We can use <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> tags to include our code directly, or from a <code class="language-plaintext highlighter-rouge">.js</code> file.</li>
+  <li data-marker="*">We’ll create another form:
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;script&gt;</span>
+
+            <span class="kd">function</span> <span class="nx">greet</span><span class="p">()</span>
+            <span class="p">{</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello, body</span><span class="dl">'</span><span class="p">);</span>
+            <span class="p">}</span>
+
+        <span class="nt">&lt;/script&gt;</span>
+        <span class="nt">&lt;title&gt;</span>hello<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;form</span> <span class="na">onsubmit=</span><span class="s">"greet(); return false;"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">Here, we won’t add an <code class="language-plaintext highlighter-rouge">action</code> to our form, since this will stay on the same page. Instead, we’ll have an <code class="language-plaintext highlighter-rouge">onsubmit</code> attribute that will call a function we’ve defined in JavaScript, and use <code class="language-plaintext highlighter-rouge">return false;</code> to prevent the form from actually being submitted anywhere.</li>
+      <li data-marker="*">Now, if we load that page, we’ll see <code class="language-plaintext highlighter-rouge">hello, body</code> being shown when we submit the form.</li>
+    </ul>
+  </li>
+  <li data-marker="*">Since our input tag, or <strong>element</strong>, has an ID of <code class="language-plaintext highlighter-rouge">name</code>, we can use it in our script:
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+
+    <span class="kd">function</span> <span class="nx">greet</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#name</span><span class="dl">'</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello, </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">name</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre></div>    </div>
+    <ul>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">document</code> is a global variable that comes with JavaScript in the browser, and <code class="language-plaintext highlighter-rouge">querySelector</code> is another function we can use to select a node in the <strong>DOM</strong>, Document Object Model, or the tree structure of the HTML page. After we select the element with the ID <code class="language-plaintext highlighter-rouge">name</code>, we get the <code class="language-plaintext highlighter-rouge">value</code> inside the input, and add it to our alert.</li>
+      <li data-marker="*">Note that JavaScript uses single quotes for strings by convention, though double quotes can be used as well as long as they match for each string.</li>
+    </ul>
+  </li>
+  <li data-marker="*">We can add more attributes to our form, to change placeholder text, change the button’s text, disable autocomplete, or autofocus the input:
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">autocomplete=</span><span class="s">"off"</span> <span class="na">autofocus</span> <span class="na">id=</span><span class="s">"name"</span> <span class="na">placeholder=</span><span class="s">"Name"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li data-marker="*">We can also listen to <strong>events</strong> in JavaScript, which occur when something happens on the page. For example, we can listen to the <code class="language-plaintext highlighter-rouge">submit</code> event on our form, and call the <code class="language-plaintext highlighter-rouge">greet</code> function:
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+
+    <span class="kd">function</span> <span class="nx">greet</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#name</span><span class="dl">'</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello, </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">name</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">listen</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">form</span><span class="dl">'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">submit</span><span class="dl">'</span><span class="p">,</span> <span class="nx">greet</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">DOMContentLoaded</span><span class="dl">'</span><span class="p">,</span> <span class="nx">listen</span><span class="p">);</span>
+
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">Here, in <code class="language-plaintext highlighter-rouge">listen</code> we pass the function <code class="language-plaintext highlighter-rouge">greet</code> by name, and not call it yet. The event listener will call it for us when the event happens.</li>
+      <li data-marker="*">We need to first listen to the <code class="language-plaintext highlighter-rouge">DOMContentLoaded</code> event, since the browser reads our HTML file from top to bottom, and <code class="language-plaintext highlighter-rouge">form</code> wouldn’t exist until it’s read the entire file and loaded the content. So by listening to this event, and calling our <code class="language-plaintext highlighter-rouge">listen</code> function, we know <code class="language-plaintext highlighter-rouge">form</code> will exist.</li>
+    </ul>
+  </li>
+  <li data-marker="*">We can also use <strong>anonymous functions</strong> in JavaScript:
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+
+    <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">DOMContentLoaded</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">form</span><span class="dl">'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">submit</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#name</span><span class="dl">'</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello, </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">name</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">We can pass in a lambda function with the <code class="language-plaintext highlighter-rouge">function()</code> syntax, so here we’ve passed in both listeneres directly to <code class="language-plaintext highlighter-rouge">addEventListener</code>.</li>
+    </ul>
+  </li>
+  <li data-marker="*">In addition to <code class="language-plaintext highlighter-rouge">submit</code>, there are many other events we can listen to:
+    <ul>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">blur</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">change</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">click</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">drag</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">focus</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">keyup</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">load</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">mousedown</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">mouseover</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">mouseup</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">submit</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">touchmove</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">unload</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">...</code></li>
+    </ul>
+  </li>
+  <li data-marker="*">For example, we can listen to the <code class="language-plaintext highlighter-rouge">keyup</code> event, and change the DOM as soon as we release a key:
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;script&gt;</span>
+
+            <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">DOMContentLoaded</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">input</span><span class="dl">'</span><span class="p">);</span>
+                <span class="nx">input</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">keyup</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#name</span><span class="dl">'</span><span class="p">);</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">name</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`hello, </span><span class="p">${</span><span class="nx">input</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="k">else</span> <span class="p">{</span>
+                        <span class="nx">name</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">hello, whoever you are</span><span class="dl">'</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">});</span>
+            <span class="p">});</span>
+
+        <span class="nt">&lt;/script&gt;</span>
+        <span class="nt">&lt;title&gt;</span>hello<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;form&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">autocomplete=</span><span class="s">"off"</span> <span class="na">autofocus</span> <span class="na">placeholder=</span><span class="s">"Name"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/form&gt;</span>
+        <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"name"</span><span class="nt">&gt;&lt;/p&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">Notice that we can substitute strings in JavaScript as well, with the <code class="language-plaintext highlighter-rouge">${input.value}</code> inside a string surrounded by backticks, <code class="language-plaintext highlighter-rouge">`</code>.</li>
+    </ul>
+  </li>
+  <li data-marker="*">We can programmatically change style, too:
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>background<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"red"</span><span class="nt">&gt;</span>R<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"green"</span><span class="nt">&gt;</span>G<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"blue"</span><span class="nt">&gt;</span>B<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;script&gt;</span>
+
+            <span class="kd">let</span> <span class="nx">body</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">body</span><span class="dl">'</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#red</span><span class="dl">'</span><span class="p">).</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">red</span><span class="dl">'</span><span class="p">;</span>
+            <span class="p">};</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#green</span><span class="dl">'</span><span class="p">).</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">green</span><span class="dl">'</span><span class="p">;</span>
+            <span class="p">};</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#blue</span><span class="dl">'</span><span class="p">).</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">blue</span><span class="dl">'</span><span class="p">;</span>
+            <span class="p">};</span>
+
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">After selecting an element, we can use the <code class="language-plaintext highlighter-rouge">style</code> property to set values for CSS properties as well. Here, we have three buttons, each of which has an <code class="language-plaintext highlighter-rouge">onclick</code> listener that changes the background color of the <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> element.</li>
+      <li data-marker="*">Notice here that our <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> tag is at the end of our HTML file, so we don’t need to listen to the <code class="language-plaintext highlighter-rouge">DOMContentLoaded</code> event, since the rest of the DOM will already have been read by the browser.</li>
+    </ul>
+  </li>
+  <li data-marker="*">In a browser’s developer tools, too, we can see the DOM and any styles applied via the <code class="language-plaintext highlighter-rouge">Elements</code> tab:<br>
+<img src="elements.png" alt="background.html with Elements tab showing DOM">
+    <ul>
+      <li data-marker="*">We can even use this to change a page in our browser after it’s loaded, by clicking on some element and editing the HTML. But these changes will only be made in our browser, not in our original HTML file or on some web page elsewhere.</li>
+    </ul>
+  </li>
+  <li data-marker="*">In <a href="https://cdn.cs50.net/2020/fall/lectures/8/src8/size.html?highlight"><code class="language-plaintext highlighter-rouge">size.html</code></a>, we can set the font size with a dropdown via JavaScript, and in <a href="https://cdn.cs50.net/2020/fall/lectures/8/src8/blink.html?highlight"><code class="language-plaintext highlighter-rouge">blink.html</code></a> we can make an element “blink”, alternating between visible and hidden.</li>
+  <li data-marker="*">With <a href="https://cdn.cs50.net/2020/fall/lectures/8/src8/geolocation.html?highlight"><code class="language-plaintext highlighter-rouge">geolocation.html</code></a>, we can ask the browser for a user’s GPS coordinates, and with <a href="https://cdn.cs50.net/2020/fall/lectures/8/src8/autocomplete.html?highlight"><code class="language-plaintext highlighter-rouge">autocomplete.html</code></a>, we can autocomplete something we typed in, with words from a dictionary file.</li>
+  <li data-marker="*">Finally, we can use Python to write code that connect to other devices on a local network, like a light bulb, via an <strong>API</strong>, application programming interface. Our light bulb’s API in particular accepts request at certain URLs:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">USERNAME</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">getenv</span><span class="p">(</span><span class="s">"USERNAME"</span><span class="p">)</span>
+<span class="n">IP</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">getenv</span><span class="p">(</span><span class="s">"IP"</span><span class="p">)</span>
+
+<span class="n">URL</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"http://</span><span class="si">{</span><span class="n">IP</span><span class="si">}</span><span class="s">/api/</span><span class="si">{</span><span class="n">USERNAME</span><span class="si">}</span><span class="s">/lights/1/state"</span>
+
+<span class="n">requests</span><span class="p">.</span><span class="n">put</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s">"on"</span><span class="p">:</span> <span class="bp">False</span><span class="p">})</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">With this code, we can use the PUT method to send a message to our light bulb, turning it off.</li>
+      <li data-marker="*">We use environment variables, values stored elsewhere on our computer, for our username and IP address.</li>
+    </ul>
+  </li>
+  <li data-marker="*">Now, with a little more logic, we can make our light bulb blink:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">USERNAME</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">getenv</span><span class="p">(</span><span class="s">"USERNAME"</span><span class="p">)</span>
+<span class="n">IP</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">getenv</span><span class="p">(</span><span class="s">"IP"</span><span class="p">)</span>
+<span class="n">URL</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"http://</span><span class="si">{</span><span class="n">IP</span><span class="si">}</span><span class="s">/api/</span><span class="si">{</span><span class="n">USERNAME</span><span class="si">}</span><span class="s">/lights/1/state"</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">requests</span><span class="p">.</span><span class="n">put</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s">"bri"</span><span class="p">:</span> <span class="mi">254</span><span class="p">,</span> <span class="s">"on"</span><span class="p">:</span> <span class="bp">True</span><span class="p">})</span>
+    <span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">requests</span><span class="p">.</span><span class="n">put</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s">"on"</span><span class="p">:</span> <span class="bp">False</span><span class="p">})</span>
+    <span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li data-marker="*">We’ll put together HTML, CSS, JavaScript, Python, and SQL next time!</li>
+</ul>
+
+
+                </main>
+
+            </div>
+
+        </div>
+
+        
+ 
+    
+
+
+</body></html>

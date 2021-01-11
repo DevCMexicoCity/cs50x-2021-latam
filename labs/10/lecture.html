@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="en-us"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta property="og:description" content="Introduction to the intellectual enterprises of computer science and the art of programming. This course teaches students how to think algorithmically and solve problems efficiently. Topics include abstraction, algorithms, data structures, encapsulation, resource management, security, and software engineering. Languages include C, Python, and SQL plus students' choice of: HTML, CSS, and JavaScript (for web development); Java or Swift (for mobile app development); or Lua (for game development). Problem sets inspired by the arts, humanities, social sciences, and sciences. Course culminates in a final project. Designed for concentrators and non-concentrators alike, with or without prior programming experience. Two thirds of CS50 students have never taken CS before. Among the overarching goals of this course are to inspire students to explore unfamiliar waters, without fear of failure, create an intensive, shared experience, accessible to all students, and build community among students.">
+
+<meta property="og:image" content="https://img.youtube.com/vi/e9Eds2Rc_x8/maxresdefault.jpg"><meta property="og:title" content="Guest Lecture - CS50x"><link href="../../favicon.ico%3F1609379064" rel="icon">
+
+<!-- https://fonts.google.com/specimen/PT+Sans?query=PT+Sans&selection.family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700 -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+
+<!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+<script src="../../assets/jquery/dist/jquery.min.js%3F1609379064"></script>
+<script src="../../assets/bootstrap/dist/js/bootstrap.bundle.min.js%3F1609379064"></script>
+
+<!-- https://bootstrap-table.com/docs/getting-started/introduction/ -->
+<link href="../../assets/bootstrap-table/dist/bootstrap-table.min.css%3F1609379064.css" rel="stylesheet">
+<script src="../../assets/bootstrap-table/dist/bootstrap-table.min.js%3F1609379064"></script>
+<script src="../../assets/bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.min.js%3F1609379064"></script>
+
+<!-- https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use -->
+<link href="../../assets/@fortawesome/fontawesome-free/css/all.min.css%3F1609379064.css" rel="stylesheet">
+
+<!-- https://moment.github.io/luxon/ -->
+<script src="../../assets/luxon.min.js%3F1609379064"></script>
+
+<!-- http://docs.mathjax.org/ -->
+<!-- https://www.jsdelivr.com/package/npm/mathjax?path=es5 -->
+<script crossorigin="anonymous" integrity="sha256-+nfSJ1LiSvANSK3wvi6FjM+oFwoIQvURU1frozp5z6o=" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-chtml.js"></script>
+
+
+
+<link href="../../assets/page.css%3F1609379064.css" rel="stylesheet">
+<script src="../../assets/jekyll-theme-cs50.js%3F1609379064"></script>
+
+<script>
+    window.CS50 = {
+        locale: "en",
+        tz: "America/New_York"
+    };
+</script>
+
+<title>Guest Lecture - CS50x</title>
+</head>
+
+    <body class="invisible">
+
+        
+        
+        
+        <div class="alert alert-dismissible fixed-top mb-0 rounded-0 shadow" data-alert="danger" id="alert" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button><p>This version of the course is not yet active but will become the current version on 1 January 2021. Looking for <a href="https://cs50.harvard.edu/x/2020/">CS50x 2020</a>?</p></div>
+        
+        
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <aside class="col-md">
+ 
+                    <header><h1 data-id="this-is-cs50x"><a href="../../index.html">This is CS50x</a></h1>
+
+<p>OpenCourseWare</p>
+
+<p><a href="https://community.alumni.harvard.edu/give/59206872" class="pr-1 small">Donate</a>
+<a href="https://community.alumni.harvard.edu/give/59206872" class="small"><i aria-hidden="true" class="fas fa-external-link-alt"></i></a></p>
+
+<p><a href="https://cs.harvard.edu/malan/">David J. Malan</a><br>
+<a href="mailto:malan@harvard.edu">malan@harvard.edu</a><br>
+<a href="https://www.facebook.com/dmalan" class="mr-2"><i class="fab fa-facebook-f"></i></a><a href="https://github.com/dmalan" class="mr-2"><i class="fab fa-github"></i></a><a href="https://www.instagram.com/davidjmalan/" class="mr-2"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/malan/" class="mr-2"><i class="fab fa-linkedin"></i></a><a href="https://www.quora.com/profile/David-J-Malan" class="mr-2"><i class="fab fa-quora"></i></a><a href="https://www.reddit.com/user/davidjmalan" class="mr-2"><i class="fab fa-reddit-alien"></i></a><a href="https://twitter.com/davidjmalan" class="mr-2"><i class="fab fa-twitter"></i></a></p></header>
+
+                    
+
+                    <button aria-controls="nav" aria-expanded="false" class="btn btn-sm collapsed d-md-none" data-target="aside > nav" data-toggle="collapse">
+                        Menu
+                    </button>
+
+                    <nav class="collapse d-md-block" id="nav"><hr>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="../../honesty/index.html">Academic Honesty</a></li>
+  <li data-marker="*"><a href="../../certificate/index.html">CS50 Certificate</a></li>
+  <li data-marker="*"><a href="../../faqs/index.html">FAQs</a></li>
+  <li data-marker="*"><a href="../../staff/index.html">Staff</a></li>
+  <li data-marker="*"><a href="../../syllabus/index.html">Syllabus</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="https://cs50.harvard.edu/x/ed">Ed Discussion</a> for Q&amp;A</li>
+  <li data-marker="*" class="small"><a href="https://us.edstem.org/quickstart/ed-discussion.pdf">Quick Start Guide</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://cs50.edx.org/">edX</a></li>
+  <li data-marker="*"><a href="https://cs50.harvard.edu/x/2021/labs/10/lecture/TODO">YouTube</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://ide.cs50.io/">CS50 IDE</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/css/">CSS Tutorial</a></li>
+  <li data-marker="*"><a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/">Flask Quickstart</a></li>
+  <li data-marker="*"><a href="https://cs50.me/cs50x">Gradebook</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/html/">HTML Tutorial</a></li>
+  <li data-marker="*"><a href="https://jinja.palletsprojects.com/en/2.11.x/templates/">Jinja Template Designer Documentation</a></li>
+  <li data-marker="*"><a href="https://man.cs50.io/">Manual Pages</a></li>
+  <li data-marker="*"><a href="https://docs.python.org/3.7/search.html">Python Documentation</a></li>
+  <li data-marker="*"><a href="https://scratch.mit.edu/">Scratch</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/sql/">SQL Tutorial</a></li>
+  <li data-marker="*"><a href="https://cs50.readthedocs.io/style/c/">Style Guide</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://cs50.noticeable.io/">Changelog</a></li>
+  <li data-marker="*"><a href="https://cs50.statuspage.io/">Status Page</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="../../communities/index.html">Communities</a></li>
+  <li data-marker="*" class="small"><a href="https://discord.gg/cs50">Discord</a></li>
+  <li data-marker="*" class="small"><a href="https://www.facebook.com/groups/cs50/">Facebook Group</a></li>
+  <li data-marker="*" class="small"><a href="https://www.facebook.com/cs50/">Facebook Page</a></li>
+  <li data-marker="*" class="small"><a href="https://github.com/cs50">GitHub</a></li>
+  <li data-marker="*" class="small"><a href="https://gitter.im/cs50/x">Gitter</a></li>
+  <li data-marker="*" class="small"><a href="https://instagram.com/cs50">Instagram</a></li>
+  <li data-marker="*" class="small"><a href="https://www.linkedin.com/groups/7437240/">LinkedIn Group</a></li>
+  <li data-marker="*" class="small"><a href="https://www.linkedin.com/school/CS50/">LinkedIn Page</a></li>
+  <li data-marker="*" class="small"><a href="https://www.quora.com/topic/CS50">Quora</a></li>
+  <li data-marker="*" class="small"><a href="https://www.reddit.com/r/cs50/">Reddit</a></li>
+  <li data-marker="*" class="small"><a href="https://cs50.edx.org/slack">Slack</a></li>
+  <li data-marker="*" class="small"><a href="https://www.snapchat.com/add/cs50">Snapchat</a></li>
+  <li data-marker="*" class="small"><a href="https://soundcloud.com/cs50">SoundCloud</a></li>
+  <li data-marker="*" class="small"><a href="https://twitter.com/cs50">Twitter</a></li>
+  <li data-marker="*" class="small"><a href="http://www.youtube.com/subscription_center?add_user=cs50tv">YouTube</a></li>
+</ul>
+
+<hr>
+
+<p><a href="https://cs50.harvardshop.com/"><img src="https://i.imgur.com/GGMdcKt.png" alt="Harvard Shop"></a></p>
+
+<hr>
+
+<p><a href="../../license/index.html" class="small"><i class="fab fa-creative-commons mr-1"></i>License</a></p></nav>
+
+                    <footer></footer>
+
+                </aside>
+
+                <main class="col-md">
+
+                    <h1 id="guest-lecture">Guest Lecture</h1>
+
+<div class="border embed-responsive embed-responsive-16by9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="embed-responsive-item" src="https://video.cs50.io/bvVeBMEGEuQ"></iframe></div>
+
+<p>Embedded EthiCS is an interdisciplinary team of philosophers and computer scientists working together to integrate ethics into the computer science curriculum. The idea behind this approach is to embed tools of ethical reasoning into computer science courses themselves. The reason for this is that when making decisions about the design, development, or deployment of a piece of technology one is, whether or not one realizes it, making ethical decisions—that is, decisions which stand to have social, political, and human impact. At Harvard we think it is important for computer scientists to be equipped with tools for thinking through these implications.</p>
+
+<p>Technology holds a lot of power and influence over us, and that means, by extension, that the people who <em>design</em> technology do too. Now that you’re starting to think about what responsibilities you might have as computer scientists (so we can avoid notable mishaps… like FaceMash, for instance), we’re going to turn your attention to the topic of social media platforms and how they affect the distribution of, and engagement with, news and information.</p>
+
+<p>It would seem that this topic is <em>especially</em> relevant now given the recent US presidential election, where political content has been dominating the internet and television broadcasts, and controversy has played out on social media, garnering attention from around the world.</p>
+
+<p>Undoubtedly, technology has completely revolutionized the way information and news is both disseminated and consumed. Instead of paper boys shouting ‘get your news here’ on the street corner, just about everyone uses the internet to stay up to date with what’s happening – not just locally, but around the world. And in the past few years, social media platforms in particular have started to play a huge role in how people access, share, and engage with information. For instance, research shows that 44% of U.S. adults report getting the news from Facebook.</p>
+
+<p>It’s safe to say, A LOT has changed in recent years owing to developments in technology, and this matters when we consider what’s at stake. Namely, the ability for the public to engage in discourse that supports a well-functioning democracy. So I’ll first present you a brief overview of where we came from, and where we are now owing to technological developments, and then consider what challenges we are faced with today.</p>
+
+<p>Before the internet, news and information was almost entirely in the hands of a few major broadcast stations and print media outlets, otherwise known as the ‘mass media’ sphere. Since a few organizations were responsible for disseminating all the news, information was essentially filtered through a narrow lens, or narrow aperture, from organizations to a wide public audience.</p>
+
+<p>The journalists who were responsible for researching and writing the content for these organizations all shared a professional ethos. They were concerned with truth, representation of social groups, creating a forum for criticism, clarifying public values, and offering comprehensive coverage. And notably, since the aim was to produce content that appealed to a wide audience, there was less polarization and extremist commentary than we see today.</p>
+
+<p>But the journalists responsible for news coverage were very uniform in a lot of ways – relatively affluent, highly educated, mostly white, male and so forth. And this had effects on the coverage of racial politics, economic policy, and views about the role of the US in the world. Moreover, there were seldom opportunities for the audience to respond, to develop new themes or topics, or level criticism against the mass media sphere. There weren’t any ‘likes’ and ‘comments sections’ for the newspaper or television broadcasts. If you didn’t like it, well, tough luck.</p>
+
+<p>This all started to change in recent years as news coverage not only moved online, but onto social media platforms. We now live in a <em>digitally networked public sphere</em>. So instead of having a narrow aperture of communications where just a few organizations disseminate information to the public, we now have a digital sphere with a wide aperture where lots of people can share news and information.</p>
+
+<p>More specifically, the sources of content are not just organizations and the professional journalists they employed, but the public, particularly social media users. Anyone can Tweet or post on Facebook, and anyone can read those tweets and posts! This not only resulted in greater <em>diversity</em> of content, but greater <em>access</em> to information as well. If you want to follow the news, there are a ton of options and free places online you could access with just a few, simple mouse clicks.</p>
+
+<p>These prospects of increased diversity and access are what led many people to believe that the digital sphere held great promise for improving the public discourse that supports a well-functioning democracy. And in some ways, this has been true.</p>
+
+<p>For example, thanks to Twitter and Facebook, we saw the mobilization of social justice movements like #MeToo and Black Lives Matter. And the increased diversity of perspectives made it possible for individual researchers and scientists to weigh-in on the CDC’s claims about coronavirus—so while the CDC did not initially say coronavirus was characterized by airborne transmission leading to community spread, they ended up revising their stance after scientists took to Twitter with evidence proving that this was the case.</p>
+
+<p>While the digital sphere has brought about some improvements, it’s also exacerbated some problems and created new challenges. For example, since anyone can create content, fact-checking and monitoring have become much more difficult. People are left to fend for themselves when it comes to figuring out whether something that they read online is trustworthy.</p>
+
+<p>We have also seen increased personalization with respect to news and information, where specific content could be targeted to specific users, by the means of curated news feeds on social media, and cable news stations cropping up that take a particular political angle to the news that they cover. This is significant, because we end up with this somewhat paradoxical effect—despite a <em>greater</em> diversity in the content that is available, there is <em>less</em> diversity in the news and information people actually end up consuming, with the personalization of information having a tendency to reinforce a person’s viewpoints rather than challenge or broaden them.</p>
+
+<p>Additionally, in the absence of centralized sources of news, we also have seen different ‘aims’ expressed by those creating and sharing content. Some have bypassed a concern for ‘truth’ in an effort to garner more views and likes with extremist content or fake news. And fake news became a huge issue around the time of the 2016 presidential election, as there were concerns that the massive spread of misinformation on social media could influence or sway individuals’ political views.</p>
+
+<p>While the spread of misinformation has always been an issue, it has surely been exacerbated by the digital public sphere, with social media platforms essentially pouring gasoline on the fire. The dissemination of fake news EXPLODES on social media—because the structure of digital environments, from likes, to retweets, etc. allows a single post on fake news to ‘go viral’ reaching the screens of millions around the world. And there are serious worries about how fake news has played a role in amplifying political polarization.</p>
+
+<p>So while technology has made possible unique advantages, it has also brought on unique challenges. One major question that we are faced with now is figuring out how content should be regulated on social media platforms, <em>if at all</em>. Given the scale of the problem, some may be skeptical, believing that any form of content regulation would be impossible – there are just too many people posting online to fact-check them all, and fake news spreads so quickly it’s hard to stop it before it’s already reached a huge audience. And there are also worries that attempts to regulate content could end up becoming a form of censorship, that violates the right to freedom of speech.</p>
+
+<p>But some people are more optimistic about the possibilities of designing social media platforms in a way that promotes and preserves democracy. In particular, there’s a possibility that with responsibly designed algorithms and user interface choices, we might be able to slow the spread of fake news, and more generally improve the ways information is disseminated and engaged with on social media.</p>
+
+<p>For example, some people believe that companies like Facebook, Twitter, YouTube have a responsibility to regulate content because of the enormous influence they have over us. In particular, it is thought that social media platforms have a responsibility to police fake news and reduce the power of data-driven algorithms that personalize the user experience… Even if doing these things would come at the cost of user engagement, resulting in less time spent on the platform and less advertising revenue.</p>
+
+<p>It’s clear that the path going forward in terms of content regulation on social media platforms is going to be tricky. Whether or not we promote democratic ideals or undermine them will come down to the particular design choices we make. In order to use technology to create solutions to the problems we are facing today, we’ll need to make informed decisions about design choices, and this requires some critical thinking about ethics and philosophy to figure out the best way to do this. But, we’re hoping that students like you taking CS50 can harness your creativity, technical knowledge and ethical reasoning to design technology in a responsible way. So I’m now going to pass things over to Meica, who will tell you about some philosophical concepts that will help you think proactively about particular design choices and algorithmic tools that can be implemented to structure social media platforms in a way that promotes democratic public discourse.</p>
+
+<p>In <a href="Joshua&#32;Cohen&#32;and&#32;Archon&#32;Fung&#32;reading.pdf">Democracy and the Digital Public Sphere</a> an article which offers a fantastic diagnosis of our situation and from which Susan and I are drawing heavily upon for this lecture, the authors Joshua Cohen and Archon Fung tell us that “the bloom is off the digital rose.” As Susan was describing, we had such high hopes for the democratizing potential of social media and the internet. But now, we face an environment in which fake news runs rampant, citizens appear to be dramatically polarized, information swirls in its own isolated bubbles, and hate speech reaches appalling levels of vitriol. All of which stand to threaten, or so people speculate, the conditions required for an effective democracy. So, the following questions arise: in what ways are the conditions of democracy threatened? What can or should be done about? Is the structure of our technology responsible? Or is it just us as human beings creating these problems?</p>
+
+<p>In this module, we are focusing specifically on the issue of content regulation. Social media companies like Twitter, Facebook, and YouTube are now all in the game of trying to address these problems through platform design and features. From one angle, then, they are acting in the service of protecting democracy by trying to get control over the spread of misinformation, the amplification of hate speech, and the deepening of polarization. However, from another angle, they are stepping-in to shape the distribution of information and, depending on the particular design choices, might be said to be regulating or silencing speech. Which of course is at odds with democratic commitments to free speech and discourse.</p>
+
+<p>The point of this module, then, is to give you some tools to think through these issues — tools for understanding the problem, diagnosing the sources of the problem, and brainstorming solutions. In the remaining ten or fifteen minutes, I am going to provide an overview of the main tools which you will find detailed in the readings. They are also the tools you will be asked to analyze in this week’s lab.</p>
+
+<p>First, then, we need to think clearly about what is required for a healthy democracy. If we are going to be making claims about how tech threatens democracy, we better understand (a) what a democracy is and (b) what sort of conditions support democracy such that those conditions could come under threat. In their article, Archon Fung, a professor in political science here at Harvard and Joshua Cohen a political philosopher now working with the faculty at Apple University, provide us with these tools.</p>
+
+<p>Behind the idea of democracy is an ideal of what political society should be. Fung and Cohen reduce this ideal to three elements: (1) the idea of a democratic society, a society in which the political culture views individuals as free and equal; even though it is likely that these people have different interests, identities and systems of belief, as citizens they are committed to arriving at, through reflection and discourse, principles that will enable them to work together while respecting their freedom and equality; (2) is the idea of a democratic political regime, which is characterized by regular elections, rights of participation, along with associative and expressive rights that make participation both informed and effective; (3) and lastly, the idea of deliberative democracy—according to which political discussion should appeal to reasons that are suitable for cooperation amongst free and equal persons. So in justifying a policy you cannot appeal to, say, your own religion given that others do not necessarily hold those same beliefs. You can appeal to the notion of, say, religious freedom but not the particular beliefs contained within the religion itself.</p>
+
+<p>So democracy, then, is basically an ideal that we govern ourselves by collective decision-making, decision-making that respects our freedom and equality. This decision-making consists not only of the formal procedures of voting, elections, and legislation, etc. It is also informed by the informal public sphere—that is, citizens identifying problems and concerns, discussing and debating problems, expressing opinions, challenging viewpoints and organizing around causes, etc. This is an absolutely critical part of the democratic decision-making process. It is where we, as the public, form, test, disperse, exchange, challenge, and revise our views. The flow of information, along with user engagement, on Facebook, YouTube, and Twitter are all a part of this informal public sphere.</p>
+
+<p>In order that individuals can participate as free and equal citizens in this arena of public discourse, Cohen and Fung lay out a set of rights and opportunities that a well-functioning democracy will require: And here are the tools of analysis on offer.</p>
+
+<h2 id="five-rights-and-opportunities-for-a-democratic-public-sphere">Five Rights and Opportunities for a Democratic Public Sphere</h2>
+
+<ol>
+  <li><strong>Rights.</strong> As citizens of a democracy, we have rights to basic liberties, such as liberties of expression and association. The right to expressive liberty is important not only for the freedom of the individual, so that he or she is not censored, but also for democracy itself. It enables citizens to bring their ideas into conversation with one another, and to criticize and hold accountable those who exercise power.</li>
+  <li><strong>Opportunity for Expression.</strong> Not only should we be free of censorship but we should have fair opportunity to participate in public discussion. It shouldn’t be the case that because someone is wealthier or more powerful that they should have more opportunity to participate.</li>
+  <li><strong>Access.</strong> Each person should have good and equal access to quality and reliable information on public matters. That is, IF we make the effort, we should be able to acquire this information. Effective participation in decision making on public matters requires being informed.</li>
+  <li><strong>Diversity.</strong> Each person should have good and equal chances to hear a wide range of views. We need access to competing views in order to have a more informed and reasoned position.</li>
+  <li><strong>Communicative Power.</strong> Citizens should have good and equal chances to explore interests and ideas in association with others, and through these associations, to develop new concerns that challenge the mainstream view.</li>
+</ol>
+
+<p>These rights and opportunities together, provide critical conditions for enabling participation in public discussion. They might seem like a lot to keep track of. But if we are going to think through how social media threatens democracy and, more concretely, how platform design might promote or hinder democracy, these are valuable tools! We can use, say, the access condition, the idea that we should all have access to reliable information, as a lens of analysis. Does our platform prevent certain groups or users from accessing reliable information? Or, we can use the diversity condition, the idea that we should all have access to a plurality of conflicting views, as a lens of analysis. So, for example, we might ask ourselves: does our platform create a filter bubble, in which individuals are no longer confronted with opposing views?</p>
+
+<p>In addition to understanding what conditions support democratic society, we also need to understand the purported problems before we can propose effective interventions. Consider fake news. Why are people so gullible when it comes to fake news? Why do they often repost it without proper critical assessment?</p>
+
+<p>Regina Rini in the <a href="https://www.nytimes.com/2018/10/15/opinion/facebook-fake-news-philosophy.html">reading</a> proposes that, in order to understand the phenomenon, we should think about fake news as a form of testimony. When another person shares information with you, you typically take it to be true. This is because of the norms governing testimony. When you assert something, passing it on to others, you take responsibility for its truth. It is assumed that you have either acquired evidence for it yourself or you have received this information from a source that you deem reliable. Most of our knowledge about the world comes through this practice of testimony. We could not possibly acquire evidence for all the beliefs we hold, so we often have to rely on sources we deem and hope to be credible.</p>
+
+<p>But social media, Rini points out, has unsettled testimonial norms. When someone posts a piece of news we seem to hold two conflicting views. On the one hand, we see it as an act of endorsement. The person testifying is taking some degree of responsibility for the accuracy of the post, the same way one would before passing on information in conversation. On the other hand, though, it’s also just a share. We see this attitude come through when Donald Trump, called out on one of his questionable tweets, retorts with: “it’s just a retweet”.</p>
+
+<p>To fight fake news, then, Rini argues that we need to stabilize social media’s norms of testimony so that, as she says, the same norms that keep us honest over cocktails will keep us honest in our posts.
+We need people to be held accountable for or to have a sense of responsibility for the information they share with others. Her concrete proposal: give users a credibility score.</p>
+
+<p>In practice, this would be an amendment to Facebook’s system. Using independent fact-checking organizations, Facebook flags problematic news and warns users before they repost it. When a user tries to post something that has been identified as false or misleading, a pop-up appears that explains the problem and identifies the original source. It then asks the user to confirm that they would like to continue with the repost.</p>
+
+<p>A user’s credibility score will depend on how often they choose to ignore these warnings and pass on misleading information: “a green dot [by the user’s name] could indicate that the user hasn’t chosen to share much disputed news, a yellow dot could indicate that they do it sometimes, and a red dot could indicate that they do it often.” The idea, then, is that a credibility score would incentivize users to take responsibility for what they share and would also give others a sense of their reliability as sources.</p>
+
+<p>Rini comes up with this solution through a careful analysis of why we are so gullible to fake news. I will leave it up to you all to consider this proposal in light of the various rights and opportunities required for a democratic public sphere. Does Rini’s proposal violate or threaten freedom of expression? Does it promote or hinder our access to reliable information? Our access to a diversity of views? our communicative power?</p>
+
+<p>It is these sorts of questions that we hope you will start to ask yourself when thinking through the following sorts of issues. What problems do fake news, hate speech, polarization, etc, pose to democracy? How successful are various attempts by companies like Twitter, YouTube, and Facebook to address these problems? And how might particular design features of social media platforms promote or hinder these rights and opportunities? Whether as a future computer scientist, a tech industry leader, or just as a user of these technologies, we hope asking these sorts of questions will help you navigate these tricky issues with a more critical eye.</p>
+
+
+                </main>
+
+            </div>
+
+        </div>
+
+        
+ 
+    
+
+
+</body></html>

@@ -1,0 +1,913 @@
+<!DOCTYPE html><html lang="en-us"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta property="og:description" content="Harvard Universty's introduction to the intellectual enterprises of computer science and the art of programming.">
+
+<meta property="og:image" content="https://img.youtube.com/vi/zYierUhIFNQ/maxresdefault.jpg"><meta property="og:title" content="Lecture 1 - CS50x 2021"><link href="../../favicon.ico%3F1610389211" rel="icon">
+
+<!-- https://fonts.google.com/specimen/PT+Sans?query=PT+Sans&selection.family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700 -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+
+<!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+<script src="../../assets/jquery/dist/jquery.min.js%3F1610389211"></script>
+<script src="../../assets/bootstrap/dist/js/bootstrap.bundle.min.js%3F1610389211"></script>
+
+<!-- https://bootstrap-table.com/docs/getting-started/introduction/ -->
+<link href="../../assets/bootstrap-table/dist/bootstrap-table.min.css%3F1610389211.css" rel="stylesheet">
+<script src="../../assets/bootstrap-table/dist/bootstrap-table.min.js%3F1610389211"></script>
+<script src="../../assets/bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.min.js%3F1610389211"></script>
+
+<!-- https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use -->
+<link href="../../assets/@fortawesome/fontawesome-free/css/all.min.css%3F1610389211.css" rel="stylesheet">
+
+<!-- https://moment.github.io/luxon/ -->
+<script src="../../assets/luxon.min.js%3F1610389211"></script>
+
+<!-- http://docs.mathjax.org/ -->
+<!-- https://www.jsdelivr.com/package/npm/mathjax?path=es5 -->
+<script crossorigin="anonymous" integrity="sha256-+nfSJ1LiSvANSK3wvi6FjM+oFwoIQvURU1frozp5z6o=" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-chtml.js"></script>
+
+<!-- https://github.com/verlok/vanilla-lazyload -->
+<script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.7.0/intersection-observer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js"></script>
+
+
+
+<link href="../../assets/page.css%3F1610389211.css" rel="stylesheet">
+<script src="../../assets/jekyll-theme-cs50.js%3F1610389211"></script>
+
+<script>
+    window.CS50 = {
+        locale: "en",
+        tz: "America/New_York"
+    };
+</script>
+
+<title>Lecture 1 - CS50x 2021</title>
+</head>
+
+    <body class="invisible">
+
+        
+        
+        
+        <div class="alert alert-dismissible fixed-top mb-0 rounded-0 shadow" data-alert="success" id="alert" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button><p>This is CS50x 2021, the newest version of the course. Looking for <a href="https://cs50.harvard.edu/x/2020/">CS50x 2020</a>?</p></div>
+        
+        
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <aside class="col-md">
+ 
+                    <header><h1 data-id="this-is-cs50x"><a href="../../index.html">This is CS50x</a></h1>
+
+<p>OpenCourseWare</p>
+
+<p><a href="https://community.alumni.harvard.edu/give/59206872" class="pr-1 small">Donate</a>
+<a href="https://community.alumni.harvard.edu/give/59206872" class="small"><i aria-hidden="true" class="fas fa-external-link-alt"></i></a></p>
+
+<p><a href="https://cs.harvard.edu/malan/">David J. Malan</a><br>
+<a href="mailto:malan@harvard.edu">malan@harvard.edu</a><br>
+<a href="https://www.facebook.com/dmalan" class="mr-2"><i class="fab fa-facebook-f"></i></a><a href="https://github.com/dmalan" class="mr-2"><i class="fab fa-github"></i></a><a href="https://www.instagram.com/davidjmalan/" class="mr-2"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/malan/" class="mr-2"><i class="fab fa-linkedin"></i></a><a href="https://www.quora.com/profile/David-J-Malan" class="mr-2"><i class="fab fa-quora"></i></a><a href="https://www.reddit.com/user/davidjmalan" class="mr-2"><i class="fab fa-reddit-alien"></i></a><a href="https://twitter.com/davidjmalan" class="mr-2"><i class="fab fa-twitter"></i></a></p></header>
+
+                    
+
+                    <button aria-controls="nav" aria-expanded="false" class="btn btn-sm collapsed d-md-none" data-target="aside > nav" data-toggle="collapse">
+                        Menu
+                    </button>
+
+                    <nav class="collapse d-md-block" id="nav"><hr>
+
+<ul>
+  <li data-marker="*"><a href="../../seminars/index.html">CS50’s New Year’s Seminars</a> <span class="text-white">🥂</span></li>
+  <li data-marker="*"><a href="../../gallery/index.html">Gallery of Final Projects</a> <span class="pl-1 text-white">🖼️ </span></li>
+  <li data-marker="*"><a href="../../new/index.html">What’s new for 2021?</a></li>
+</ul>
+<ul>
+  <li data-marker="*"><a href="../../weeks/0/index.html">Week 0</a> Scratch</li>
+  <li data-marker="*"><a href="../../weeks/1/index.html">Week 1</a> C</li>
+  <li data-marker="*"><a href="../../weeks/2/index.html">Week 2</a> Arrays</li>
+  <li data-marker="*"><a href="../../weeks/3/index.html">Week 3</a> Algorithms</li>
+  <li data-marker="*"><a href="../../weeks/4/index.html">Week 4</a> Memory</li>
+  <li data-marker="*"><a href="../../weeks/5/index.html">Week 5</a> Data Structures</li>
+  <li data-marker="*"><a href="../../weeks/6/index.html">Week 6</a> Python</li>
+  <li data-marker="*"><a href="../../weeks/7/index.html">Week 7</a> SQL</li>
+  <li data-marker="*"><a href="../../weeks/8/index.html">Week 8</a> HTML, CSS, JavaScript</li>
+  <li data-marker="*"><a href="../../weeks/9/index.html">Week 9</a> Flask</li>
+  <li data-marker="*"><a href="../../weeks/10/index.html">Week 10</a> Ethics</li>
+</ul>
+<ul>
+  <li data-marker="*" class="small"><a href="../../weeks/security/index.html">Security</a></li>
+  <li data-marker="*" class="small"><a href="../../weeks/ai/index.html">Artificial Intelligence</a></li>
+</ul>
+<ul>
+  <li data-marker="*"><a href="../../project/index.html">Final Project</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="../../honesty/index.html">Academic Honesty</a></li>
+  <li data-marker="*"><a href="../../certificate/index.html">CS50 Certificate</a></li>
+  <li data-marker="*"><a href="../../faqs/index.html">FAQs</a></li>
+  <li data-marker="*"><a href="https://cs50.me/cs50x">Gradebook</a></li>
+  <li data-marker="*"><a href="../../staff/index.html">Staff</a></li>
+  <li data-marker="*"><a href="../../syllabus/index.html">Syllabus</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="https://cs50.harvard.edu/x/ed">Ed Discussion</a> for Q&amp;A</li>
+  <li data-marker="*" class="small"><a href="https://us.edstem.org/quickstart/ed-discussion.pdf">Quick Start Guide</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://cs50.edx.org/">edX</a></li>
+  <li data-marker="*"><a href="https://www.youtube.com/playlist?list=PLhQjrBD2T382_R182iC2gNZI9HzWFMC_8">YouTube</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://ide.cs50.io/">CS50 IDE</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/css/">CSS Tutorial</a></li>
+  <li data-marker="*"><a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/">Flask Quickstart</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/html/">HTML Tutorial</a></li>
+  <li data-marker="*"><a href="https://jinja.palletsprojects.com/en/2.11.x/templates/">Jinja Template Designer Documentation</a></li>
+  <li data-marker="*"><a href="https://man.cs50.io/">Manual Pages</a></li>
+  <li data-marker="*"><a href="https://docs.python.org/3.7/search.html">Python Documentation</a></li>
+  <li data-marker="*"><a href="https://scratch.mit.edu/">Scratch</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/sql/">SQL Tutorial</a></li>
+  <li data-marker="*"><a href="https://cs50.readthedocs.io/style/c/">Style Guide</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://cs50.noticeable.io/">Changelog</a></li>
+  <li data-marker="*"><a href="https://cs50.statuspage.io/">Status Page</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="../../communities/index.html">Communities</a></li>
+  <li data-marker="*" class="small"><a href="https://discord.gg/cs50">Discord</a></li>
+  <li data-marker="*" class="small"><a href="https://www.facebook.com/groups/cs50/">Facebook Group</a></li>
+  <li data-marker="*" class="small"><a href="https://www.facebook.com/cs50/">Facebook Page</a></li>
+  <li data-marker="*" class="small"><a href="https://github.com/cs50">GitHub</a></li>
+  <li data-marker="*" class="small"><a href="https://gitter.im/cs50/x">Gitter</a></li>
+  <li data-marker="*" class="small"><a href="https://instagram.com/cs50">Instagram</a></li>
+  <li data-marker="*" class="small"><a href="https://www.linkedin.com/groups/7437240/">LinkedIn Group</a></li>
+  <li data-marker="*" class="small"><a href="https://www.linkedin.com/school/CS50/">LinkedIn Page</a></li>
+  <li data-marker="*" class="small"><a href="https://www.quora.com/topic/CS50">Quora</a></li>
+  <li data-marker="*" class="small"><a href="https://www.reddit.com/r/cs50/">Reddit</a></li>
+  <li data-marker="*" class="small"><a href="https://cs50.edx.org/slack">Slack</a></li>
+  <li data-marker="*" class="small"><a href="https://www.snapchat.com/add/cs50">Snapchat</a></li>
+  <li data-marker="*" class="small"><a href="https://soundcloud.com/cs50">SoundCloud</a></li>
+  <li data-marker="*" class="small"><a href="https://twitter.com/cs50">Twitter</a></li>
+  <li data-marker="*" class="small"><a href="http://www.youtube.com/subscription_center?add_user=cs50tv">YouTube</a></li>
+</ul>
+
+<hr>
+
+<p><a href="https://cs50.harvardshop.com/"><img src="https://i.imgur.com/GGMdcKt.png" alt="Harvard Shop"></a></p>
+
+<hr>
+
+<p><a href="../../license/index.html" class="small"><i class="fab fa-creative-commons mr-1"></i>License</a></p></nav>
+
+                    <footer></footer>
+
+                </aside>
+
+                <main class="col-md">
+
+                    <h1 class="no_toc" id="lecture-1">Lecture 1</h1>
+
+<ul id="markdown-toc">
+  <li><a href="index.html#c" id="markdown-toc-c">C</a></li>
+  <li><a href="index.html#cs50-ide" id="markdown-toc-cs50-ide">CS50 IDE</a></li>
+  <li><a href="index.html#compiling" id="markdown-toc-compiling">Compiling</a></li>
+  <li><a href="index.html#functions-and-arguments" id="markdown-toc-functions-and-arguments">Functions and arguments</a></li>
+  <li><a href="index.html#main-header-files" id="markdown-toc-main-header-files">main, header files</a></li>
+  <li><a href="index.html#tools" id="markdown-toc-tools">Tools</a></li>
+  <li><a href="index.html#commands" id="markdown-toc-commands">Commands</a></li>
+  <li><a href="index.html#types-format-codes" id="markdown-toc-types-format-codes">Types, format codes,</a></li>
+  <li><a href="index.html#operators-limitations-truncation" id="markdown-toc-operators-limitations-truncation">Operators, limitations, truncation</a></li>
+  <li><a href="index.html#variables-syntactic-sugar" id="markdown-toc-variables-syntactic-sugar">Variables, syntactic sugar</a></li>
+  <li><a href="index.html#conditions" id="markdown-toc-conditions">Conditions</a></li>
+  <li><a href="index.html#boolean-expressions-loops" id="markdown-toc-boolean-expressions-loops">Boolean expressions, loops</a></li>
+  <li><a href="index.html#abstraction" id="markdown-toc-abstraction">Abstraction</a></li>
+  <li><a href="index.html#mario" id="markdown-toc-mario">Mario</a></li>
+  <li><a href="index.html#memory-imprecision-and-overflow" id="markdown-toc-memory-imprecision-and-overflow">Memory, imprecision, and overflow</a></li>
+</ul>
+
+<h2 id="c">C</h2>
+
+<ul>
+  <li data-marker="*">Today we’ll learn a new language, <strong>C</strong>: a programming language that has all the features of Scratch and more, but perhaps a little less friendly since it’s purely in text:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"hello, world"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li data-marker="*">Though at first, to borrow a phrase from MIT, trying to absorb all these new concepts may feel like drinking from a fire hose, be assured that by the end of the semester we’ll be empowered by and experienced at learning and applying these concepts.</li>
+  <li data-marker="*">We can compare a lot of the programming features in C to blocks we’ve already seen and used in Scratch. The details of the syntax are far less important than the ideas, which we’ve already been introduced to.</li>
+  <li data-marker="*">In our example, though the words are new, the ideas are exactly as same as the “when green flag clicked” and “say (hello, world)” blocks in Scratch:<br>
+<img src="when_green_flag.png" alt="block labeled 'when green flag clicked', block labeled 'say (hello, world)'"></li>
+  <li data-marker="*">When writing code, we might consider the following qualities:
+    <ul>
+      <li data-marker="*"><strong>Correctness</strong>, or whether our code works correctly, as intended.</li>
+      <li data-marker="*"><strong>Design</strong>, or a subjective measure of how well-written our code is, based on how efficient it is and how elegant or logically readable it is, without unnecessary repetition.</li>
+      <li data-marker="*"><strong>Style</strong>, or how aesthetically formatted our code is, in terms of consistent indentation and other placement of symbols. Differences in style don’t affect the correctness or meaning of our code, but affect how readable it is visually.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="cs50-ide">CS50 IDE</h2>
+<ul>
+  <li data-marker="*">To start writing our code quickly, we’ll use a tool for the course, <a href="https://ide.cs50.io/"><strong>CS50 IDE</strong></a>, an <em>integrated development environment</em> which includes programs and features for writing code. CS50 IDE is built atop a popular cloud-based IDE used by general programmers, but with additional educational features and customization.</li>
+  <li data-marker="*">We’ll open the IDE, and after logging in we’ll see a screen like this:<br>
+<img src="cs50_ide.png" alt="two panels, top blank, bottom with prompt">
+    <ul>
+      <li data-marker="*">The top panel, blank, will contain text files within which we can write our code.</li>
+      <li data-marker="*">The bottom panel, a <strong>terminal</strong> window, will allow us to type in various commands and run them, including programs from our code above.</li>
+    </ul>
+  </li>
+  <li data-marker="*">Our IDE runs in the cloud and comes with a standard set of tools, but know that there are many desktop-based IDEs as well, offering more customization and control for different programming purposes, at the cost of greater setup time and effort.</li>
+  <li data-marker="*">In the IDE, we’ll go to File &gt; New File, and then File &gt; Save to save our file as <code class="language-plaintext highlighter-rouge">hello.c</code>, indicating that our file will be code written in C. We’ll see that the name of our tab has indeed changed to <code class="language-plaintext highlighter-rouge">hello.c</code>, and now we’ll paste our code from above:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"hello, world"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li data-marker="*">To run our program, we’ll use a CLI, or <strong>command-line interface</strong>, a prompt at which we need to enter text commands. This is in contrast to a <strong>graphical user interface</strong>, or GUI, like Scratch, where we have images, icons, and buttons in addition to text.</li>
+</ul>
+
+<h2 id="compiling">Compiling</h2>
+
+<ul>
+  <li data-marker="*">In the terminal in the bottom pane of our IDE, we’ll <strong>compile</strong> our code before we can run it. Computers only understand binary, which is also used to represent instructions like printing something to the screen. Our <strong>source code</strong> has been written in characters we can read, but it needs to be compiled: converted to <strong>machine code</strong>, patterns of zeros and ones that our computer can directly understand.</li>
+  <li data-marker="*">A program called a <strong>compiler</strong> will take source code as input and produce machine code as output. In the CS50 IDE, we have access to a compiler already, through a command called <strong>make</strong>. In our terminal, we’ll type in <code class="language-plaintext highlighter-rouge">make hello</code>, which will automatically find our <code class="language-plaintext highlighter-rouge">hello.c</code> file with our source code, and compile it into a program called <code class="language-plaintext highlighter-rouge">hello</code>. There will be some output, but no error messages in yellow or red, so our program compiled successfully.</li>
+  <li data-marker="*">To run our program, we’ll type in another command, <code class="language-plaintext highlighter-rouge">./hello</code>, which looks in the current folder, <code class="language-plaintext highlighter-rouge">.</code>, for a program called <code class="language-plaintext highlighter-rouge">hello</code>, and runs it.</li>
+  <li data-marker="*">The <code class="language-plaintext highlighter-rouge">$</code> in the terminal is an indicator of where the prompt is, or where we can type in more commands.</li>
+</ul>
+
+<h2 id="functions-and-arguments">Functions and arguments</h2>
+
+<ul>
+  <li data-marker="*">We’ll use the same ideas we’ve explored in Scratch.</li>
+  <li data-marker="*"><strong>Functions</strong> are small actions or verbs that we can use in our program to do something, and the inputs to functions are called <strong>arguments</strong>.
+    <ul>
+      <li data-marker="*">For example, the “say” block in Scratch might have taken something like “hello, world” as an argument. In C, the function to print something to the screen is called <code class="language-plaintext highlighter-rouge">printf</code> (with the <code class="language-plaintext highlighter-rouge">f</code> standing for “formatted” text, which we’ll soon see). And in C, we pass in arguments within parentheses, as in <code class="language-plaintext highlighter-rouge">printf("hello, world");</code>. The double quotes indicate that we want to print out the letters <code class="language-plaintext highlighter-rouge">hello, world</code> literally, and the semicolon at the end indicates the end of our line of code.</li>
+    </ul>
+  </li>
+  <li data-marker="*">Functions can also have two kinds of outputs:
+    <ul>
+      <li data-marker="*"><strong>side effects</strong>, such as something printed to the screen,</li>
+      <li data-marker="*">and <strong>return values</strong>, a value that is passed back to our program that we can use or store for later.
+        <ul>
+          <li data-marker="*">The “ask” block in Scratch, for example, created an “answer” block.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li data-marker="*">To get the same functionality as the “ask” block, we’ll use a <strong>library</strong>, or a set of code already written. The CS50 Library will include some basic, simple functions that we can use right away. For example, <code class="language-plaintext highlighter-rouge">get_string</code> will ask the user for a <strong>string</strong>, or some sequence of text, and return it to our program. <code class="language-plaintext highlighter-rouge">get_string</code> takes in some input as the prompt for the user, such as <code class="language-plaintext highlighter-rouge">What's your name?</code>, and we’ll have to save it in a variable with:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">string</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">get_string</span><span class="p">(</span><span class="s">"What's your name? "</span><span class="p">);</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">In C, the single <code class="language-plaintext highlighter-rouge">=</code> indicates <strong>assignment</strong>, or setting the value on the right to the variable on the left. And C will call the <code class="language-plaintext highlighter-rouge">get_string</code> function in order to get its output first.</li>
+      <li data-marker="*">And we also need to indicate that our variable named <code class="language-plaintext highlighter-rouge">answer</code> has a <strong>type</strong> of string, so our program knows to interpret the zeros and ones as text.</li>
+      <li data-marker="*">Finally, we need to remember to add a semicolon to end our line of code.</li>
+    </ul>
+  </li>
+  <li data-marker="*">In Scratch, we also used the “answer” block within our “join” and “say” blocks. In C, we’ll do this:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">printf</span><span class="p">(</span><span class="s">"hello, %s"</span><span class="p">,</span> <span class="n">answer</span><span class="p">);</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">The <code class="language-plaintext highlighter-rouge">%s</code> is called a <strong>format code</strong>, which just means that we want the <code class="language-plaintext highlighter-rouge">printf</code> function to substitute a variable where the <code class="language-plaintext highlighter-rouge">%s</code> placeholder is. And the variable we want to use is <code class="language-plaintext highlighter-rouge">answer</code>, which we give to <code class="language-plaintext highlighter-rouge">printf</code> as another argument, separated from the first one with a comma. (<code class="language-plaintext highlighter-rouge">printf("hello, answer")</code> would literally print out <code class="language-plaintext highlighter-rouge">hello, answer</code> every time.)</li>
+    </ul>
+  </li>
+  <li data-marker="*">Back in the CS50 IDE, we’ll add what we’ve discovered:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;cs50.h&gt;
+#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">string</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">get_string</span><span class="p">(</span><span class="s">"What's your name? "</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"hello, %s"</span><span class="p">,</span> <span class="n">answer</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">We need to tell the compiler to include the CS50 Library, with <code class="language-plaintext highlighter-rouge">#include &lt;cs50.h&gt;</code>, so we can use the <code class="language-plaintext highlighter-rouge">get_string</code> function.</li>
+      <li data-marker="*">We also have an opportunity to use better style here, since we could name our <code class="language-plaintext highlighter-rouge">answer</code> variable anything, but a more descriptive name will help us understand its purpose better than a shorter name like <code class="language-plaintext highlighter-rouge">a</code> or <code class="language-plaintext highlighter-rouge">x</code>.</li>
+    </ul>
+  </li>
+  <li data-marker="*">After we save the file, we’ll need to recompile our program with <code class="language-plaintext highlighter-rouge">make hello</code>, since we’ve only changed the source code but not the compiled machine code. Other languages or IDEs may not require us to manually recompile our code after we change it, but here we have the opportunity for more control and understanding of what’s happening under the hood.</li>
+  <li data-marker="*">Now, <code class="language-plaintext highlighter-rouge">./hello</code> will run our program, and prompt us for our name as intended. We might notice that the next prompt is printed immediately after our program’s output, as in <code class="language-plaintext highlighter-rouge">hello, Brian~/ $</code>. We can add a new line after our program’s output, so the next prompt is on its own line, with <code class="language-plaintext highlighter-rouge">\n</code>:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">printf</span><span class="p">(</span><span class="s">"hello, %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">answer</span><span class="p">);</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">\n</code> is an example of an <strong>escape sequence</strong>, or some text that represents some other text.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="main-header-files">main, header files</h2>
+
+<ul>
+  <li data-marker="*">The “when green flag clicked” block in Scratch starts what we would consider to be the main program. In C, the first line for the same is <code class="language-plaintext highlighter-rouge">int main(void)</code>, which we’ll learn more about over the coming weeks, followed by an open curly brace <code class="language-plaintext highlighter-rouge">{</code>, and a closed curly brace <code class="language-plaintext highlighter-rouge">}</code>, wrapping everything that should be in our program.
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">We’ll learn more about ways we can modify this line in the coming weeks, but for now we’ll simply use this to start our program.</li>
+    </ul>
+  </li>
+  <li data-marker="*"><strong>Header files</strong> that end with <code class="language-plaintext highlighter-rouge">.h</code> refer to some other set of code, like a library, that we can then use in our program. We <em>include</em> them with lines like <code class="language-plaintext highlighter-rouge">#include &lt;stdio.h&gt;</code>, for example, for the <em>standard input/output</em> library, which contains the <code class="language-plaintext highlighter-rouge">printf</code> function.</li>
+</ul>
+
+<h2 id="tools">Tools</h2>
+
+<ul>
+  <li data-marker="*">With all of the new syntax, it’s easy for us to make mistakes or forget something. We have a few tools written by the staff to help us.</li>
+  <li data-marker="*">We might forget to include a line of code, and when we try to compile our program, see a lot of lines of error messages that are hard to understand, since the compiler might have been designed for a more technical audience. <strong><code class="language-plaintext highlighter-rouge">help50</code></strong> is a command we can run to explain problems in our code in a more user-friendly way. We can run it by adding <code class="language-plaintext highlighter-rouge">help50</code> to the front of a command we’re trying, like <code class="language-plaintext highlighter-rouge">help50 make hello</code>, to get advice that might be more understandable.</li>
+  <li data-marker="*">It turns out that, in C, new lines and indentation generally don’t affect how our code runs. For example, we can change our <code class="language-plaintext highlighter-rouge">main</code> function to be one line, <code class="language-plaintext highlighter-rouge">int main(void){printf("hello, world");}</code>, but it’s much harder to read, so we would consider it to have bad style. We can run <strong><code class="language-plaintext highlighter-rouge">style50</code></strong>, as with <code class="language-plaintext highlighter-rouge">style50 hello.c</code>, with the name of the file of our source code, to see suggestions for new lines and indentation.</li>
+  <li data-marker="*">Additionally, we can add <strong>comments</strong>, notes in our source code for ourselves or other humans that don’t affect how our code runs. For example, we might add a line like <code class="language-plaintext highlighter-rouge">// Greet user</code>, with two slashes <code class="language-plaintext highlighter-rouge">//</code> to indicate that the line is a comment, and then write the purpose of our code or program to help us remember later on.</li>
+  <li data-marker="*"><strong><code class="language-plaintext highlighter-rouge">check50</code></strong> will check the correctness of our code with some automated tests. The staff writes tests specifically for some of the programs we’ll be writing in the course, and instructions for using <code class="language-plaintext highlighter-rouge">check50</code> will be included in each problem set or lab as needed. After we run <code class="language-plaintext highlighter-rouge">check50</code>, we’ll see some output telling us whether our code passed relevant tests.</li>
+  <li data-marker="*">The CS50 IDE also gives us the equivalent of our own computer in the cloud, somewhere on the internet, with our own files and folders. If we click the folder icon in the top left, we’ll see a file tree, a GUI of the files in our IDE:<br>
+<img src="cs50_ide_file_tree.png" alt="left panel with file tree">
+    <ul>
+      <li data-marker="*">To open a file, we can just double-click it. <code class="language-plaintext highlighter-rouge">hello.c</code> is the source code that we just wrote, and <code class="language-plaintext highlighter-rouge">hello</code> itself will have lots of red dots, each of which are unprintable characters since they represent binary instructions for our computers.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="commands">Commands</h2>
+
+<ul>
+  <li data-marker="*">Since the CS50 IDE is a virtual computer in the cloud, we can also run commands available in Linux, an operating system like macOS or Windows.</li>
+  <li data-marker="*">In the terminal, we can type in <code class="language-plaintext highlighter-rouge">ls</code>, short for list, to see a list of files and folder in the current folder:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">~/</span> <span class="err">$</span> <span class="n">ls</span>
+<span class="n">hello</span><span class="o">*</span>  <span class="n">hello</span><span class="p">.</span><span class="n">c</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">hello</code> is in green with an asterisk to indicate that we can run it as a program.</li>
+    </ul>
+  </li>
+  <li data-marker="*">We can also <em>remove</em> files with <code class="language-plaintext highlighter-rouge">rm</code>, with a command like <code class="language-plaintext highlighter-rouge">rm hello</code>. It will prompt us for a confirmation, and we can respond with <code class="language-plaintext highlighter-rouge">y</code> or <code class="language-plaintext highlighter-rouge">n</code> for yes or no.</li>
+  <li data-marker="*">With <code class="language-plaintext highlighter-rouge">mv</code>, or <em>move</em>, we can rename files. With <code class="language-plaintext highlighter-rouge">mv hello.c goodbye.c</code>, we’ve renamed our <code class="language-plaintext highlighter-rouge">hello.c</code> file to be named <code class="language-plaintext highlighter-rouge">goodbye.c</code>.</li>
+  <li data-marker="*">With <code class="language-plaintext highlighter-rouge">mkdir</code>, or <em>make directory</em>, we can create folders, or directories. If we run <code class="language-plaintext highlighter-rouge">mkdir lecture</code>, we’ll see a folder called <code class="language-plaintext highlighter-rouge">lecture</code>, and we can move files into directories with a command like <code class="language-plaintext highlighter-rouge">mv hello.c lecture/</code>.</li>
+  <li data-marker="*">To <em>change directories</em> in our terminal, we can use <code class="language-plaintext highlighter-rouge">cd</code>, as with <code class="language-plaintext highlighter-rouge">cd lecture/</code>. Our prompt will change from <code class="language-plaintext highlighter-rouge">~/</code> to <code class="language-plaintext highlighter-rouge">~/lecture/</code>, indicating that we’re in the <code class="language-plaintext highlighter-rouge">lecture</code> directory inside <code class="language-plaintext highlighter-rouge">~</code>. <code class="language-plaintext highlighter-rouge">~</code> stands for our home directory, or our account’s default, top-level folder.</li>
+  <li data-marker="*">We can also use <code class="language-plaintext highlighter-rouge">..</code> as shorthand for the parent, or containing folder. Within <code class="language-plaintext highlighter-rouge">~/lecture/</code>, we can run <code class="language-plaintext highlighter-rouge">mv hello.c ..</code> to move it back up to <code class="language-plaintext highlighter-rouge">~</code>, since it’s the parent folder of <code class="language-plaintext highlighter-rouge">lecture/</code>. <code class="language-plaintext highlighter-rouge">cd ..</code>, similarly, will change our terminal’s  directory to the current one’s parent. A single dot, <code class="language-plaintext highlighter-rouge">.</code>, refers to the current directory, as in <code class="language-plaintext highlighter-rouge">./hello</code>.</li>
+  <li data-marker="*">Now that our <code class="language-plaintext highlighter-rouge">lecture/</code> folder is empty, we can remove it with <code class="language-plaintext highlighter-rouge">rmdir lecture/</code> as well.</li>
+</ul>
+
+<h2 id="types-format-codes">Types, format codes,</h2>
+
+<ul>
+  <li data-marker="*">There are many data <strong>types</strong> we can use for our variables, which indicate to the computer what type of data they represent:
+    <ul>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">bool</code>, a Boolean expression of either <code class="language-plaintext highlighter-rouge">true</code> or <code class="language-plaintext highlighter-rouge">false</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">char</code>, a single ASCII character like <code class="language-plaintext highlighter-rouge">a</code> or <code class="language-plaintext highlighter-rouge">2</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">double</code>, a floating-point value with more digits than a <code class="language-plaintext highlighter-rouge">float</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">float</code>, a floating-point value, or real number with a decimal value</li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">int</code>, integers up to a certain size, or number of bits</li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">long</code>, integers with more bits, so they can count higher than an <code class="language-plaintext highlighter-rouge">int</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">string</code>, a string of characters</li>
+    </ul>
+  </li>
+  <li data-marker="*">And the CS50 library has corresponding functions to get input of various types:
+    <ul>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">get_char</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">get_double</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">get_float</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">get_int</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">get_long</code></li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">get_string</code></li>
+    </ul>
+  </li>
+  <li data-marker="*">For <code class="language-plaintext highlighter-rouge">printf</code>, too, there are different placeholders for each type:
+    <ul>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">%c</code> for chars</li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">%f</code> for floats, doubles</li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">%i</code> for ints</li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">%li</code> for longs</li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">%s</code> for strings</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="operators-limitations-truncation">Operators, limitations, truncation</h2>
+
+<ul>
+  <li data-marker="*">There are several mathematical operators we can use, too:
+    <ul>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">+</code> for addition</li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">-</code> for subtraction</li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">*</code> for multiplication</li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">/</code> for division</li>
+      <li data-marker="*"><code class="language-plaintext highlighter-rouge">%</code> for remainder</li>
+    </ul>
+  </li>
+  <li data-marker="*">We’ll make a new program, <code class="language-plaintext highlighter-rouge">addition.c</code>:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;cs50.h&gt;
+#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">get_int</span><span class="p">(</span><span class="s">"x: "</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">get_int</span><span class="p">(</span><span class="s">"y: "</span><span class="p">);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%i</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">We’ll include header files for libraries we know we want to use, and then we’ll call <code class="language-plaintext highlighter-rouge">get_int</code> to get integers from the user, storing them in variables named <code class="language-plaintext highlighter-rouge">x</code> and <code class="language-plaintext highlighter-rouge">y</code>.</li>
+      <li data-marker="*">Then, in <code class="language-plaintext highlighter-rouge">printf</code>, we’ll print a placeholder for an integer, <code class="language-plaintext highlighter-rouge">%i</code>, followed by a new line. Since we want to print out the sum of <code class="language-plaintext highlighter-rouge">x</code> and <code class="language-plaintext highlighter-rouge">y</code>, we’ll pass in <code class="language-plaintext highlighter-rouge">x + y</code> for <code class="language-plaintext highlighter-rouge">printf</code> to substitute in the string.</li>
+      <li data-marker="*">We’ll save, run <code class="language-plaintext highlighter-rouge">make addition</code> in the terminal, and then <code class="language-plaintext highlighter-rouge">./addition</code> to see our program working. If we type in something that’s not an integer, we’ll see <code class="language-plaintext highlighter-rouge">get_int</code> asking us for an integer again. If we type in a really big number, like <code class="language-plaintext highlighter-rouge">4000000000</code>, <code class="language-plaintext highlighter-rouge">get_int</code> will prompt us again too. This is because, like on many computer systems, an <code class="language-plaintext highlighter-rouge">int</code> in CS50 IDE is 32 bits, which can only contain about four billion different values. And since integers can be positive or negative, the highest positive value for an <code class="language-plaintext highlighter-rouge">int</code> can only be about two billion, with a lowest negative value of about negative two billion, for a total of about four billion total values.</li>
+    </ul>
+  </li>
+  <li data-marker="*">We can change our program to use the <code class="language-plaintext highlighter-rouge">long</code> type:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;cs50.h&gt;
+#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">long</span> <span class="n">x</span> <span class="o">=</span> <span class="n">get_long</span><span class="p">(</span><span class="s">"x: "</span><span class="p">);</span>
+
+    <span class="kt">long</span> <span class="n">y</span> <span class="o">=</span> <span class="n">get_long</span><span class="p">(</span><span class="s">"y: "</span><span class="p">);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%li</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">Now we can type in bigger integers, and see a correct result as expected.</li>
+    </ul>
+  </li>
+  <li data-marker="*">Whenever we get an error while compiling, it’s a good idea to scroll up to the top to see the first error and fix that first, since sometimes a mistake early in the program will lead to the rest of the program being interpreted with errors as well.</li>
+  <li data-marker="*">Let’s look at another example, <code class="language-plaintext highlighter-rouge">truncation.c</code>:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;cs50.h&gt;
+#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Get numbers from user</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">get_int</span><span class="p">(</span><span class="s">"x: "</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">get_int</span><span class="p">(</span><span class="s">"y: "</span><span class="p">);</span>
+
+    <span class="c1">// Divide x by y</span>
+    <span class="kt">float</span> <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%f</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">z</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">We’ll store the result of <code class="language-plaintext highlighter-rouge">x</code> divided by <code class="language-plaintext highlighter-rouge">y</code> in <code class="language-plaintext highlighter-rouge">z</code>, a floating-point value, or real number, and print it out as a float too.</li>
+      <li data-marker="*">But when we compile and run our program, we see <code class="language-plaintext highlighter-rouge">z</code> printed out as whole numbers like <code class="language-plaintext highlighter-rouge">0.000000</code> or <code class="language-plaintext highlighter-rouge">1.000000</code>. It turns out that, in our code, <code class="language-plaintext highlighter-rouge">x / y</code> is divided as two integers <em>first</em>, so the result given back by the division operation is an integer as well. The result is <strong>truncated</strong>, with the value after the decimal point lost. Even though <code class="language-plaintext highlighter-rouge">z</code> is a <code class="language-plaintext highlighter-rouge">float</code>, the value we’re storing in it is already an integer.</li>
+      <li data-marker="*">To fix this, we <strong>cast</strong>, or convert, our integers to floats before we divide them:
+        <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span> <span class="n">x</span> <span class="o">/</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span> <span class="n">y</span><span class="p">;</span>
+</code></pre></div>        </div>
+      </li>
+      <li data-marker="*">The result will be a float as we expect, and in fact we can cast only one of <code class="language-plaintext highlighter-rouge">x</code> or <code class="language-plaintext highlighter-rouge">y</code> and get a float as well.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="variables-syntactic-sugar">Variables, syntactic sugar</h2>
+
+<ul>
+  <li data-marker="*">In Scratch, we had blocks like “set [counter] to (0)” that set a <strong>variable</strong> to some value. In C, we would write <code class="language-plaintext highlighter-rouge">int counter = 0;</code> for the same effect.</li>
+  <li data-marker="*">We can increase the value of a variable with <code class="language-plaintext highlighter-rouge">counter = counter + 1;</code>, where we look at the right side first, taking the original value of <code class="language-plaintext highlighter-rouge">counter</code>, adding 1, and then storing it into the left side (back into <code class="language-plaintext highlighter-rouge">counter</code> in this case).</li>
+  <li data-marker="*">C also supports <strong>syntactic sugar</strong>, or shorthand expressions for the same functionality. In this case, we could equivalently say <code class="language-plaintext highlighter-rouge">counter += 1;</code> to add one to <code class="language-plaintext highlighter-rouge">counter</code> before storing it again. We could also just write <code class="language-plaintext highlighter-rouge">counter++;</code>, and we can learn this (and other examples) through looking at documentation or other references online.</li>
+</ul>
+
+<h2 id="conditions">Conditions</h2>
+
+<ul>
+  <li data-marker="*">We can translate conditions, or “if” blocks, with:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"x is less than y</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">Notice that in C, we use <code class="language-plaintext highlighter-rouge">{</code> and <code class="language-plaintext highlighter-rouge">}</code> (as well as indentation) to indicate how lines of code should be nested.</li>
+    </ul>
+  </li>
+  <li data-marker="*">We can have “if” and “else” conditions:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"x is less than y</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"x is not less than y</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li data-marker="*">And even “else if”:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"x is less than y</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"x is greater than y</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"x is equal to y</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">Notice that, to compare two values in C, we use <code class="language-plaintext highlighter-rouge">==</code>, two equals signs.</li>
+      <li data-marker="*">And, logically, we don’t need the <code class="language-plaintext highlighter-rouge">if (x == y)</code> in the final condition, since that’s the only case remaining, so we can just say <code class="language-plaintext highlighter-rouge">else</code>:
+        <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"x is less than y</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"x is greater than y</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"x is equal to y</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li data-marker="*">Let’s take a look at another example, <code class="language-plaintext highlighter-rouge">conditions.c</code>:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;cs50.h&gt;
+#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Prompt user for x</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">get_int</span><span class="p">(</span><span class="s">"x: "</span><span class="p">);</span>
+
+    <span class="c1">// Prompt user for y</span>
+    <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">get_int</span><span class="p">(</span><span class="s">"y: "</span><span class="p">);</span>
+
+    <span class="c1">// Compare x and y</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"x is less than y</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"x is greater than y</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"x is equal to y</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">We’ve included the conditions we just saw, along with two calls, or uses, of <code class="language-plaintext highlighter-rouge">get_int</code> to get <code class="language-plaintext highlighter-rouge">x</code> and <code class="language-plaintext highlighter-rouge">y</code> from the user.</li>
+      <li data-marker="*">We’ll compile and run our program to see that it indeed works as intended.</li>
+    </ul>
+  </li>
+  <li data-marker="*">In <code class="language-plaintext highlighter-rouge">agree.c</code>, we can ask the user to confirm or deny something:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;cs50.h&gt;
+#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">get_char</span><span class="p">(</span><span class="s">"Do you agree? "</span><span class="p">);</span>
+
+    <span class="c1">// Check whether agreed</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">'Y'</span> <span class="o">||</span> <span class="n">c</span> <span class="o">==</span> <span class="sc">'y'</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"Agreed.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">'N'</span> <span class="o">||</span> <span class="n">c</span> <span class="o">==</span> <span class="sc">'n'</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"Not agreed.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">With <code class="language-plaintext highlighter-rouge">get_char</code>, we can get a single character, and since we only have a single one in our program, it seems reasonable to call it <code class="language-plaintext highlighter-rouge">c</code>.</li>
+      <li data-marker="*">We use two vertical bars, <code class="language-plaintext highlighter-rouge">||</code>, to indicate a logical “or”, whether either expression can be true for the condition to be followed. (Two ampersands, <code class="language-plaintext highlighter-rouge">&amp;&amp;</code>, indicate a logical “and”, where both conditions would have to be true.) And notice that we use two equals signs, <code class="language-plaintext highlighter-rouge">==</code>, to compare two values, as well as single quotes, <code class="language-plaintext highlighter-rouge">'</code>, to surround our values of single characters.</li>
+      <li data-marker="*">If neither of the expressions are true, nothing will happen since our program doesn’t have a loop.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="boolean-expressions-loops">Boolean expressions, loops</h2>
+
+<ul>
+  <li data-marker="*">We can translate a “forever” block in Scratch with:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"hello, world</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">The <code class="language-plaintext highlighter-rouge">while</code> keyword requires a condition, so we use <code class="language-plaintext highlighter-rouge">true</code> as the Boolean expression to ensure that our loop will run forever. <code class="language-plaintext highlighter-rouge">while</code> will tell the computer to check whether the expression evaluates to <code class="language-plaintext highlighter-rouge">true</code>, and then run the lines inside the curly braces. Then it will repeat that until the expression isn’t true anymore. In this case, <code class="language-plaintext highlighter-rouge">true</code> will always be true, so our loop is an <strong>infinite loop</strong>, or one that will run forever.</li>
+    </ul>
+  </li>
+  <li data-marker="*">We could do something a certain number of times with <code class="language-plaintext highlighter-rouge">while</code>:<br>
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"hello, world</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">We create a variable, <code class="language-plaintext highlighter-rouge">i</code>, and set it to 0. Then, while <code class="language-plaintext highlighter-rouge">i</code> is less than 50, we run some lines of code, including one where we add 1 to <code class="language-plaintext highlighter-rouge">i</code> each time. This way, our loop will eventually end when <code class="language-plaintext highlighter-rouge">i</code> reaches a value of 50.</li>
+      <li data-marker="*">In this case, we’re using the variable <code class="language-plaintext highlighter-rouge">i</code> as a counter, but since it doesn’t serve any additional purpose, we can simply name it <code class="language-plaintext highlighter-rouge">i</code>.</li>
+    </ul>
+  </li>
+  <li data-marker="*">Even though we <em>could</em> do the following and start counting at 1, by convention we should start at 0:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">50</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"hello, world</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li data-marker="*">Another correct, but arguably less well-designed solution might be starting at 50 and counting backwards:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"hello, world</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">i</span><span class="o">--</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">In this case, the logic for our loop is harder to reason about without serving any additional purpose, and might even confuse readers.</li>
+    </ul>
+  </li>
+  <li data-marker="*">Finally, more commonly we can use the <code class="language-plaintext highlighter-rouge">for</code> keyword:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"hello, world</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">Again, first we create a variable named <code class="language-plaintext highlighter-rouge">i</code> and set it to 0. Then, we check that <code class="language-plaintext highlighter-rouge">i &lt; 50</code> every time we reach the top of the loop, before we run any of the code inside. If that expression is true, then we run the code inside. Finally, after we run the code inside, we use <code class="language-plaintext highlighter-rouge">i++</code> to add one to <code class="language-plaintext highlighter-rouge">i</code>, and the loop repeats.</li>
+      <li data-marker="*">The <code class="language-plaintext highlighter-rouge">for</code> loop is more elegant than a <code class="language-plaintext highlighter-rouge">while</code> loop in this case, since everything related to the loop is in the same line, and only the code we actually want to run multiple times is inside the loop.</li>
+    </ul>
+  </li>
+  <li data-marker="*">Notice that for many of these lines of code, like <code class="language-plaintext highlighter-rouge">if</code> conditions and <code class="language-plaintext highlighter-rouge">for</code> loops, we don’t put a semicolon at the end. This is just how the language of C was designed, many years ago, and a general rule is that only lines for actions or verbs have semicolons at the end.</li>
+</ul>
+
+<h2 id="abstraction">Abstraction</h2>
+
+<ul>
+  <li data-marker="*">We can write a program that prints <code class="language-plaintext highlighter-rouge">meow</code> three times:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"meow</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"meow</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"meow</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li data-marker="*">We could use a <code class="language-plaintext highlighter-rouge">for</code> loop, so we don’t have to copy and paste so many lines:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"meow</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li data-marker="*">We can move the <code class="language-plaintext highlighter-rouge">printf</code> line to its own function, like our own puzzle piece:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="kt">void</span> <span class="nf">meow</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"meow</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">meow</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">We defined a function, <code class="language-plaintext highlighter-rouge">meow</code>, above our <code class="language-plaintext highlighter-rouge">main</code> function.</li>
+    </ul>
+  </li>
+  <li data-marker="*">But conventionally, our <code class="language-plaintext highlighter-rouge">main</code> function should be the first function in our program, so we need a few more lines:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="kt">void</span> <span class="nf">meow</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">meow</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">meow</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"meow</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">It turns out that we need to declare our <code class="language-plaintext highlighter-rouge">meow</code> function first with a <strong>prototype</strong>, before we use it in <code class="language-plaintext highlighter-rouge">main</code>, and actually define it after. The compiler reads our source code from top to bottom, so it needs to know that <code class="language-plaintext highlighter-rouge">meow</code> will exist later in the file.</li>
+    </ul>
+  </li>
+  <li data-marker="*">We can even change our <code class="language-plaintext highlighter-rouge">meow</code> function to take in some input, <code class="language-plaintext highlighter-rouge">n</code>, and meow <code class="language-plaintext highlighter-rouge">n</code> times:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="kt">void</span> <span class="nf">meow</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">meow</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">meow</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"meow</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">The <code class="language-plaintext highlighter-rouge">void</code> before the <code class="language-plaintext highlighter-rouge">meow</code> function means that it doesn’t return a value, and likewise in <code class="language-plaintext highlighter-rouge">main</code> we can’t do anything with the result of <code class="language-plaintext highlighter-rouge">meow</code>, so we just call it.</li>
+    </ul>
+  </li>
+  <li data-marker="*">The abstraction here leads to better design, since we now have the flexibility to reuse our <code class="language-plaintext highlighter-rouge">meow</code> function in multiple places in the future.</li>
+  <li data-marker="*">Let’s look at another example of abstraction, <code class="language-plaintext highlighter-rouge">get_positive_int.c</code>:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;cs50.h&gt;
+#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">get_positive_int</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">get_positive_int</span><span class="p">();</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%i</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Prompt user for positive integer</span>
+<span class="kt">int</span> <span class="nf">get_positive_int</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+    <span class="k">do</span>
+    <span class="p">{</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">get_int</span><span class="p">(</span><span class="s">"Positive Integer: "</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">n</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">We have our own function that calls <code class="language-plaintext highlighter-rouge">get_int</code> repeatedly until we have some integer that’s <em>not</em> less than 1. With a do-while loop, our program will do something first, then check some condition, and repeat while the condition is true. A while loop, on the other hand, will check the condition first.</li>
+      <li data-marker="*">We need to declare our integer <code class="language-plaintext highlighter-rouge">n</code> outside the do-while loop, since we need to use it after the loop ends. The <strong>scope</strong> of a variable in C refers to the context, or lines of code, within which it exists. In many cases, this will be the curly braces surrounding the variable.</li>
+      <li data-marker="*">Notice that the function <code class="language-plaintext highlighter-rouge">get_positive_int</code> now starts with <code class="language-plaintext highlighter-rouge">int</code>, indicating that it has a return value of type <code class="language-plaintext highlighter-rouge">int</code>, and in <code class="language-plaintext highlighter-rouge">main</code> we indeed store it in <code class="language-plaintext highlighter-rouge">i</code> after calling <code class="language-plaintext highlighter-rouge">get_positive_int()</code>. In <code class="language-plaintext highlighter-rouge">get_positive_int</code>, we have a new keyword, <code class="language-plaintext highlighter-rouge">return</code>, to return the value <code class="language-plaintext highlighter-rouge">n</code> to wherever the function was called.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="mario">Mario</h2>
+
+<ul>
+  <li data-marker="*">We might want a program that prints part of a screen from a video game like Super Mario Bros. In <code class="language-plaintext highlighter-rouge">mario.c</code>, we can print four question marks, simulating blocks:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"????</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li data-marker="*">With a loop, we can print a number of question marks, following them with a single new line after the loop:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"?"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li data-marker="*">We can get a positive integer from the user, and print out that number of question marks, by using <code class="language-plaintext highlighter-rouge">n</code> for our loop:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;cs50.h&gt;
+#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Get positive integer from user</span>
+    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+    <span class="k">do</span>
+    <span class="p">{</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">get_int</span><span class="p">(</span><span class="s">"Width: "</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">);</span>
+
+    <span class="c1">// Print out that many question marks</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"?"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li data-marker="*">And we can print a two-dimensional set of blocks with nested loops, one inside the other:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;cs50.h&gt;
+#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"#"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">We have two nested loops, where the outer loop uses <code class="language-plaintext highlighter-rouge">i</code> to do everything inside 3 times, and the inner loop uses <code class="language-plaintext highlighter-rouge">j</code>, a different variable, to do something 3 times for each of <em>those</em> times. In other words, the outer loop prints 3 “rows”, or lines, ending each of them with a new line, and the inner loop prints 3 “columns”, or <code class="language-plaintext highlighter-rouge">#</code> characters, <em>without</em> a new line.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="memory-imprecision-and-overflow">Memory, imprecision, and overflow</h1>
+
+<ul>
+  <li data-marker="*">Our computer has memory, in hardware chips called RAM, random-access memory. Our programs use that RAM to store data while they’re running, but that memory is finite.</li>
+  <li data-marker="*">With <code class="language-plaintext highlighter-rouge">imprecision.c</code>, we can see what happens when we use floats:
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;cs50.h&gt;
+#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">float</span> <span class="n">x</span> <span class="o">=</span> <span class="n">get_float</span><span class="p">(</span><span class="s">"x: "</span><span class="p">);</span>
+    <span class="kt">float</span> <span class="n">y</span> <span class="o">=</span> <span class="n">get_float</span><span class="p">(</span><span class="s">"y: "</span><span class="p">);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%.50f</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li data-marker="*">With <code class="language-plaintext highlighter-rouge">%.50f</code>, we can specify the number of decimal places displayed.</li>
+      <li data-marker="*">Hmm, now we get …
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x: 1
+y: 10
+0.10000000149011611938476562500000000000000000000000
+</code></pre></div>        </div>
+      </li>
+      <li data-marker="*">It turns out that this is called <strong>floating-point imprecision</strong>, where we don’t have enough bits to store all possible values. With a finite number of bits for a <code class="language-plaintext highlighter-rouge">float</code>, we can’t represent all possible real numbers (of which there are an <em>infinite</em> number of), so the computer has to store the closest value it can. And this can lead to problems where even small differences in value add up, unless the programmer uses some other way to represent decimal values as accurately as needed.</li>
+    </ul>
+  </li>
+  <li data-marker="*">Last week, when we had three bits and needed to count higher than seven (or <code class="language-plaintext highlighter-rouge">111</code>), we added another bit to get eight, <code class="language-plaintext highlighter-rouge">1000</code>. But if we only had three bits available, we wouldn’t have a place for the extra <code class="language-plaintext highlighter-rouge">1</code>. It would disappear and we would be back at <code class="language-plaintext highlighter-rouge">000</code>. This problem is called <strong>integer overflow</strong>, where an integer can only be so big before it runs out of bits.</li>
+  <li data-marker="*">The Y2K problem arose because many programs stored the calendar year with just two digits, like 98 for 1998, and 99 for 1999. But when the year 2000 approached, the programs had to store only 00, leading to confusion between the years 1900 and 2000.</li>
+  <li data-marker="*">In 2038, we’ll also run out of bits to track time, since many years ago some humans decided to use 32 bits as the standard number of bits to count the number of seconds since January 1st, 1970. But with 32 bits representing only positive numbers, we can only count up to about four billion, and in 2038 we’ll reach that limit unless we upgrade the software in all of our computer systems.</li>
+</ul>
+
+
+                </main>
+
+            </div>
+
+        </div>
+
+        
+ 
+    
+
+
+</body></html>

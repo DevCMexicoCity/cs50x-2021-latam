@@ -1,0 +1,430 @@
+<!DOCTYPE html><html lang="en-us"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta property="og:description" content="Harvard Universty's introduction to the intellectual enterprises of computer science and the art of programming.">
+
+<meta property="og:image" content="https://img.youtube.com/vi/zYierUhIFNQ/maxresdefault.jpg"><meta property="og:title" content="Lecture 10 - CS50x 2021"><link href="../../favicon.ico%3F1610389211" rel="icon">
+
+<!-- https://fonts.google.com/specimen/PT+Sans?query=PT+Sans&selection.family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700 -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+
+<!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+<script src="../../assets/jquery/dist/jquery.min.js%3F1610389211"></script>
+<script src="../../assets/bootstrap/dist/js/bootstrap.bundle.min.js%3F1610389211"></script>
+
+<!-- https://bootstrap-table.com/docs/getting-started/introduction/ -->
+<link href="../../assets/bootstrap-table/dist/bootstrap-table.min.css%3F1610389211.css" rel="stylesheet">
+<script src="../../assets/bootstrap-table/dist/bootstrap-table.min.js%3F1610389211"></script>
+<script src="../../assets/bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.min.js%3F1610389211"></script>
+
+<!-- https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use -->
+<link href="../../assets/@fortawesome/fontawesome-free/css/all.min.css%3F1610389211.css" rel="stylesheet">
+
+<!-- https://moment.github.io/luxon/ -->
+<script src="../../assets/luxon.min.js%3F1610389211"></script>
+
+<!-- http://docs.mathjax.org/ -->
+<!-- https://www.jsdelivr.com/package/npm/mathjax?path=es5 -->
+<script crossorigin="anonymous" integrity="sha256-+nfSJ1LiSvANSK3wvi6FjM+oFwoIQvURU1frozp5z6o=" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-chtml.js"></script>
+
+<!-- https://github.com/verlok/vanilla-lazyload -->
+<script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.7.0/intersection-observer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js"></script>
+
+
+
+<link href="../../assets/page.css%3F1610389211.css" rel="stylesheet">
+<script src="../../assets/jekyll-theme-cs50.js%3F1610389211"></script>
+
+<script>
+    window.CS50 = {
+        locale: "en",
+        tz: "America/New_York"
+    };
+</script>
+
+<title>Lecture 10 - CS50x 2021</title>
+</head>
+
+    <body class="invisible">
+
+        
+        
+        
+        <div class="alert alert-dismissible fixed-top mb-0 rounded-0 shadow" data-alert="success" id="alert" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button><p>This is CS50x 2021, the newest version of the course. Looking for <a href="https://cs50.harvard.edu/x/2020/">CS50x 2020</a>?</p></div>
+        
+        
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <aside class="col-md">
+ 
+                    <header><h1 data-id="this-is-cs50x"><a href="../../index.html">This is CS50x</a></h1>
+
+<p>OpenCourseWare</p>
+
+<p><a href="https://community.alumni.harvard.edu/give/59206872" class="pr-1 small">Donate</a>
+<a href="https://community.alumni.harvard.edu/give/59206872" class="small"><i aria-hidden="true" class="fas fa-external-link-alt"></i></a></p>
+
+<p><a href="https://cs.harvard.edu/malan/">David J. Malan</a><br>
+<a href="mailto:malan@harvard.edu">malan@harvard.edu</a><br>
+<a href="https://www.facebook.com/dmalan" class="mr-2"><i class="fab fa-facebook-f"></i></a><a href="https://github.com/dmalan" class="mr-2"><i class="fab fa-github"></i></a><a href="https://www.instagram.com/davidjmalan/" class="mr-2"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/malan/" class="mr-2"><i class="fab fa-linkedin"></i></a><a href="https://www.quora.com/profile/David-J-Malan" class="mr-2"><i class="fab fa-quora"></i></a><a href="https://www.reddit.com/user/davidjmalan" class="mr-2"><i class="fab fa-reddit-alien"></i></a><a href="https://twitter.com/davidjmalan" class="mr-2"><i class="fab fa-twitter"></i></a></p></header>
+
+                    
+
+                    <button aria-controls="nav" aria-expanded="false" class="btn btn-sm collapsed d-md-none" data-target="aside > nav" data-toggle="collapse">
+                        Menu
+                    </button>
+
+                    <nav class="collapse d-md-block" id="nav"><hr>
+
+<ul>
+  <li data-marker="*"><a href="../../seminars/index.html">CS50’s New Year’s Seminars</a> <span class="text-white">🥂</span></li>
+  <li data-marker="*"><a href="../../gallery/index.html">Gallery of Final Projects</a> <span class="pl-1 text-white">🖼️ </span></li>
+  <li data-marker="*"><a href="../../new/index.html">What’s new for 2021?</a></li>
+</ul>
+<ul>
+  <li data-marker="*"><a href="../../weeks/0/index.html">Week 0</a> Scratch</li>
+  <li data-marker="*"><a href="../../weeks/1/index.html">Week 1</a> C</li>
+  <li data-marker="*"><a href="../../weeks/2/index.html">Week 2</a> Arrays</li>
+  <li data-marker="*"><a href="../../weeks/3/index.html">Week 3</a> Algorithms</li>
+  <li data-marker="*"><a href="../../weeks/4/index.html">Week 4</a> Memory</li>
+  <li data-marker="*"><a href="../../weeks/5/index.html">Week 5</a> Data Structures</li>
+  <li data-marker="*"><a href="../../weeks/6/index.html">Week 6</a> Python</li>
+  <li data-marker="*"><a href="../../weeks/7/index.html">Week 7</a> SQL</li>
+  <li data-marker="*"><a href="../../weeks/8/index.html">Week 8</a> HTML, CSS, JavaScript</li>
+  <li data-marker="*"><a href="../../weeks/9/index.html">Week 9</a> Flask</li>
+  <li data-marker="*"><a href="../../weeks/10/index.html">Week 10</a> Ethics</li>
+</ul>
+<ul>
+  <li data-marker="*" class="small"><a href="../../weeks/security/index.html">Security</a></li>
+  <li data-marker="*" class="small"><a href="../../weeks/ai/index.html">Artificial Intelligence</a></li>
+</ul>
+<ul>
+  <li data-marker="*"><a href="../../project/index.html">Final Project</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="../../honesty/index.html">Academic Honesty</a></li>
+  <li data-marker="*"><a href="../../certificate/index.html">CS50 Certificate</a></li>
+  <li data-marker="*"><a href="../../faqs/index.html">FAQs</a></li>
+  <li data-marker="*"><a href="https://cs50.me/cs50x">Gradebook</a></li>
+  <li data-marker="*"><a href="../../staff/index.html">Staff</a></li>
+  <li data-marker="*"><a href="../../syllabus/index.html">Syllabus</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="https://cs50.harvard.edu/x/ed">Ed Discussion</a> for Q&amp;A</li>
+  <li data-marker="*" class="small"><a href="https://us.edstem.org/quickstart/ed-discussion.pdf">Quick Start Guide</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://cs50.edx.org/">edX</a></li>
+  <li data-marker="*"><a href="https://www.youtube.com/playlist?list=PLhQjrBD2T382_R182iC2gNZI9HzWFMC_8">YouTube</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://ide.cs50.io/">CS50 IDE</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/css/">CSS Tutorial</a></li>
+  <li data-marker="*"><a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/">Flask Quickstart</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/html/">HTML Tutorial</a></li>
+  <li data-marker="*"><a href="https://jinja.palletsprojects.com/en/2.11.x/templates/">Jinja Template Designer Documentation</a></li>
+  <li data-marker="*"><a href="https://man.cs50.io/">Manual Pages</a></li>
+  <li data-marker="*"><a href="https://docs.python.org/3.7/search.html">Python Documentation</a></li>
+  <li data-marker="*"><a href="https://scratch.mit.edu/">Scratch</a></li>
+  <li data-marker="*"><a href="https://www.w3schools.com/sql/">SQL Tutorial</a></li>
+  <li data-marker="*"><a href="https://cs50.readthedocs.io/style/c/">Style Guide</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://cs50.noticeable.io/">Changelog</a></li>
+  <li data-marker="*"><a href="https://cs50.statuspage.io/">Status Page</a></li>
+</ul>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="../../communities/index.html">Communities</a></li>
+  <li data-marker="*" class="small"><a href="https://discord.gg/cs50">Discord</a></li>
+  <li data-marker="*" class="small"><a href="https://www.facebook.com/groups/cs50/">Facebook Group</a></li>
+  <li data-marker="*" class="small"><a href="https://www.facebook.com/cs50/">Facebook Page</a></li>
+  <li data-marker="*" class="small"><a href="https://github.com/cs50">GitHub</a></li>
+  <li data-marker="*" class="small"><a href="https://gitter.im/cs50/x">Gitter</a></li>
+  <li data-marker="*" class="small"><a href="https://instagram.com/cs50">Instagram</a></li>
+  <li data-marker="*" class="small"><a href="https://www.linkedin.com/groups/7437240/">LinkedIn Group</a></li>
+  <li data-marker="*" class="small"><a href="https://www.linkedin.com/school/CS50/">LinkedIn Page</a></li>
+  <li data-marker="*" class="small"><a href="https://www.quora.com/topic/CS50">Quora</a></li>
+  <li data-marker="*" class="small"><a href="https://www.reddit.com/r/cs50/">Reddit</a></li>
+  <li data-marker="*" class="small"><a href="https://cs50.edx.org/slack">Slack</a></li>
+  <li data-marker="*" class="small"><a href="https://www.snapchat.com/add/cs50">Snapchat</a></li>
+  <li data-marker="*" class="small"><a href="https://soundcloud.com/cs50">SoundCloud</a></li>
+  <li data-marker="*" class="small"><a href="https://twitter.com/cs50">Twitter</a></li>
+  <li data-marker="*" class="small"><a href="http://www.youtube.com/subscription_center?add_user=cs50tv">YouTube</a></li>
+</ul>
+
+<hr>
+
+<p><a href="https://cs50.harvardshop.com/"><img src="https://i.imgur.com/GGMdcKt.png" alt="Harvard Shop"></a></p>
+
+<hr>
+
+<p><a href="../../license/index.html" class="small"><i class="fab fa-creative-commons mr-1"></i>License</a></p></nav>
+
+                    <footer></footer>
+
+                </aside>
+
+                <main class="col-md">
+
+                    <h1 class="no_toc" id="lecture-10">Lecture 10</h1>
+
+<ul id="markdown-toc">
+  <li><a href="index.html#the-end" id="markdown-toc-the-end">The End</a></li>
+  <li><a href="index.html#ethics" id="markdown-toc-ethics">Ethics</a></li>
+  <li><a href="index.html#looking-forward" id="markdown-toc-looking-forward">Looking Forward</a></li>
+  <li><a href="index.html#quiz-show" id="markdown-toc-quiz-show">Quiz Show</a></li>
+</ul>
+
+<h2 id="the-end">The End</h2>
+
+<ul>
+  <li data-marker="*">Big thanks to the <a href="https://americanrepertorytheater.org/">American Repertory Theater</a> for hosting lectures this term, providing amazing props, lighting, and sounds to our stage.</li>
+  <li data-marker="*">CS50’s team, too, has been making everything possible off-stage, including our teaching fellows and course assistants, at both Harvard and Yale.</li>
+  <li data-marker="*">And even David makes mistakes and can be unsure about answers for some questions, so rest assured that learning will continue well beyond this course.</li>
+  <li data-marker="*">Don’t forget that, ultimately:
+    <blockquote>
+      <p>what ultimately matters in this course is not so much where you end up relative to your classmates but where you end up relative to yourself when you began</p>
+    </blockquote>
+  </li>
+  <li data-marker="*">We’ve learned some first principles:
+    <ul>
+      <li data-marker="*">computational thinking</li>
+      <li data-marker="*">using algorithms to solve problems, given some inputs from which to produce outputs</li>
+      <li data-marker="*">axes of correctness, design, and style to evaluate our code</li>
+      <li data-marker="*">abstraction, using layering to simplify problems, as with functions in code</li>
+      <li data-marker="*">precision, as by considering all the possible edge cases in our instructions</li>
+    </ul>
+  </li>
+  <li data-marker="*">With these basic building blocks, we can learn to use tools in the future, beyond C and Python, to solve even more problems.</li>
+  <li data-marker="*">We ask a volunteer to give a series of instructions for how to draw a cube and a snowman, and since everyone else interpreted each instruction slightly differently, the final drawings all ended up very different.</li>
+</ul>
+
+<h2 id="ethics">Ethics</h2>
+
+<ul>
+  <li data-marker="*">We might think of ethics as whether we <em>should</em> do something, or <em>how</em> we go about doing it, even when we have the ability to.</li>
+  <li data-marker="*">For example, we can now use code to send lots of emails, creating more spam. We can collect passwords for our website with a form, and if a user uses that same password for another site, we end up with access to their account unless we store the passwords securely.</li>
+  <li data-marker="*">JavaScript, too, can be used to log users’ actions on our sites, like items they’ve added to their cart. But logging all actions, over time, can cause worry for users’ privacy.</li>
+  <li data-marker="*">Before Facebook, the website, there was another website, <a href="https://www.thecrimson.com/article/2003/11/19/facemash-creator-survives-ad-board-the/">Facemash</a>, where code was used to scrape, or download, images of Harvard students and use them without prior permission.</li>
+  <li data-marker="*">With some colleagues from the Department of Philosophy, Meica Magnani and Susan Kennedy, we discuss some frameworks for making decisions more rigorously.</li>
+  <li data-marker="*">The <a href="https://embeddedethics.seas.harvard.edu/">Embedded EthiCS</a> program at Harvard integrates tools for ethical reasoning into computer science courses, to help ensure that future computer scientists will be creating and using technology ethically.</li>
+  <li data-marker="*">The <a href="../../labs/10/lecture.html">transcript</a> for this section of lecture, as well as readings for the related <a href="../../labs/10/index.html">lab</a>, have been posted separately.</li>
+</ul>
+
+<h2 id="looking-forward">Looking Forward</h2>
+
+<ul>
+  <li data-marker="*">Even without additional courses in computer science, we hope that you’re now equipped to use technology to solve problems in your own domain.</li>
+  <li data-marker="*">When we face new problems, we can rely on one or more of these skills:
+    <ul>
+      <li data-marker="*">asking questions</li>
+      <li data-marker="*">finding answers</li>
+      <li data-marker="*">reading documentation</li>
+      <li data-marker="*">teaching yourself new languages</li>
+    </ul>
+  </li>
+  <li data-marker="*">CS50 IDE, too, can be used for future projects, but it comes with tools for the course.</li>
+  <li data-marker="*">More industry-standard tools, for our own Mac or PC, include a terminal and other command-line tools:
+    <ul>
+      <li data-marker="*"><a href="https://developer.apple.com/xcode/">https://developer.apple.com/xcode/</a></li>
+      <li data-marker="*"><a href="https://docs.microsoft.com/en-us/windows/wsl/about">https://docs.microsoft.com/en-us/windows/wsl/about</a></li>
+      <li data-marker="*">…</li>
+    </ul>
+  </li>
+  <li data-marker="*">Brian has a <a href="https://www.youtube.com/watch?v=MJUJ4wbFm_A">workshop</a> on Git, a version-control software used to manage different versions of code and enable collaboration with others.</li>
+  <li data-marker="*">One of the most popular IDEs, <a href="https://code.visualstudio.com/">VS Code</a> is open-source and freely available, with a text editor at its core and lots of other features that can be added. There are many alternatives as well.</li>
+  <li data-marker="*">Web hosts include:
+    <ul>
+      <li data-marker="*"><a href="https://pages.github.com/">https://pages.github.com/</a></li>
+      <li data-marker="*"><a href="https://www.netlify.com/">https://www.netlify.com/</a></li>
+      <li data-marker="*">…</li>
+    </ul>
+  </li>
+  <li data-marker="*">Web app hosts include:
+    <ul>
+      <li data-marker="*"><a href="https://www.heroku.com/platform">https://www.heroku.com/platform</a></li>
+      <li data-marker="*"><a href="https://aws.amazon.com/education/awseducate/">https://aws.amazon.com/education/awseducate/</a></li>
+      <li data-marker="*"><a href="https://azure.microsoft.com/en-us/free/students/">https://azure.microsoft.com/en-us/free/students/</a></li>
+      <li data-marker="*"><a href="https://edu.google.com/programs/students/">https://edu.google.com/programs/students/</a></li>
+      <li data-marker="*">…</li>
+    </ul>
+  </li>
+  <li data-marker="*">And news sources for technology and programming include:
+    <ul>
+      <li data-marker="*"><a href="https://www.reddit.com/r/learnprogramming/">https://www.reddit.com/r/learnprogramming/</a></li>
+      <li data-marker="*"><a href="https://www.reddit.com/r/programming/">https://www.reddit.com/r/programming/</a></li>
+      <li data-marker="*"><a href="https://stackoverflow.com/">https://stackoverflow.com/</a></li>
+      <li data-marker="*"><a href="https://serverfault.com/">https://serverfault.com/</a></li>
+      <li data-marker="*"><a href="https://techcrunch.com/">https://techcrunch.com/</a></li>
+      <li data-marker="*"><a href="https://news.ycombinator.com/">https://news.ycombinator.com/</a></li>
+      <li data-marker="*">…</li>
+    </ul>
+  </li>
+  <li data-marker="*">CS50 has many communities as well:
+    <ul>
+      <li data-marker="*"><a href="https://discord.gg/cs50">https://discord.gg/cs50</a></li>
+      <li data-marker="*"><a href="https://www.facebook.com/groups/cs50">https://www.facebook.com/groups/cs50</a></li>
+      <li data-marker="*"><a href="https://www.facebook.com/cs50">https://www.facebook.com/cs50</a></li>
+      <li data-marker="*"><a href="https://gitter.im/cs50/x">https://gitter.im/cs50/x</a></li>
+      <li data-marker="*"><a href="https://github.com/cs50">https://github.com/cs50</a></li>
+      <li data-marker="*"><a href="https://www.instagram.com/cs50/">https://www.instagram.com/cs50/</a></li>
+      <li data-marker="*"><a href="https://www.linkedin.com/groups/7437240/">https://www.linkedin.com/groups/7437240/</a></li>
+      <li data-marker="*"><a href="https://www.linkedin.com/school/CS50/">https://www.linkedin.com/school/CS50/</a></li>
+      <li data-marker="*"><a href="https://www.quora.com/topic/CS50">https://www.quora.com/topic/CS50</a></li>
+      <li data-marker="*"><a href="https://www.reddit.com/r/cs50">https://www.reddit.com/r/cs50</a></li>
+      <li data-marker="*"><a href="https://cs50x.slack.com/">https://cs50x.slack.com/</a></li>
+      <li data-marker="*"><a href="https://www.snapchat.com/add/cs50">https://www.snapchat.com/add/cs50</a></li>
+      <li data-marker="*"><a href="https://soundcloud.com/cs50">https://soundcloud.com/cs50</a></li>
+      <li data-marker="*"><a href="http://cs50.stackexchange.com/">http://cs50.stackexchange.com/</a></li>
+      <li data-marker="*"><a href="https://twitter.com/cs50">https://twitter.com/cs50</a></li>
+      <li data-marker="*"><a href="http://www.youtube.com/cs50">http://www.youtube.com/cs50</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="quiz-show">Quiz Show</h2>
+
+<ul>
+  <li data-marker="*">We host a quiz show with the audience, with the following questions:
+    <ul>
+      <li data-marker="*">What are the steps for compiling source code into machine code?
+        <ul>
+          <li data-marker="*">Preprocessing, compiling, assembling, linking</li>
+        </ul>
+      </li>
+      <li data-marker="*">What is the runtime of binary search?
+        <ul>
+          <li data-marker="*"><em>O</em>(log <em>n</em>)</li>
+        </ul>
+      </li>
+      <li data-marker="*">Which of these animals was the first to be mentioned in a CS50 lecture?
+        <ul>
+          <li data-marker="*">Cat</li>
+        </ul>
+      </li>
+      <li data-marker="*">Every time you <code class="language-plaintext highlighter-rouge">malloc</code> memory, you should also be sure to…
+        <ul>
+          <li data-marker="*"><code class="language-plaintext highlighter-rouge">free</code></li>
+        </ul>
+      </li>
+      <li data-marker="*">What is a race condition?
+        <ul>
+          <li data-marker="*">When two things happen at the same time and produce an unexpected result</li>
+        </ul>
+      </li>
+      <li data-marker="*">Does zooming in on a photo let you “enhance” it to generate more detail?
+        <ul>
+          <li data-marker="*">No, a photo only has a certain amount of detail</li>
+        </ul>
+      </li>
+      <li data-marker="*">Which of the following is not a characteristic of a good hash function?
+        <ul>
+          <li data-marker="*">Randomness</li>
+        </ul>
+      </li>
+      <li data-marker="*">What does FIFO stand for?
+        <ul>
+          <li data-marker="*">First in, first out</li>
+        </ul>
+      </li>
+      <li data-marker="*">Which of the following would represent pink using RGB values?
+        <ul>
+          <li data-marker="*"><code class="language-plaintext highlighter-rouge">#ffd0e0</code></li>
+        </ul>
+      </li>
+      <li data-marker="*">In C, which of the following lines of code allocates enough memory for a copy of the string <code class="language-plaintext highlighter-rouge">s</code>?
+        <ul>
+          <li data-marker="*"><code class="language-plaintext highlighter-rouge">malloc(strlen(s) + 1)</code></li>
+        </ul>
+      </li>
+      <li data-marker="*">How should you organize your clothes to be cool?
+        <ul>
+          <li data-marker="*">queue</li>
+        </ul>
+      </li>
+      <li data-marker="*">What is a segmentation fault?
+        <ul>
+          <li data-marker="*">When a program tries to access memory that it shouldn’t</li>
+        </ul>
+      </li>
+      <li data-marker="*">Which of the following types of overflow can result from recursion without a base case?
+        <ul>
+          <li data-marker="*">stack overflow</li>
+        </ul>
+      </li>
+      <li data-marker="*">In the town of Fiftyville, what were the names of the three people who witnessed the rubber duck robbery?
+        <ul>
+          <li data-marker="*">Ruth, Eugene, and Raymond</li>
+        </ul>
+      </li>
+      <li data-marker="*">Which of these command-line programs check your code for memory leaks?
+        <ul>
+          <li data-marker="*"><code class="language-plaintext highlighter-rouge">valgrind</code></li>
+        </ul>
+      </li>
+      <li data-marker="*">Which of the following exists in C, but not Python?
+        <ul>
+          <li data-marker="*">do-while loops</li>
+        </ul>
+      </li>
+      <li data-marker="*">What HTTP request method should you use when sending private information, like a password?
+        <ul>
+          <li data-marker="*">POST</li>
+        </ul>
+      </li>
+      <li data-marker="*">What data structure allows for constant-time lookup for words in a dictionary?
+        <ul>
+          <li data-marker="*">trie</li>
+        </ul>
+      </li>
+      <li data-marker="*">What is a cookie?
+        <ul>
+          <li data-marker="*">both of the above</li>
+        </ul>
+      </li>
+      <li data-marker="*">What’s your comfort level now?
+        <ul>
+          <li data-marker="*">I’m among those more comfortable</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li data-marker="*">Thanks for joining us at CS50!</li>
+</ul>
+
+
+                </main>
+
+            </div>
+
+        </div>
+
+        
+ 
+    
+
+
+</body></html>
