@@ -1,376 +1,513 @@
-<!DOCTYPE html><html lang="en-us"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta property="og:description" content="Harvard Universty's introduction to the intellectual enterprises of computer science and the art of programming.">
+<!DOCTYPE html>
+<html lang="es-LA">
 
-<meta property="og:image" content="https://img.youtube.com/vi/zYierUhIFNQ/maxresdefault.jpg"><meta property="og:title" content="Lecture 0 - CS50x 2021"><link href="../../favicon.ico%3F1610389211" rel="icon">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:description"
+    content="Harvard Universty's introduction to the intellectual enterprises of computer science y the art of programming.">
 
-<!-- https://fonts.google.com/specimen/PT+Sans?query=PT+Sans&selection.family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700 -->
-<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <meta property="og:image" content="https://img.youtube.com/vi/zYierUhIFNQ/maxresdefault.jpg">
+  <meta property="og:title" content="Lecture 0 - CS50x 2021">
+  <link href="../../favicon.ico%3F1610389211" rel="icon">
 
-<!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
-<script src="../../assets/jquery/dist/jquery.min.js%3F1610389211"></script>
-<script src="../../assets/bootstrap/dist/js/bootstrap.bundle.min.js%3F1610389211"></script>
+  <!-- https://fonts.google.com/specimen/PT+Sans?query=PT+Sans&selection.family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
 
-<!-- https://bootstrap-table.com/docs/getting-started/introduction/ -->
-<link href="../../assets/bootstrap-table/dist/bootstrap-table.min.css%3F1610389211.css" rel="stylesheet">
-<script src="../../assets/bootstrap-table/dist/bootstrap-table.min.js%3F1610389211"></script>
-<script src="../../assets/bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.min.js%3F1610389211"></script>
+  <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+  <script src="../../assets/jquery/dist/jquery.min.js%3F1610389211"></script>
+  <script src="../../assets/bootstrap/dist/js/bootstrap.bundle.min.js%3F1610389211"></script>
 
-<!-- https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use -->
-<link href="../../assets/@fortawesome/fontawesome-free/css/all.min.css%3F1610389211.css" rel="stylesheet">
+  <!-- https://bootstrap-table.com/docs/getting-started/introduction/ -->
+  <link href="../../assets/bootstrap-table/dist/bootstrap-table.min.css%3F1610389211.css" rel="stylesheet">
+  <script src="../../assets/bootstrap-table/dist/bootstrap-table.min.js%3F1610389211"></script>
+  <script src="../../assets/bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.min.js%3F1610389211"></script>
 
-<!-- https://moment.github.io/luxon/ -->
-<script src="../../assets/luxon.min.js%3F1610389211"></script>
+  <!-- https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use -->
+  <link href="../../assets/@fortawesome/fontawesome-free/css/all.min.css%3F1610389211.css" rel="stylesheet">
 
-<!-- http://docs.mathjax.org/ -->
-<!-- https://www.jsdelivr.com/package/npm/mathjax?path=es5 -->
-<script crossorigin="anonymous" integrity="sha256-+nfSJ1LiSvANSK3wvi6FjM+oFwoIQvURU1frozp5z6o=" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-chtml.js"></script>
+  <!-- https://moment.github.io/luxon/ -->
+  <script src="../../assets/luxon.min.js%3F1610389211"></script>
 
-<!-- https://github.com/verlok/vanilla-lazyload -->
-<script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.7.0/intersection-observer.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js"></script>
+  <!-- http://docs.mathjax.org/ -->
+  <!-- https://www.jsdelivr.com/package/npm/mathjax?path=es5 -->
+  <script crossorigin="anonymous" integrity="sha256-+nfSJ1LiSvANSK3wvi6FjM+oFwoIQvURU1frozp5z6o="
+    src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-chtml.js"></script>
+
+  <!-- https://github.com/verlok/vanilla-lazyload -->
+  <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.7.0/intersection-observer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js"></script>
 
 
 
-<link href="../../assets/page.css%3F1610389211.css" rel="stylesheet">
-<script src="../../assets/jekyll-theme-cs50.js%3F1610389211"></script>
+  <link href="../../assets/page.css%3F1610389211.css" rel="stylesheet">
+  <script src="../../assets/jekyll-theme-cs50.js%3F1610389211"></script>
 
-<script>
+  <script>
     window.CS50 = {
-        locale: "en",
-        tz: "America/New_York"
+      locale: "en",
+      tz: "America/Mexico_City"
     };
-</script>
+  </script>
 
-<title>Lecture 0 - CS50x 2021</title>
+  <title>Clase 0 - CS50x 2021</title>
 </head>
 
-    <body class="invisible">
+<body class="invisible">
 
-        
-        
-        
-        <div class="alert alert-dismissible fixed-top mb-0 rounded-0 shadow" data-alert="success" id="alert" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">×</span>
-            </button><p>This is CS50x 2021, the newest version of the course. Looking for <a href="https://cs50.harvard.edu/x/2020/">CS50x 2020</a>?</p></div>
-        
-        
+  <!-- <div class="alert alert-dismissible fixed-top mb-0 rounded-0 shadow" data-alert="success" id="alert" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">×</span>
+    </button>
+    <p>This is CS50x 2021, the newest version of the course. Looking for <a
+        href="https://cs50.harvard.edu/x/2020/">CS50x 2020</a>?</p>
+  </div> -->
 
-        <div class="container-fluid">
+  <div class="container-fluid">
 
-            <div class="row">
+    <div class="row">
 
-                <aside class="col-md">
- 
-                    <header><h1 data-id="this-is-cs50x"><a href="../../index.html">This is CS50x</a></h1>
+      <aside class="col-md">
 
-<p>OpenCourseWare</p>
+        <header>
+          <h1 data-id="this-is-cs50x"><a href="index.html">Esto es CS50x</a></h1>
 
-<p><a href="https://community.alumni.harvard.edu/give/59206872" class="pr-1 small">Donate</a>
-<a href="https://community.alumni.harvard.edu/give/59206872" class="small"><i aria-hidden="true" class="fas fa-external-link-alt"></i></a></p>
+          <p>OpenCourseWare</p>
 
-<p><a href="https://cs.harvard.edu/malan/">David J. Malan</a><br>
-<a href="mailto:malan@harvard.edu">malan@harvard.edu</a><br>
-<a href="https://www.facebook.com/dmalan" class="mr-2"><i class="fab fa-facebook-f"></i></a><a href="https://github.com/dmalan" class="mr-2"><i class="fab fa-github"></i></a><a href="https://www.instagram.com/davidjmalan/" class="mr-2"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/malan/" class="mr-2"><i class="fab fa-linkedin"></i></a><a href="https://www.quora.com/profile/David-J-Malan" class="mr-2"><i class="fab fa-quora"></i></a><a href="https://www.reddit.com/user/davidjmalan" class="mr-2"><i class="fab fa-reddit-alien"></i></a><a href="https://twitter.com/davidjmalan" class="mr-2"><i class="fab fa-twitter"></i></a></p></header>
+          <p><a href="https://community.alumni.harvard.edu/give/59206872" class="pr-1 small">Donar a CS50</a>
+            <a href="https://community.alumni.harvard.edu/give/59206872" class="small"><i aria-hidden="true"
+                class="fas fa-external-link-alt"></i></a>
+          </p>
 
-                    
+          <p><a href="https://cs.harvard.edu/malan/">David J. Malan</a><br>
+            <a href="mailto:malan@harvard.edu">malan@harvard.edu</a><br>
+            <a href="https://www.facebook.com/dmalan" class="mr-2"><i class="fab fa-facebook-f"></i></a><a
+              href="https://github.com/dmalan" class="mr-2"><i class="fab fa-github"></i></a><a
+              href="https://www.instagram.com/davidjmalan/" class="mr-2"><i class="fab fa-instagram"></i></a><a
+              href="https://www.linkedin.com/in/malan/" class="mr-2"><i class="fab fa-linkedin"></i></a><a
+              href="https://www.quora.com/profile/David-J-Malan" class="mr-2"><i class="fab fa-quora"></i></a><a
+              href="https://www.reddit.com/user/davidjmalan" class="mr-2"><i class="fab fa-reddit-alien"></i></a><a
+              href="https://twitter.com/davidjmalan" class="mr-2"><i class="fab fa-twitter"></i></a>
+          </p>
 
-                    <button aria-controls="nav" aria-expanded="false" class="btn btn-sm collapsed d-md-none" data-target="aside > nav" data-toggle="collapse">
-                        Menu
-                    </button>
+          <p><a href="https://cs.harvard.edu/malan/">Developer Circles CDMX</a><br>
+            <a href="https://discord.gg/UUcw6dSVrm" class="mr-2"><i class="fab fa-discord"></i></a>
+            <a href="https://www.facebook.com/groups/DevCCiudaddeMexico/" class="mr-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://github.com/DevCMexicoCity/cs50x-2021-latam" class="mr-2"><i class="fab fa-github"></i></a>
+            <a href="https://youtube.com/c/FacebookDeveloperCirclesCiudaddeMexico" class="mr-2"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/devc_cdmx/" class="mr-2"><i class="fab fa-instagram"></i></a>
+          </p>
+        </header>
 
-                    <nav class="collapse d-md-block" id="nav"><hr>
 
-<ul>
-  <li data-marker="*"><a href="../../seminars/index.html">CS50’s New Year’s Seminars</a> <span class="text-white">🥂</span></li>
-  <li data-marker="*"><a href="../../gallery/index.html">Gallery of Final Projects</a> <span class="pl-1 text-white">🖼️ </span></li>
-  <li data-marker="*"><a href="../../new/index.html">What’s new for 2021?</a></li>
-</ul>
-<ul>
-  <li data-marker="*"><a href="../../weeks/0/index.html">Week 0</a> Scratch</li>
-  <li data-marker="*"><a href="../../weeks/1/index.html">Week 1</a> C</li>
-  <li data-marker="*"><a href="../../weeks/2/index.html">Week 2</a> Arrays</li>
-  <li data-marker="*"><a href="../../weeks/3/index.html">Week 3</a> Algorithms</li>
-  <li data-marker="*"><a href="../../weeks/4/index.html">Week 4</a> Memory</li>
-  <li data-marker="*"><a href="../../weeks/5/index.html">Week 5</a> Data Structures</li>
-  <li data-marker="*"><a href="../../weeks/6/index.html">Week 6</a> Python</li>
-  <li data-marker="*"><a href="../../weeks/7/index.html">Week 7</a> SQL</li>
-  <li data-marker="*"><a href="../../weeks/8/index.html">Week 8</a> HTML, CSS, JavaScript</li>
-  <li data-marker="*"><a href="../../weeks/9/index.html">Week 9</a> Flask</li>
-  <li data-marker="*"><a href="../../weeks/10/index.html">Week 10</a> Ethics</li>
-</ul>
-<ul>
-  <li data-marker="*" class="small"><a href="../../weeks/security/index.html">Security</a></li>
-  <li data-marker="*" class="small"><a href="../../weeks/ai/index.html">Artificial Intelligence</a></li>
-</ul>
-<ul>
-  <li data-marker="*"><a href="../../project/index.html">Final Project</a></li>
-</ul>
 
-<hr>
+        <button aria-controls="nav" aria-expanded="false" class="btn btn-sm collapsed d-md-none"
+          data-target="aside > nav" data-toggle="collapse">
+          Menu
+        </button>
 
-<ul>
-  <li data-marker="*"><a href="../../honesty/index.html">Academic Honesty</a></li>
-  <li data-marker="*"><a href="../../certificate/index.html">CS50 Certificate</a></li>
-  <li data-marker="*"><a href="../../faqs/index.html">FAQs</a></li>
-  <li data-marker="*"><a href="https://cs50.me/cs50x">Gradebook</a></li>
-  <li data-marker="*"><a href="../../staff/index.html">Staff</a></li>
-  <li data-marker="*"><a href="../../syllabus/index.html">Syllabus</a></li>
-</ul>
+        <nav class="collapse d-md-block" id="nav">
+          <hr>
 
-<hr>
+          <ul>
+            <li data-marker="*"><a href="/gallery/index.html">Galería de Proyectos 2020</a> <span
+                class="pl-1 text-white">🖼️ </span></li>
+            <li data-marker="*"><a href="/new/index.html">Novedades de la edición 2021</a></li>
+          </ul>
+          <ul>
+            <li data-marker="*"><a href="/weeks/0/index.html">Semana 0</a> Scratch</li>
+            <li data-marker="*"><a href="/weeks/1/index.html">Semana 1</a> C</li>
+            <li data-marker="*"><a href="/weeks/2/index.html">Semana 2</a> Arrays</li>
+            <li data-marker="*"><a href="/weeks/3/index.html">Semana 3</a> Algoritmos</li>
+            <li data-marker="*"><a href="/weeks/4/index.html">Semana 4</a> Memoria</li>
+            <li data-marker="*"><a href="/weeks/5/index.html">Semana 5</a> Estructuras de Datos</li>
+            <li data-marker="*"><a href="/weeks/6/index.html">Semana 6</a> Python</li>
+            <li data-marker="*"><a href="/weeks/7/index.html">Semana 7</a> SQL</li>
+            <li data-marker="*"><a href="/weeks/8/index.html">Semana 8</a> HTML, CSS, JavaScript</li>
+            <li data-marker="*"><a href="/weeks/9/index.html">Semana 9</a> Flask</li>
+            <li data-marker="*"><a href="/weeks/10/index.html">Semana 10</a> Ética</li>
+          </ul>
+          <ul>
+            <li data-marker="*" class="small"><a href="weeks/security/index.html">Seguridad Informática</a></li>
+            <li data-marker="*" class="small"><a href="weeks/ai/index.html">Inteligencia Artificial</a></li>
+          </ul>
+          <ul>
+            <li data-marker="*"><a href="project/index.html">Proyecto Final</a></li>
+          </ul>
 
-<ul>
-  <li data-marker="*"><a href="https://cs50.harvard.edu/x/ed">Ed Discussion</a> for Q&amp;A</li>
-  <li data-marker="*" class="small"><a href="https://us.edstem.org/quickstart/ed-discussion.pdf">Quick Start Guide</a></li>
-</ul>
+          <hr>
 
-<hr>
+          <ul>
+            <li data-marker="*"><a href="honesty/index.html">Honestidad Académica</a></li>
+            <li data-marker="*"><a href="certificate/index.html">Certificado de CS50</a></li>
+            <li data-marker="*"><a href="faqs/index.html">Preguntas Frecuentes</a></li>
+            <li data-marker="*"><a href="https://cs50.me/cs50x">Calificaciones</a></li>
+            <li data-marker="*"><a href="staff/index.html">Staff</a></li>
+            <li data-marker="*"><a href="syllabus/index.html">Temario</a></li>
+          </ul>
 
-<ul class="small">
-  <li data-marker="*"><a href="https://cs50.edx.org/">edX</a></li>
-  <li data-marker="*"><a href="https://www.youtube.com/playlist?list=PLhQjrBD2T382_R182iC2gNZI9HzWFMC_8">YouTube</a></li>
-</ul>
+          <hr>
 
-<hr>
+          <ul>
+            <li data-marker="*"><a href="https://discord.gg/cs50">Grupo de Estudio CS50x</a></li>
+            <li data-marker="*" class="small">(en español)</li>
+            <li data-marker="*" class="small"><a href="https://discord.gg/cs50">Discord</a></li>
+          </ul>
 
-<ul class="small">
-  <li data-marker="*"><a href="https://ide.cs50.io/">CS50 IDE</a></li>
-  <li data-marker="*"><a href="https://www.w3schools.com/css/">CSS Tutorial</a></li>
-  <li data-marker="*"><a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/">Flask Quickstart</a></li>
-  <li data-marker="*"><a href="https://www.w3schools.com/html/">HTML Tutorial</a></li>
-  <li data-marker="*"><a href="https://jinja.palletsprojects.com/en/2.11.x/templates/">Jinja Template Designer Documentation</a></li>
-  <li data-marker="*"><a href="https://man.cs50.io/">Manual Pages</a></li>
-  <li data-marker="*"><a href="https://docs.python.org/3.7/search.html">Python Documentation</a></li>
-  <li data-marker="*"><a href="https://scratch.mit.edu/">Scratch</a></li>
-  <li data-marker="*"><a href="https://www.w3schools.com/sql/">SQL Tutorial</a></li>
-  <li data-marker="*"><a href="https://cs50.readthedocs.io/style/c/">Style Guide</a></li>
-</ul>
+          <hr>
 
-<hr>
+          <ul>
+            <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><a href="https://cs50.harvard.edu/x/ed">Plataforma Ed</a></li>
+            <li data-marker="*" class="small">Preguntas y Respuestas (En inglés)</li>
+            <li data-marker="*" class="small"><a href="https://us.edstem.org/quickstart/ed-discussion.pdf">Guía de Inicio</a></li>
+          </ul>
 
-<ul class="small">
-  <li data-marker="*"><a href="https://cs50.noticeable.io/">Changelog</a></li>
-  <li data-marker="*"><a href="https://cs50.statuspage.io/">Status Page</a></li>
-</ul>
+          <hr>
 
-<hr>
+          <ul class="small">
+            <li data-marker="*"><a href="https://cs50.edx.org/">CS50 en edX</a></li>
+            <li data-marker="*"><a
+                href="https://www.youtube.com/playlist?list=PLhQjrBD2T382_R182iC2gNZI9HzWFMC_8">CS50 en YouTube</a></li>
+          </ul>
 
-<ul>
-  <li data-marker="*"><a href="../../communities/index.html">Communities</a></li>
-  <li data-marker="*" class="small"><a href="https://discord.gg/cs50">Discord</a></li>
-  <li data-marker="*" class="small"><a href="https://www.facebook.com/groups/cs50/">Facebook Group</a></li>
-  <li data-marker="*" class="small"><a href="https://www.facebook.com/cs50/">Facebook Page</a></li>
-  <li data-marker="*" class="small"><a href="https://github.com/cs50">GitHub</a></li>
-  <li data-marker="*" class="small"><a href="https://gitter.im/cs50/x">Gitter</a></li>
-  <li data-marker="*" class="small"><a href="https://instagram.com/cs50">Instagram</a></li>
-  <li data-marker="*" class="small"><a href="https://www.linkedin.com/groups/7437240/">LinkedIn Group</a></li>
-  <li data-marker="*" class="small"><a href="https://www.linkedin.com/school/CS50/">LinkedIn Page</a></li>
-  <li data-marker="*" class="small"><a href="https://www.quora.com/topic/CS50">Quora</a></li>
-  <li data-marker="*" class="small"><a href="https://www.reddit.com/r/cs50/">Reddit</a></li>
-  <li data-marker="*" class="small"><a href="https://cs50.edx.org/slack">Slack</a></li>
-  <li data-marker="*" class="small"><a href="https://www.snapchat.com/add/cs50">Snapchat</a></li>
-  <li data-marker="*" class="small"><a href="https://soundcloud.com/cs50">SoundCloud</a></li>
-  <li data-marker="*" class="small"><a href="https://twitter.com/cs50">Twitter</a></li>
-  <li data-marker="*" class="small"><a href="http://www.youtube.com/subscription_center?add_user=cs50tv">YouTube</a></li>
-</ul>
+          <hr>
 
-<hr>
+          <ul class="small">
+            <li data-marker="*"><a href="https://ide.cs50.io/">CS50 IDE</a></li>
+            <li data-marker="*"><a href="https://www.w3schools.com/css/">Tutorial CSS </a></li>
+            <li data-marker="*"><a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/">Flask Quickstart</a>
+            </li>
+            <li data-marker="*"><a href="https://www.w3schools.com/html/">Tutorial HTML</a></li>
+            <li data-marker="*"><a href="https://jinja.palletsprojects.com/en/2.11.x/templates/">Documentación Jinja Template Designer</a></li>
+            <li data-marker="*"><a href="https://man.cs50.io/">Páginas del Manual</a></li>
+            <li data-marker="*"><a href="https://docs.python.org/3.7/search.html">Documentación Python</a></li>
+            <li data-marker="*"><a href="https://scratch.mit.edu/">Scratch</a></li>
+            <li data-marker="*"><a href="https://www.w3schools.com/sql/">Tutorial SQL</a></li>
+            <li data-marker="*"><a href="https://cs50.readthedocs.io/style/c/">Guía de Estilo de Código en C</a></li>
+          </ul>
 
-<p><a href="https://cs50.harvardshop.com/"><img src="https://i.imgur.com/GGMdcKt.png" alt="Harvard Shop"></a></p>
+          <hr>
 
-<hr>
+          <ul class="small">
+            <li data-marker="*"><a href="https://cs50.noticeable.io/">Historial de cambios herramientas CS50</a></li>
+            <li data-marker="*"><a href="https://cs50.statuspage.io/">Página de estatus de servicios de CS50</a></li>
+          </ul>
 
-<p><a href="../../license/index.html" class="small"><i class="fab fa-creative-commons mr-1"></i>License</a></p></nav>
+          <hr>
 
-                    <footer></footer>
+          <ul>
+            <li data-marker="*"><a href="communities/index.html">Comunidades Oficiales CS50</a></li>
+            <li data-marker="*" class="small">(En inglés)</li>
+            <li data-marker="*" class="small"><a href="https://discord.gg/cs50">Discord</a></li>
+            <li data-marker="*" class="small"><a href="https://www.facebook.com/groups/cs50/">Facebook Group</a></li>
+            <li data-marker="*" class="small"><a href="https://www.facebook.com/cs50/">Facebook Page</a></li>
+            <li data-marker="*" class="small"><a href="https://github.com/cs50">GitHub</a></li>
+            <li data-marker="*" class="small"><a href="https://gitter.im/cs50/x">Gitter</a></li>
+            <li data-marker="*" class="small"><a href="https://instagram.com/cs50">Instagram</a></li>
+            <li data-marker="*" class="small"><a href="https://www.linkedin.com/groups/7437240/">LinkedIn Group</a></li>
+            <li data-marker="*" class="small"><a href="https://www.linkedin.com/school/CS50/">LinkedIn Page</a></li>
+            <li data-marker="*" class="small"><a href="https://www.quora.com/topic/CS50">Quora</a></li>
+            <li data-marker="*" class="small"><a href="https://www.reddit.com/r/cs50/">Reddit</a></li>
+            <li data-marker="*" class="small"><a href="https://cs50.edx.org/slack">Slack</a></li>
+            <li data-marker="*" class="small"><a href="https://www.snapchat.com/add/cs50">Snapchat</a></li>
+            <li data-marker="*" class="small"><a href="https://soundcloud.com/cs50">SoundCloud</a></li>
+            <li data-marker="*" class="small"><a href="https://twitter.com/cs50">Twitter</a></li>
+            <li data-marker="*" class="small"><a
+                href="http://www.youtube.com/subscription_center?add_user=cs50tv">YouTube</a></li>
+          </ul>
 
-                </aside>
+          <hr>
 
-                <main class="col-md">
+          <p><a href="https://cs50.harvardshop.com/"><img src="https://i.imgur.com/GGMdcKt.png" alt="Harvard Shop"></a>
+          </p>
 
-                    <h1 class="no_toc" id="lecture-0">Lecture 0</h1>
+          <hr>
 
-<ul id="markdown-toc">
-  <li><a href="index.html#welcome" id="markdown-toc-welcome">Welcome</a></li>
-  <li><a href="index.html#what-is-computer-science" id="markdown-toc-what-is-computer-science">What is computer science?</a></li>
-  <li><a href="index.html#representing-numbers" id="markdown-toc-representing-numbers">Representing numbers</a></li>
-  <li><a href="index.html#text" id="markdown-toc-text">Text</a></li>
-  <li><a href="index.html#images-video-sounds" id="markdown-toc-images-video-sounds">Images, video, sounds</a></li>
-  <li><a href="index.html#algorithms" id="markdown-toc-algorithms">Algorithms</a></li>
-  <li><a href="index.html#pseudocode" id="markdown-toc-pseudocode">Pseudocode</a></li>
-  <li><a href="index.html#scratch" id="markdown-toc-scratch">Scratch</a></li>
-</ul>
+          <p><a href="license/index.html" class="small"><i class="fab fa-creative-commons mr-1"></i>Licencia</a></p>
+        </nav>
 
-<h2 id="welcome">Welcome</h2>
+        <footer></footer>
 
-<ul>
-  <li data-marker="*">This year, we’ll be in the <a href="https://americanrepertorytheater.org/venue/loeb-drama-center-3/">Loeb Drama Center</a> at Harvard University, where, thanks to our close collaboration with the <a href="https://americanrepertorytheater.org/">American Repertory Theater</a>, we have an amazing stage and even props for demonstrations.</li>
-  <li data-marker="*">We turned an 18th century <a href="https://images.hollis.harvard.edu/permalink/f/100kie6/HVD_VIAolvwork671391">watercolor painting of Harvard’s campus</a> by a student, Jonathan Fisher, into the backdrop for the stage.</li>
-  <li data-marker="*">Twenty years ago as an undergraduate, David overcame his own trepidation, stepping outside his comfort zone and took CS50 himself, finding that the course was less about programming than about problem solving.</li>
-  <li data-marker="*">In fact, two-thirds of CS50 students have never taken a computer science course before.</li>
-  <li data-marker="*">And importantly, too:
-    <blockquote>
-      <p>what ultimately matters in this course is not so much where you end up relative to your classmates but where you end up relative to yourself when you began</p>
-    </blockquote>
-  </li>
-  <li data-marker="*">We’ll start off the course recreating a component of a <a href="https://en.wikipedia.org/wiki/Super_Mario_Bros.">Super Mario game</a>, later building a web application called CS50 Finance that will allow users to buy and sell stocks virtually, and ending the course with the creation of your very own final project.</li>
-</ul>
+      </aside>
 
-<h2 id="what-is-computer-science">What is computer science?</h2>
+      <main class="col-md">
 
-<ul>
-  <li data-marker="*">Computer science is fundamentally problem solving.</li>
-  <li data-marker="*">We can think of <strong>problem solving</strong> as the process of taking some input (details about our problem) and generate some output (the solution to our problem). The “black box” in the middle is computer science, or the code we’ll learn to write.<br>
-<img src="input_output.png" alt="word &quot;input&quot;, arrow into box, arrow out of box, word &quot;output&quot;"></li>
-  <li data-marker="*">To begin doing that, we’ll need a way to represent inputs and outputs, so we can store and work with information in a standardized way.</li>
-</ul>
+        <h1 class="no_toc" id="lecture-0">Clase 0</h1>
 
-<h2 id="representing-numbers">Representing numbers</h2>
+        <ul id="markdown-toc">
+          <li><a href="index.html#welcome" id="markdown-toc-welcome">Bienvenida</a></li>
+          <li><a href="index.html#what-is-computer-science" id="markdown-toc-what-is-computer-science">¿Qué son las Ciencias de la Computación?</a></li>
+          <li><a href="index.html#representing-numbers" id="markdown-toc-representing-numbers">Representación de números</a></li>
+          <li><a href="index.html#text" id="markdown-toc-text">Text</a></li>
+          <li><a href="index.html#images-video-sounds" id="markdown-toc-images-video-sounds">Imágenes, video, sonidos</a></li>
+          <li><a href="index.html#algorithms" id="markdown-toc-algorithms">Algoritmos</a></li>
+          <li><a href="index.html#pseudocode" id="markdown-toc-pseudocode">Pseudocódigo</a></li>
+          <li><a href="index.html#scratch" id="markdown-toc-scratch">Scratch</a></li>
+        </ul>
 
-<ul>
-  <li data-marker="*">We might start with the task of taking attendance by counting the number of people in a room. With our hand, we might raise one finger at a time to represent each person, but we won’t be able to count very high. This system is called <strong>unary</strong>, where each digit represents a single value of one.</li>
-  <li data-marker="*">We’ve probably learned a more efficient system to represent numbers, where we have ten digits, 0 through 9:
-    <pre>0 1 2 3 4 5 6 7 8 9
-</pre>
-    <ul>
-      <li data-marker="*">This system is called decimal, or <strong>base 10</strong>, since there are ten different values that a digit can represent.</li>
-    </ul>
-  </li>
-  <li data-marker="*">Computers use a simpler system called <strong>binary</strong>, or base two, with only two possible digits, 0 and 1.
-    <ul>
-      <li data-marker="*">Each <em>binary digit</em> is also called a <strong>bit</strong>.</li>
-    </ul>
-  </li>
-  <li data-marker="*">Since computers run on electricity, which can be turned on or off, we can conveniently represent a bit by turning some switch on or off to represent a 0 or 1.
-    <ul>
-      <li data-marker="*">With one light bulb, for example, we can turn it on to count to 1.</li>
-    </ul>
-  </li>
-  <li data-marker="*">With three light bulbs, we can turn them on in different patterns, and count from 0 (with all three off) to 7 (with all three on):<br>
-<img src="lightbulb_0.png" alt="off off off representing 0"><br>
-<img src="lightbulb_1.png" alt="off off on representing 1"><br>
-<img src="lightbulb_2.png" alt="off on off representing 2"><br>
-<img src="lightbulb_3.png" alt="off on on representing 3"><br>
-<img src="lightbulb_4.png" alt="on off off representing 4"><br>
-<img src="lightbulb_5.png" alt="on off on representing 5"><br>
-<img src="lightbulb_6.png" alt="on on off representing 6"><br>
-<img src="lightbulb_7.png" alt="on on on representing 7"></li>
-  <li data-marker="*">Inside modern computers, there are not light bulbs but million of tiny switches called <strong>transistors</strong> that can be turned on and off to represent different values.</li>
-  <li data-marker="*">For example, we know the following number in decimal represents one hundred and twenty-three.
-    <pre>1 2 3
-</pre>
-    <ul>
-      <li data-marker="*">The <code class="language-plaintext highlighter-rouge">3</code> is in the ones column, the <code class="language-plaintext highlighter-rouge">2</code> is in the tens column, and the <code class="language-plaintext highlighter-rouge">1</code> is in the hundreds column.</li>
-      <li data-marker="*">So <code class="language-plaintext highlighter-rouge">123</code> is <code class="language-plaintext highlighter-rouge">100×1 + 10×2 + 1×3 = 100 + 20 + 3 = 123</code>.</li>
-      <li data-marker="*">Each place for a digit represents a power of ten, since there are ten possible digits for each place. The rightmost place is for 10<sup>0</sup>, the middle one 10<sup>1</sup>, and the leftmost place 10<sup>2</sup>:
-        <pre>10<sup>2</sup> 10<sup>1</sup> 10<sup>0</sup>
+        <h2 id="welcome">Bienvenida</h2>
+
+        <ul>
+          <li data-marker="*">Este año, las clases de CS50 serán en <a
+              href="https://americanrepertorytheater.org/venue/loeb-drama-center-3/">Loeb Drama Center</a> en la Universidad de Harvard
+            dónde, gracias a la colaboración del <a href="https://americanrepertorytheater.org/">American Repertory Theater</a>, 
+            tenemos un escenario impresionante e incluso algunas utilidades para realizar demostraciones.</li>
+          <li data-marker="*">Adaptamos como fondo del escenario una <a href="https://images.hollis.harvard.edu/permalink/f/100kie6/HVD_VIAolvwork671391">
+            pintura en acuarela del campus de Harvard</a> del siglo 18, que fue creada por el estudiante de Harvard, Jonathan Fisher.</li>
+          <li data-marker="*">Hace veinte años aún como estudiante, el profesor David J. Mallan superó su propio miedo, salió de su
+            zona de comfort y se inscribió en la clase de CS50 de aquella época, dándose cuenta de que el curso era menos sobre programación y más sobresolucionar problemas.</li>
+          <li data-marker="*">De hecho, dos terceras partes de los estudiantes de CS50 nunca han tomado un curso de Ciencias de la Computación anteriormente.
+          </li>
+          <li data-marker="*">Y algo que es muy importante:
+            <blockquote>
+              <p>Lo que realmente importa en este curso no es tanto cómo se compara tu conocimiento con el de tus compañeros sino
+                qué tanto has avanzarás en tu conocimiento comparado a cuándo comenzaste el curso</p>
+            </blockquote>
+          </li>
+          <li data-marker="*">Comenzaremos el curso recreando un componente del juego <a
+              href="https://en.wikipedia.org/wiki/Super_Mario_Bros.">Super Mario</a>, más tarde construiremos una
+            aplicación web llamada "CS50 Finance" la cuál permitirá a los usuarios comprar y vender acciones de manera virtual,
+            y terminaremos el curso con la creación de un proyecto final de tu elección.</li>
+        </ul>
+
+        <h2 id="what-is-computer-science">¿Qué son las Ciencias de la Computación?</h2>
+
+        <ul>
+          <li data-marker="*">Las Ciencias de la Computación tratan fundamentalmente sobre solución problemas.</li>
+          <li data-marker="*">Pensamos en <strong>solución problemas</strong> como el proceso de tomar datos de entrada
+            (detalles sobre el problema) y generar una salida (la solución al problema). La “caja negra” en el medio
+            son las Ciencias de la Computación, o el código que aprenderemos a escribir.<br>
+            <img src="input_output.png"
+              alt="palabra &quot;entrada&quot;, flecha apuntando hacia la caja, flecha con origen en la caja, palabra &quot;salida&quot;">
+          </li>
+          <li data-marker="*">Para comenzar a hacer eso, necesitamos una forma de representar las entradas y salidas, para que podamos
+            trabajar y almacenar información de una manera estandarizada.</li>
+        </ul>
+
+        <h2 id="representing-numbers">Representando números</h2>
+
+        <ul>
+          <li data-marker="*">Podríamos comenzar con la tarea de pasar asistencia, contando el número de gente en un salón de clases.
+            Si contamos con nuestra mano, levantando un dedo a la vez para representar a cada persona, no seremos capaces de contar hasta un número muy alto.
+            Esta forma de conteo se conoce como sistema <strong>unario</strong>, dónde cada dígito representa un el valor uno.</li>
+          <li data-marker="*">Seguramente conoces un sistema más eficiente para representar números, en el cuál tenemos 10 dígitos, del 0 al 9:
+            <pre>0 1 2 3 4 5 6 7 8 9</pre>
+            <ul>
+              <li data-marker="*">Este sistema se llama decimal, o <strong>base 10</strong>, debido a que hay 10 diferentes valores que un dígito puede representar.</li>
+            </ul>
+          </li>
+          <li data-marker="*">Las computadoras usan un sistema más simple llamado <strong>binario</strong>, o base dos, con solo dos dígitos posibles, 0 y 1.
+            <ul>
+              <li data-marker="*">Cada <em>dígo binario</em> también se conoce como <strong>bit</strong>.</li>
+            </ul>
+          </li>
+          <li data-marker="*">Debido a que las computadoras funcionan con electricidad, la cuál puede ser encendida o apagada, resulta muy conveniente
+            representar un bit con los estados encendido o apagado de un switch para representar 0 o 1.
+            <ul>
+              <li data-marker="*">Por ejemplo, podríamos encender un foco para contar 1.</li>
+            </ul>
+          </li>
+          <li data-marker="*">Si tenemos tres focos, podemos encenderlos en diferentes combinaciones, y contar desde 0 (con los tres focos apagados)
+            hasta 7 (con los tres focos encendidos):<br>
+            <img src="lightbulb_0.png" alt="off off off representing 0"><br>
+            <img src="lightbulb_1.png" alt="off off on representing 1"><br>
+            <img src="lightbulb_2.png" alt="off on off representing 2"><br>
+            <img src="lightbulb_3.png" alt="off on on representing 3"><br>
+            <img src="lightbulb_4.png" alt="on off off representing 4"><br>
+            <img src="lightbulb_5.png" alt="on off on representing 5"><br>
+            <img src="lightbulb_6.png" alt="on on off representing 6"><br>
+            <img src="lightbulb_7.png" alt="on on on representing 7">
+          </li>
+          <li data-marker="*">Dentro de las computadoras modernas, ya no hay focos sino millones de pequeños switches llamados
+            <strong>transistores</strong> los cuales de igual manera se pueden encender y apagar para formar diferentes valores.</li>
+          <li data-marker="*">Por ejemplo, sabemos que el siguiente número representa ciento veintitrés en sistema decimal.
+            <pre>1 2 3</pre>
+            <ul>
+              <li data-marker="*">El <code class="language-plaintext highlighter-rouge">3</code> está en la columa de las unidades,
+                el <code class="language-plaintext highlighter-rouge">2</code> está en la columna de las decenas, y el <code
+                  class="language-plaintext highlighter-rouge">1</code> en la columna de las centanas.</li>
+              <li data-marker="*">Así qué <code class="language-plaintext highlighter-rouge">123</code> es <code
+                  class="language-plaintext highlighter-rouge">100×1 + 10×2 + 1×3 = 100 + 20 + 3 = 123</code>.</li>
+              <li data-marker="*">Cada posición de un dígito representa una potencia de 10, debido a que hay 10 dígitos posibles
+                para cada posición. La posición más a la derecha es 10<sup>0</sup>, la del medio 10<sup>1</sup>, y la de
+                más a la izquierda 10<sup>2</sup>:
+                <pre>10<sup>2</sup> 10<sup>1</sup> 10<sup>0</sup>
 1   2   3
 </pre>
-      </li>
-    </ul>
-  </li>
-  <li data-marker="*">In binary, with just two digits, we have powers of two for each place value:
-    <pre>2<sup>2</sup> 2<sup>1</sup> 2<sup>0</sup>
+              </li>
+            </ul>
+          </li>
+          <li data-marker="*">En binario, debido a que tenemos solo dos dígitos, tenemos potencias de 2 para cada posición:
+            <pre>2<sup>2</sup> 2<sup>1</sup> 2<sup>0</sup>
 #  #  #
 </pre>
-    <ul>
-      <li data-marker="*">This is equivalent to:
-        <pre>4  2  1
+            <ul>
+              <li data-marker="*">Esto es equivalente a:
+                <pre>4  2  1
 #  #  #
 </pre>
-      </li>
-    </ul>
-  </li>
-  <li data-marker="*">With all the light bulbs or switches off, we would still have a value of 0:
-    <pre>4 2 1
+              </li>
+            </ul>
+          </li>
+          <li data-marker="*">Con todos los focos o switches apagados, aún tendremos el valor de 0:
+            <pre>4 2 1
 <b>0 0 0</b>
 </pre>
-  </li>
-  <li data-marker="*">Now if we change the binary value to, say, <code class="language-plaintext highlighter-rouge">0 1 1</code>, the decimal value would be 3, since we add the 2 and the 1:
-    <pre>4 2 1
+          </li>
+          <li data-marker="*">Si cambiamos el valor binario a, digamos, <code
+              class="language-plaintext highlighter-rouge">0 1 1</code>, el valor decimal sería 3, debido a que sumamos el 2 y el 1:
+            <pre>4 2 1
 <b>0 1 1</b>
 </pre>
-  </li>
-  <li data-marker="*">If we had several more light bulbs, we might have a binary value of <code class="language-plaintext highlighter-rouge">110010</code>, which would have the equivalent decimal value of <code class="language-plaintext highlighter-rouge">50</code>:
-    <pre>32 16  8  4  2  1
+          </li>
+          <li data-marker="*">Con más focos o interruptores, podríamos tener un valor de <code
+              class="language-plaintext highlighter-rouge">110010</code>, el cuál tendría el valor decimal equivalente
+            de <code class="language-plaintext highlighter-rouge">50</code>:
+            <pre>32 16  8  4  2  1
 <b> 1  1  0  0  1  0</b>
 </pre>
-    <ul>
-      <li data-marker="*">Notice that <code class="language-plaintext highlighter-rouge">32 + 16 + 2 = 50</code>.</li>
-    </ul>
-  </li>
-  <li data-marker="*">With more bits, we can count up to even higher numbers.</li>
-</ul>
-
-<h2 id="text">Text</h2>
-
-<ul>
-  <li data-marker="*">To represent letters, all we need to do is decide how numbers map to letters. Some humans, many years ago, collectively decided on a standard mapping of numbers to letters. The letter “A”, for example, is the number 65, and “B” is 66, and so on. By using context, like whether we’re looking at a spreadsheet or an email, different programs can interpret and display the same bits as numbers or text.</li>
-  <li data-marker="*">The standard mapping, <a href="https://en.wikipedia.org/wiki/ASCII"><strong>ASCII</strong></a>, also includes lowercase letters and punctuation.</li>
-  <li data-marker="*">If we received a text message with a pattern of bits that had the decimal values <code class="language-plaintext highlighter-rouge">72</code>, <code class="language-plaintext highlighter-rouge">73</code>, and <code class="language-plaintext highlighter-rouge">33</code>, those bits would map to the letters <code class="language-plaintext highlighter-rouge">HI!</code>. Each letter is typically represented with a pattern of eight bits, or a <strong>byte</strong>, so the sequences of bits we would receive are <code class="language-plaintext highlighter-rouge">01001000</code>, <code class="language-plaintext highlighter-rouge">01001001</code>, and <code class="language-plaintext highlighter-rouge">00100001</code>.
-    <ul>
-      <li data-marker="*">We might already be familiar with using bytes as a unit of measurement for data, as in megabytes or gigabytes, for millions or billions of bytes.</li>
-    </ul>
-  </li>
-  <li data-marker="*">With eight bits, or one byte, we can have 2<sup>8</sup>, or 256 different values (including zero). (The <em>highest value</em> we can count up to would be 255.)</li>
-  <li data-marker="*">Other characters, such as letters with accent marks and symbols in other languages, are part of a standard called <a href="https://en.wikipedia.org/wiki/Unicode"><strong>Unicode</strong></a>, which uses more bits than ASCII to accommodate all these characters.
-    <ul>
-      <li data-marker="*">When we receive an emoji, our computer is actually just receiving a number in binary that it then maps to the image of the emoji based on the Unicode standard.
-        <ul>
-          <li data-marker="*">For example, the “face with tears of joy” emoji is just the bits <code class="language-plaintext highlighter-rouge">000000011111011000000010</code>:<br>
-<img src="face_with_tears_of_joy.png" alt="face with tears of joy emoji"></li>
+            <ul>
+              <li data-marker="*">Debido a que <code
+                  class="language-plaintext highlighter-rouge">32 + 16 + 2 = 50</code>.</li>
+            </ul>
+          </li>
+          <li data-marker="*">Con más bits, podemos contar valores más altos.</li>
         </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
 
-<h2 id="images-video-sounds">Images, video, sounds</h2>
+        <h2 id="text">Texto</h2>
 
-<ul>
-  <li data-marker="*">An image, like the picture of the emoji, are made up of colors.</li>
-  <li data-marker="*">With only bits, we can map numbers to colors as well. There are many different systems to represent colors, but a common one is <strong>RGB</strong>, which represents different colors by indicating the amount of red, green, and blue within each color.</li>
-  <li data-marker="*">For example, our pattern of bits earlier, <code class="language-plaintext highlighter-rouge">72</code>, <code class="language-plaintext highlighter-rouge">73</code>, and <code class="language-plaintext highlighter-rouge">33</code> might indicate the amount of red, green, and blue in a color. (And our programs would know those bits map to a color if we opened an image file, as opposed to receiving them in a text message.)
-    <ul>
-      <li data-marker="*">Each number might be a byte, with 256 possible values, so with three bytes, we can represent millions of colors. Our three bytes from above would represent a dark shade of yellow:<br>
-<img src="72_73_33.png" alt="dark yellow"></li>
-    </ul>
-  </li>
-  <li data-marker="*">The dots, or squares, on our screens are called <strong>pixels</strong>, and images are made up of many thousands or millions of those pixels as well. So by using three bytes to represent the color for each pixel, we can create images. We can see pixels in an emoji if we zoom in, for example:<br>
-<img src="emoji_zoomed.png" alt="zoomed-in emoji of laughing tears of joy with squares of pixels distinguishable"></li>
-  <li data-marker="*">The <strong>resolution</strong> of an image is the number of pixels there are, horizontally and vertically, so a high-resolution image will have more pixels and require more bytes to be stored.</li>
-  <li data-marker="*">Videos are made up of many images, changing multiple times a second to give us the appearance of motion, as an old-fashioned <a href="https://youtu.be/p3q9MM__h-M">flipbook</a> might do.</li>
-  <li data-marker="*">Music can be represented with bits, too, with mappings of numbers to notes and durations, or more complex mappings of bits to sound frequencies at each moment of time.</li>
-  <li data-marker="*">File formats, like JPEG and PNG, or Word or Excel documents, are also based on some standard that some humans have agreed on, for representing information with bits.</li>
-</ul>
+        <ul>
+          <li data-marker="*">Para representar letras, solo necestiaríamos definir una manera de relacionar números con letras. Ciertas personas,
+            hace muchos años, definieron en conjunto y de forma estándar esta relación . La letra “A”, por
+            ejemplo, es el número 65, y “B” es 66, y así en adelante. Diferentes programas de computadora usan el contexto
+            (por ejemplo si estamos mirando una hoja de cálculo o un email) para interpretar y mostrar los mismos bits como números o como texto.</li>
+          <li data-marker="*">La relación estándar, conocida como <a
+              href="https://en.wikipedia.org/wiki/ASCII"><strong>ASCII</strong></a>, también incluye letras minúsculas 
+            y signos de puntuación.</li>
+          <li data-marker="*">Si recibimos un mensaje de texto con un patrón de bits que contienen los valores decimales <code
+              class="language-plaintext highlighter-rouge">72</code>, <code
+              class="language-plaintext highlighter-rouge">73</code>, y <code
+              class="language-plaintext highlighter-rouge">33</code>, esos bits representarían letras <code
+              class="language-plaintext highlighter-rouge">HI!</code>. Cada letra típicamente se representa con un
+            patrón de ocho bits, o un <strong>byte</strong>, así que las secuencias de bits que recibimos son <code
+              class="language-plaintext highlighter-rouge">01001000</code>, <code
+              class="language-plaintext highlighter-rouge">01001001</code>, y <code
+              class="language-plaintext highlighter-rouge">00100001</code>.
+            <ul>
+              <li data-marker="*">Probablemente ya estemos familiarizados con usar bytes como unidad de medida de información, como los
+                megabytes o gigabytes, cuando hablamos de millones o miles de millones de bytes.</li>
+            </ul>
+          </li>
+          <li data-marker="*">Con ocho bits, o un byte, tenemos 2<sup>8</sup>, o 256 valores diferentes
+            (incluyendo el cero). (El <em>valor más alto</em> al que podemos contar es 255.)</li>
+          <li data-marker="*">Otros caracteres, como letras, tilde o símbolos de otros lenguajes, son
+            parte de un estándar llamado <a href="https://en.wikipedia.org/wiki/Unicode"><strong>Unicode</strong></a>,
+            el cual usa más bits que el ASCII para lograr representar todos los caracteres.
+            <ul>
+              <li data-marker="*">Cuándo recibimos un emoji, nuestra computadora en realidad está recibiendo un número binario
+                que se relaciona con una imagen de un emjoi basado en el estándar Unicode.
+                <ul>
+                  <li data-marker="*">Por ejemplo, el emoji “cara con lágrimas de alegría” es simplemente el patrón de bits <code
+                      class="language-plaintext highlighter-rouge">000000011111011000000010</code>:<br>
+                    <img src="face_con_tears_of_joy.png" alt="cara con lágrimas de alegría">
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
 
-<h2 id="algorithms">Algorithms</h2>
+        <h2 id="images-video-sounds">Imágenes, video, sonidos</h2>
 
-<ul>
-  <li data-marker="*">Now that we can represent inputs and outputs, we can work on problem solving. The black box earlier will contain <strong>algorithms</strong>, step-by-step instructions for solving problems:<br>
-<img src="algorithms.png" alt="box with word &quot;algorithms&quot;"></li>
-  <li data-marker="*">Humans can follow algorithms too, such as recipes for cooking. When programming a computer, we need to be more precise with our algorithms so our instructions aren’t ambiguous or misinterpreted.</li>
-  <li data-marker="*">We might have an application on our phones that store our contacts, with their names and phone numbers sorted alphabetically. The old-school equivalent might be a phone book, a printed copy of names and phone numbers.</li>
-  <li data-marker="*">Our input to the problem of finding someone’s number would be the phone book and a name to look for. We might open the book and start from the first page, looking for a name one page at a time. This algorithm would be <strong>correct</strong>, since we will eventually find the name if it’s in the book.</li>
-  <li data-marker="*">We might flip through the book two pages at a time, but this algorithm will not be correct since we might skip the page with our name on it. We can fix this <strong>bug</strong>, or mistake, by going back one page if we flipped too far, since we know the phone book is sorted alphabetically.</li>
-  <li data-marker="*">Another algorithm would be opening the phone book to the middle, decide whether our name will be in the left half or right half of the book (because the book is alphabetized), and reduce the size of our problem by half. We can repeat this until we find our name, dividing the problem in half each time. With 1024 pages to start, we would only need 10 steps of dividing in half before we have just one page remaining to check. We can see this visualized in an <a href="https://youtu.be/F5LZhsekEBc">animation of dividing a phone book in half repeatedly</a>, compared to the <a href="https://youtu.be/-yTRajiUi5s">animation of searching one page at a time</a>.</li>
-  <li data-marker="*">In fact, we can represent the efficiency of each of those algorithms with a chart:<br>
-<img src="running_time.png" alt="chart with: &quot;size of problem&quot; as x-axis; &quot;time to solve&quot; as y-axis; red, steep straight line from origin to top of graph labeled &quot;n&quot;; yellow, less steep straight line from origin to top of graph labeled &quot;n/2&quot;; green, curved line that gets less and less steep from origin to right of graph labeled &quot;log_2  n&quot;">
-    <ul>
-      <li data-marker="*">Our first solution, searching one page at a time, can be represented by the red line: our time to solve increases linearly as the size of the problem increases. <em>n</em> is a some number representing the size of the problem, so with <em>n</em> pages in our phone books, we have to take up to <em>n</em> steps to find a name.</li>
-      <li data-marker="*">The second solution, searching two pages at a time, can be represented by the yellow line: our slope is less steep, but still linear. Now, we only need (roughly) <em>n</em> / 2 steps, since we flip two pages at a time.</li>
-      <li data-marker="*">Our final solution, dividing the phone book in half each time, can be represented by the green line, with a fundamentally different relationship between the size of the problem and the time to solve it: <a href="https://en.wikipedia.org/wiki/Logarithm"><strong>logarithmic</strong></a>, since our time to solve rises more and more slowly as the size of the problem increases. In other words, if the phone book went from 1000 to 2000 pages, we would only need one more step to find our name. If the size doubled again from 2000 to 4000 pages, we would still only need one more step. The green line is labeled log<sub>2</sub> <em>n</em>, or log base 2 of <em>n</em>, since we’re dividing the problem by two with each step.</li>
-    </ul>
-  </li>
-  <li data-marker="*">When we write programs using algorithms, we generally care not just how correct they are, but how <strong>well-designed</strong> they are, considering factors such as efficiency.</li>
-</ul>
+        <ul>
+          <li data-marker="*">Una imagen, como la correspondiente a un emoji, está compuesta de colores.</li>
+          <li data-marker="*">Con solo ocho bits, podemos relacionar números también a colores. Hay mucho sistemas para
+            representar colores, uno muy común es el <strong>RGB</strong>, el cuál representa diferentes colores indicando
+            la cantidad de rojo, verde y azul de cada color.</li>
+          <li data-marker="*">Por ejemplo, el patrón de bits que usamos antes, <code
+              class="language-plaintext highlighter-rouge">72</code>, <code
+              class="language-plaintext highlighter-rouge">73</code>, y <code
+              class="language-plaintext highlighter-rouge">33</code> puede indicar la cantidad de rojo, verde y azul
+            en un color. (Y un programa de archivos de imagenes sabría que esos bits estarían relacionados a un color,
+            a diferencia de un programa de mensajes de texto que los relacionaria a letras.)
+            <ul>
+              <li data-marker="*">Cada número podría ser un byte, con 256 valores posibles, así que con tres bytes, podríamos
+                representar colores. Nuestros tres bytes de arriba representaría un color amarillo oscuro:<br>
+                <img src="72_73_33.png" alt="amarillo oscuro">
+              </li>
+            </ul>
+          </li>
+          <li data-marker="*">Los puntos, o cuadros, en nuestras pantallas se llaman <strong>pixeles</strong>, y las imágenes están
+            compuestas de miles o millones de esos pixeles. Así que al usar tres bytes para representar un color
+            para cada pixel, podemos crear imágenes. Podríamos ver los pixeles de un emoji si ampliamos la imagen (zoom), por ejemplo:<br>
+            <img src="emoji_zoomed.png"
+              alt="emoji de lágrimas de alegría ampliado con los cuadros de los pixeles distinguibles">
+          </li>
+          <li data-marker="*">La <strong>resolución</strong> de una imagen es el números de pixeles que hay,
+            horizontal y verticalmente, así que una imagen de alta resolution tendrá más pixeles y requerirá más bytes para ser almacenada.</li>
+          <li data-marker="*">Los videos están hechos de muchas imágenes cambiando muchas veces en un segundo, para darnos la
+            apariencia de movimiento, como en un antiguo <a href="https://youtu.be/p3q9MM__h-M">cuaderno de animación (flipbook)</a>.</li>
+          <li data-marker="*">La música también se puede representar con bits, relacionando números a notas y duraciones,
+            o con relaciones más complejas de bits a frecuencias de sonido en un determinado instante.</li>
+          <li data-marker="*">Los formatos de archivos, como JPEG y PNG, o documentos de Word o Excel, también están basados en un
+            estándar para representar también información con bits que fue definido por alguien.</li>
+        </ul>
 
-<h2 id="pseudocode">Pseudocode</h2>
+        <h2 id="algorithms">Algoritmos</h2>
 
-<ul>
-  <li data-marker="*">We can write <strong>pseudocode</strong>, which is a representation of our algorithm in precise English (or some other human language):
-    <pre>1  Pick up phone book
+        <ul>
+          <li data-marker="*">Ahora que podemos representar información para la entrada y la salida, podemos hablar de solución de problemas. La caja
+            negra de antes contiene <strong>algoritmos</strong>, los cuales son instrucciones paso a paso para resolver problemas:<br>
+            <img src="algorithms.png" alt="caja con la palabra &quot;algoritmos&quot;">
+          </li>
+          <li data-marker="*">Un humano también puede interpretar algoritmos, por ejemplo, recetas de cocina. Cuándo programamos una
+            computadora, necesitamos ser más precisos y evitar instrucciones ambiguas o que puedan mal interpretarse</li>
+          <li data-marker="*">Probablemente tenemos una app en nuestros teléfonos para almacenar contactos, con sus nombres y
+            ordenados alfabéticamente. El equivalente antiguo a esto es un directorio telefónico, una copia impresa 
+            de una lista de números y teléfonos.</li>
+          <li data-marker="*">Nuestra entrada al problema de encontrar el número de teléfono de alguien sería el directorio telefónico y el nombre
+            que estamos buscando. Podríamos abrir el directorio y comenzar a buscar desde la primera página, una página a la vez. Este
+            algoritmo sería <strong>correcto</strong>, debido a que eventualmente encontraríamos lo que buscamos si es que está en el directorio.</li>
+          <li data-marker="*">Podríamos avanzar dos páginas a la vez, pero este algoritmo no sería correcto,
+            debido a que podríamos saltar la página con el nombre que buscamos. Podríamos arreglar este error (conocido como <strong>bug</strong>)
+            regresando páginas si es que hemos avanzado de más, debido a que sabemos que el directorio telefónico está ordenado alfabéticamente</li>
+          <li data-marker="*"> Otro algoritmo sería abrir el directorio telefónico a la mitad, determinar si el nombre que buscamos
+            está en la mitad de la izquierda o en la de la derecha (debido al orden alfabético), y reducir el tamaño de nuestro problema a la mitad.
+            Podemos repetir esto hasta que encontremos el nombre buscado, reduciendo el tamaño del problema cada vez  a la mitad.
+            Iniciando con un directorio de 1024 páginas, necesitaríamos solo 10 pasos de dividir nuestro problema a la mitad antes de quedarnos solo on una página
+            pendiente por revisar. Podemos visualizar esto en la siguiente <a href="https://youtu.be/F5LZhsekEBc">animación de
+              la división de un directorio telefónico a la mitad, de manera repetida</a>, comparado a la <a
+              href="https://youtu.be/-yTRajiUi5s">animación de buscar una página a la vez</a>.</li>
+          <li data-marker="*">De hecho, podemos representar la eficiencia de cada uno de esos algoritmos en una gráfica:<br>
+            <img src="running_time.png"
+              alt="gráfica con: &quot;tamaño del problema&quot; en el eje de las x; &quot;tiempo para resolver&quot; en el eje de las y; línea recta roja, con pendiente pronunciada del origen a la parte superior con la leyenda &quot;n&quot;; línea recta amarilla, con pendiente menos pronunciada del origen a la parte superior con la etiqueta &quot;n/2&quot;; linea curva verde, que cada vez es menos pronunciada del origen a la derecha de la gráfica con la etiqueta &quot;log_2  n&quot;">
+            <ul>
+              <li data-marker="*">Nuestra primera solución, buscar una página a la vez, se representa con una línea roja:
+                el tiempo para resolver el problema incrementa de manera lineal con el tamaño del problema. <em>n</em> es un número
+                que representa el tamaño del problema, así con <em>n</em> páginas en nuestro directorio telefónico, tenemos que realizar hasta
+                <em>n</em> pasos para encontrar un nombre.</li>
+              <li data-marker="*">La segunda solución, buscar dos páginas a la vez, se representa con una línea amarilla:
+                la pendientes es menos pronunciada, pero aún muestra una relación lineal. Ahora necesitamos solo <em>n</em> / 2 pasos, debido
+                a que avanzamos dos páginas a la vez.</li>
+              <li data-marker="*">Nuestra solución final, dividir el directorio telefónic a la mitad cada vez, se representa con
+                una líne verde, con una relación fundamentalmente diferente entre el tamaño del problem y el tiempo para
+                resolverlo: una relación <a href="https://en.wikipedia.org/wiki/Logarithm"><strong>logarítmica</strong></a>, debido
+                a que el tiempo para resolver se incrementa más lentamente según se incrementa el tamaño de nuestro problema. En otras palabras, si
+                aumentamos el tamaño del directorio de 1000 a 2000 páginas, necesitaríamos solo un paso más para encontrar un nombre. Si
+                el tamaño nuevamente aumenta al doble de 2000 a 4000 páginas, aún necesitaríamos solo un paso más. La ínea verde está
+                etiquetada con log<sub>2</sub> <em>n</em>, o logaritmo base 2 de <em>n</em>, debido a que dividimos el problema a la mitad en cada paso.</li>
+            </ul>
+          </li>
+          <li data-marker="*">Generalmente cuando escribimos programas usando algoritmos, no solo nos importa que sean correctos,
+            también nos importa que tan <strong>bien diseñados</strong> estén, considerando factores como la eficiencia.</li>
+        </ul>
+
+        <h2 id="pseudocode">Pseudocódigo</h2>
+
+        <ul>
+          <li data-marker="*">Podemos escribir <strong>pseudocódigo</strong>, el cuál es una representación
+            precisa en algún lenguaje humano como Inglés o Español:
+            <pre>1  Pick up phone book
 2  Open to middle of phone book
 3  Look at page
 4  If person is on page
@@ -384,12 +521,32 @@
 12 Else
 13     Quit
 </pre>
-    <ul>
-      <li data-marker="*">With these steps, we check the middle page, decide what to do, and repeat. If the person isn’t on the page, and there’s no more pages in the book left, then we stop. And that final case is particularly important to remember. When other programs on our computers forgot that final case, they might appear to freeze or stop responding, since they’ve encountered a case that wasn’t accounted for, or continue to repeat the same work over and over behind the scenes without making any progress.</li>
-    </ul>
-  </li>
-  <li data-marker="*">Some of these lines start with verbs, or actions. We’ll start calling these <em>functions</em>:
-    <pre>1  <b>Pick up</b> phone book
+
+<pre>  1  Toma un directorio telefónico
+  2  Abre el directorio telefónico a la mitad
+  3  Lee la página
+  4  Si la persona está en la página
+  5      Llama a la persona
+  6  Si "de otra forma" la persona está en una página anterior
+  7      Abre el directorio a la mitad de la mitad de la izquierda
+  8      Regresa a la línea 3
+  9  Si "de otra forma" la persona está en una página posterior
+  10     Abre el directorio a la mitad de la mitad de la derecha
+  11     Regresa a la línea 3
+  12 "De otra forma"
+  13     Terminar
+  </pre>
+            <ul>
+              <li data-marker="*">Con estos pasos, revisamos la página de la mitad, decidimos qué hacer, y repetimos. Si la 
+                persona no está en la página, y no hay más páginas por revisar, entonces terminamos. Es particularmente 
+                importante recordar el caso final. Cuándo otros programas en nuestras computadoras olvidan casos como el del final,
+                es cuándo pueden aparecer comportamientos como "congelarse" o "la aplicación no responde", debido a que el programa 
+                encuentra un caso que no fue tomado en cuenta por quién lo creo, o continúa repitiendo las mismas instrucciones una y otra vez sin lograr ningún progreso.</li>
+            </ul>
+          </li>
+          <li data-marker="*">Algunas de estás líenas comienzas con verbos, o acciones, las cuales llamaremos
+            <em>funciones</em>:
+            <pre>1  <b>Pick up</b> phone book
 2  <b>Open to</b> middle of phone book
 3  <b>Look at</b> page
 4  If person is on page
@@ -403,9 +560,10 @@
 12 Else
 13     <b>Quit</b>
 </pre>
-  </li>
-  <li data-marker="*">We also have branches that lead to different paths, like forks in the road, which we’ll call <em>conditions</em>:
-    <pre>1  Pick up phone book
+          </li>
+          <li data-marker="*">También tenemos ramas que conducen a diferentes caminos, como bifurcaciones en un camino, a estas
+            las llamaremos <em>condiciones</em>:
+            <pre>1  Pick up phone book
 2  Open to middle of phone book
 3  Look at page
 4  <b>If</b> person is on page
@@ -419,9 +577,10 @@
 12 <b>Else</b>
 13     Quit
 </pre>
-  </li>
-  <li data-marker="*">And the questions that decide where we go are called <em>Boolean expressions</em>, which eventually result in a value of yes or no, or true or false:
-    <pre>1  Pick up phone book
+          </li>
+          <li data-marker="*">Y a las preguntas qué deciden a dónde iremos las llamaremos <em>expressions Booleanas</em>, las cuales
+            dan como resultado un valor de sí o no, o verdadero o falso:
+            <pre>1  Pick up phone book
 2  Open to middle of phone book
 3  Look at page
 4  If <b>person is on page</b>
@@ -435,9 +594,10 @@
 12 Else
 13     Quit
 </pre>
-  </li>
-  <li data-marker="*">Lastly, we have words that create cycles, where we can repeat parts of our program, called <em>loops</em>:
-    <pre>1  Pick up phone book
+          </li>
+          <li data-marker="*">Por último, tenemos palabras que crean ciclos, en dónde podemos repetir parrtes de nuestro programa, estos se llaman 
+            <em>ciclos</em>:
+            <pre>1  Pick up phone book
 2  Open to middle of phone book
 3  Look at page
 4  If person is on page
@@ -451,148 +611,222 @@
 12 Else
 13     Quit
 </pre>
-  </li>
-</ul>
+          </li>
+        </ul>
 
-<h2 id="scratch">Scratch</h2>
+        <h2 id="scratch">Scratch</h2>
 
-<ul>
-  <li data-marker="*">We can write programs with the building blocks we just discovered:
-    <ul>
-      <li data-marker="*">functions</li>
-      <li data-marker="*">conditions</li>
-      <li data-marker="*">Boolean expressions</li>
-      <li data-marker="*">loops</li>
-    </ul>
-  </li>
-  <li data-marker="*">And we’ll discover additional features including:
-    <ul>
-      <li data-marker="*">variables</li>
-      <li data-marker="*">threads</li>
-      <li data-marker="*">events</li>
-      <li data-marker="*">…</li>
-    </ul>
-  </li>
-  <li data-marker="*">Before we learn to use a text-based programming language called C, we’ll use a graphical programming language called <a href="https://scratch.mit.edu/">Scratch</a>, where we’ll drag and drop blocks that contain instructions.</li>
-  <li data-marker="*">A simple program in C that prints out “hello, world”, would look like this:
-    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+        <ul>
+          <li data-marker="*">Podemos escribir programas con los elementos que acabamos de identificar:
+            <ul>
+              <li data-marker="*">funciones</li>
+              <li data-marker="*">condiciones</li>
+              <li data-marker="*">expresiones Booleanas</li>
+              <li data-marker="*">ciclos (loops)</li>
+            </ul>
+          </li>
+          <li data-marker="*">Y más adelante identificaremos otros elementos como:
+            <ul>
+              <li data-marker="*">variables</li>
+              <li data-marker="*">hilos (threads)</li>
+              <li data-marker="*">eventos</li>
+              <li data-marker="*">…</li>
+            </ul>
+          </li>
+          <li data-marker="*">Antes de que comencemos a aprender a usar un lenguaje de programación llamado C, usaremos un lenguaje gráfico
+            de programación llamado <a href="https://scratch.mit.edu/">Scratch</a>, en el cuál podemos arrastrar y soltar bloques
+            que representan instrucciones.</li>
+          <li data-marker="*">Un programa simple en C que muestra el texto “hello, world” en la pantalla, se ve de esta manera:
+            <div class="language-c highlighter-rouge">
+              <div class="highlight">
+                <pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
 </span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">printf</span><span class="p">(</span><span class="s">"hello, world</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div>    </div>
-    <ul>
-      <li data-marker="*">There’s a lot of symbols and syntax, or arrangement of these symbols, that we would have to figure out.</li>
-    </ul>
-  </li>
-  <li data-marker="*">The programming environment for Scratch is a little more friendly:<br>
-<img src="scratch.png" alt="screenshot of Scratch's interface">
-    <ul>
-      <li data-marker="*">On the top right, we have a stage that will be shown by our program, where we can add or change backgrounds, characters (called sprites in Scratch), and more.</li>
-      <li data-marker="*">On the left, we have puzzle pieces that represent functions or variables, or other concepts, that we can drag and drop into our instruction area in the center.</li>
-      <li data-marker="*">On the bottom right, we can add more characters for our program to use.</li>
-    </ul>
-  </li>
-  <li data-marker="*">We can drag a few blocks to make Scratch say “hello, world”:<br>
-<img src="hello_world.png" alt="screenshot of hello, world">
-    <ul>
-      <li data-marker="*">The “when green flag clicked” block refers to the start of our program (since there is a green flag above the stage that we can use to start it), and below it we’ve snapped in a “say” block and typed in “hello, world”. And we can figure out what these blocks do by exploring the interface and experimenting.</li>
-    </ul>
-  </li>
-  <li data-marker="*">We can also drag in the “ask and wait” block, with a question like “What’s your name?”, and combine it with a “say” block for the answer:<br>
-<img src="answer.png" alt="screenshot of question and answer">
-    <ul>
-      <li data-marker="*">The “answer” block is a variable, or value, that stores what the program’s user types in, and we can place it in a “say” block by draggind and dropping as well.</li>
-    </ul>
-  </li>
-  <li data-marker="*">But we didn’t wait after we said “Hello” with the first block, so we can use the “join” block to combine two phrases so our cat can say “hello, David”:<br>
-<img src="join.png" alt="screenshot of join">
-    <ul>
-      <li data-marker="*">When we try to nest blocks, or place them one inside the other, Scratch will help us by expanding places where they can be used.</li>
-    </ul>
-  </li>
-  <li data-marker="*">In fact, the “say” block itself is like an algorithm, where we provided an input of “hello, world” and it produced the output of Scratch (the cat) “saying” that phrase:<br>
-<img src="say_algorithm.png" alt="say as algorithm with &quot;hello, world&quot; as input and cat as output"></li>
-  <li data-marker="*">The “ask” block, too, takes in an input (the question we want to ask), and produces the output of the “answer” block:<br>
-<img src="ask_algorithm.png" alt="ask as algorithm with &quot;What's your name?&quot; as input and answer block as output"></li>
-  <li data-marker="*">We can then use the “answer” block along with our own text, “hello, “, as two inputs to the join algorithm …<br>
-<img src="join_algorithm.png" alt="join as algorithm with &quot;hello, &quot; and &quot;answer&quot; as input and &quot;hello, David!&quot; as output"></li>
-  <li data-marker="*">… the output of which we pass can as input to the “say” block:<br>
-<img src="say_again.png" alt="say as algorithm with &quot;hello, David!&quot; as input and cat as output"></li>
-  <li data-marker="*">At the bottom left of the screen, we see an icon for extensions, and one of them is called Text to Speech. After we add it, we can use the “speak” block to hear our cat speak:<br>
-<img src="speak_join.png" alt="speak block with join hello, answer"></li>
-  <li data-marker="*">The Text to Speech extension, thanks to the cloud, or computer servers on the internet, is converting our text to audio.</li>
-  <li data-marker="*">We can try to make the cat say meow:<br>
-<img src="meow_wait.png" alt="blocks labeled &quot;play sound Meow until done&quot; and &quot;wait 1 seconds&quot;, repeated three times">
-    <ul>
-      <li data-marker="*">We can have it say meow three times, but now we’re repeating blocks over and over.</li>
-    </ul>
-  </li>
-  <li data-marker="*">Let’s use a loop, or a “repeat” block:<br>
-<img src="repeat_meow.png" alt="blocks labeled &quot;repeat 3&quot; with &quot;play sound Meow until done&quot; and &quot;wait 1 seconds&quot; nested inside">
-    <ul>
-      <li data-marker="*">Now our program achieves the same results, but with fewer blocks. We can consider it to have a better design: if there’s something we wanted to change, we would only need to change it in one place instead of three.</li>
-    </ul>
-  </li>
-  <li data-marker="*">We can have the cat point towards the mouse and move towards it:<br>
-<img src="point_towards.png" alt="blocks labeled &quot;forever&quot; with &quot;point towards mouse-pointer&quot; and &quot;move 1 steps&quot; nested inside"></li>
-  <li data-marker="*">We try out the Pen extension, by using the “pen down” block with a condition:<br>
-<img src="draw.png" alt="blocks labeled &quot;forever&quot; with &quot;go to mouse pointer&quot;, &quot;if mouse down? then (pen down) else (pen up) nested inside&quot;">
-    <ul>
-      <li data-marker="*">Here, we move the cat to the mouse pointer, and if the mouse is clicked, or down, we put the “pen down”, which draws. Otherwise, we put the pen up. We repeat this very quickly, over and over again, so we end up with the effect of drawing whenever we have the mouse held down.</li>
-    </ul>
-  </li>
-  <li data-marker="*">Scratch also has different costumes, or images, that we can use for our characters.</li>
-  <li data-marker="*">We’ll make a program that can count:<br>
-<img src="count.png" alt="blocks labeled &quot;set counter to 1&quot; and &quot;forever&quot; with &quot;say counter for 1 seconds&quot; and &quot;change counter by 1&quot; nested inside">
-    <ul>
-      <li data-marker="*">Here, <code class="language-plaintext highlighter-rouge">counter</code> is a variable, the value of which we can set, use, and change.</li>
-    </ul>
-  </li>
-  <li data-marker="*">We look at some more programs, like <a href="https://scratch.mit.edu/projects/277536611/editor/">bounce</a>, where the cat moves back and forth on the screen forever, by turning around whenever we’re at the edge of the screen.
-    <ul>
-      <li data-marker="*">We can improve the animation by having the cat change to a different costumes after every 10 steps in <a href="https://scratch.mit.edu/projects/277536630/editor/">bounce1</a>. Now when we click the green flag to run our program, we see the cat alternate the movement of its legs.</li>
-    </ul>
-  </li>
-  <li data-marker="*">We can even record our own sounds with our computer’s microphone, and play them in our program.</li>
-  <li data-marker="*">To build more and more complex programs, we start with each of these simpler features, and layer them atop one another.</li>
-  <li data-marker="*">We can also have Scratch meow if we touch it with the mouse pointer, in <a href="https://scratch.mit.edu/projects/277537223/editor/">pet0</a>.</li>
-  <li data-marker="*">In <a href="https://scratch.mit.edu/projects/326130490/editor/">bark</a>, we have not one but two programs in the same Scratch project. Both of these programs will run at the same time after the green flag is clicked. One of these will play a sea lion sound if the <code class="language-plaintext highlighter-rouge">muted</code> variable is set to <code class="language-plaintext highlighter-rouge">false</code>, and the other will set the <code class="language-plaintext highlighter-rouge">muted</code> variable from either <code class="language-plaintext highlighter-rouge">true</code> to <code class="language-plaintext highlighter-rouge">false</code>, or <code class="language-plaintext highlighter-rouge">false</code> to <code class="language-plaintext highlighter-rouge">true</code>, if the space key is pressed.</li>
-  <li data-marker="*">Another extension looks at the video as captured by our computer’s webcam, and plays the meow sound if the video has motion above some threshold.</li>
-  <li data-marker="*">With multiple sprites, or characters, we can have different sets of blocks for each of them:<br>
-<img src="marco.png" alt="blocks labeled &quot;forever&quot; with if key space pressed? then&quot; with &quot;say Marco! for 2 seconds&quot; and &quot;broadcast event&quot; nested inside">
-    <ul>
-      <li data-marker="*">For one puppet, we have these blocks that say “Marco!”, and then a “broadcast event” block. This “event” is used for our two sprites to communicate with each other, like sending a message behind the scenes. So our other puppet can just wait for this “event” to say “Polo!”:<br>
-<img src="polo.png" alt="blocks labeled &quot;when I receive event&quot;, &quot;say Polo! for 2 seconds&quot;"></li>
-    </ul>
-  </li>
-  <li data-marker="*">We can use the Translate extension to say something in other languages, too:<br>
-<img src="translate.png" alt="blocks labeled &quot;when green flag clicked&quot;, &quot;ask (What's your name?) and wait&quot;, &quot;say (translate (join (hello) (answer) to Arabic))&quot;">
-    <ul>
-      <li data-marker="*">Here, the output of the “join” block is use as the input to the “translate” block, the output of which is passed as input to the “say” block.</li>
-    </ul>
-  </li>
-  <li data-marker="*">Now that we know some basics, we can think about the design, or quality of our programs. For example, we might want to have the cat meow three times with the “repeat” block:<br>
-<img src="repeat_meow.png" alt="blocks labeled &quot;repeat 3&quot; with &quot;play sound Meow until done&quot; and &quot;wait 1 seconds&quot; nested inside"></li>
-  <li data-marker="*">We can use <strong>abstraction</strong>, which simplifies a more complex concept. In this case, we can define our own “meow” block in Scratch, and reuse it elsewhere in our program, as seen in <a href="https://scratch.mit.edu/projects/421542702/editor/">meow3</a>. The advantage is that we don’t need to know how meowing is implemented, or written in code, but rather just use it in our program, making it more readable.</li>
-  <li data-marker="*">We can even define a block with an input in <a href="https://scratch.mit.edu/projects/421543064/editor/">meow4</a>, where we have a block that make the cat meow a certain number of times. Now we can reuse that block in our program to meow any number of times, much like how we can use the “translate” or “speak” blocks, without knowing the <strong>implementation details</strong>, or how the block actually works.</li>
-  <li data-marker="*">We take a look at a few more demos, including <a href="https://scratch.mit.edu/projects/277536784/">Gingerbread tales remix</a> and <a href="https://scratch.mit.edu/projects/277537196/">Oscartime</a>, both of which combine loops, conditions, and movement to make an interactive game.</li>
-  <li data-marker="*">Oscartime was actually made by David many years ago, and he started by adding one sprite, then one feature at a time, and so on, until they added up to the more complicated program.</li>
-  <li data-marker="*">A former student, Andrew, created <a href="https://scratch.mit.edu/projects/37412/">Raining Men</a>. Even though Andrew ultimately ended up not pursuing computer science as a profession, the problem-solving skills, algorithms, and ideas we’ll learn in the course are applicable everywhere.</li>
-  <li data-marker="*">Until next time!</li>
-</ul>
-
-
-                </main>
-
+</code></pre>
+              </div>
             </div>
+            <ul>
+              <li data-marker="*">Tiene muchos símbolos y una estructura muy particular (sintáxis) de estos símbolos 
+                que tendremos que aprender.</li>
+            </ul>
+          </li>
+          <li data-marker="*">El ambiente de programación de Scratch es más amigable:<br>
+            <img src="scratch.png" alt="captura de pantalla de la interfaz gráfica de Scratch">
+            <ul>
+              <li data-marker="*">Arriba a la derecha, tenemos un "escenario" que mostrará nuestro programa, en dónde podemos
+                cambiar el fondo, agregar personajes (llamados sprites en Scratch), y más.</li>
+              <li data-marker="*">Arriba a la izquierda, tenemos piezas de rompecabezas que representan funciones, variables, u otros
+                conceptos, podemos arrastrar y solotar estas piezas en el área de instrucciones del centro.</li>
+              <li data-marker="*">Abajo a la derecha, podemos agregar más personajes para usar en nuestro programa.</li>
+            </ul>
+          </li>
+          <li data-marker="*">Podemos arrastrar algunos bloques para hacer que Scratch diga hola, mundo”:<br>
+            <img src="hello_world.png" alt="captura de pantalla de hola, mundo">
+            <ul>
+              <li data-marker="*">El bloque “cuándo se presiona la bandera verde” se refiere al inicio de nuestro programa (hay una
+                bandera verde arriba del escenario que podemos usar para iniciar el programa), y debajo colocamos un bloque decir”
+                y en él escribmos “hola, mundo”. Explorando la interfaz y experimentando podemos descubrir que hacen cada uno de estos bloques.</li>
+            </ul>
+          </li>
+          <li data-marker="*">También podemos arrastrar el bloque “preguntar y esperar”, con una pregunta como “¿Cómo te llamas?”,
+            y combinarlo con un bloque “decir”:<br>
+            <img src="answer.png" alt="captura de pantalla de pregunta y respuesta">
+            <ul>
+              <li data-marker="*">El bloque “respuesta” es una variable, o valor, el cuál almacena lo que el usuario del programa escribe,
+                y podemos arrastrarla dentro de un bloque “decir”.</li>
+            </ul>
+          </li>
+          <li data-marker="*">Pero no pausamos después de decir "Hola" con el primer bloque, así que podemos usar el bloque “unir”
+            para combinar dos frases y que así nuestro gato pueda decir “hola, David”:<br>
+            <img src="join.png" alt="captura de pantalla de unir">
+            <ul>
+              <li data-marker="*">Cuando intentamos anidar bloques o colocarlos uno dentro de otro, Scratch nos ayuda
+                expandiendo los lugares en los que se pueden usar.</li>
+            </ul>
+          </li>
+          <li data-marker="*">De hecho, el bloque “decir” es por si mismo un algoritmo, en dónde proveemos un valor de entrada
+            hola, mundo” y produce la salida de Scratch (el gato) “diciendo” esa frase:<br>
+            <img src="say_algorithm.png"
+              alt="decir como algoritmo con &quot;hola, mundo&quot; como la salida producida por el gato">
+          </li>
+          <li data-marker="*">El bloque “preguntar”, también toma un valor de entrada (la pregunta que queremos hacer), y produce
+            salida del bloque “respuesta”:<br>
+            <img src="ask_algorithm.png"
+              alt="preguntar como un algoritmo con &quot;¿Cómo te llamas?&quot; como valor de entrada y el bloque de respuesta como salida">
+          </li>
+          <li data-marker="*">Ahora podemos usar el bloque “respuesta” junto con nuestro texto, “hola, “, como entradas del algoritmo unir …<br>
+            <img src="join_algorithm.png"
+              alt="unir como algoritmo con &quot;hola, &quot; y &quot;respuesta&quot; como entradas y &quot;hola, David!&quot; como salida">
+          </li>
+          <li data-marker="*">… y esta salida podemos usarla como entrada del bloque “decir”:<br>
+            <img src="say_again.png" alt="decir como algoritmo con &quot;hola, David!&quot; como entrada y gato como salida">
+          </li>
+          <li data-marker="*">Abajo a la izquierda de la pantalla, veremos un icno para extensiones, y una de ellas se llama
+            Texto a Voz (Text to Speech). Después de agregarla, podemos usar el bloque “decir” para escuchar hablar a nuestro gato:<br>
+            <img src="speak_join.png" alt="bloque hablar con unir hola a respuesta">
+          </li>
+          <li data-marker="*">La extensión Texto a Voz, convierte el texto a audio usando "la nube" (o simplemente otras computadoras en internet).</li>
+          <li data-marker="*">Podemos intentar que el gato haga meow:<br>
+            <img src="meow_wait.png"
+              alt="bloques etiquetados &quot;reproducir sonido Meow hasta&quot; y &quot;esperar 1 segundo&quot;, repetido tres veces">
+            <ul>
+              <li data-marker="*">Podemos hacerlo decir meow tres veces, pero ahora estaríamos repiteiendo los bloques varias veces.
+              </li>
+            </ul>
+          </li>
+          <li data-marker="*">Usemos un ciclo (loop), o un bloque “repetir”:<br>
+            <img src="repeat_meow.png"
+              alt="bloques etiquetados &quot;repetir 3&quot; con &quot;reproducir sonido Meow hasta&quot; y &quot;esperar 1 segundo&quot; anidados dentro">
+            <ul>
+              <li data-marker="*">Ahora nuestro programa logr el mismo resultado, pero con menos bloques. Podemos considerar
+                que tiene un mejor diseño: si hay algo que queremos cambiar, solo necesitamos cambiarlo en un solo lugar en lugar de tres</li>
+            </ul>
+          </li>
+          <li data-marker="*">Podemos hacer que el gato se oriente y se mueva hacia el apuntador del mouse:<br>
+            <img src="point_towards.png"
+              alt="bloques etiquetados &quot;por siempre&quot; con &quot;girar hacia apuntador de mouse&quot; y &quot;mover 1 paso&quot; anidados dentro">
+          </li>
+          <li data-marker="*">Para probar la extensión Pen, podemos usar el bloque “pen down” con una condición:<br>
+            <img src="draw.png"
+              alt="bloques etiquetados &quot;por siempre&quot; con &quot;ir a apuntador de mouse&quot;, &quot;si el mouse está presionado? entonces (pen down) de otra forma (pen up) anidados dentro&quot;">
+            <ul>
+              <li data-marker="*">Aquí, movemos al gato al apuntdor del mouse y si el mouse está presionado 
+                realizamos la acción “bajar el lápiz”, para poder dibujar. De otra forma, levantamos el lápiz. Repetimos esto muy rápido, una
+                y otra vez, así logramos un efecto de dibujar cuando el botón del mouse se mantenga presionado.</li>
+            </ul>
+          </li>
+          <li data-marker="*">Scratch también tiene diferentes vestuarios, o imagenes, que podemos usar para nuestros personajes.</li>
+          <li data-marker="*">Haremos un programa que puede contar:<br>
+            <img src="count.png"
+              alt="bloques etiquetados &quot;establecer el valor de contador a 1&quot; y &quot;por siempre&quot; con &quot;decir valor del contador por 1 segundos&quot; y &quot;cambiar el valor del contador por 1&quot; anidados dentro">
+            <ul>
+              <li data-marker="*">Aquí, <code class="language-plaintext highlighter-rouge">contador</code> es una variable,
+                cuyo valor podemos definir, usar y cambiar.</li>
+            </ul>
+          </li>
+          <li data-marker="*">Veamos algunos otros programas, como<a
+              href="https://scratch.mit.edu/projects/277536611/editor/">bounce</a>, en el cual se mueve de izquierda a derecha
+            en la pantalla repetidamente, y se voltea cuando llega al borde de la pantalla.
+            <ul>
+              <li data-marker="*">Podemos mejorar la animación haciendo que el gato cambie entre diferentes diseños o vestuarios
+                cada que da 10 paso en <a href="https://scratch.mit.edu/projects/277536630/editor/">bounce1</a>. Ahora cuando
+                presionamos la bandera verde para iniciar nuestro programa, podremos ver como si el gato moviera las piernas.</li>
+            </ul>
+          </li>
+          <li data-marker="*">Incluso podemos grabar nuestros propies sonidos con el micrófono de la computadora, y reproducirlos en nuestro programa.</li>
+          <li data-marker="*">Para construir programas más complejos podemos comenzar con funcinoes simples y agruparlas.</li>
+          <li data-marker="*">También podemos hacer que Scratch haga meow si lo tocamos con el apuntador del mouse, en <a
+              href="https://scratch.mit.edu/projects/277537223/editor/">pet0</a>.</li>
+          <li data-marker="*">En <a href="https://scratch.mit.edu/projects/326130490/editor/">bark</a>, no tenemos solo uno
+            sino dos programas en el mismo proyecto de Scratch. Ambos programas se ejecutaran al mismo tiempo al presionar la vandera verde
+            Uno de ellos reproducirá un sonido de león si:
+            la variable <code
+              class="language-plaintext highlighter-rouge">muted</code> tiene el valor de <code
+              class="language-plaintext highlighter-rouge">false</code>, y la otra modificará el valor de la variable <code
+              class="language-plaintext highlighter-rouge">muted</code> al valor de <code
+              class="language-plaintext highlighter-rouge">true</code> a <code
+              class="language-plaintext highlighter-rouge">false</code>, o de <code
+              class="language-plaintext highlighter-rouge">false</code> a <code
+              class="language-plaintext highlighter-rouge">true</code>, si la barra de espacio en el teclado está presionada.</li>
+          <li data-marker="*">Otra extensión usa el video de la webcam de la computadora, y reproduce el
+            sonido meow si en el video ocurre más movimiento del definido en un intervalo.</li>
+          <li data-marker="*">Si tenemos múltiples sprites o personajes, podemos tener diferenrtes conjuntos de bloques para cada uno de ellos:<br>
+            <img src="marco.png"
+              alt="bloques etiquetados &quot;por siempre&quot; con si la tecla espacio está presionada? entonces&quot; con &quot;decir Marco! por 2 segundos&quot; y &quot;difundir el evento&quot; anidados dentro">
+            <ul>
+              <li data-marker="*">Para un personaje, tenemos estos bloques que dicen “Marco!”, y luego un bloque “difundir evento”.
+                Este “evento” es usado por nuestros dos sprites para comunicarse entre ellos, es como enviar un mensaje
+                de manera oculta. Así nuestros personajes esperarán este “evento” para decir “Polo!”:<br>
+                <img src="polo.png"
+                  alt="bloques etiquetados &quot;cuando recibo el evento&quot;, &quot;decir Polo! por 2 segundos&quot;">
+              </li>
+            </ul>
+          </li>
+          <li data-marker="*">Podemos usar la extensión Traducir para decir algo en otros lenguajes:<br>
+            <img src="translate.png"
+              alt="bloques etiquetados &quot;cuando se presiona la bandera verde&quot;, &quot;preguntar (¿Cómo te llamas?) y esperar&quot;, &quot;decir (traducir (unir (hello) (respuesta) a Árabe))&quot;">
+            <ul>
+              <li data-marker="*">Aquí, la salida del bloque “unir” se usa como entrada para el bloque “traducir”, y la
+                salida de este se usa como entrada al bloque “decir”.</li>
+            </ul>
+          </li>
+          <li data-marker="*">Ahora que sabemos las bases, podemos pensar en el diseño, o calidad de nuestros programas.
+            Por ejemplo, podríamos querer que el gato haga meow tres veces con el bloque “repetir”:<br>
+            <img src="repeat_meow.png"
+              alt="bloques etiquetados &quot;repeat 3&quot; con &quot;reproducir sonido Meow hasta terminar&quot; y &quot;esperar 1 segundo&quot; anidados dentro">
+          </li>
+          <li data-marker="*">Podemos hacer uso de el concepto de <strong>abstracción</strong>, lo cuál simplifica un concepto complejo. En este
+            caso, podemos definir nuestro bloque “meow” en Scratch, y reusarlo en otro lugar en nuestro programa, como se puede ver en <a
+              href="https://scratch.mit.edu/projects/421542702/editor/">meow3</a>. La ventaja de esto es que no necesitamos
+            saber como está construido el algoritmo meow, ni su código, para poder usarlo en nuestros programas, haciendo que sea más legible.</li>
+          <li data-marker="*">Incluso podemos definir un bloque que requiera una entrada, en <a
+              href="https://scratch.mit.edu/projects/421543064/editor/">meow4</a>, tenemos un bloque que hace el gato
+            haga meow cierto número de veces. Ahora podemos reusar el bloque en nuestro programa para hacer meow cualquier número de veces,
+            esto es similar a cuándo usamos los bloques “traducir” o “hablar”, sin en realidad saber cómo funcionan o detalles sobre su <strong>implementación</strong>.</li>
+          <li data-marker="*">Veremos unos cuántos demos más, incluyendo<a
+              href="https://scratch.mit.edu/projects/277536784/">Gingerbread tales remix</a> y <a
+              href="https://scratch.mit.edu/projects/277537196/">Oscartime</a>, los cuales combinan ciclos (loops), condiciones,
+            y movimiento para crear un juego interactivo.</li>
+          <li data-marker="*">Oscartime fue creado por el profesor David hace muchos años, y comenzó poco a poco, agregando personaje por personaje,
+            y funcionalidad por funcionalidad, hasta que en conjunto formaban un programa más complejo.</li>
+          <li data-marker="*">Un estudiante pasado, Andrew, creó <a
+              href="https://scratch.mit.edu/projects/37412/">Raining Men</a>. Y aunque Andrew terminó por no dedicarse
+            a las Ciencias de la Comptuación como profesión, las habilidades de solución de problemas, algoritmos, e ideas que aprenderemos
+            en el curso son aplicables en cualquier parte.</li>
+          <li data-marker="*">¡Hasta la próxima!</li>
+        </ul>
 
-        </div>
 
-        
- 
-    
+      </main>
+
+    </div>
+
+  </div>
 
 
-</body></html>
+</body>
+
+</html>

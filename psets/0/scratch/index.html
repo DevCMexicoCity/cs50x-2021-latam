@@ -1,269 +1,339 @@
-<!DOCTYPE html><html lang="en-us"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta property="og:description" content="Harvard Universty's introduction to the intellectual enterprises of computer science and the art of programming.">
+<!DOCTYPE html>
+<html lang="en-us">
 
-<meta property="og:image" content="https://img.youtube.com/vi/zYierUhIFNQ/maxresdefault.jpg"><meta property="og:title" content="Scratch - CS50x 2021"><link href="../../../favicon.ico%3F1610389211" rel="icon">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:description"
+    content="Harvard Universty's introduction to the intellectual enterprises of computer science and the art of programming.">
 
-<!-- https://fonts.google.com/specimen/PT+Sans?query=PT+Sans&selection.family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700 -->
-<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <meta property="og:image" content="https://img.youtube.com/vi/zYierUhIFNQ/maxresdefault.jpg">
+  <meta property="og:title" content="Scratch - CS50x 2021">
+  <link href="../../../favicon.ico%3F1610389211" rel="icon">
 
-<!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
-<script src="../../../assets/jquery/dist/jquery.min.js%3F1610389211"></script>
-<script src="../../../assets/bootstrap/dist/js/bootstrap.bundle.min.js%3F1610389211"></script>
+  <!-- https://fonts.google.com/specimen/PT+Sans?query=PT+Sans&selection.family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
 
-<!-- https://bootstrap-table.com/docs/getting-started/introduction/ -->
-<link href="../../../assets/bootstrap-table/dist/bootstrap-table.min.css%3F1610389211.css" rel="stylesheet">
-<script src="../../../assets/bootstrap-table/dist/bootstrap-table.min.js%3F1610389211"></script>
-<script src="../../../assets/bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.min.js%3F1610389211"></script>
+  <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+  <script src="../../../assets/jquery/dist/jquery.min.js%3F1610389211"></script>
+  <script src="../../../assets/bootstrap/dist/js/bootstrap.bundle.min.js%3F1610389211"></script>
 
-<!-- https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use -->
-<link href="../../../assets/@fortawesome/fontawesome-free/css/all.min.css%3F1610389211.css" rel="stylesheet">
+  <!-- https://bootstrap-table.com/docs/getting-started/introduction/ -->
+  <link href="../../../assets/bootstrap-table/dist/bootstrap-table.min.css%3F1610389211.css" rel="stylesheet">
+  <script src="../../../assets/bootstrap-table/dist/bootstrap-table.min.js%3F1610389211"></script>
+  <script
+    src="../../../assets/bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.min.js%3F1610389211"></script>
 
-<!-- https://moment.github.io/luxon/ -->
-<script src="../../../assets/luxon.min.js%3F1610389211"></script>
+  <!-- https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use -->
+  <link href="../../../assets/@fortawesome/fontawesome-free/css/all.min.css%3F1610389211.css" rel="stylesheet">
 
-<!-- http://docs.mathjax.org/ -->
-<!-- https://www.jsdelivr.com/package/npm/mathjax?path=es5 -->
-<script crossorigin="anonymous" integrity="sha256-+nfSJ1LiSvANSK3wvi6FjM+oFwoIQvURU1frozp5z6o=" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-chtml.js"></script>
+  <!-- https://moment.github.io/luxon/ -->
+  <script src="../../../assets/luxon.min.js%3F1610389211"></script>
 
-<!-- https://github.com/verlok/vanilla-lazyload -->
-<script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.7.0/intersection-observer.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js"></script>
+  <!-- http://docs.mathjax.org/ -->
+  <!-- https://www.jsdelivr.com/package/npm/mathjax?path=es5 -->
+  <script crossorigin="anonymous" integrity="sha256-+nfSJ1LiSvANSK3wvi6FjM+oFwoIQvURU1frozp5z6o="
+    src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-chtml.js"></script>
+
+  <!-- https://github.com/verlok/vanilla-lazyload -->
+  <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.7.0/intersection-observer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js"></script>
 
 
 
-<link href="../../../assets/page.css%3F1610389211.css" rel="stylesheet">
-<script src="../../../assets/jekyll-theme-cs50.js%3F1610389211"></script>
+  <link href="../../../assets/page.css%3F1610389211.css" rel="stylesheet">
+  <script src="../../../assets/jekyll-theme-cs50.js%3F1610389211"></script>
 
-<script>
+  <script>
     window.CS50 = {
-        locale: "en",
-        tz: "America/New_York"
+      locale: "en",
+      tz: "America/New_York"
     };
-</script>
+  </script>
 
-<title>Scratch - CS50x 2021</title>
+  <title>Scratch - CS50x 2021</title>
 </head>
 
-    <body class="invisible">
+<body class="invisible">
 
-        
-        
-        
-        <div class="alert alert-dismissible fixed-top mb-0 rounded-0 shadow" data-alert="success" id="alert" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">×</span>
-            </button><p>This is CS50x 2021, the newest version of the course. Looking for <a href="https://cs50.harvard.edu/x/2020/">CS50x 2020</a>?</p></div>
-        
-        
+  <!-- <div class="alert alert-dismissible fixed-top mb-0 rounded-0 shadow" data-alert="success" id="alert" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">×</span>
+    </button>
+    <p>This is CS50x 2021, the newest version of the course. Looking for <a
+        href="https://cs50.harvard.edu/x/2020/">CS50x 2020</a>?</p>
+  </div> -->
 
-        <div class="container-fluid">
+  <div class="container-fluid">
 
-            <div class="row">
+    <div class="row">
 
-                <aside class="col-md">
- 
-                    <header><h1 data-id="this-is-cs50x"><a href="../../../index.html">This is CS50x</a></h1>
+      <aside class="col-md">
 
-<p>OpenCourseWare</p>
+        <header>
+          <h1 data-id="this-is-cs50x"><a href="index.html">Esto es CS50x</a></h1>
 
-<p><a href="https://community.alumni.harvard.edu/give/59206872" class="pr-1 small">Donate</a>
-<a href="https://community.alumni.harvard.edu/give/59206872" class="small"><i aria-hidden="true" class="fas fa-external-link-alt"></i></a></p>
+          <p>OpenCourseWare</p>
 
-<p><a href="https://cs.harvard.edu/malan/">David J. Malan</a><br>
-<a href="mailto:malan@harvard.edu">malan@harvard.edu</a><br>
-<a href="https://www.facebook.com/dmalan" class="mr-2"><i class="fab fa-facebook-f"></i></a><a href="https://github.com/dmalan" class="mr-2"><i class="fab fa-github"></i></a><a href="https://www.instagram.com/davidjmalan/" class="mr-2"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/malan/" class="mr-2"><i class="fab fa-linkedin"></i></a><a href="https://www.quora.com/profile/David-J-Malan" class="mr-2"><i class="fab fa-quora"></i></a><a href="https://www.reddit.com/user/davidjmalan" class="mr-2"><i class="fab fa-reddit-alien"></i></a><a href="https://twitter.com/davidjmalan" class="mr-2"><i class="fab fa-twitter"></i></a></p></header>
+          <p><a href="https://community.alumni.harvard.edu/give/59206872" class="pr-1 small">Donar a CS50</a>
+            <a href="https://community.alumni.harvard.edu/give/59206872" class="small"><i aria-hidden="true"
+                class="fas fa-external-link-alt"></i></a>
+          </p>
 
-                    
+          <p><a href="https://cs.harvard.edu/malan/">David J. Malan</a><br>
+            <a href="mailto:malan@harvard.edu">malan@harvard.edu</a><br>
+            <a href="https://www.facebook.com/dmalan" class="mr-2"><i class="fab fa-facebook-f"></i></a><a
+              href="https://github.com/dmalan" class="mr-2"><i class="fab fa-github"></i></a><a
+              href="https://www.instagram.com/davidjmalan/" class="mr-2"><i class="fab fa-instagram"></i></a><a
+              href="https://www.linkedin.com/in/malan/" class="mr-2"><i class="fab fa-linkedin"></i></a><a
+              href="https://www.quora.com/profile/David-J-Malan" class="mr-2"><i class="fab fa-quora"></i></a><a
+              href="https://www.reddit.com/user/davidjmalan" class="mr-2"><i class="fab fa-reddit-alien"></i></a><a
+              href="https://twitter.com/davidjmalan" class="mr-2"><i class="fab fa-twitter"></i></a>
+          </p>
 
-                    <button aria-controls="nav" aria-expanded="false" class="btn btn-sm collapsed d-md-none" data-target="aside > nav" data-toggle="collapse">
-                        Menu
-                    </button>
-
-                    <nav class="collapse d-md-block" id="nav"><hr>
-
-<ul>
-  <li data-marker="*"><a href="../../../seminars/index.html">CS50’s New Year’s Seminars</a> <span class="text-white">🥂</span></li>
-  <li data-marker="*"><a href="../../../gallery/index.html">Gallery of Final Projects</a> <span class="pl-1 text-white">🖼️ </span></li>
-  <li data-marker="*"><a href="../../../new/index.html">What’s new for 2021?</a></li>
-</ul>
-<ul>
-  <li data-marker="*"><a href="../../../weeks/0/index.html">Week 0</a> Scratch</li>
-  <li data-marker="*"><a href="../../../weeks/1/index.html">Week 1</a> C</li>
-  <li data-marker="*"><a href="../../../weeks/2/index.html">Week 2</a> Arrays</li>
-  <li data-marker="*"><a href="../../../weeks/3/index.html">Week 3</a> Algorithms</li>
-  <li data-marker="*"><a href="../../../weeks/4/index.html">Week 4</a> Memory</li>
-  <li data-marker="*"><a href="../../../weeks/5/index.html">Week 5</a> Data Structures</li>
-  <li data-marker="*"><a href="../../../weeks/6/index.html">Week 6</a> Python</li>
-  <li data-marker="*"><a href="../../../weeks/7/index.html">Week 7</a> SQL</li>
-  <li data-marker="*"><a href="../../../weeks/8/index.html">Week 8</a> HTML, CSS, JavaScript</li>
-  <li data-marker="*"><a href="../../../weeks/9/index.html">Week 9</a> Flask</li>
-  <li data-marker="*"><a href="../../../weeks/10/index.html">Week 10</a> Ethics</li>
-</ul>
-<ul>
-  <li data-marker="*" class="small"><a href="../../../weeks/security/index.html">Security</a></li>
-  <li data-marker="*" class="small"><a href="../../../weeks/ai/index.html">Artificial Intelligence</a></li>
-</ul>
-<ul>
-  <li data-marker="*"><a href="../../../project/index.html">Final Project</a></li>
-</ul>
-
-<hr>
-
-<ul>
-  <li data-marker="*"><a href="../../../honesty/index.html">Academic Honesty</a></li>
-  <li data-marker="*"><a href="../../../certificate/index.html">CS50 Certificate</a></li>
-  <li data-marker="*"><a href="../../../faqs/index.html">FAQs</a></li>
-  <li data-marker="*"><a href="https://cs50.me/cs50x">Gradebook</a></li>
-  <li data-marker="*"><a href="../../../staff/index.html">Staff</a></li>
-  <li data-marker="*"><a href="../../../syllabus/index.html">Syllabus</a></li>
-</ul>
-
-<hr>
-
-<ul>
-  <li data-marker="*"><a href="https://cs50.harvard.edu/x/ed">Ed Discussion</a> for Q&amp;A</li>
-  <li data-marker="*" class="small"><a href="https://us.edstem.org/quickstart/ed-discussion.pdf">Quick Start Guide</a></li>
-</ul>
-
-<hr>
-
-<ul class="small">
-  <li data-marker="*"><a href="https://cs50.edx.org/">edX</a></li>
-  <li data-marker="*"><a href="https://www.youtube.com/playlist?list=PLhQjrBD2T382_R182iC2gNZI9HzWFMC_8">YouTube</a></li>
-</ul>
-
-<hr>
-
-<ul class="small">
-  <li data-marker="*"><a href="https://ide.cs50.io/">CS50 IDE</a></li>
-  <li data-marker="*"><a href="https://www.w3schools.com/css/">CSS Tutorial</a></li>
-  <li data-marker="*"><a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/">Flask Quickstart</a></li>
-  <li data-marker="*"><a href="https://www.w3schools.com/html/">HTML Tutorial</a></li>
-  <li data-marker="*"><a href="https://jinja.palletsprojects.com/en/2.11.x/templates/">Jinja Template Designer Documentation</a></li>
-  <li data-marker="*"><a href="https://man.cs50.io/">Manual Pages</a></li>
-  <li data-marker="*"><a href="https://docs.python.org/3.7/search.html">Python Documentation</a></li>
-  <li data-marker="*"><a href="https://scratch.mit.edu/">Scratch</a></li>
-  <li data-marker="*"><a href="https://www.w3schools.com/sql/">SQL Tutorial</a></li>
-  <li data-marker="*"><a href="https://cs50.readthedocs.io/style/c/">Style Guide</a></li>
-</ul>
-
-<hr>
-
-<ul class="small">
-  <li data-marker="*"><a href="https://cs50.noticeable.io/">Changelog</a></li>
-  <li data-marker="*"><a href="https://cs50.statuspage.io/">Status Page</a></li>
-</ul>
-
-<hr>
-
-<ul>
-  <li data-marker="*"><a href="../../../communities/index.html">Communities</a></li>
-  <li data-marker="*" class="small"><a href="https://discord.gg/cs50">Discord</a></li>
-  <li data-marker="*" class="small"><a href="https://www.facebook.com/groups/cs50/">Facebook Group</a></li>
-  <li data-marker="*" class="small"><a href="https://www.facebook.com/cs50/">Facebook Page</a></li>
-  <li data-marker="*" class="small"><a href="https://github.com/cs50">GitHub</a></li>
-  <li data-marker="*" class="small"><a href="https://gitter.im/cs50/x">Gitter</a></li>
-  <li data-marker="*" class="small"><a href="https://instagram.com/cs50">Instagram</a></li>
-  <li data-marker="*" class="small"><a href="https://www.linkedin.com/groups/7437240/">LinkedIn Group</a></li>
-  <li data-marker="*" class="small"><a href="https://www.linkedin.com/school/CS50/">LinkedIn Page</a></li>
-  <li data-marker="*" class="small"><a href="https://www.quora.com/topic/CS50">Quora</a></li>
-  <li data-marker="*" class="small"><a href="https://www.reddit.com/r/cs50/">Reddit</a></li>
-  <li data-marker="*" class="small"><a href="https://cs50.edx.org/slack">Slack</a></li>
-  <li data-marker="*" class="small"><a href="https://www.snapchat.com/add/cs50">Snapchat</a></li>
-  <li data-marker="*" class="small"><a href="https://soundcloud.com/cs50">SoundCloud</a></li>
-  <li data-marker="*" class="small"><a href="https://twitter.com/cs50">Twitter</a></li>
-  <li data-marker="*" class="small"><a href="http://www.youtube.com/subscription_center?add_user=cs50tv">YouTube</a></li>
-</ul>
-
-<hr>
-
-<p><a href="https://cs50.harvardshop.com/"><img src="https://i.imgur.com/GGMdcKt.png" alt="Harvard Shop"></a></p>
-
-<hr>
-
-<p><a href="../../../license/index.html" class="small"><i class="fab fa-creative-commons mr-1"></i>License</a></p></nav>
-
-                    <footer></footer>
-
-                </aside>
-
-                <main class="col-md">
-
-                    <h1 id="scratch">Scratch</h1>
-
-<p>It’s time to choose your own adventure! Your assignment, quite simply, is to implement in Scratch any project of your choice, be it an interactive story, game, animation, or anything else, subject only to the following requirements:</p>
-
-<ul>
-  <li data-marker="*">Your project must have at least two sprites, at least one of which must resemble something other than a cat.</li>
-  <li data-marker="*">Your project must have at least three scripts total (i.e., not necessarily three per sprite).</li>
-  <li data-marker="*">Your project must use at least one condition.</li>
-  <li data-marker="*">Your project must use at least one loop.</li>
-  <li data-marker="*">Your project must use at least one variable.</li>
-  <li data-marker="*">Your project must use at least one sound.</li>
-  <li data-marker="*">Your project should be more complex than most of those demonstrated in lecture (many of which, though instructive, were quite short) but it can be less complex than <em>Ivy’s Hardest Game</em>. As such, your project should probably use a few dozen puzzle pieces overall.</li>
-</ul>
-
-<p>If you’d like to try out some Scratch projects from past students, here are a few:</p>
-
-<ul>
-  <li data-marker="*"><a href="https://scratch.mit.edu/projects/37412/">It’s Raining Men</a>, from lecture</li>
-  <li data-marker="*"><a href="https://scratch.mit.edu/projects/326129587/">Ivy’s Hardest Game</a>, a game, Harvard edition</li>
-  <li data-marker="*"><a href="https://scratch.mit.edu/projects/37413/">Soccer</a>, a game</li>
-  <li data-marker="*"><a href="https://scratch.mit.edu/projects/26329196/">Cookie Love Story</a>, an animation</li>
-  <li data-marker="*"><a href="https://scratch.mit.edu/projects/277536784/">Gingerbread tales</a>, an interactive story</li>
-  <li data-marker="*"><a href="https://scratch.mit.edu/projects/75390754/">Intersection</a>, a game</li>
-  <li data-marker="*"><a href="https://scratch.mit.edu/projects/277537196/">Oscartime</a>, a game</li>
-</ul>
-
-<p>You might find these <a href="https://scratch.mit.edu/projects/editor/?tutorial=all">tutorials</a> or <a href="https://scratch.mit.edu/starter-projects">starter projects</a> helpful. And you’re welcome to explore <a href="https://scratch.mit.edu/explore/projects/all">scratch.mit.edu</a> for inspiration. But try to think of an idea on your own, and then set out to implement it. However, don’t try to implement the entirety of your project all at once: pluck off one piece at a time. In other words, take baby steps: write a bit of code (i.e., drag and drop a few puzzle pieces), test, write a bit more, test, and so forth. And select <strong>File &gt; Save now</strong> every few minutes so that you don’t lose any work!</p>
-
-<p>If, along the way, you find it too difficult to implement some feature, try not to fret; alter your design or work around the problem. If you set out to implement an idea that you find fun, odds are you won’t find it too hard to satisfy the above requirements.</p>
-
-<p>Alright, off you go. Make us proud!</p>
-
-<p>Once finished with your project, select <strong>File &gt; Save now</strong> one last time. Then select <strong>File &gt; Save to your computer</strong> and keep that file so that you can submit it. If prompted by your computer to <strong>Open</strong> or <strong>Save</strong> the file, be sure to <strong>Save</strong> it.</p>
-
-<h2 id="hello-world">Hello, World</h2>
-
-<p>Suffice it to say it’s a bit harder to meet classmates when taking a course online. But, thanks to technology, everyone can at least say hello!</p>
-
-<p>If you have a phone (or digital camera) and would like to say hello to classmates, record a 1- to 2-minute video of yourself saying hello, perhaps stating where in the world you are, why you’re taking CS50x, and something interesting about you! Try to begin your video by saying “hello, world” and end it with “my name is…, and this is CS50.” But, ultimately, it’s totally up to you.</p>
-
-<p>If you do record a video, upload it to YouTube (unless blocked in your country, in which case you’re welcome to upload it elsewhere) so that you can provide us with its URL when you submit!</p>
-
-<h2 id="how-to-submit">How to Submit</h2>
-
-<div class="alert" data-alert="warning" role="alert"><p>Be sure to complete <strong>both</strong> steps below, in order!</p></div>
-
-<h3 id="step-1-of-2">Step 1 of 2</h3>
-
-<p>Submit <a href="https://forms.cs50.io/b4e8bd58-1dd6-4a98-91a4-0d95143d63c6">this form</a>.</p>
-
-<h3 id="step-2-of-2">Step 2 of 2</h3>
-
-<p>This step assumes that you’ve downloaded your Scratch project as a file whose name ends in <code class="language-plaintext highlighter-rouge">.sb3</code>. And this step also assumes that you’ve <a href="https://github.com/join">signed up for a GitHub account</a>, per the above form.</p>
-
-<ol>
-  <li>Visit <a href="https://submit.cs50.io/invites/9770b67479384c4d8c37790779e466d9">this link</a>, log in with your GitHub account, and click <strong>Authorize cs50</strong>.</li>
-  <li>Check the box indicating that you’d like to grant course staff access to your submissions, and click <strong>Join course</strong>.</li>
-  <li>Go to <a href="https://submit.cs50.io/upload/cs50/problems/2021/x/scratch">https://submit.cs50.io/upload/cs50/problems/2021/x/scratch</a>.</li>
-  <li>Click “Choose File” and choose your <code class="language-plaintext highlighter-rouge">.sb3</code> file. Click <strong>Submit</strong>.</li>
-</ol>
-
-<p>That’s it! Once your submission uploads, you should be redirected to your submission page. Click the submission link and then the <strong>check50</strong> link to see which requirements your project met. You are welcome to resubmit as many times as you’d like (before the deadline)!</p>
-
-<p>To view your current progress in the course, visit the course gradebook at <a href="https://cs50.me/cs50x">cs50.me/cs50x</a>!</p>
+          <p><a href="https://cs.harvard.edu/malan/">Developer Circles CDMX</a><br>
+            <a href="https://discord.gg/UUcw6dSVrm" class="mr-2"><i class="fab fa-discord"></i></a>
+            <a href="https://www.facebook.com/groups/DevCCiudaddeMexico/" class="mr-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://github.com/DevCMexicoCity/cs50x-2021-latam" class="mr-2"><i class="fab fa-github"></i></a>
+            <a href="https://youtube.com/c/FacebookDeveloperCirclesCiudaddeMexico" class="mr-2"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/devc_cdmx/" class="mr-2"><i class="fab fa-instagram"></i></a>
+          </p>
+        </header>
 
 
-                </main>
 
-            </div>
+        <button aria-controls="nav" aria-expanded="false" class="btn btn-sm collapsed d-md-none"
+          data-target="aside > nav" data-toggle="collapse">
+          Menu
+        </button>
 
+        <nav class="collapse d-md-block" id="nav">
+          <hr>
+
+          <ul>
+            <li data-marker="*"><a href="/gallery/index.html">Galería de Proyectos 2020</a> <span
+                class="pl-1 text-white">🖼️ </span></li>
+            <li data-marker="*"><a href="/new/index.html">Novedades de la edición 2021</a></li>
+          </ul>
+          <ul>
+            <li data-marker="*"><a href="/weeks/0/index.html">Semana 0</a> Scratch</li>
+            <li data-marker="*"><a href="/weeks/1/index.html">Semana 1</a> C</li>
+            <li data-marker="*"><a href="/weeks/2/index.html">Semana 2</a> Arrays</li>
+            <li data-marker="*"><a href="/weeks/3/index.html">Semana 3</a> Algoritmos</li>
+            <li data-marker="*"><a href="/weeks/4/index.html">Semana 4</a> Memoria</li>
+            <li data-marker="*"><a href="/weeks/5/index.html">Semana 5</a> Estructuras de Datos</li>
+            <li data-marker="*"><a href="/weeks/6/index.html">Semana 6</a> Python</li>
+            <li data-marker="*"><a href="/weeks/7/index.html">Semana 7</a> SQL</li>
+            <li data-marker="*"><a href="/weeks/8/index.html">Semana 8</a> HTML, CSS, JavaScript</li>
+            <li data-marker="*"><a href="/weeks/9/index.html">Semana 9</a> Flask</li>
+            <li data-marker="*"><a href="/weeks/10/index.html">Semana 10</a> Ética</li>
+          </ul>
+          <ul>
+            <li data-marker="*" class="small"><a href="weeks/security/index.html">Seguridad Informática</a></li>
+            <li data-marker="*" class="small"><a href="weeks/ai/index.html">Inteligencia Artificial</a></li>
+          </ul>
+          <ul>
+            <li data-marker="*"><a href="project/index.html">Proyecto Final</a></li>
+          </ul>
+
+          <hr>
+
+          <ul>
+            <li data-marker="*"><a href="honesty/index.html">Honestidad Académica</a></li>
+            <li data-marker="*"><a href="certificate/index.html">Certificado de CS50</a></li>
+            <li data-marker="*"><a href="faqs/index.html">Preguntas Frecuentes</a></li>
+            <li data-marker="*"><a href="https://cs50.me/cs50x">Calificaciones</a></li>
+            <li data-marker="*"><a href="staff/index.html">Staff</a></li>
+            <li data-marker="*"><a href="syllabus/index.html">Temario</a></li>
+          </ul>
+
+          <hr>
+
+          <ul>
+            <li data-marker="*"><a href="https://discord.gg/cs50">Grupo de Estudio CS50x</a></li>
+            <li data-marker="*" class="small">(en español)</li>
+            <li data-marker="*" class="small"><a href="https://discord.gg/cs50">Discord</a></li>
+          </ul>
+
+          <hr>
+
+          <ul>
+            <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><a href="https://cs50.harvard.edu/x/ed">Plataforma Ed</a></li>
+            <li data-marker="*" class="small">Preguntas y Respuestas (En inglés)</li>
+            <li data-marker="*" class="small"><a href="https://us.edstem.org/quickstart/ed-discussion.pdf">Guía de Inicio</a></li>
+          </ul>
+
+          <hr>
+
+          <ul class="small">
+            <li data-marker="*"><a href="https://cs50.edx.org/">CS50 en edX</a></li>
+            <li data-marker="*"><a
+                href="https://www.youtube.com/playlist?list=PLhQjrBD2T382_R182iC2gNZI9HzWFMC_8">CS50 en YouTube</a></li>
+          </ul>
+
+          <hr>
+
+          <ul class="small">
+            <li data-marker="*"><a href="https://ide.cs50.io/">CS50 IDE</a></li>
+            <li data-marker="*"><a href="https://www.w3schools.com/css/">Tutorial CSS </a></li>
+            <li data-marker="*"><a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/">Flask Quickstart</a>
+            </li>
+            <li data-marker="*"><a href="https://www.w3schools.com/html/">Tutorial HTML</a></li>
+            <li data-marker="*"><a href="https://jinja.palletsprojects.com/en/2.11.x/templates/">Documentación Jinja Template Designer</a></li>
+            <li data-marker="*"><a href="https://man.cs50.io/">Páginas del Manual</a></li>
+            <li data-marker="*"><a href="https://docs.python.org/3.7/search.html">Documentación Python</a></li>
+            <li data-marker="*"><a href="https://scratch.mit.edu/">Scratch</a></li>
+            <li data-marker="*"><a href="https://www.w3schools.com/sql/">Tutorial SQL</a></li>
+            <li data-marker="*"><a href="https://cs50.readthedocs.io/style/c/">Guía de Estilo de Código en C</a></li>
+          </ul>
+
+          <hr>
+
+          <ul class="small">
+            <li data-marker="*"><a href="https://cs50.noticeable.io/">Historial de cambios herramientas CS50</a></li>
+            <li data-marker="*"><a href="https://cs50.statuspage.io/">Página de estatus de servicios de CS50</a></li>
+          </ul>
+
+          <hr>
+
+          <ul>
+            <li data-marker="*"><a href="communities/index.html">Comunidades Oficiales CS50</a></li>
+            <li data-marker="*" class="small">(En inglés)</li>
+            <li data-marker="*" class="small"><a href="https://discord.gg/cs50">Discord</a></li>
+            <li data-marker="*" class="small"><a href="https://www.facebook.com/groups/cs50/">Facebook Group</a></li>
+            <li data-marker="*" class="small"><a href="https://www.facebook.com/cs50/">Facebook Page</a></li>
+            <li data-marker="*" class="small"><a href="https://github.com/cs50">GitHub</a></li>
+            <li data-marker="*" class="small"><a href="https://gitter.im/cs50/x">Gitter</a></li>
+            <li data-marker="*" class="small"><a href="https://instagram.com/cs50">Instagram</a></li>
+            <li data-marker="*" class="small"><a href="https://www.linkedin.com/groups/7437240/">LinkedIn Group</a></li>
+            <li data-marker="*" class="small"><a href="https://www.linkedin.com/school/CS50/">LinkedIn Page</a></li>
+            <li data-marker="*" class="small"><a href="https://www.quora.com/topic/CS50">Quora</a></li>
+            <li data-marker="*" class="small"><a href="https://www.reddit.com/r/cs50/">Reddit</a></li>
+            <li data-marker="*" class="small"><a href="https://cs50.edx.org/slack">Slack</a></li>
+            <li data-marker="*" class="small"><a href="https://www.snapchat.com/add/cs50">Snapchat</a></li>
+            <li data-marker="*" class="small"><a href="https://soundcloud.com/cs50">SoundCloud</a></li>
+            <li data-marker="*" class="small"><a href="https://twitter.com/cs50">Twitter</a></li>
+            <li data-marker="*" class="small"><a
+                href="http://www.youtube.com/subscription_center?add_user=cs50tv">YouTube</a></li>
+          </ul>
+
+          <hr>
+
+          <p><a href="https://cs50.harvardshop.com/"><img src="https://i.imgur.com/GGMdcKt.png" alt="Harvard Shop"></a>
+          </p>
+
+          <hr>
+
+          <p><a href="license/index.html" class="small"><i class="fab fa-creative-commons mr-1"></i>Licencia</a></p>
+        </nav>
+
+        <footer></footer>
+
+      </aside>
+
+      <main class="col-md">
+
+        <h1 id="scratch">Scratch</h1>
+
+        <p>Crear un proyecto de Scratch de tu elección, elige tu propia aventura!😉,
+          puede ser una historia interactiva, un juego, animación, o cualquier otra cosa.
+          Debe cumplir con los siguientes requisitos:</p>
+
+        <ul>
+          <li data-marker="*">Debe tener al menos 2 sprites, al menos uno de los cuales no de ser un gato (el gato ya fue usado en los ejemplos de la clase).</li>
+          <li data-marker="*">Debe tener al menos 3 scripts en total (sumando los scripts de todos los personajes).</li>
+          <li data-marker="*">Debe usar al menos 1 condición.</li>
+          <li data-marker="*">Debe usar al menos 1 ciclo (loop).</li>
+          <li data-marker="*">Debe usar al menos 1 variable.</li>
+          <li data-marker="*">Debe usar al menos 1 sonido.</li>
+          <li data-marker="*">- Debe ser más complicado que los que se mostraron en la clase 
+            (los de la clase eran cortos, con el objetivo de explicar conceptos particulares) 
+            pero puede ser menos complejo que el ejemplo Ivy’s Hardest Game. 
+            Por lo tanto, en total el proyecto debería tener  unas cuantas docenas de piezas en total..</li>
+        </ul>
+
+        <p>Aquí hay algunos proyectos de Scratch de estudiantes anteriores:</p>
+
+        <ul>
+          <li data-marker="*"><a href="https://scratch.mit.edu/projects/37412/">It’s Raining Men</a>, mostrado en clase</li>
+          <li data-marker="*"><a href="https://scratch.mit.edu/projects/326129587/">Ivy’s Hardest Game</a>, un juego de Harvard.</li>
+          <li data-marker="*"><a href="https://scratch.mit.edu/projects/37413/">Soccer</a>, un juego</li>
+          <li data-marker="*"><a href="https://scratch.mit.edu/projects/26329196/">Cookie Love Story</a>, una animación</li>
+          <li data-marker="*"><a href="https://scratch.mit.edu/projects/277536784/">Gingerbread tales</a>, una historia interactiva</li>
+          <li data-marker="*"><a href="https://scratch.mit.edu/projects/75390754/">Intersection</a>, un juego</li>
+          <li data-marker="*"><a href="https://scratch.mit.edu/projects/277537196/">Oscartime</a>, un juego</li>
+        </ul>
+
+        <p>Estos <a href="https://scratch.mit.edu/projects/editor/?tutorial=all">tutoriales</a> o estos <a
+            href="https://scratch.mit.edu/starter-projects">proyectos para iniciar</a> pueden resultarte útiles.
+            También te invitamos a explorar <a href="https://scratch.mit.edu/explore/projects/all">scratch.mit.edu</a> para encontrar inspiración.
+            Intenta encontrar una idea propia. Pero no intentes implementar todo el proyecto de una sola vez.
+            Da pasos pequeños. Prueba una pieza a la vez. Prueba, avanza otro poco, prueba otra vez, y así continúa.
+            Y recuerda usar la opción <strong>Guardar</strong> cada pocos minutos, para que no pierdas ningún progreso!</p>
+
+        <p>Si durante el proceso te resulta difícil implementar alguna funcionalidad, trata de no perder la paciencia; altera tu diseño
+          o prueba varias soluciones al problema..</p>
+
+        <p>Ya puedes comenzar. ¡Enorgullecenos!</p>
+
+        <p>Una vez que termines tu proyecto seleccion <strong>Archivo (File) &gt; Guardar ahora (Save now)</strong> una última vez.
+          Luego selecciona <strong>Archivo (File &gt; Guardar a tu computadora (Save to your computer)</strong> para poder obetener el archivo que debes enviar.
+          Asegúrate de seleccionar la opción <strong>Guardar (Save)</strong> si es que se te pide elegir entre <strong>Abrir (Open)</strong> y <strong>Guardar (Save)</strong>.
+        </p>
+
+        <h2 id="hello-world">Hola, Mundo</h2>
+
+        <p>Es complicado conocer a los compañeros de clase tomando un curso online. Pero gracias a la tecnología todos pueden decir hola.</p>
+
+        <p>Si tienes un teléfono o cámara digital y te gustaría saludar a los compañeros de clase, graba un video de 1 a 2 minutos
+          saludando, indicando de qué país eres, por qué estás tomando CS50x, y contandonos algo sobre ti.
+          Trata de comenzar tu video diciendo "Hello, world" y terminarlo diciendo "my name is..., and this is CS50".
+        </p>
+
+        <p>Si grabas un video, súbelo a YouTube (u otra plataforma) para que nos puedas proporcionar la URL al enviar tus soluciones</p>
+
+        <h2 id="how-to-submit">Cómo enviar las soluciones</h2>
+
+        <div class="alert" data-alert="warning" role="alert">
+          <p>Asegúrate de completar en orden <strong>ambos</strong> pasos listados abajo</p>
         </div>
 
-        
- 
-    
+        <h3 id="step-1-of-2">Paso 1 de 2</h3>
+
+        <p>Responde <a href="https://forms.cs50.io/b4e8bd58-1dd6-4a98-91a4-0d95143d63c6">este formulario</a>.</p>
+
+        <h3 id="step-2-of-2">Paso 2 de 2</h3>
+
+        <p>Para este paso asumimos que descargaste tu proyecto de Scratch como un archivo con extension <code
+            class="language-plaintext highlighter-rouge">.sb3</code>. Y también asumimos que tienes una <a
+            href="https://github.com/join">cuenta de GitHub</a>.</p>
+
+        <ol>
+          <li>Visita <a href="https://submit.cs50.io/invites/9770b67479384c4d8c37790779e466d9">este enlace</a>, inicia sesión en
+            tu cuenta de GitHub, y presiona <strong>Authorize cs50</strong>.</li>
+          <li>Marca la casilla que indica que permites que el staff del curso tenga acceso a tus soluciones (submissions), y presiona
+            <strong>Join course</strong>.</li>
+          <li>Ve a <a
+              href="https://submit.cs50.io/upload/cs50/problems/2021/x/scratch">https://submit.cs50.io/upload/cs50/problems/2021/x/scratch</a>.
+          </li>
+          <li>Presiona “Choose File” y elige tu archivo con extensión <code class="language-plaintext highlighter-rouge">.sb3</code>.
+            Presiona <strong>Submit</strong>.</li>
+        </ol>
+
+        <p>¡Eso es todo! Cuándo se envíe tu solución, verás otra página. Presiona el enlace
+          de tu envío y luego el enlace <strong>check50</strong> para ver si tu proyecto cumple los requisitos.
+          Puedes enviar tantas soluciones como quieras (antes de la fecha límite)</p>
+
+        <p>Para ver tu progreso actual en el curso, visita la página de calificaciones <a
+            href="https://cs50.me/cs50x">cs50.me/cs50x</a>!</p>
+
+      </main>
+
+    </div>
+
+  </div>
 
 
-</body></html>
+</body>
+
+</html>
